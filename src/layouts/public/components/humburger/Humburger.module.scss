@@ -1,0 +1,15 @@
+@use '/styles/mixins/mediaQuerys';
+
+.Humburguer {
+  @include mediaQuerys.for-phone {
+    place-self: center;
+    font-size: 1.5rem;
+    color: #000000;
+  }
+
+  @include mediaQuerys.for-tablet {
+    place-self: center;
+    font-size: 1.5rem;
+    color: #000000;
+  }
+}

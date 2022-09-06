@@ -1,0 +1,45 @@
+@use '/styles/mixins/mediaQuerys';
+.Navbar {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-columns: 20rem 1fr 20rem;
+  grid-template-rows: auto;
+  grid-template-areas: 'logo centerMenu optionsMenu';
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  @include mediaQuerys.for-phone {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'centerMenu logo  optionsMenu';
+  }
+
+  @include mediaQuerys.for-tablet {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'centerMenu logo  optionsMenu';
+  }
+
+  &__logo {
+    justify-self: center;
+    width: 10rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    @include mediaQuerys.for-phone {
+      width: 5rem;
+    }
+  }
+
+  &__options {
+    place-self: center;
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    @include mediaQuerys.for-phone {
+      font-size: 1rem;
+    }
+  }
+}

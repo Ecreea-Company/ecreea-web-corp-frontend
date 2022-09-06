@@ -1,0 +1,46 @@
+.Sidebar {
+  visibility: hidden;
+  overflow: hidden;
+  position: fixed;
+  background-color: aliceblue;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__fadeIn {
+    visibility: visible;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      left: -100%;
+      opacity: 0;
+    }
+    100% {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  &__fadeOut {
+    visibility: hidden;
+    left: -100%;
+    animation: fadeOut 0.5s ease-in-out;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      visibility: visible;
+      left: 0;
+      opacity: 1;
+    }
+    100% {
+      visibility: visible;
+      left: -100%;
+      opacity: 0;
+    }
+  }
+}

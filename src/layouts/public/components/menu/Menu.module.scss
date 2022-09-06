@@ -1,0 +1,18 @@
+@use '/styles/mixins/mediaQuerys';
+
+.Menu {
+  place-self: center;
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  @include mediaQuerys.for-phone {
+    font-size: 1rem;
+  }
+
+  &__row {
+    flex-direction: row;
+  }
+  &__column {
+    flex-direction: column;
+  }
+}

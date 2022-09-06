@@ -15,6 +15,7 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/triple-slash-reference": "off"
+    "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/consistent-type-assertions": "off"
   }
 }
