@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { IoMenu } from 'react-icons/io5'
-import { GrFormClose } from 'react-icons/gr'
+import { IoMenu, IoCloseSharp } from 'react-icons/io5'
 
-import { hamburgerSharing } from '@/services/HumburgerSharing.service'
+import { HamburgerSharing } from '@/services'
 
 import styles from './Humburger.module.scss'
 
@@ -14,7 +13,7 @@ const Humburger = ({ customStyle }: HumburgerProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = (): void => {
-    hamburgerSharing.setSubject(!isOpen)
+    HamburgerSharing.setSubject(!isOpen)
     setIsOpen(!isOpen)
   }
 
@@ -29,7 +28,7 @@ const Humburger = ({ customStyle }: HumburgerProps): JSX.Element => {
           handleClick()
         }}
       >
-        {isOpen ? <GrFormClose /> : <IoMenu />}
+        {isOpen ? <IoCloseSharp /> : <IoMenu />}
       </a>
     </>
   )

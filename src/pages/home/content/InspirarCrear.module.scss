@@ -1,0 +1,92 @@
+@use 'styles/mixins/mediaQueries';
+@use 'styles/mixins/utilities';
+
+@mixin brilloMobileandTablet {
+  &__imgBrillo {
+    width: 80%;
+    height: 80%;
+    top: calc(50% - 42%);
+    left: calc(50% - 43%);
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      width: 4%;
+      height: 4%;
+      top: calc(50% - 5%);
+      left: calc(50% - 6%);
+    }
+    100% {
+      width: 80%;
+      height: 80%;
+      top: calc(50% - 42%);
+      left: calc(50% - 43%);
+    }
+  }
+}
+
+.Section {
+  @include utilities.background-image(var(--url-bg-inpirarCrear));
+  min-height: 100vh;
+  position: relative;
+
+  &__title {
+    position: absolute;
+    width: 100%;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    top: calc(50% - 10%);
+  }
+
+  @include mediaQueries.for-phone {
+    &__title {
+      width: 80%;
+      top: calc(50% - 20%);
+      left: calc(50% - 40%);
+      font-size: 2rem;
+    }
+  }
+  @include mediaQueries.for-tablet {
+    &__title {
+      width: 80%;
+      top: calc(50% - 25%);
+      left: calc(50% - 40%);
+    }
+  }
+
+  &__imgBrillo {
+    @include utilities.background-image(var(--url-luz-mode));
+    background-size: contain;
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    top: calc(50% - 23%);
+    left: calc(50% - 25%);
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      width: 4%;
+      height: 4%;
+      top: calc(50% - 5%);
+      left: calc(50% - 6%);
+    }
+    100% {
+      width: 40%;
+      height: 40%;
+      top: calc(50% - 23%);
+      left: calc(50% - 25%);
+    }
+  }
+
+  @include mediaQueries.for-phone {
+    @include brilloMobileandTablet;
+  }
+
+  @include mediaQueries.for-tablet {
+    @include brilloMobileandTablet;
+  }
+}

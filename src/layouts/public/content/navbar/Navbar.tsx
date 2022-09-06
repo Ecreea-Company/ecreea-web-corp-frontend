@@ -1,8 +1,7 @@
 import { FiSearch } from 'react-icons/fi'
 import { BsGlobe2 } from 'react-icons/bs'
-import { HiOutlineMoon } from 'react-icons/hi'
 import { useWindowSize } from '@/hooks'
-import { Logo, Menu, Humburger } from '../../components'
+import { Logo, Menu, Humburger, ButtonMode } from '../../components'
 import styles from './Navbar.module.scss'
 
 const centralMenuItems = [
@@ -46,9 +45,7 @@ const Navbar = (): JSX.Element => {
           </a>
         </li>
         <li>
-          <a href="#">
-            <HiOutlineMoon />
-          </a>
+          <ButtonMode />
         </li>
       </ul>
     </div>

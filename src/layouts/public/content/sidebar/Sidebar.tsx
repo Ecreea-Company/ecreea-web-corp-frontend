@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { hamburgerSharing } from '@/services/HumburgerSharing.service'
+import { HamburgerSharing } from '@/services'
 
 import styles from './Sidebar.module.scss'
 import { Menu } from '../../components'
@@ -19,7 +19,7 @@ const centralMenuItems = [
 const Sidebar = (): JSX.Element => {
   const [sidebarStyles, setSidebarStyles] = useState('')
 
-  const subscription$ = hamburgerSharing.getSubject()
+  const subscription$ = HamburgerSharing.getSubject()
   useEffect(() => {
     subscription$.subscribe((data) => {
       setSidebarStyles(data ? fadeIn : fadeOut)

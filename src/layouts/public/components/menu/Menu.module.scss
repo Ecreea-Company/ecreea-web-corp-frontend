@@ -1,11 +1,11 @@
-@use '/styles/mixins/mediaQuerys';
+@use '/styles/mixins/mediaQueries';
 
 .Menu {
   place-self: center;
   display: flex;
   gap: 1rem;
   font-size: 0.8rem;
-  @include mediaQuerys.for-phone {
+  @include mediaQueries.for-phone {
     font-size: 1rem;
   }
 

@@ -1,0 +1,17 @@
+// modos de visualización
+body,
+body[data-theme='light'] {
+  --url-bg-inpirarCrear: white;
+  --url-luz-mode: url('/pages/home/luz_mode_white.webp');
+  --text-font-color: black;
+  --color-bg-navbar: rgba(255, 255, 255, 0.5);
+  --background-color: white;
+}
+
+body[data-theme='dark'] {
+  --url-bg-inpirarCrear: url('/pages/home/fondo-planeta.webp');
+  --url-luz-mode: url('/pages/home/luz_mode_black.webp');
+  --text-font-color: white;
+  --color-bg-navbar: rgba(0, 0, 0, 0.5);
+  --background-color: black;
+}

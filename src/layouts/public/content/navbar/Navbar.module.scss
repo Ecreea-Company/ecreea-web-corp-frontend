@@ -1,6 +1,6 @@
-@use '/styles/mixins/mediaQuerys';
+@use '/styles/mixins/mediaQueries';
 .Navbar {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-bg-navbar);
   backdrop-filter: blur(10px);
   display: grid;
   grid-template-columns: 20rem 1fr 20rem;
@@ -10,14 +10,14 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 9999;
 
-  @include mediaQuerys.for-phone {
+  @include mediaQueries.for-phone {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'centerMenu logo  optionsMenu';
   }
 
-  @include mediaQuerys.for-tablet {
+  @include mediaQueries.for-tablet {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'centerMenu logo  optionsMenu';
   }
@@ -28,7 +28,7 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 
-    @include mediaQuerys.for-phone {
+    @include mediaQueries.for-phone {
       width: 5rem;
     }
   }
@@ -38,7 +38,7 @@
     display: flex;
     gap: 1rem;
     font-size: 0.8rem;
-    @include mediaQuerys.for-phone {
+    @include mediaQueries.for-phone {
       font-size: 1rem;
     }
   }
