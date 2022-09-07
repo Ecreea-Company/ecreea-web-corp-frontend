@@ -4,3 +4,18 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@mixin section-100vh {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin flex($direction, $justify, $align, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}

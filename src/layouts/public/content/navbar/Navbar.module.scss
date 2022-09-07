@@ -4,11 +4,10 @@
   backdrop-filter: blur(10px);
   display: grid;
   grid-template-columns: 20rem 1fr 20rem;
-  grid-template-rows: auto;
+  grid-template-rows: 1fr;
   grid-template-areas: 'logo centerMenu optionsMenu';
   overflow: hidden;
   position: fixed;
-  top: 0;
   width: 100%;
   z-index: 9999;
 
@@ -20,6 +19,10 @@
   @include mediaQueries.for-tablet {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'centerMenu logo  optionsMenu';
+  }
+
+  @include mediaQueries.for-desktop-xxl {
+    width: 1920px;
   }
 
   &__logo {

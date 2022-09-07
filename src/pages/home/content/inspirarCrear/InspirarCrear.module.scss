@@ -27,16 +27,19 @@
 
 .Section {
   @include utilities.background-image(var(--url-bg-inpirarCrear));
-  min-height: 100vh;
-  position: relative;
+  @include utilities.section-100vh;
 
   &__title {
     position: absolute;
     width: 100%;
-    font-size: 4rem;
+    font-size: 4.5vw;
     font-weight: bold;
     text-align: center;
-    top: calc(50% - 10%);
+    top: calc(50% - 11%);
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 5rem;
+      top: calc(50% - 9%);
+    }
   }
 
   @include mediaQueries.for-phone {
@@ -52,6 +55,7 @@
       width: 80%;
       top: calc(50% - 25%);
       left: calc(50% - 40%);
+      font-size: 4rem;
     }
   }
 
