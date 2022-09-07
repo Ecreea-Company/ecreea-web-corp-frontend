@@ -1,0 +1,80 @@
+@use 'styles/mixins/mediaQueries';
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.flex(column, center, __);
+  padding-left: 6rem;
+
+  @include mediaQueries.for-phone {
+    padding-left: 3rem;
+  }
+
+  &__title {
+    font-size: 3vw;
+    font-weight: bold;
+    background: linear-gradient(60deg, #ed5212, #df3a1c, #d72a24);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2vh;
+    @include mediaQueries.for-phone {
+      font-size: 4vw;
+    }
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 3rem;
+    }
+  }
+
+  &__Parrafo {
+    font-size: 7vw;
+    font-weight: bold;
+    margin-bottom: 14vh;
+    @include mediaQueries.for-phone {
+      font-size: 6vw;
+      margin-bottom: 4vh;
+    }
+    @include mediaQueries.for-tablet {
+      font-size: 6vw;
+      margin-bottom: 5vh;
+    }
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 8rem;
+      margin-bottom: 9rem;
+    }
+  }
+}
+
+.Parrafo {
+  &__item {
+    position: absolute;
+    animation: roll 18s ease 1s infinite backwards;
+  }
+
+  &__item:nth-child(1) {
+    animation-delay: 0s;
+    opacity: 0;
+  }
+  &__item:nth-child(2) {
+    animation-delay: 6s;
+    opacity: 0;
+  }
+  &__item:nth-child(3) {
+    animation-delay: 12s;
+    opacity: 0;
+  }
+
+  @keyframes roll {
+    0% {
+      opacity: 0;
+    }
+    2.5%,
+    25% {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+    27.5%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
