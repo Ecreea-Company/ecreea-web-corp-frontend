@@ -1,0 +1,157 @@
+@use 'styles/mixins/mediaQueries';
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.flex(column, center, center, 8vh);
+
+  @include mediaQueries.for-phone {
+    gap: 4vh;
+  }
+  @include mediaQueries.for-tablet {
+    gap: 4vh;
+  }
+
+  &__title {
+    font-size: 2vw;
+    font-weight: bold;
+    @include mediaQueries.for-phone {
+      font-size: 6vw;
+    }
+
+    @include mediaQueries.for-tablet {
+      font-size: 5vw;
+    }
+
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 3rem;
+    }
+  }
+
+  &__parrafo {
+    font-size: 1.5vw;
+    @include mediaQueries.for-phone {
+      width: 80%;
+      font-size: 5vw;
+      text-align: center;
+    }
+    @include mediaQueries.for-tablet {
+      width: 80%;
+      font-size: 3vw;
+      text-align: center;
+    }
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 2rem;
+    }
+  }
+
+  &__MaquinaEscribir {
+    font-size: 12vw;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    height: 12vw;
+    line-height: 12vw;
+    @include mediaQueries.for-desktop-xxl {
+      height: 14rem;
+      line-height: 14rem;
+      font-size: 14rem;
+    }
+  }
+
+  &__Frases {
+    font-size: 1.5vw;
+    line-height: 2vw;
+    height: 2vw;
+    overflow: hidden;
+    text-align: center;
+    @include mediaQueries.for-phone {
+      font-size: 2.5vw;
+      line-height: 6vw;
+      height: 6vw;
+      width: 80%;
+    }
+
+    @include mediaQueries.for-tablet {
+      font-size: 2.5vw;
+      line-height: 6vw;
+      height: 6vw;
+      width: 90%;
+    }
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 2rem;
+    }
+  }
+}
+
+.MaquinaEscribir {
+  &__item {
+    top: 0;
+    position: relative;
+    animation: slide 12s steps(4) infinite;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--background-color);
+      border-left: 3px solid #1d4cbd;
+      animation: typing 3s steps(11) infinite;
+    }
+  }
+
+  @keyframes slide {
+    100% {
+      top: -48vw;
+    }
+  }
+
+  @include mediaQueries.for-desktop-xxl {
+    @keyframes slide {
+      100% {
+        top: -56rem;
+      }
+    }
+  }
+
+  @keyframes typing {
+    40%,
+    60% {
+      left: calc(100% + 12vw);
+    }
+    100% {
+      left: 0;
+    }
+  }
+}
+
+.Frases {
+  &__item {
+    top: 0;
+    position: relative;
+    animation: slideFrases 12s steps(4) infinite;
+  }
+
+  @keyframes slideFrases {
+    100% {
+      top: -8vw;
+    }
+  }
+
+  @include mediaQueries.for-phone {
+    @keyframes slideFrases {
+      100% {
+        top: -24vw;
+      }
+    }
+  }
+  @include mediaQueries.for-tablet {
+    @keyframes slideFrases {
+      100% {
+        top: -24vw;
+      }
+    }
+  }
+}

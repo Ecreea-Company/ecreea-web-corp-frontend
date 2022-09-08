@@ -2,3 +2,4 @@ export { default as CreacionDeImpacto } from './creacionDeImpacto/CreacionDeImpa
 export { default as CrearParaCrear } from './crearParaCrear/CrearParaCrear'
 export { default as Ecreadores } from './ecreadores/Ecreadores'
 export { default as InspirarCrear } from './inspirarCrear/InspirarCrear'
+export { default as NuestraEsencia } from './nuestraEsencia/NuestraEsencia'
