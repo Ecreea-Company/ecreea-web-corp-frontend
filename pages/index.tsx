@@ -1,5 +1,5 @@
 import { Public } from '@/layouts'
-import { CreacionDeImpacto, CrearParaCrear, InspirarCrear } from '@/pages/home/content'
+import { CreacionDeImpacto, CrearParaCrear, Ecreadores, InspirarCrear } from '@/pages/home/content'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <CrearParaCrear />
       <div style={{ minHeight: '100vh', background: 'orange' }}></div>
       <CreacionDeImpacto />
-      <div style={{ minHeight: '100vh', background: 'orange' }}></div>
+      <Ecreadores />
       <div style={{ minHeight: '100vh', background: 'gray' }}></div>
       <div style={{ minHeight: '100vh', background: 'orange' }}></div>
     </Public>
