@@ -34,17 +34,17 @@ const Navbar = (): JSX.Element => {
           )}
 
       <ul className={styles.Navbar__options}>
-        <li>
+        <li className={styles.Navbar__items}>
           <a href="#">
             <FiSearch />
           </a>
         </li>
-        <li>
+        <li className={styles.Navbar__items}>
           <a href="#">
             <BsGlobe2 />
           </a>
         </li>
-        <li>
+        <li className={styles.Navbar__items}>
           <ButtonMode />
         </li>
       </ul>

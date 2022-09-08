@@ -8,6 +8,7 @@
   grid-template-areas: 'logo centerMenu optionsMenu';
   overflow: hidden;
   position: fixed;
+
   width: 100%;
   z-index: 9999;
 
@@ -44,5 +45,9 @@
     @include mediaQueries.for-phone {
       font-size: 1rem;
     }
+  }
+
+  &__items {
+    width: 1rem;
   }
 }
