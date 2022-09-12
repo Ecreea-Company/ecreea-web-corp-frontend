@@ -1,3 +1,4 @@
+import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import { CreacionDeImpacto, CrearParaCrear, Ecreadores, InspirarCrear, NuestraEsencia } from '@/pages/home/content'
 import type { NextPage } from 'next'
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
       <Ecreadores />
       <NuestraEsencia/>
       <div style={{ minHeight: '100vh', background: 'orange' }}></div>
+      <Footer/>
     </Public>
   )
 }

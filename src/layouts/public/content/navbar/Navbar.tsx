@@ -3,13 +3,30 @@ import { BsGlobe2 } from 'react-icons/bs'
 import { useWindowSize } from '@/hooks'
 import { Logo, Menu, Humburger, ButtonMode } from '../../components'
 import styles from './Navbar.module.scss'
+import type { MenuItemProps } from '../../components/menu/Menu.component'
+import Link from 'next/link'
 
-const centralMenuItems = [
-  'Creeadores',
-  'Innovacion',
-  'Inversores',
-  'Sostenibilidad',
-  'ecreea'
+const centralMenuItems: MenuItemProps[] = [
+  {
+    text: 'Creadores',
+    href: '/creadores'
+  },
+  {
+    text: 'Innovación',
+    href: '/innovacion'
+  },
+  {
+    text: 'Inversores',
+    href: '/inversores'
+  },
+  {
+    text: 'Sostenibilidad',
+    href: '/sostenibilidad'
+  },
+  {
+    text: 'ecreea',
+    href: '/ecreea'
+  }
 ]
 
 const Navbar = (): JSX.Element => {
@@ -18,7 +35,11 @@ const Navbar = (): JSX.Element => {
   return (
     <div className={styles.Navbar}>
       <div className={styles.Navbar__logo} style={{ gridArea: 'logo' }}>
-        <Logo />
+        <Link href={'/'}>
+          <a>
+            <Logo />
+          </a>
+        </Link>
       </div>
 
       {width < 1200

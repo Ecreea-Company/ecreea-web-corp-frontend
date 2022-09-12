@@ -1,12 +1,18 @@
 
 // styles
+import Link from 'next/link'
 import styles from './Menu.module.scss'
 
 // interface
-interface MenuProps {
-  itemsList: String[] | JSX.Element[]
+export interface MenuProps {
+  itemsList: MenuItemProps[]
   customStyle?: React.CSSProperties
   direction: 'row' | 'column'
+}
+
+export interface MenuItemProps {
+  href: string
+  text: string
 }
 
 const Menu = ({ itemsList, customStyle, direction }: MenuProps): JSX.Element => {
@@ -14,7 +20,11 @@ const Menu = ({ itemsList, customStyle, direction }: MenuProps): JSX.Element => 
   return (
     <ul className={`${styles.Menu} ${menuDirection}`} style={customStyle}>
         {itemsList.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              <Link href={item.href ? item.href : '/'}>
+              <a>{item.text}</a>
+              </Link>
+            </li>
         ))}
     </ul>
   )

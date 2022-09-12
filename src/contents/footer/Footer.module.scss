@@ -1,0 +1,197 @@
+@use '/styles/mixins/mediaQueries';
+
+.Footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.5fr;
+  padding-top: 2vw;
+  padding-left: 7vw;
+  padding-right: 7vw;
+
+  &__Block1 {
+    grid-area: 1/1/2/2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    border-top: 1px solid var(--text-font-color);
+
+    @include mediaQueries.for-phone {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      border-top: 0;
+    }
+    @include mediaQueries.for-tablet {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      border-top: 0;
+    }
+  }
+
+  &__Block2 {
+    grid-area: 2/1/3/2;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.Block1 {
+  &__section {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    font-size: 0.8rem;
+    @include mediaQueries.for-phone {
+      border-top: 1px solid var(--text-font-color);
+    }
+    @include mediaQueries.for-tablet {
+      border-top: 1px solid var(--text-font-color);
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    @include mediaQueries.for-phone {
+      margin-top: 2vw;
+      margin-bottom: 2vw;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include mediaQueries.for-tablet {
+      margin-top: 2vw;
+      margin-bottom: 2vw;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    @include mediaQueries.for-phone {
+      gap: 3vw;
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      overflow-y: auto;
+    }
+    @include mediaQueries.for-tablet {
+      gap: 3vw;
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      overflow-y: auto;
+    }
+  }
+
+  &__list__open {
+    @include mediaQueries.for-phone {
+      height: auto;
+      padding-bottom: 3vw;
+    }
+    @include mediaQueries.for-tablet {
+      height: auto;
+      padding-bottom: 3vw;
+    }
+  }
+
+  &__redes {
+    display: flex;
+    gap: 1vw;
+    padding-top: 1vw;
+  }
+
+  &__icon {
+    width: 1.5vw;
+    font-size: 1.5vw;
+    @include mediaQueries.for-phone {
+      width: 6vw;
+      font-size: 6vw;
+    }
+    @include mediaQueries.for-tablet {
+      width: 6vw;
+      font-size: 6vw;
+    }
+  }
+}
+
+.Block2 {
+  &__top {
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    @include mediaQueries.for-phone {
+      border-top: 1px solid var(--text-font-color);
+      font-size: 0.8rem;
+      text-align: center;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+    }
+    @include mediaQueries.for-tablet {
+      border-top: 1px solid var(--text-font-color);
+      font-size: 0.8rem;
+      text-align: center;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    border-top: 1px solid var(--text-font-color);
+    @include mediaQueries.for-phone {
+      flex-direction: column;
+      font-size: 0.8rem;
+      gap: 3vw;
+    }
+    @include mediaQueries.for-tablet {
+      flex-direction: column;
+      font-size: 0.8rem;
+      gap: 3vw;
+    }
+  }
+  &__list {
+    display: flex;
+    gap: 5vw;
+    @include mediaQueries.for-phone {
+      gap: 0;
+      justify-content: space-between;
+    }
+    @include mediaQueries.for-tablet {
+      gap: 0;
+      justify-content: space-between;
+    }
+  }
+  &__bandera {
+    display: flex;
+    gap: 1vw;
+    @include mediaQueries.for-phone {
+      justify-content: center;
+      gap: 4vw;
+    }
+    @include mediaQueries.for-tablet {
+      justify-content: center;
+      gap: 4vw;
+    }
+  }
+
+  &__peru {
+    width: 2vw;
+    @include mediaQueries.for-phone {
+      width: 6vw;
+    }
+    @include mediaQueries.for-tablet {
+      width: 6vw;
+    }
+  }
+}

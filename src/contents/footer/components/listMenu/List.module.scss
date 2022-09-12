@@ -1,0 +1,70 @@
+@use '/styles/mixins/mediaQueries';
+.Block1 {
+  &__section {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    font-size: 0.8rem;
+    @include mediaQueries.for-phone {
+      border-top: 1px solid var(--text-font-color);
+    }
+    @include mediaQueries.for-tablet {
+      border-top: 1px solid var(--text-font-color);
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    @include mediaQueries.for-phone {
+      margin-top: 2vw;
+      margin-bottom: 2vw;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include mediaQueries.for-tablet {
+      margin-top: 2vw;
+      margin-bottom: 2vw;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    @include mediaQueries.for-phone {
+      gap: 3vw;
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      overflow-y: auto;
+    }
+    @include mediaQueries.for-tablet {
+      gap: 3vw;
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      transition: all 0.5s ease-in-out;
+      overflow-y: auto;
+    }
+  }
+
+  &__list__open {
+    @include mediaQueries.for-phone {
+      height: auto;
+      padding-bottom: 3vw;
+    }
+    @include mediaQueries.for-tablet {
+      height: auto;
+      padding-bottom: 3vw;
+    }
+  }
+}
