@@ -1,0 +1,19 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.background-image(url('/pages/innovacion/bg-comercio.jpg'));
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  color: white;
+
+  &__content {
+    align-self: center;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 87%;
+  }
+}

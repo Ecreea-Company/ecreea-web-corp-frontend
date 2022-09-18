@@ -1,0 +1,21 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.flex(column, center, center, 5vw);
+  @include utilities.background-image(
+    url('/pages/creadores/bg-porqueLoHacemos.jpg')
+  );
+  font-weight: bold;
+  color: whitesmoke;
+
+  &__title {
+    font-size: 2vw;
+  }
+
+  &__parrafo {
+    width: 80%;
+    font-size: 6vw;
+    text-align: center;
+  }
+}

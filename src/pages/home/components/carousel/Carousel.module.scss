@@ -1,0 +1,103 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Slider {
+  width: 100%;
+  @include utilities.flex(row, center, center);
+  position: relative;
+
+  &__Controls {
+    @include utilities.flex(row, space-between, center);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+  }
+
+  &__content {
+    width: 60vw;
+    height: 70vh;
+    position: relative;
+    perspective: 1400px;
+    transform-style: preserve-3d;
+
+    @include mediaQueries.for-phone {
+      width: 80vw;
+      height: 30vh;
+    }
+
+    @include mediaQueries.for-tablet {
+      width: 80vw;
+      height: 40vh;
+    }
+  }
+
+  & input[type='radio'] {
+    display: none;
+  }
+
+  &__card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 400ms ease-in-out;
+    filter: drop-shadow(0px 3px 8px rgb(52, 50, 50));
+  }
+
+  .s1:checked ~ &__1,
+  .s2:checked ~ &__2,
+  .s3:checked ~ &__3 {
+    transform: translate3d(0%, 0, 0px);
+  }
+
+  .s1:checked ~ &__2,
+  .s2:checked ~ &__3,
+  .s3:checked ~ &__1 {
+    transform: translate3d(140%, 34%, -100px);
+    height: 40vh;
+    width: 50vw;
+    @include mediaQueries.for-phone {
+      transform: translate3d(180%, 20%, -100px);
+      height: 20vh;
+      width: 50vw;
+    }
+    @include mediaQueries.for-tablet {
+      transform: translate3d(180%, 40%, -100px);
+      height: 20vh;
+      width: 50vw;
+    }
+  }
+
+  .s1:checked ~ &__3,
+  .s2:checked ~ &__1,
+  .s3:checked ~ &__2 {
+    transform: translate3d(-120%, 34%, -100px);
+    height: 40vh;
+    width: 50vw;
+    @include mediaQueries.for-phone {
+      transform: translate3d(-120%, 20%, -100px);
+      height: 20vh;
+      width: 50vw;
+    }
+    @include mediaQueries.for-tablet {
+      transform: translate3d(-120%, 40%, -100px);
+      height: 20vh;
+      width: 50vw;
+    }
+  }
+}
+
+.Controls {
+  &__prev {
+    height: 45vh;
+    width: 12vw;
+    cursor: pointer;
+  }
+  &__next {
+    height: 45vh;
+    width: 12vw;
+    cursor: pointer;
+  }
+}

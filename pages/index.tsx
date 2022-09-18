@@ -1,6 +1,6 @@
 import { Footer } from '@/contents'
 import { Public } from '@/layouts'
-import { CreacionDeImpacto, CrearParaCrear, Ecreadores, InspirarCrear, NuestraEsencia } from '@/pages/home/content'
+import { CreacionDeImpacto, CrearParaCrear, Ecreadores, InspirarCrear, NuestraEsencia, Transformamos, UltimasInformaciones } from '@/pages/home/content'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
@@ -8,11 +8,11 @@ const Home: NextPage = () => {
     <Public titlePage="Home">
       <InspirarCrear />
       <CrearParaCrear />
-      <div style={{ minHeight: '100vh', background: 'orange' }}></div>
+      <Transformamos />
       <CreacionDeImpacto />
       <Ecreadores />
       <NuestraEsencia/>
-      <div style={{ minHeight: '100vh', background: 'orange' }}></div>
+      <UltimasInformaciones />
       <Footer/>
     </Public>
   )

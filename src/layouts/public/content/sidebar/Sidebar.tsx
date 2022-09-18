@@ -9,11 +9,26 @@ const fadeIn = styles.Sidebar__fadeIn
 const fadeOut = styles.Sidebar__fadeOut
 
 const centralMenuItems = [
-  'Creeadores',
-  'Innovacion',
-  'Inversores',
-  'Sostenibilidad',
-  'ecreea'
+  {
+    text: 'Creadores',
+    href: '/creadores'
+  },
+  {
+    text: 'Innovación',
+    href: '/innovacion'
+  },
+  {
+    text: 'Inversores',
+    href: '/inversores'
+  },
+  {
+    text: 'Sostenibilidad',
+    href: '/sostenibilidad'
+  },
+  {
+    text: 'ecreea',
+    href: '/ecreea'
+  }
 ]
 
 const Sidebar = (): JSX.Element => {

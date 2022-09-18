@@ -1,0 +1,16 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.flex(column, center, center, 4vw);
+
+  &__title {
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  &__parrafos {
+    @include utilities.flex(column, center, center);
+    font-size: 4vw;
+  }
+}

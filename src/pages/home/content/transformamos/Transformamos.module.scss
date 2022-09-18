@@ -1,0 +1,25 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.flex(column, space-evenly, center);
+}
+
+.Title {
+  &__industrial {
+    background: linear-gradient(60deg, #1d3cb3, #1c74d6);
+    background-clip: text;
+    color: transparent;
+  }
+  &__energia {
+    background: linear-gradient(60deg, #ffee38, #fcbe25);
+    background-clip: text;
+    color: transparent;
+  }
+  &__construccion {
+    background: linear-gradient(60deg, #fcbe24, #f8a720, #f06916, #ed5212);
+    background-clip: text;
+    color: transparent;
+  }
+}

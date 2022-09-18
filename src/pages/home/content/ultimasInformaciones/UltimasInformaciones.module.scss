@@ -1,0 +1,45 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.flex(column, center, center, 2rem);
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &__video {
+    width: 90vw;
+    height: 70vh;
+
+    & div {
+      width: inherit;
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & svg {
+      cursor: pointer;
+      width: max-content;
+    }
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+
+    &:hover i {
+      display: block;
+      width: 1.5rem;
+    }
+
+    & i {
+      display: none;
+    }
+  }
+}

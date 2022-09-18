@@ -1,0 +1,17 @@
+.Title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+  width: 56%;
+
+  & h1 {
+    font-size: 3.3vw;
+    font-weight: bold;
+  }
+
+  & p {
+    font-size: 1.8vw;
+    font-weight: 300;
+    text-align: justify;
+  }
+}

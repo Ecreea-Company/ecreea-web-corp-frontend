@@ -1,0 +1,61 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-200vh;
+  @include utilities.background-image(
+    url('/pages/creadores/bg-transformamos.jpg')
+  );
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-size: 180% 150%;
+  animation: bg_lava 20s infinite;
+  color: white;
+  font-weight: bold;
+
+  @keyframes bg_lava {
+    0% {
+      background-size: 180% 150%;
+    }
+
+    50% {
+      background-size: 100% 150%;
+    }
+
+    100% {
+      background-size: 180% 150%;
+    }
+  }
+
+  &__Block1 {
+    @include utilities.flex(column, center, center, 5vw);
+  }
+
+  &__Block2 {
+    @include utilities.flex(column, center, center, 5vw);
+  }
+}
+
+.Block1 {
+  &__title {
+    font-size: 2vw;
+  }
+
+  &__parrafo {
+    width: 90%;
+    font-size: 5vw;
+    text-align: center;
+  }
+}
+
+.Block2 {
+  &__title {
+    font-size: 2vw;
+  }
+
+  &__parrafo {
+    width: 90%;
+    font-size: 5vw;
+    text-align: center;
+  }
+}

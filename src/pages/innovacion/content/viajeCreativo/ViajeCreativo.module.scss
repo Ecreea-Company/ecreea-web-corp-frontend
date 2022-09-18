@@ -1,0 +1,35 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-200vh;
+  @include utilities.background-image(
+    url('/pages/innovacion/bg-viajeCreativo.jpg')
+  );
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  color: white;
+  &__OneBlock {
+    @include utilities.flex(column, center, __);
+    font-size: 10vw;
+    font-weight: bold;
+    padding-left: 5vw;
+  }
+
+  &__SecondBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.SecondBlock {
+  &__parrafo {
+    grid-area: 1/2/3/3;
+    width: 90%;
+    align-self: center;
+    font-size: 2.5vw;
+    font-weight: 300;
+    text-align: justify;
+  }
+}

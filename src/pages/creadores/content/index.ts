@@ -1,0 +1,6 @@
+export { default as ComoLoHacemos } from './comoLoHacemos/ComoLoHacemos'
+export { default as PorqueLoHacemos } from './porqueLoHacemos/PorqueLoHacemos'
+export { default as SomosArtistas } from './somosArtistas/SomosArtistas'
+export { default as Transformamos } from './transformamos/Transformamos'
+export { default as TransformamosObjetivos } from './transformamosObjetivos/TransformamosObjetivos'
+export { default as TransformamosValores } from './transformamosValores/TransformamosValores'

@@ -1,5 +1,18 @@
 @use './modesColor';
 
+//Refactorizar SI o SI
+@font-face {
+  font-family: 'icomoon';
+  src: url('/icons/fonts/icomoon.eot?armci4');
+  src: url('/icons/fonts/icomoon.eot?armci4#iefix') format('embedded-opentype'),
+    url('/icons/fonts/icomoon.ttf?armci4') format('truetype'),
+    url('/icons/fonts/icomoon.woff?armci4') format('woff'),
+    url('/icons/fonts/icomoon.svg?armci4#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 /* Aquí definimos las Custom properties */
 :root {
   --negro: #393939;
@@ -74,7 +87,6 @@ a,
 strong,
 blockquote,
 i,
-b,
 u,
 em {
   font-size: 1em;

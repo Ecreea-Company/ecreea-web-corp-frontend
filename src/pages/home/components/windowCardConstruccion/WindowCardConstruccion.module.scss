@@ -1,0 +1,95 @@
+@use 'styles/mixins/mediaQueries';
+.WindowCard {
+  background-color: aliceblue;
+  width: 57vw;
+  height: 65vh;
+  border-radius: 1vw;
+  overflow: hidden;
+  position: relative;
+  animation: fadeInWindow 1.5s;
+  color: black;
+  @include mediaQueries.for-phone {
+    width: 75vw;
+    height: 28vh;
+  }
+
+  @keyframes fadeInWindow {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    width: 15vw;
+    height: 3vw;
+    top: calc(50% - 1.5vw);
+    left: 5vw;
+    animation: fadeInLogo 2.5s ease-in;
+    @include mediaQueries.for-phone {
+      left: 15vw;
+    }
+
+    @keyframes fadeInLogo {
+      0%,
+      20% {
+        width: 20vw;
+        height: 4vw;
+        top: calc(50% - 2vw);
+        left: calc(50% - 10vw);
+        opacity: 0;
+      }
+      50% {
+        width: 20vw;
+        height: 4vw;
+        top: calc(50% - 2vw);
+        left: calc(50% - 10vw);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__Description {
+    position: absolute;
+    width: 25vw;
+    left: 27vw;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    animation: fadeInDescription 2.5s ease-in;
+    @include mediaQueries.for-phone {
+      left: 37vw;
+      top: 8vh;
+    }
+  }
+
+  @keyframes fadeInDescription {
+    0%,
+    90% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.Description {
+  &__parrafo {
+    font-size: 1.5vw;
+    font-weight: 300;
+    text-align: justify;
+  }
+
+  &__link {
+    font-size: 2vw;
+    font-weight: 300;
+    text-align: center;
+  }
+}

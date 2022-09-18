@@ -1,0 +1,37 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.flex(column, center, center, 4vw);
+  background: url('/pages/home/Degradado_Ecreeadores.webp') no-repeat center
+    center;
+  background-size: 180vw 150vh;
+  animation: bg_lava 20s infinite;
+  color: white;
+
+  @keyframes bg_lava {
+    0% {
+      background-size: 180vw 150vh;
+    }
+
+    50% {
+      background-size: 100vw 150vh;
+    }
+
+    100% {
+      background-size: 180vw 150vh;
+    }
+  }
+
+  &__title {
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  &__Objetivos {
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+}

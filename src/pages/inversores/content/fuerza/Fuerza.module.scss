@@ -1,0 +1,32 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section-100vh;
+  @include utilities.background-image(url('/pages/inversores/bg-fuerza.jpg'));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.Description {
+  padding-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  font-size: 3.3vw;
+  font-weight: bold;
+  width: 44vw;
+
+  &__title {
+    font-size: 3.3vw;
+    font-weight: bold;
+    color: #f20b0b;
+  }
+
+  &__parrafo {
+    font-size: 2vw;
+    font-weight: 300;
+    text-align: justify;
+  }
+}
