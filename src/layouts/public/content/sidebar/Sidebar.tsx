@@ -4,30 +4,36 @@ import { HamburgerSharing } from '@/services'
 
 import styles from './Sidebar.module.scss'
 import { Menu } from '../../components'
+import { MenuItemProps } from '../../components/menu/Menu.component'
 
 const fadeIn = styles.Sidebar__fadeIn
 const fadeOut = styles.Sidebar__fadeOut
 
-const centralMenuItems = [
+const centralMenuItems: MenuItemProps[] = [
   {
     text: 'Creadores',
-    href: '/creadores'
+    href: '/creadores',
+    isDisabled: false
   },
   {
     text: 'Innovación',
-    href: '/innovacion'
+    href: '/innovacion',
+    isDisabled: false
   },
   {
     text: 'Inversores',
-    href: '/inversores'
+    href: '/inversores',
+    isDisabled: false
   },
   {
     text: 'Sostenibilidad',
-    href: '/sostenibilidad'
+    href: '/sostenibilidad',
+    isDisabled: true
   },
   {
     text: 'ecreea',
-    href: '/ecreea'
+    href: '/ecreea',
+    isDisabled: true
   }
 ]
 
