@@ -3,7 +3,14 @@ import { ImageFill, TitleDegradado } from '@/components'
 import { Carousel, WindowCardConstruccion, WindowCardEnergia, WindowCardIndustrial } from '../../components'
 import styles from './Transformamos.module.scss'
 
-const cards = [
+interface CardsProps {
+  title: string
+  component: JSX.Element
+  styles: string
+  card: JSX.Element
+}
+
+const cards: CardsProps[] = [
   {
     component: (
       <ImageFill src="/pages/home/tab_industrial.png" alt="E2B-Ecreea" />

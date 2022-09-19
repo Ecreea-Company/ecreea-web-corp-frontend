@@ -15,4 +15,9 @@
   &__column {
     flex-direction: column;
   }
+
+  &__disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }

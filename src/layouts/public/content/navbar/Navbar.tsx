@@ -9,23 +9,28 @@ import Link from 'next/link'
 const centralMenuItems: MenuItemProps[] = [
   {
     text: 'Creadores',
-    href: '/creadores'
+    href: '/creadores',
+    isDisabled: false
   },
   {
     text: 'Innovación',
-    href: '/innovacion'
+    href: '/innovacion',
+    isDisabled: false
   },
   {
     text: 'Inversores',
-    href: '/inversores'
+    href: '/inversores',
+    isDisabled: false
   },
   {
     text: 'Sostenibilidad',
-    href: '/sostenibilidad'
+    href: '/sostenibilidad',
+    isDisabled: true
   },
   {
     text: 'ecreea',
-    href: '/ecreea'
+    href: '/ecreea',
+    isDisabled: true
   }
 ]
 
