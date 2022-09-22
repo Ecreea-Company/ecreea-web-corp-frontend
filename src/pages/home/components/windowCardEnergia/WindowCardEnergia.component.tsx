@@ -1,4 +1,5 @@
 import { ImageFill } from '@/components'
+import { IoIosArrowForward } from 'react-icons/io'
 import styles from './WindowCardEnergia.module.scss'
 
 function WindowCardEnergia (): JSX.Element {
@@ -19,9 +20,12 @@ function WindowCardEnergia (): JSX.Element {
           propósito es impulsar a que los proyectos nunca paren de
           desarrollarse.
         </p>
-        <p className={styles.Description__link}>
-          Impulsa con nosotros www.energix.com
-        </p>
+        <a className={styles.Description__link} href="https://www.e2b.pe/">
+          <p>Impulsa con nosotros</p>
+          <div className={styles.Description__arrow}>
+            <IoIosArrowForward />
+          </div>
+        </a>
       </div>
     </div>
   )

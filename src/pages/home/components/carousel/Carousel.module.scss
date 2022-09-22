@@ -32,6 +32,11 @@
       width: 80vw;
       height: 40vh;
     }
+
+    @include mediaQueries.for-desktop-xxl {
+      width: 40vw;
+      height: 65vh;
+    }
   }
 
   & input[type='radio'] {
@@ -68,6 +73,11 @@
       height: 20vh;
       width: 50vw;
     }
+    @include mediaQueries.for-desktop-xxl {
+      transform: translate3d(180%, 30%, -100px);
+      height: 40vh;
+      width: 25vw;
+    }
   }
 
   .s1:checked ~ &__3,
@@ -86,6 +96,12 @@
       height: 20vh;
       width: 50vw;
     }
+
+    @include mediaQueries.for-desktop-xxl {
+      transform: translate3d(-120%, 30%, -100px);
+      height: 40vh;
+      width: 25vw;
+    }
   }
 }
 
@@ -94,10 +110,17 @@
     height: 45vh;
     width: 12vw;
     cursor: pointer;
+    @include mediaQueries.for-desktop-xxl {
+      width: 5vw;
+    }
   }
+
   &__next {
     height: 45vh;
     width: 12vw;
     cursor: pointer;
+    @include mediaQueries.for-desktop-xxl {
+      width: 5vw;
+    }
   }
 }

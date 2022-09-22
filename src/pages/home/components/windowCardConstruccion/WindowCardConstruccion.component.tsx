@@ -1,4 +1,5 @@
 import { ImageFill } from '@/components'
+import { IoIosArrowForward } from 'react-icons/io'
 import styles from './WindowCardConstruccion.module.scss'
 
 function WindowCardConstruccion (): JSX.Element {
@@ -18,9 +19,12 @@ function WindowCardConstruccion (): JSX.Element {
           integrales con la promesa de construir grandes sueños para grandes
           personas y empresas.
         </p>
-        <p className={styles.Description__link}>
-          Construye con nosotros www.ebuilding.com
-        </p>
+        <a className={styles.Description__link} href="https://www.e2b.pe/">
+          <p>Impulsa con nosotros</p>
+          <div className={styles.Description__arrow}>
+            <IoIosArrowForward />
+          </div>
+        </a>
       </div>
     </div>
   )

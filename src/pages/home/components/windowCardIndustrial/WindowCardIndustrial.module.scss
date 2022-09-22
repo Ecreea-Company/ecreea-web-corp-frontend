@@ -2,19 +2,8 @@
 @use 'styles/mixins/mediaQueries';
 
 .WindowCard {
-  background-color: aliceblue;
-  width: 57vw;
-  height: 65vh;
-  border-radius: 1vw;
-  overflow: hidden;
-  position: relative;
+  @include utilities.cardIndustrias;
   animation: fadeInWindow 1.5s;
-  color: black;
-
-  @include mediaQueries.for-phone {
-    width: 75vw;
-    height: 28vh;
-  }
 
   @keyframes fadeInWindow {
     0% {
@@ -29,24 +18,33 @@
     position: absolute;
     width: 5vw;
     height: 5vw;
-    top: 3vh;
-    left: 15vw;
-    animation: fadeInLogo 3.5s;
+    top: 8%;
+    left: 12%;
+    animation: fadeInLogo 3s;
+
     @include mediaQueries.for-phone {
       width: 6vw;
       height: 6vw;
-      top: 2vh;
-      left: 20vw;
+    }
+
+    @include mediaQueries.for-tablet {
+      width: 6vw;
+      height: 6vw;
+    }
+
+    @include mediaQueries.for-desktop-xxl {
+      width: 3vw;
+      height: 3vw;
     }
   }
 
   @keyframes fadeInLogo {
     0%,
     20% {
-      width: 6.5vw;
-      height: 7vw;
+      width: 5vw;
+      height: 5vw;
       top: calc(50% - 2.5vw);
-      left: 8vw;
+      left: 18vw;
     }
   }
 
@@ -62,51 +60,88 @@
     }
   }
 
+  @include mediaQueries.for-tablet {
+    @keyframes fadeInLogo {
+      0%,
+      20% {
+        width: 6.5vw;
+        height: 7vw;
+        top: calc(50% - 3vw);
+        left: 24vw;
+      }
+    }
+  }
+
+  @include mediaQueries.for-desktop-xxl {
+    @keyframes fadeInLogo {
+      0%,
+      20% {
+        width: 3vw;
+        height: 3vw;
+        top: calc(50% - 1.5vw);
+        left: 14vw;
+      }
+    }
+  }
+
   &__title {
     position: absolute;
     font-size: 1vw;
     font-weight: 300;
-    top: 10%;
-    left: 22vw;
+    top: calc(50% - 0.8vw);
+    left: 25vw;
+    opacity: 0;
     animation: fadeInTitle 3.5s;
     @include mediaQueries.for-phone {
       font-size: 1.5vw;
-      top: 11%;
-      left: 27vw;
+      top: calc(50% - 0.4vw);
+      left: 32vw;
+    }
+
+    @include mediaQueries.for-tablet {
+      font-size: 1.5vw;
+      top: calc(50% - 0.4vw);
+      left: 32vw;
+    }
+
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 0.8vw;
+      top: calc(50% - 0.4vw);
+      left: 18vw;
     }
   }
 
   @keyframes fadeInTitle {
     0%,
     20% {
-      font-size: 1.5vw;
-      top: 50%;
-      left: 20vw;
-      font-weight: 300;
+      opacity: 1;
     }
-  }
-
-  @include mediaQueries.for-phone {
-    @keyframes fadeInTitle {
-      0%,
-      20% {
-        font-size: 1.5vw;
-        top: 50%;
-        left: 28vw;
-        font-weight: 300;
-      }
+    40% {
+      opacity: 0;
     }
   }
 
   &__Info {
     @include utilities.flex(column, center, center, 2vw);
     position: absolute;
-    width: 90%;
-    top: 24%;
-    left: calc(50% - 45%);
+    width: 76%;
+    height: 85%;
+    top: 8%;
+    left: 12%;
     animation: fadeInInfo 3.5s;
+
     @include mediaQueries.for-phone {
       @include utilities.flex(column, center, center, 4vw);
+      height: max-content;
+    }
+
+    @include mediaQueries.for-tablet {
+      @include utilities.flex(column, center, center, 3vw);
+      height: max-content;
+    }
+
+    @include mediaQueries.for-desktop-xxl {
+      @include utilities.flex(column, center, center, 1vw);
     }
   }
 
@@ -119,42 +154,78 @@
 }
 
 .Info {
+  &__contentTitle {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__p1 {
-    font-size: 2vw;
-    text-align: center;
-    width: 62%;
+    font-size: 2.2vw;
+    width: 80%;
     @include mediaQueries.for-phone {
-      font-size: 2.5vw;
-      width: 70%;
+      font-size: 2.9vw;
+      width: 80%;
+    }
+
+    @include mediaQueries.for-tablet {
+      font-size: 2.9vw;
+      width: 80%;
+    }
+
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 1.5vw;
+      width: 82%;
     }
   }
 
   &__p2 {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     text-align: center;
     @include mediaQueries.for-phone {
-      font-size: 1.8vw;
+      font-size: 1.6vw;
+    }
+
+    @include mediaQueries.for-tablet {
+      font-size: 1.6vw;
+    }
+
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 0.8vw;
     }
   }
 
   &__industrias {
-    width: 75%;
-    height: 10vw;
+    width: 100%;
+    height: 15vw;
     @include mediaQueries.for-phone {
-      height: 12vw;
+      height: 20vw;
+    }
+
+    @include mediaQueries.for-tablet {
+      height: 20vw;
     }
   }
   &__link {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     font-weight: bold;
+    color: #4d91e1;
     @include utilities.flex(row, center, center);
+
     @include mediaQueries.for-phone {
-      font-size: 1.8vw;
+      font-size: 1.6vw;
+    }
+
+    @include mediaQueries.for-tablet {
+      font-size: 1.6vw;
+    }
+
+    @include mediaQueries.for-desktop-xxl {
+      font-size: 0.8vw;
     }
   }
 
   &__arrow {
-    width: 1.3vw;
+    width: 1.2vw;
     margin-left: 0.5vw;
     animation: arrowEffect 1s infinite;
     @include mediaQueries.for-phone {

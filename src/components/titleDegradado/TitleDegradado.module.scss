@@ -15,4 +15,10 @@
     width: 80%;
     text-align: center;
   }
+
+  @include mediaQueries.for-desktop-xxl {
+    font-size: 5rem;
+    width: 85%;
+    text-align: center;
+  }
 }

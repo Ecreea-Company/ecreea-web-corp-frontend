@@ -14,15 +14,15 @@ function WindowCardIndustrial (): JSX.Element {
             src="/pages/home/e2b_logo.png"
             stylesCustom={styles.WindowCard__logo}
           />
-          <p className={styles.WindowCard__title}>
-            ECREEA TO BUSINESS | E2B | WWW.E2B.PE
-          </p>
+          <p className={styles.WindowCard__title}>ECREEA TO BUSINESS | E2B</p>
 
           <div className={styles.WindowCard__Info}>
-            <p className={styles.Info__p1}>
-              Es la <b>Transformación Digital</b> de todas las adquisiciones
-              industriales
-            </p>
+            <div className={styles.Info__contentTitle}>
+              <p className={styles.Info__p1}>
+                Es la <b>Transformación Digital</b> de todas las adquisiciones
+                industriales
+              </p>
+            </div>
             <p className={styles.Info__p2}>
               Plataforma Digital que brinda soluciones integrales en suministros
               Industriales para crear negocios fáciles y productivos en todas
