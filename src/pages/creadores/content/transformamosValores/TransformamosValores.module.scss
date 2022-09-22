@@ -1,16 +1,32 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
   @include utilities.section-100vh;
   @include utilities.flex(column, center, center, 4vw);
+  @include mediaQueries.for-phone {
+    gap: 25vw;
+  }
 
   &__title {
-    font-size: 2vw;
+    font-size: 2em;
     font-weight: bold;
+
+    @include mediaQueries.for-phone {
+      font-size: 8vw;
+      text-align: center;
+    }
   }
 
   &__parrafos {
-    @include utilities.flex(column, center, center);
-    font-size: 4vw;
+    @include utilities.flex(column, center, center, 0.5em);
+    font-size: 4em;
+    width: 80%;
+    text-align: center;
+
+    @include mediaQueries.for-phone {
+      gap: 10vw;
+      font-size: 8vw;
+    }
   }
 }

@@ -61,12 +61,24 @@ const Navbar = (): JSX.Element => {
 
       <ul className={styles.Navbar__options}>
         <li className={styles.Navbar__items}>
-          <a href="#">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault()
+            }}
+            className={styles.Navbar__disabled}
+          >
             <FiSearch />
           </a>
         </li>
         <li className={styles.Navbar__items}>
-          <a href="#">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault()
+            }}
+            className={styles.Navbar__disabled}
+          >
             <BsGlobe2 />
           </a>
         </li>

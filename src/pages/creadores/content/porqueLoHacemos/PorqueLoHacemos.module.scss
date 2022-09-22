@@ -1,8 +1,9 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-100vh;
-  @include utilities.flex(column, center, center, 5vw);
+  @include utilities.section(100vh);
+  @include utilities.flex(column, center, center, 5em);
   @include utilities.background-image(
     url('/pages/creadores/bg-porqueLoHacemos.jpg')
   );
@@ -10,12 +11,21 @@
   color: whitesmoke;
 
   &__title {
-    font-size: 2vw;
+    font-size: 2em;
+
+    @include mediaQueries.for-phone {
+      font-size: 8vw;
+    }
   }
 
   &__parrafo {
     width: 80%;
-    font-size: 6vw;
+    font-size: 5.5em;
     text-align: center;
+
+    @include mediaQueries.for-phone {
+      font-size: 12vw;
+      width: 90%;
+    }
   }
 }

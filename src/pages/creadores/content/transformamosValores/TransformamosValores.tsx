@@ -9,7 +9,7 @@ const TransformamosValores = (): JSX.Element => {
         <p><b>Pasión</b> por la Innovación y disrupción.</p>
         <p>Trabajo en <b>equipo.</b></p>
         <p><b>Visionarios.</b></p>
-        <p><b>Excelencia</b> operativa.</p>
+
       </div>
     </div>
   )

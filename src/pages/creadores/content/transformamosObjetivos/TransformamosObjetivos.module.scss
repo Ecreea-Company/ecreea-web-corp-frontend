@@ -1,13 +1,20 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-100vh;
-  @include utilities.flex(column, center, center, 4vw);
+  @include utilities.section(100vh);
+  @include utilities.flex(column, center, center, 8em);
   background: url('/pages/home/Degradado_Ecreeadores.webp') no-repeat center
     center;
   background-size: 180vw 150vh;
   animation: bg_lava 20s infinite;
   color: white;
+
+  @include mediaQueries.for-phone {
+    @include utilities.section(200vh);
+    border: 1px solid red;
+    background-size: 280vw 250vh;
+  }
 
   @keyframes bg_lava {
     0% {
@@ -23,15 +30,42 @@
     }
   }
 
+  @include mediaQueries.for-phone {
+    @keyframes bg_lava {
+      0% {
+        background-size: 280vw 250vh;
+      }
+
+      50% {
+        background-size: 200vw 250vh;
+      }
+
+      100% {
+        background-size: 280vw 250vh;
+      }
+    }
+  }
+
   &__title {
-    font-size: 2vw;
+    font-size: 2.5em;
     font-weight: bold;
+
+    @include mediaQueries.for-phone {
+      font-size: 8vw;
+      text-align: center;
+    }
   }
 
   &__Objetivos {
-    width: 85%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
+
+    @include mediaQueries.for-phone {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 15vw;
+      text-align: center;
+    }
   }
 }

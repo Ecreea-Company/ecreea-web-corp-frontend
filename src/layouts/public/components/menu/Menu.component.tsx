@@ -1,4 +1,3 @@
-
 // styles
 import Link from 'next/link'
 import styles from './Menu.module.scss'
@@ -16,17 +15,27 @@ export interface MenuItemProps {
   isDisabled: boolean
 }
 
-const Menu = ({ itemsList, customStyle, direction }: MenuProps): JSX.Element => {
-  const menuDirection = direction === 'row' ? styles.Menu__row : styles.Menu__column
+const Menu = ({
+  itemsList,
+  customStyle,
+  direction
+}: MenuProps): JSX.Element => {
+  const menuDirection =
+    direction === 'row' ? styles.Menu__row : styles.Menu__column
   return (
-    <ul className={`${styles.Menu} ${menuDirection}`} style={customStyle} >
-        {itemsList.map((item, index) => (
-            <li key={index}>
-              <Link href={item.href ? item.href : '/'} >
-              <a className={item.isDisabled ? styles.Menu__link : ''}>{item.text}</a>
-              </Link>
-            </li>
-        ))}
+    <ul className={`${styles.Menu} ${menuDirection}`} style={customStyle}>
+      {itemsList.map((item, index) => (
+        <li key={index}>
+          <Link href={item.isDisabled ? '#' : item.href}>
+            <a
+              className={item.isDisabled ? styles.Menu__disabled : ''}
+              onClick={(e) => (item.isDisabled ? e.preventDefault() : null)}
+            >
+              {item.text}
+            </a>
+          </Link>
+        </li>
+      ))}
     </ul>
   )
 }

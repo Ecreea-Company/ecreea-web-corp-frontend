@@ -1,57 +1,77 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-100vh;
+  @include utilities.section(100vh);
   @include utilities.flex(column, center, center, 5vw);
   font-weight: bold;
 
+  @include mediaQueries.for-phone {
+    @include utilities.section(80vh);
+    gap: 15vw;
+  }
+
+  @include mediaQueries.for-tablet {
+    @include utilities.section(80vh);
+    gap: 10vw;
+  }
+
   &__title {
-    font-size: 2vw;
+    font-size: 2em;
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    @include utilities.flex(column, __, flex-start);
+    counter-reset: counter;
+
+    @include mediaQueries.for-phone {
+      @include utilities.flex(column, __, flex-start, 10vw);
+      width: 80%;
+    }
+
+    @include mediaQueries.for-tablet {
+      @include utilities.flex(column, __, flex-start, 8vw);
+      width: 80%;
+    }
   }
 
   &__item {
-    font-size: 6vw;
-    // border: 1px solid whitesmoke;
-  }
-
-  &__textSubrayado {
+    font-size: 6em;
+    counter-increment: counter;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  &__imgSubrayado {
-    width: 20vw;
-  }
-
-  &__contentSubrayado {
     position: relative;
+
+    &::before {
+      content: counter(counter) '.  ';
+      margin-right: 0.5em;
+    }
+
+    @include mediaQueries.for-phone {
+      font-size: 8vw;
+    }
+
+    @include mediaQueries.for-tablet {
+      font-size: 8vw;
+    }
   }
 
-  &__bgBlack {
+  &__subrayado {
     position: absolute;
-    left: 100%;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--background-color);
-    animation: checking 0.8s;
+    width: 3em;
+    top: 110%;
+    left: 68%;
+  }
 
-    @keyframes checking {
-      0%,
-      40%,
-      60% {
-        left: 0;
-      }
-      100% {
-        left: 100%;
-      }
+  &__animate {
+    animation: subrayado 0.5s ease;
+  }
+
+  @keyframes subrayado {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 3em;
     }
   }
 }

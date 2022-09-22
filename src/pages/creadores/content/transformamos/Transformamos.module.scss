@@ -1,7 +1,36 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+@mixin block {
+  &__title {
+    font-size: 2em;
+    @include mediaQueries.for-phone {
+      font-size: 8vw;
+      width: 80%;
+      text-align: center;
+    }
+  }
+
+  &__parrafo {
+    width: 90%;
+    font-size: 4.8em;
+    text-align: center;
+    @include mediaQueries.for-phone {
+      width: 95%;
+      font-size: 12vw;
+    }
+  }
+}
+
+@mixin block-content {
+  @include utilities.flex(column, center, center, 5vw);
+  @include mediaQueries.for-phone {
+    gap: 20vw;
+  }
+}
 
 .Section {
-  @include utilities.section-200vh;
+  @include utilities.section(200vh);
   @include utilities.background-image(
     url('/pages/creadores/bg-transformamos.jpg')
   );
@@ -12,6 +41,10 @@
   animation: bg_lava 20s infinite;
   color: white;
   font-weight: bold;
+
+  @include mediaQueries.for-phone {
+    @include utilities.section(160vh);
+  }
 
   @keyframes bg_lava {
     0% {
@@ -28,34 +61,18 @@
   }
 
   &__Block1 {
-    @include utilities.flex(column, center, center, 5vw);
+    @include block-content;
   }
 
   &__Block2 {
-    @include utilities.flex(column, center, center, 5vw);
+    @include block-content;
   }
 }
 
 .Block1 {
-  &__title {
-    font-size: 2vw;
-  }
-
-  &__parrafo {
-    width: 90%;
-    font-size: 5vw;
-    text-align: center;
-  }
+  @include block;
 }
 
 .Block2 {
-  &__title {
-    font-size: 2vw;
-  }
-
-  &__parrafo {
-    width: 90%;
-    font-size: 5vw;
-    text-align: center;
-  }
+  @include block;
 }
