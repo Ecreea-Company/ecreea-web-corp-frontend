@@ -1,3 +1,9 @@
+@use 'styles/mixins/mediaQueries';
+
 .Title {
-  font-size: 3.5vw;
+  font-size: 3.5em;
+  @include mediaQueries.for-phone {
+    font-size: 8vw;
+    text-align: center;
+  }
 }

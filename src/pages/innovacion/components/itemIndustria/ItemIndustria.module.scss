@@ -1,12 +1,22 @@
+@use 'styles/mixins/mediaQueries';
+
 .ItemIndustria {
   &__title {
-    font-size: 2vw;
+    font-size: 2em;
     font-weight: bold;
+    @include mediaQueries.for-phone {
+      font-size: 6vw;
+      text-align: center;
+    }
   }
 
   &__parrafo {
-    font-size: 1.5vw;
+    font-size: 1.5em;
     font-weight: 300;
     text-align: justify;
+    @include mediaQueries.for-phone {
+      font-size: 6vw;
+      text-align: center;
+    }
   }
 }

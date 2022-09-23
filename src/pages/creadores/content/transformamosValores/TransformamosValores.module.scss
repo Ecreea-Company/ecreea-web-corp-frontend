@@ -2,7 +2,7 @@
 @use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-100vh;
+  @include utilities.section(100vh);
   @include utilities.flex(column, center, center, 4vw);
   @include mediaQueries.for-phone {
     gap: 25vw;
@@ -13,6 +13,7 @@
     font-weight: bold;
 
     @include mediaQueries.for-phone {
+      width: 80%;
       font-size: 8vw;
       text-align: center;
     }
@@ -27,6 +28,7 @@
     @include mediaQueries.for-phone {
       gap: 10vw;
       font-size: 8vw;
+      width: 75%;
     }
   }
 }

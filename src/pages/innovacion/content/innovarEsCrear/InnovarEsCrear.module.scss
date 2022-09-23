@@ -1,7 +1,8 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-200vh;
+  @include utilities.section(200vh);
   @include utilities.background-image(
     url('/pages/innovacion/bg-innovarEsCrear.jpg')
   );
@@ -11,34 +12,55 @@
   color: white;
 
   &__OneBlock {
+    place-self: center;
     @include utilities.flex(column, center, center);
+    width: 80%;
+    @include mediaQueries.for-phone {
+      gap: 5vw;
+    }
   }
+
   &__SecondBlock {
-    @include utilities.flex(column, center, center, 2vw);
+    place-self: center;
+    @include utilities.flex(column, center, center, 2em);
+    width: 80%;
   }
 }
 
 .OneBlock {
   &__title {
-    font-size: 10vw;
+    font-size: 9em;
     font-weight: bold;
+    text-align: center;
+    @include mediaQueries.for-phone {
+      font-size: 18vw;
+    }
   }
 
   &__parrafo {
-    font-size: 3.5vw;
+    font-size: 3.5em;
     font-weight: 300;
+    @include mediaQueries.for-phone {
+      font-size: 7vw;
+    }
   }
 }
 
 .SecondBlock {
   &__frase {
-    font-size: 3.5vw;
+    font-size: 3.5em;
     font-weight: bold;
-    width: 70%;
+    text-align: center;
+    @include mediaQueries.for-phone {
+      font-size: 12vw;
+    }
   }
 
   &__autor {
-    font-size: 2.5vw;
+    font-size: 2.5em;
     font-weight: 300;
+    @include mediaQueries.for-phone {
+      font-size: 7vw;
+    }
   }
 }

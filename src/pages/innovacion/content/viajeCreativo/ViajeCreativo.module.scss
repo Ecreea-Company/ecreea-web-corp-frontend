@@ -1,24 +1,40 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-200vh;
+  @include utilities.section(200vh);
   @include utilities.background-image(
     url('/pages/innovacion/bg-viajeCreativo.jpg')
   );
+
+  @include mediaQueries.for-phone {
+    background-position: 0em;
+  }
+
+  @include mediaQueries.for-tablet {
+    background-position: -38em;
+  }
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   color: white;
   &__OneBlock {
     @include utilities.flex(column, center, __);
-    font-size: 10vw;
+    font-size: 10em;
     font-weight: bold;
-    padding-left: 5vw;
+    padding-left: 0.5em;
+    width: 95%;
+
+    @include mediaQueries.for-phone {
+      font-size: 15vw;
+      text-align: center;
+    }
   }
 
   &__SecondBlock {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 1fr;
   }
 }
@@ -26,10 +42,16 @@
 .SecondBlock {
   &__parrafo {
     grid-area: 1/2/3/3;
-    width: 90%;
-    align-self: center;
-    font-size: 2.5vw;
+    width: 70%;
+    place-self: center;
+    font-size: 2.2em;
     font-weight: 300;
     text-align: justify;
+    line-height: 1.5em;
+    @include mediaQueries.for-phone {
+      grid-area: 1/1/3/3;
+      font-size: 6vw;
+      width: 80%;
+    }
   }
 }

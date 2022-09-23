@@ -1,17 +1,31 @@
+@use 'styles/mixins/mediaQueries';
+
 .Title {
   display: flex;
   flex-direction: column;
-  gap: 1.5vw;
+  gap: 1.5em;
   width: 56%;
 
+  @include mediaQueries.for-phone {
+    width: 80%;
+    text-align: center;
+  }
+
   & h1 {
-    font-size: 3.3vw;
+    font-size: 3.3em;
     font-weight: bold;
+    @include mediaQueries.for-phone {
+      font-size: 13vw;
+    }
   }
 
   & p {
-    font-size: 1.8vw;
+    font-size: 1.8em;
     font-weight: 300;
     text-align: justify;
+    @include mediaQueries.for-phone {
+      font-size: 5vw;
+      text-align: center;
+    }
   }
 }

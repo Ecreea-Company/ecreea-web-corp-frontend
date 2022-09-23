@@ -1,19 +1,31 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-100vh;
+  @include utilities.section(100vh);
   @include utilities.background-image(url('/pages/innovacion/bg-comercio.jpg'));
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr;
   grid-template-rows: 1fr;
   color: white;
 
+  @include mediaQueries.for-phone {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background-size: auto 160%;
+    background-position-y: 0em;
+  }
+
   &__content {
     align-self: center;
     justify-self: end;
     display: flex;
     flex-direction: column;
-    gap: 2vw;
+    gap: 2em;
     width: 87%;
+    @include mediaQueries.for-phone {
+      width: 90%;
+      place-self: center;
+    }
   }
 }

@@ -1,4 +1,5 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
   @include utilities.section-100vh;
@@ -8,12 +9,24 @@
   grid-template-rows: 1fr;
   color: white;
 
+  @include mediaQueries.for-phone {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background-size: 180% 100%;
+    background-position-x: 0em;
+  }
+
   &__content {
     align-self: center;
     justify-self: end;
     display: flex;
     flex-direction: column;
-    gap: 2vw;
+    gap: 2em;
     width: 87%;
+
+    @include mediaQueries.for-phone {
+      width: 90%;
+      place-self: center;
+    }
   }
 }

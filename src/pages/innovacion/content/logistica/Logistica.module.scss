@@ -1,4 +1,5 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
   @include utilities.section-100vh;
@@ -11,14 +12,37 @@
   color: white;
 
   &__left {
-    padding: 5vw;
+    padding: 5em;
   }
   &__right {
-    padding-top: 5vw;
-    padding-bottom: 5vw;
-    padding-right: 7vw;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    padding-right: 7em;
     display: flex;
     flex-direction: column;
-    gap: 3vw;
+    gap: 3em;
+  }
+}
+
+@include mediaQueries.for-phone {
+  .Section {
+    @include utilities.section(100vh);
+    @include utilities.background-image(
+      url('/pages/innovacion/bg-logistico.jpg')
+    );
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background-size: auto 120%;
+    background-position-y: 0em;
+    color: white;
+
+    &__content {
+      place-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      width: 90%;
+    }
   }
 }

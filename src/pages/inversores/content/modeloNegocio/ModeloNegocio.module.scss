@@ -1,7 +1,8 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-100vh;
+  @include utilities.section(100vh);
   @include utilities.background-image(
     url('/pages/inversores/bg-modeloNegocio.jpg')
   );
@@ -9,25 +10,49 @@
   flex-direction: column;
   justify-content: center;
   color: white;
+
+  @include mediaQueries.for-phone {
+    background-position-x: -8rem;
+    align-items: center;
+  }
+
+  @include mediaQueries.for-tablet {
+    background-position-x: -15rem;
+  }
 }
 
 .Description {
-  padding-left: 5vw;
+  padding-left: 5em;
   display: flex;
   flex-direction: column;
-  gap: 2vw;
-  font-size: 3.3vw;
+  gap: 1.5em;
   font-weight: bold;
-  width: 53vw;
+  width: 58%;
+  @include mediaQueries.for-phone {
+    text-align: center;
+    padding-left: 0em;
+    width: 80%;
+  }
+
+  @include mediaQueries.for-tablet {
+    width: 65%;
+  }
 
   &__title {
-    font-size: 3.3vw;
+    font-size: 3.3em;
     font-weight: bold;
+    @include mediaQueries.for-phone {
+      font-size: 15vw;
+    }
   }
 
   &__parrafo {
-    font-size: 2vw;
+    font-size: 2em;
     font-weight: 300;
     text-align: justify;
+    @include mediaQueries.for-phone {
+      font-size: 5vw;
+      text-align: center;
+    }
   }
 }

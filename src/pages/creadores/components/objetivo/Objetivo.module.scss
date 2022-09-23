@@ -19,6 +19,9 @@
   &__img {
     height: 4em;
     width: min-content;
+    @include mediaQueries.for-phone {
+      height: min-content;
+    }
   }
 
   &__parrafo {

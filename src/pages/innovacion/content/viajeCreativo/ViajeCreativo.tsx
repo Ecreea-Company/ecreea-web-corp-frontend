@@ -1,11 +1,14 @@
 import styles from './ViajeCreativo.module.scss'
+import { useWindowSize } from '@/hooks'
 
 const ViajeCreativo = (): JSX.Element => {
+  const { width } = useWindowSize()
+
   return (
     <div className={styles.Section}>
       <section className={styles.Section__OneBlock}>
         <h1 className={styles.OneBlock__title}>
-          Tu viaje creativo empieza aquí.
+          Tu viaje creativo{width > 1940 && <br />} empieza aquí.
         </h1>
       </section>
       <section className={styles.Section__SecondBlock}>
