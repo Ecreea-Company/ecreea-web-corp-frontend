@@ -31,16 +31,22 @@
 
   &__title {
     position: absolute;
-    width: 100%;
+    width: max-content;
     font-size: 4.5vw;
     font-weight: bold;
-    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
     top: calc(50% - 11%);
     z-index: 9;
+    display: flex;
     @include mediaQueries.for-desktop-xxl {
       font-size: 5rem;
       top: calc(50% - 9%);
     }
+  }
+
+  &__List {
+    margin-right: 4em;
   }
 
   @include mediaQueries.for-phone {
@@ -49,6 +55,8 @@
       top: calc(50% - 20%);
       left: calc(50% - 40%);
       font-size: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
   @include mediaQueries.for-tablet {
@@ -57,6 +65,8 @@
       top: calc(50% - 25%);
       left: calc(50% - 40%);
       font-size: 4rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
@@ -79,12 +89,6 @@
       top: calc(50% - 5%);
       left: calc(50% - 6%);
     }
-    100% {
-      width: 40%;
-      height: 40%;
-      top: calc(50% - 23%);
-      left: calc(50% - 25%);
-    }
   }
 
   @include mediaQueries.for-phone {
@@ -93,5 +97,50 @@
 
   @include mediaQueries.for-tablet {
     @include brilloMobileandTablet;
+  }
+}
+
+.List {
+  &__item {
+    position: absolute;
+    animation: roll 8s ease 1s infinite backwards;
+    width: 3.7em;
+    text-align: end;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+      opacity: 0;
+    }
+    &:nth-child(2) {
+      animation-delay: 2s;
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      animation-delay: 4s;
+      opacity: 0;
+    }
+    &:nth-child(4) {
+      animation-delay: 6s;
+      opacity: 0;
+    }
+  }
+
+  @keyframes roll {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -70%, 0);
+    }
+
+    2.5%,
+    25% {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+
+    27.5%,
+    100% {
+      opacity: 0;
+      transform: translate3d(0, 70%, 0);
+    }
   }
 }

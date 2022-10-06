@@ -1,4 +1,4 @@
-import { ItemIndustria, TitleIndustria } from '../../components'
+import { ItemIndustria, LinkRedirect, TitleIndustria } from '../../components'
 import styles from './Comercio.module.scss'
 
 const Comercio = (): JSX.Element => {
@@ -31,6 +31,11 @@ const Comercio = (): JSX.Element => {
             <ItemIndustria key={index} {...item} />
           ))
         }
+         <LinkRedirect
+          text="Inicia tu transformación digital aquí"
+          colorText="#6AE4FF"
+          url='/'
+        />
       </div>
     </div>
   )

@@ -63,11 +63,12 @@
   }
 
   &__animate {
-    animation: subrayado 0.5s ease;
+    animation: subrayado 1s ease;
   }
 
   @keyframes subrayado {
-    0% {
+    0%,
+    70% {
       width: 0;
     }
     100% {

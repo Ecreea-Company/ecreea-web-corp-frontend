@@ -1,4 +1,4 @@
-import { ItemIndustria, TitleIndustria } from '../../components'
+import { ItemIndustria, LinkRedirect, TitleIndustria } from '../../components'
 import styles from './Energia.module.scss'
 
 function Energia (): JSX.Element {
@@ -18,20 +18,25 @@ function Energia (): JSX.Element {
     },
     {
       title: 'Energías Limpias',
-      subtitle: 'Desarrollo de una transición sostenible hacia energías limpias.'
+      subtitle:
+        'Desarrollo de una transición sostenible hacia energías limpias.'
     }
   ]
   return (
     <div className={styles.Section}>
-    <div className={styles.Section__content}>
-      <TitleIndustria title={title.title} subtitle={title.subtitle} />
-      {
-        itemsIndustria.map((item, index) => (
+      <div className={styles.Section__content}>
+        <TitleIndustria title={title.title} subtitle={title.subtitle} />
+        {itemsIndustria.map((item, index) => (
           <ItemIndustria key={index} {...item} />
-        ))
-      }
+        ))}
+
+        <LinkRedirect
+          text="Impulsa con nosotros"
+          colorText="#FFC107"
+          url='/'
+        />
+      </div>
     </div>
-  </div>
   )
 }
 

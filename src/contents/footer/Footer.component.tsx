@@ -20,16 +20,16 @@ const data = [
     title: 'Mapa del sitio',
     items: [
       {
-        text: 'Creeadores',
-        url: 'creeadores'
+        text: 'Creadores',
+        url: 'creadores'
       },
       {
         text: 'Inversores',
         url: 'inversores'
       },
       {
-        text: 'Inovación',
-        url: 'inovacion'
+        text: 'Innovación',
+        url: 'innovacion'
       },
       {
         text: 'Sostenibilidad',
@@ -151,13 +151,29 @@ const Footer = (): JSX.Element => {
         </div>
         <div className={styles.Block2__bottom}>
           <ul className={styles.Block2__list}>
-            <li><Link href={'/politicaPrivacidad'} ><a>Política de privacidad</a></Link></li>
-            <li><Link href={'/terminosUso'}><a>Terminos de uso</a></Link></li>
-            <li><Link href={'/cookies'}><a>Cookies</a></Link></li>
+            <li>
+              <Link href={'/politicaPrivacidad'}>
+                <a>Política de privacidad</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/terminosUso'}>
+                <a>Terminos de uso</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/cookies'}>
+                <a>Cookies</a>
+              </Link>
+            </li>
           </ul>
           <div className={styles.Block2__bandera}>
             <p>Somos libres, seámoslo siempre </p>
-            <img src="/banderaPeru.jpg" alt="bandera-peru" className={styles.Block2__peru}/>
+            <img
+              src="/banderaPeru.jpg"
+              alt="bandera-peru"
+              className={styles.Block2__peru}
+            />
           </div>
         </div>
       </div>
