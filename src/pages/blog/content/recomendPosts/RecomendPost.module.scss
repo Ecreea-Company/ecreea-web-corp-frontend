@@ -1,0 +1,31 @@
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  margin: 3rem 1.5rem;
+  @include mediaQueries.for-desktop-new {
+    margin: 3rem 5rem;
+  }
+
+  & h3 {
+    font-size: clamp(1.2rem, 3rem, 3rem);
+    font-weight: bold;
+  }
+
+  &__posts {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    margin: 2rem 0;
+
+    @include mediaQueries.for-desktop-new {
+      flex-direction: column;
+      overflow: visible;
+      gap: 5rem;
+      margin: 5rem 0;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

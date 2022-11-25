@@ -8,6 +8,7 @@ body[data-theme='light'] {
   --backgorund-disabled: chocolate;
   --color-bg-navbar: rgba(255, 255, 255, 0.5);
   --background-color: white;
+  --background-card: rgb(237, 237, 237);
 }
 
 body[data-theme='dark'] {
@@ -18,4 +19,5 @@ body[data-theme='dark'] {
   --backgorund-disabled: midnightblue;
   --color-bg-navbar: rgba(0, 0, 0, 0.5);
   --background-color: black;
+  --background-card: rgb(32, 32, 32);
 }

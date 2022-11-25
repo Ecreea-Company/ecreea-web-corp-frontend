@@ -1,0 +1,51 @@
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  display: grid;
+  grid-template: 1fr 5rem / 1fr;
+  margin: 0 1.5rem;
+
+  @include mediaQueries.for-desktop-new {
+    margin: 0 5rem;
+  }
+
+  &__posts {
+    display: grid;
+    grid-auto-rows: 25rem;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+    overflow: hidden;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    @include mediaQueries.for-desktop-new {
+      gap: 10rem;
+    }
+  }
+}
+
+.Control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:disabled {
+    color: gray;
+    cursor: not-allowed;
+  }
+
+  @include mediaQueries.for-desktop-new {
+    gap: 1rem;
+  }
+
+  &__text {
+    display: none;
+    @include mediaQueries.for-desktop-new {
+      display: block;
+    }
+  }
+}

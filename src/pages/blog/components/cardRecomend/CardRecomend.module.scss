@@ -1,0 +1,35 @@
+@use 'styles/mixins/mediaQueries';
+
+.CardRecomend {
+  display: flex;
+  flex-direction: column;
+  min-width: 18rem;
+  gap: 2rem;
+  @include mediaQueries.for-desktop-new {
+    min-width: 100%;
+    flex-direction: row;
+  }
+
+  &__img {
+    position: relative;
+    max-width: 100%;
+    min-height: 10rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    overflow: hidden;
+    @include mediaQueries.for-desktop-new {
+      min-width: 25rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  & h4 {
+    font-size: clamp(1rem, 2vw, 4rem);
+    font-weight: bold;
+  }
+}

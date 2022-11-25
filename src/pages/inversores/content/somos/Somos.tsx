@@ -1,27 +1,24 @@
 import Image from 'next/image'
 import styles from './Somos.module.scss'
-import { TitleGraf } from '../../components'
 
 function Somos (): JSX.Element {
-  const title = {
-    title: 'Somos lo que medimos',
-    description:
-      'Medimos nuestro progreso, el progreso desarrolla nuestro aprendizaje y así llegamos al éxito.'
-  }
   return (
     <div className={styles.Section}>
-      <div className={styles.Section__title}>
-        <TitleGraf title={title.title} description={title.description} />
-      </div>
-      <div className={styles.Section__descImg}>
-        <p>
-          Promedio de crecimiento mensual del <b>43%</b>
-        </p>
-      </div>
-      <div className={styles.Section__grafica}>
-        <div className={styles.Grafica__img}>
-          <Image layout="fill" src={'/pages/inversores/graf-somos.png'} />
-        </div>
+      <h1 className={styles.Section__title}>Somos lo que medimos</h1>
+      <p className={styles.Section__p1}>
+        Medimos nuestro progreso, el progreso desarrolla nuestro aprendizaje y
+        así llegamos al éxito.
+      </p>
+      <p className={styles.Section__titleGraf}>
+        Promedio de crecimiento mensual del <b>43%</b>
+      </p>
+      <div className={styles.Section__graf}>
+        <Image
+          src="/pages/inversores/graf-somos.png"
+          layout="responsive"
+          width={'15rem'}
+          height={'7.5rem'}
+        />
       </div>
     </div>
   )

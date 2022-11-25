@@ -39,7 +39,7 @@
   }
 
   &__title {
-    font-size: 3.3em;
+    font-size: 3.3rem;
     font-weight: bold;
     @include mediaQueries.for-phone {
       font-size: 15vw;
