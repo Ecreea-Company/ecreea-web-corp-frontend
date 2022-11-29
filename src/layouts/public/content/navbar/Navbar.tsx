@@ -23,6 +23,11 @@ const centralMenuItems: MenuItemProps[] = [
     isDisabled: false
   },
   {
+    text: 'Blog',
+    href: '/blog',
+    isDisabled: false
+  },
+  {
     text: 'Sostenibilidad',
     href: '/sostenibilidad',
     isDisabled: true

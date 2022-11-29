@@ -80,7 +80,8 @@ export const getStaticProps: GetStaticProps<{ data: any }> = async ({
     props: {
       data,
       dataRecomend
-    }
+    },
+    revalidate: 10
   }
 }
 
