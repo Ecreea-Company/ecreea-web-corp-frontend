@@ -6,21 +6,21 @@ import {
   AiOutlineLink
 } from 'react-icons/ai'
 
-function Redes (): JSX.Element {
+function Redes ({ id }: any): JSX.Element {
   return (
     <div className={styles.Redes}>
-    <div>
+    <a href={`https://www.facebook.com/sharer/sharer.php?u=https://www.ecreea.com/blog/${id}`} >
       <AiFillFacebook />
-    </div>
-    <div>
+    </a>
+    <a href='https://www.youtube.com/@Ecreea2Business'>
       <AiFillYoutube />
-    </div>
-    <div>
+    </a>
+    <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.ecreea.com/blog/${id}`}>
       <AiFillLinkedin />
-    </div>
-    <div>
+    </a>
+    {/* <div>
       <AiOutlineLink />
-    </div>
+    </div> */}
   </div>
 
   )

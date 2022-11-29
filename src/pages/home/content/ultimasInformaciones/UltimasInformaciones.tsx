@@ -1,5 +1,6 @@
 // npm packages
 
+import Link from 'next/link'
 import { useState } from 'react'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
@@ -28,28 +29,27 @@ const UltimasInformaciones = (): JSX.Element => {
               height="76"
               viewBox="0 0 65 76"
               fill="none"
-              stroke='currentColor'
+              stroke="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               onClick={() => setIsPlaying(true)}
             >
               <path
                 d="M2 3.35898L62 38L2 72.641L2 3.35898Z"
-                stroke='currentColor'
+                stroke="currentColor"
                 strokeWidth="1.5"
               />
             </svg>
           </div>
             )}
       </section>
-      <a
-        href="https://www.facebook.com/ecreaacompany"
-        className={styles.Section__link}
-      >
-        <p>Ver más Noticias</p>
-        <i>
-          <MdKeyboardArrowRight />
-        </i>
-      </a>
+      <Link href="/blog">
+        <a className={styles.Section__link}>
+          <p>Ver más Noticias</p>
+          <i>
+            <MdKeyboardArrowRight />
+          </i>
+        </a>
+      </Link>
     </section>
   )
 }

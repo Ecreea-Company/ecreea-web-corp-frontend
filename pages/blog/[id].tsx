@@ -15,8 +15,8 @@ const Post: NextPage = ({ data, dataRecomend }: any) => {
       </Head>
       <Header />
       <PostUser data={data} />
-      <StandLibro />
-      <ShareSocial />
+      {/* <StandLibro /> */}
+      <ShareSocial id={data.id} />
       <RecomendPost data={dataRecomend} />
       <Footer />
     </Public>
@@ -100,6 +100,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: data,
-    fallback: false
+    fallback: 'blocking'
   }
 }
