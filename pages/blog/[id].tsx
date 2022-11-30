@@ -10,9 +10,14 @@ const Post: NextPage = ({ data, dataRecomend }: any) => {
   return (
     <Public titlePage={data.titulo}>
       <Head>
-        <meta name="description" content={data.titulo} />
-        <meta name="description" content={data.contenido} />
+        <meta property="og:description" content={data.contenido} />
         <meta property="og:image" content={data.imagen} />
+        <meta property="og:title" content={data.titulo} />
+        <meta property="og:type" content="blog" />
+        <meta
+          property="og:url"
+          content={`https://www.ecreea.com/blog/${data.id}`}
+        />
       </Head>
       <Header />
       <PostUser data={data} />
