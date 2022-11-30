@@ -10,6 +10,10 @@ const Post: NextPage = ({ data, dataRecomend }: any) => {
   return (
     <Public titlePage={data.titulo}>
       <Head>
+        <meta
+          name="author"
+          content={`${data.autor.nombre} ${data.autor.apellido}`}
+        />
         <meta property="og:description" content={data.contenido} />
         <meta property="og:image" content={data.imagen} />
         <meta property="og:title" content={data.titulo} />
