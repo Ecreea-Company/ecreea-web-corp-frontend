@@ -12,6 +12,7 @@ const Post: NextPage = ({ data, dataRecomend }: any) => {
       <Head>
         <meta name="description" content={data.titulo} />
         <meta name="description" content={data.contenido} />
+        <meta property="og:image" content={data.imagen} />
       </Head>
       <Header />
       <PostUser data={data} />
