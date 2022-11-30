@@ -3,7 +3,7 @@ import {
   AiFillFacebook,
   AiFillYoutube,
   AiFillLinkedin,
-  AiOutlineLink
+  AiFillTwitterSquare
 } from 'react-icons/ai'
 
 function Redes ({ id }: any): JSX.Element {
@@ -18,9 +18,9 @@ function Redes ({ id }: any): JSX.Element {
     <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.ecreea.com/blog/${id}`}>
       <AiFillLinkedin />
     </a>
-    {/* <div>
-      <AiOutlineLink />
-    </div> */}
+    <a href={`https://twitter.com/intent/tweet?text=Ecreea-Company&url=https://www.ecreea.com/blog/${id}&hashtags=Ecreea-Company`}>
+      <AiFillTwitterSquare />
+    </a>
   </div>
 
   )
