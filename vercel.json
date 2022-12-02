@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      { 
+        "source": "/admin-strapi",
+        "destination": "https://strapi-production-d105.up.railway.app/admin", 
+        "permanent": true
+      }
+    ]
+  }
+  
