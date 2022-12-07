@@ -91,4 +91,22 @@
     font-size: 1.4rem;
     font-weight: bold;
   }
+
+  & h1,
+  & h2,
+  & h3,
+  & h5,
+  & h6,
+  & strong {
+    font-weight: bold;
+  }
+
+  & blockquote {
+    display: block;
+    padding: 1em;
+    padding-block-end: 1em;
+    padding-inline-start: 2.3rem;
+    padding-inline-end: 2.3rem;
+    border-left: 0.5rem solid var(--text-font-color);
+  }
 }
