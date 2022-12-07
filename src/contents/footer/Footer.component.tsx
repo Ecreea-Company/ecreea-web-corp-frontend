@@ -21,19 +21,19 @@ const data = [
     items: [
       {
         text: 'Creadores',
-        url: 'creadores'
+        url: '/creadores'
       },
       {
         text: 'Inversores',
-        url: 'inversores'
+        url: '/inversores'
       },
       {
         text: 'Innovación',
-        url: 'innovacion'
+        url: '/innovacion'
       },
       {
         text: 'Sostenibilidad',
-        url: 'sostenibilidad'
+        url: '/sostenibilidad'
       }
     ]
   },
@@ -42,11 +42,11 @@ const data = [
     items: [
       {
         text: 'Sé un creador',
-        url: 'seuncreador'
+        url: '/seuncreador'
       },
       {
         text: 'Aprendizaje continuo',
-        url: 'aprendizajecontinuo'
+        url: '/aprendizajecontinuo'
       }
     ]
   },
@@ -55,15 +55,15 @@ const data = [
     items: [
       {
         text: 'Liderazgo de Ecreea',
-        url: 'liderazgoecreea'
+        url: '/liderazgoecreea'
       },
       {
         text: 'Ética y cumplimiento',
-        url: 'eticaycumplimiento'
+        url: '/eticaycumplimiento'
       },
       {
         text: 'Eventos',
-        url: 'eventos'
+        url: '/eventos'
       }
     ]
   },
@@ -72,11 +72,11 @@ const data = [
     items: [
       {
         text: 'Centro de Ayuda',
-        url: 'centrodeayuda'
+        url: '/centrodeayuda'
       },
       {
         text: 'Preguntas Frecuentes',
-        url: 'preguntasfrecuentes'
+        url: '/preguntasfrecuentes'
       }
     ]
   }
