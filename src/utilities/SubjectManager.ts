@@ -1,13 +1,13 @@
 import { Observable, Subject } from 'rxjs'
 
-export class SubjectManager {
-  private readonly subject$ = new Subject<any>()
+export class SubjectManager<T> {
+  private readonly subject$ = new Subject<T>()
 
-  getSubject (): Observable<any> {
+  getSubject (): Observable<T> {
     return this.subject$.asObservable()
   }
 
-  setSubject (value: any): void {
+  setSubject (value: T): void {
     this.subject$.next(value)
   }
 }

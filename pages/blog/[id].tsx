@@ -91,7 +91,7 @@ export const getStaticProps: GetStaticProps<{ data: any }> = async ({
       data,
       dataRecomend
     },
-    revalidate: 10
+    revalidate: 1
   }
 }
 
@@ -111,6 +111,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: data,
-    fallback: 'blocking'
+    fallback: false
   }
 }
