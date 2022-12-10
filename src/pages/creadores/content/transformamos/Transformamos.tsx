@@ -13,7 +13,7 @@ const Transformamos = (): JSX.Element => {
         </p>
       </div>
       <div className={styles.Section__Block2}>
-        <h1 className={styles.Block2__title}>Transformamos con una misión</h1>
+        <h1 className={styles.Block2__title}>Transformamos con una visión</h1>
         <p className={styles.Block1__parrafo}>
           Inspirar a { width < 540 && <br /> }crear un { width < 540 && <br /> } mundo mejor.
         </p>

@@ -158,7 +158,7 @@ const Footer = (): JSX.Element => {
             </li>
             <li>
               <Link href={'/terminosUso'}>
-                <a>Terminos de uso</a>
+                <a>Términos de uso</a>
               </Link>
             </li>
             <li>
