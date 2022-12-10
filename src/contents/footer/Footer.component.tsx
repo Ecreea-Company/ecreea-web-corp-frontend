@@ -93,7 +93,7 @@ const Footer = (): JSX.Element => {
             </li>
             <li>
               <LinkEcreea href="/terminosUso" disabled={true}>
-                Terminos de uso
+                Términos de uso
               </LinkEcreea>
             </li>
             <li>
