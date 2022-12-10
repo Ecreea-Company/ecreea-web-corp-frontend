@@ -3,41 +3,8 @@ import { BsGlobe2 } from 'react-icons/bs'
 import { useWindowSize } from '@/hooks'
 import { Logo, Menu, Humburger, ButtonMode } from '../../components'
 import styles from './Navbar.module.scss'
-import type { MenuItemProps } from '../../components/menu/Menu.component'
-import Link from 'next/link'
-
-const centralMenuItems: MenuItemProps[] = [
-  {
-    text: 'Creadores',
-    href: '/creadores',
-    isDisabled: false
-  },
-  {
-    text: 'Innovación',
-    href: '/innovacion',
-    isDisabled: false
-  },
-  {
-    text: 'Inversores',
-    href: '/inversores',
-    isDisabled: false
-  },
-  {
-    text: 'Blog',
-    href: '/blog',
-    isDisabled: false
-  },
-  {
-    text: 'Sostenibilidad',
-    href: '/sostenibilidad',
-    isDisabled: true
-  },
-  {
-    text: 'ecreea',
-    href: '/ecreea',
-    isDisabled: true
-  }
-]
+import { LinkEcreea } from '@/components'
+import { centralMenuItems } from '@/data'
 
 const Navbar = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -45,11 +12,9 @@ const Navbar = (): JSX.Element => {
   return (
     <div className={styles.Navbar}>
       <div className={styles.Navbar__logo} style={{ gridArea: 'logo' }}>
-        <Link href={'/'}>
-          <a>
-            <Logo />
-          </a>
-        </Link>
+        <LinkEcreea href="/">
+          <Logo />
+        </LinkEcreea>
       </div>
 
       {width < 1200
@@ -66,26 +31,14 @@ const Navbar = (): JSX.Element => {
 
       <ul className={styles.Navbar__options}>
         <li className={styles.Navbar__items}>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault()
-            }}
-            className={styles.Navbar__disabled}
-          >
+          <LinkEcreea href="#" disabled={true}>
             <FiSearch />
-          </a>
+          </LinkEcreea>
         </li>
         <li className={styles.Navbar__items}>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault()
-            }}
-            className={styles.Navbar__disabled}
-          >
+          <LinkEcreea href="#" disabled={true}>
             <BsGlobe2 />
-          </a>
+          </LinkEcreea>
         </li>
         <li className={styles.Navbar__items}>
           <ButtonMode />

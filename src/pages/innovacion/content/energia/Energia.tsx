@@ -33,7 +33,7 @@ function Energia (): JSX.Element {
         <LinkRedirect
           text="Impulsa con nosotros"
           colorText="#FFC107"
-          url='/'
+          url='https://www.energix.pe/'
         />
       </div>
     </div>

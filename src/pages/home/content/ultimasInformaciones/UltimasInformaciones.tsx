@@ -9,6 +9,7 @@ import styles from './UltimasInformaciones.module.scss'
 
 const UltimasInformaciones = (): JSX.Element => {
   const [isPlaying, setIsPlaying] = useState(false)
+
   return (
     <section className={styles.Section}>
       <h1 className={styles.Section__title}>Últimas informaciones</h1>
@@ -50,6 +51,7 @@ const UltimasInformaciones = (): JSX.Element => {
           </i>
         </a>
       </Link>
+
     </section>
   )
 }

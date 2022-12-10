@@ -14,73 +14,8 @@ import { List } from './components'
 // styles
 import styles from './Footer.module.scss'
 
-// datos del footer
-const data = [
-  {
-    title: 'Mapa del sitio',
-    items: [
-      {
-        text: 'Creadores',
-        url: '/creadores'
-      },
-      {
-        text: 'Inversores',
-        url: '/inversores'
-      },
-      {
-        text: 'Innovación',
-        url: '/innovacion'
-      },
-      {
-        text: 'Sostenibilidad',
-        url: '/sostenibilidad'
-      }
-    ]
-  },
-  {
-    title: '¡ecreea!',
-    items: [
-      {
-        text: 'Sé un creador',
-        url: '/seuncreador'
-      },
-      {
-        text: 'Aprendizaje continuo',
-        url: '/aprendizajecontinuo'
-      }
-    ]
-  },
-  {
-    title: 'Acerca de Ecreea',
-    items: [
-      {
-        text: 'Liderazgo de Ecreea',
-        url: '/liderazgoecreea'
-      },
-      {
-        text: 'Ética y cumplimiento',
-        url: '/eticaycumplimiento'
-      },
-      {
-        text: 'Eventos',
-        url: '/eventos'
-      }
-    ]
-  },
-  {
-    title: 'Ayuda',
-    items: [
-      {
-        text: 'Centro de Ayuda',
-        url: '/centrodeayuda'
-      },
-      {
-        text: 'Preguntas Frecuentes',
-        url: '/preguntasfrecuentes'
-      }
-    ]
-  }
-]
+import { footerData as data } from '@/data'
+import { LinkEcreea } from '@/components'
 
 const Footer = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -152,19 +87,20 @@ const Footer = (): JSX.Element => {
         <div className={styles.Block2__bottom}>
           <ul className={styles.Block2__list}>
             <li>
-              <Link href={'/politicaPrivacidad'}>
-                <a>Política de privacidad</a>
-              </Link>
+              <LinkEcreea href="/politicaPrivacidad" disabled={true}>
+                Política de privacidad
+              </LinkEcreea>
             </li>
             <li>
-              <Link href={'/terminosUso'}>
-                <a>Términos de uso</a>
-              </Link>
+
+              <LinkEcreea href="/terminosUso" disabled={true}>
+                Terminos de uso
+              </LinkEcreea>
             </li>
             <li>
-              <Link href={'/cookies'}>
-                <a>Cookies</a>
-              </Link>
+              <LinkEcreea href="/cookies" disabled={true}>
+                Cookies
+              </LinkEcreea>
             </li>
           </ul>
           <div className={styles.Block2__bandera}>

@@ -3,6 +3,7 @@ import { Public } from '@/layouts'
 import { Header, StandLibro } from '@/pages/blog/components'
 import { PostUser, ShareSocial } from '@/pages/blog/content'
 import RecomendPost from '@/pages/blog/content/recomendPosts/RecomendPost'
+import { getArticulo } from '@/services'
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
@@ -38,15 +39,7 @@ export default Post
 export const getStaticProps: GetStaticProps<{ data: any }> = async ({
   params
 }) => {
-  const res = await fetch(
-    `https://strapi-production-d105.up.railway.app/api/articulos/${params?.id}?populate[autor][populate][0]=area&populate[autor][populate][1]=fotoPerfil&populate[imagen][populate][2]=*&populate[categoria][populate][3]=*`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.API_TOKEN}`
-      }
-    }
-  )
-  const dataCrudo: any = await res.json()
+  const dataCrudo: any = await getArticulo(params?.id)
   const data = {
     id: dataCrudo.data.id,
     categoria: dataCrudo.data.attributes.categoria.data.attributes.nombre,
@@ -90,8 +83,7 @@ export const getStaticProps: GetStaticProps<{ data: any }> = async ({
     props: {
       data,
       dataRecomend
-    },
-    revalidate: 1
+    }
   }
 }
 

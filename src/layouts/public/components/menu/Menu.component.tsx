@@ -1,5 +1,5 @@
 // styles
-import Link from 'next/link'
+import { LinkEcreea } from '@/components'
 import styles from './Menu.module.scss'
 
 // interface
@@ -26,14 +26,9 @@ const Menu = ({
     <ul className={`${styles.Menu} ${menuDirection}`} style={customStyle}>
       {itemsList.map((item, index) => (
         <li key={index}>
-          <Link href={item.isDisabled ? '#' : item.href}>
-            <a
-              className={item.isDisabled ? styles.Menu__disabled : ''}
-              onClick={(e) => (item.isDisabled ? e.preventDefault() : null)}
-            >
-              {item.text}
-            </a>
-          </Link>
+          <LinkEcreea href={item.href} disabled={item.isDisabled}>
+          {item.text}
+          </LinkEcreea>
         </li>
       ))}
     </ul>
