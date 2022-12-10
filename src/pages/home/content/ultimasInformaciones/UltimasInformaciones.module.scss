@@ -43,3 +43,32 @@
     }
   }
 }
+
+.LinkEcreea[aria-disabled='true'] {
+  color: var(--text-font-color-disabled);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::after {
+    display: none;
+    content: '¡Muy Pronto!';
+    font-size: 0.5rem;
+    font-weight: bold;
+    background-color: var(--backgorund-disabled);
+    color: white;
+    text-align: center;
+    width: 5rem;
+    height: 1rem;
+    line-height: 1rem;
+    border-radius: 0.4rem;
+    position: absolute;
+    top: 1.2rem;
+    left: calc(50% - 2.5rem);
+    opacity: 1;
+  }
+
+  &:hover::after {
+    display: block;
+  }
+}

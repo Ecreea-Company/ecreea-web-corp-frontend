@@ -34,7 +34,7 @@ const Comercio = (): JSX.Element => {
          <LinkRedirect
           text="Inicia tu transformación digital aquí"
           colorText="#6AE4FF"
-          url='/'
+          url='https://www.e2b.pe/'
         />
       </div>
     </div>
