@@ -40,7 +40,7 @@ function Huella (): JSX.Element {
         </div>
       </div>
       <div className={styles.Section__SecondBlock}>
-        <p>¡Ya emprendimos el viaje, acompañanos a las estrellas!</p>
+        <p>¡Ya emprendimos el viaje, acompáñanos a las estrellas!</p>
       </div>
     </div>
   )
