@@ -8,7 +8,7 @@ function ModeloNegocio (): JSX.Element {
           Modelo de negocios escalable
         </h1>
         <p className={styles.Description__parrafo}>
-          Usamos la tecnología e innovacion como catapulta de crecimiento para
+          Usamos la tecnología e innovación como catapulta de crecimiento para
           nuestro gran talento humano.
         </p>
       </div>

@@ -5,7 +5,7 @@ const NuestraEsencia = (): JSX.Element => {
     <div className={styles.Section}>
       <h5 className={styles.Section__title}>Nuestra Esencia</h5>
       <p className={styles.Section__parrafo}>
-        Estan siempre alli para guiarnos y son consistentemente aplicados en
+        Están siempre ahí para guiarnos y son consistentemente aplicados en
         todo Ecreea:
       </p>
 
@@ -25,7 +25,7 @@ const NuestraEsencia = (): JSX.Element => {
       </ul>
       <ul className={styles.Section__Frases}>
         <li className={styles.Frases__item}>
-          <span>Ver lo que no todos pueden ver</span>
+          <span>Creer para crear</span>
         </li>
         <li className={styles.Frases__item}>
           <span>Amamos lo que hacemos y dejamos nuestro corazón en ello</span>
