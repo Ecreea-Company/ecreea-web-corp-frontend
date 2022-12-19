@@ -1,0 +1,25 @@
+@use 'styles/mixins/mediaQueries';
+
+.Container{
+  display: flex;
+  flex-direction: column;
+
+  &__paragraph {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: justify;
+    font-size: clamp(1.13rem,2vw,3.16rem);
+    padding: clamp(2rem,4vw,4rem);
+    gap: 1rem;
+  
+    h1 {
+      font-weight: bold;
+    }
+
+    @include mediaQueries.for-desktop-new {
+      padding-left: 7rem;
+      padding-right: 7rem;
+    }
+  }
+}
