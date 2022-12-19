@@ -32,7 +32,6 @@
   @include utilities.section(80vh);
   display: flex;
   justify-content: center;
-  background-color: white;
   padding: clamp(2rem, 7vw, 5.5rem);
 
   &__paragraph{
@@ -102,7 +101,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
   gap: 2rem;
   padding: clamp(2rem, 5vw,5.5rem);
 
