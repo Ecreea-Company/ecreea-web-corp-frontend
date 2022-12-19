@@ -7,7 +7,7 @@
   &__paragraph {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--background-color);
     text-align: justify;
     font-size: clamp(1.13rem,2vw,3.16rem);
     padding: clamp(2rem,4vw,4rem);
