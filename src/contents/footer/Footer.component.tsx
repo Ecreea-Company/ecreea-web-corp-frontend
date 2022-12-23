@@ -1,6 +1,5 @@
 // npm packages
 import { useWindowSize } from '@/hooks'
-import Link from 'next/link'
 import { useState } from 'react'
 import {
   AiFillFacebook,

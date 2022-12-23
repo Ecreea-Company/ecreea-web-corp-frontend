@@ -1,6 +1,6 @@
 import { Footer } from '@/contents'
 import { Public } from '@/layouts'
-import { Header, StandLibro } from '@/pages/blog/components'
+import { Header } from '@/pages/blog/components'
 import { PostUser, ShareSocial } from '@/pages/blog/content'
 import RecomendPost from '@/pages/blog/content/recomendPosts/RecomendPost'
 import { getArticulo } from '@/services'
