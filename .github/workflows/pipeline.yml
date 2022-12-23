@@ -25,6 +25,8 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install
+      - name: Creando .env
+        run: echo "API_TOKEN=${{ secrets.API_TOKEN }}" > .env
       - name: Lint
         uses: borales/actions-yarn@v4
         with:
