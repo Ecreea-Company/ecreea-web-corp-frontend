@@ -29,7 +29,7 @@ const Post: NextPage = ({ data }: any) => {
       <PostUser data={data} />
       {/* <StandLibro /> */}
       <ShareSocial id={data.id} />
-      {/* <RecomendPost data={dataRecomend} /> */}
+      <RecomendPost />
       <Footer />
     </Public>
   )
@@ -64,7 +64,8 @@ export const getStaticProps: GetStaticProps<{ data: any }> = async ({
     props: {
       data: postAdapter
 
-    }
+    },
+    revalidate: 10
   }
 }
 
@@ -76,6 +77,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false
+    fallback: 'blocking'
   }
 }

@@ -7,7 +7,7 @@ interface CardRecomendProps {
   categoria: string
   titulo: string
   fecha: string
-  id: number
+  slug: string
 }
 
 function CardRecomend ({
@@ -15,7 +15,7 @@ function CardRecomend ({
   categoria,
   titulo,
   fecha,
-  id
+  slug
 }: CardRecomendProps): JSX.Element {
   const unixdate = Date.parse(fecha)
   const dateObject = new Date(unixdate)
@@ -25,7 +25,7 @@ function CardRecomend ({
     year: 'numeric'
   })
   return (
-    <Link href={`/blog/${id}`}>
+    <Link href={`/blog/${slug}`}>
     <a>
     <div className={styles.CardRecomend}>
       <div className={styles.CardRecomend__img}>

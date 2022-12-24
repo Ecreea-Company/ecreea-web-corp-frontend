@@ -2,7 +2,7 @@ import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import { Header } from '@/pages/blog/components'
 import { AllPosts, Hero } from '@/pages/blog/content'
-import { getArticulosBypage } from '@/services'
+import { getArticulosByPage } from '@/services'
 import type { NextPage, GetServerSideProps } from 'next'
 
 const Blog: NextPage = ({ data, meta }: any) => {
@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
 }) => {
   res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate')
 
-  const dataCrudo: any = await getArticulosBypage(page)
+  const dataCrudo: any = await getArticulosByPage(page)
 
   const data = dataCrudo.data.map((obj: any) => {
     return {
