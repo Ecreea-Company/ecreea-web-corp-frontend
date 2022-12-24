@@ -1,12 +1,12 @@
 import { Redes } from '../../components'
 import styles from './ShareSocial.module.scss'
 
-function ShareSocial ({ id }: any): JSX.Element {
+function ShareSocial ({ slug }: any): JSX.Element {
   return (
     <section className={styles.Section}>
         <h3>Compartir artículo</h3>
         <div>
-            <Redes id={id}/>
+            <Redes id={slug}/>
         </div>
     </section>
   )

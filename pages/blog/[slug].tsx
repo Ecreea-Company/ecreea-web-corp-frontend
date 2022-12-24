@@ -28,7 +28,7 @@ const Post: NextPage = ({ data }: any) => {
       <Header />
       <PostUser data={data} />
       {/* <StandLibro /> */}
-      <ShareSocial id={data.id} />
+      <ShareSocial slug={data.slug} />
       <RecomendPost />
       <Footer />
     </Public>

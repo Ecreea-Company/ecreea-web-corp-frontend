@@ -27,7 +27,7 @@ function PostUser ({ data }: any): JSX.Element {
       <h1>{data.titulo}</h1>
 
       <div className={styles.Section__redesTop}>
-        <Redes id={data.id} />
+        <Redes slug={data.slug} />
       </div>
 
       <div className={styles.Autor}>
