@@ -45,6 +45,7 @@ export const getStaticProps: GetStaticProps<{ data: any }> = async ({
   const dataCruda = post.data[0]
 
   const postAdapter = {
+    slug: dataCruda.attributes.slug,
     categoria: dataCruda.attributes.categoria.data.attributes.nombre,
     fecha_publicacion: dataCruda.attributes.publishedAt,
     titulo: dataCruda.attributes.titulo,
