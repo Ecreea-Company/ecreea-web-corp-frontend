@@ -22,7 +22,7 @@ const Post: NextPage = ({ data }: any) => {
         <meta property="og:type" content="blog" />
         <meta
           property="og:url"
-          content={`https://www.ecreea.com/blog/${data.id}`}
+          content={`https://www.ecreea.com/blog/${data.slug}`}
         />
       </Head>
       <Header />
