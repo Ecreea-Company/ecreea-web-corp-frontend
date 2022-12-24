@@ -6,7 +6,7 @@ function ShareSocial ({ slug }: any): JSX.Element {
     <section className={styles.Section}>
         <h3>Compartir artículo</h3>
         <div>
-            <Redes id={slug}/>
+            <Redes slug={slug}/>
         </div>
     </section>
   )
