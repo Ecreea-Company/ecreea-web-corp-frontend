@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['res.cloudinary.com', 'xsgames.co', 'images.unsplash.com']
+    domains: ['res.cloudinary.com', 'www.gravatar.com']
   }
 }
 

@@ -11,7 +11,7 @@ function Card ({ post }: any): JSX.Element {
     year: 'numeric'
   })
   return (
-    <Link href={`/blog/${post.id}`}>
+    <Link href={`/blog/${post.slug}`}>
     <a className={styles.Card}>
       <div className={styles.Card__img}>
         <Image src={post.imagen} layout="fill" objectFit="cover" />
