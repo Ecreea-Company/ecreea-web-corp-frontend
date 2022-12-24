@@ -1,21 +1,40 @@
-
-export const getArticulos = async (page: string | number | string[]) => {
+export const getArticulosByPage = async (page: string | number | string[]) => {
   const res = await fetch(
-        `https://strapi-production-d105.up.railway.app/api/articulos?populate=*&sort[0]=id%3Adesc&pagination[page]=${page}&pagination[pageSize]=6`,
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.API_TOKEN}`
-          }
-        }
-
+    `${process.env.NEXT_PUBLIC_API_URL}/posts?populate=*&sort[0]=id%3Adesc&pagination[page]=${page}&pagination[pageSize]=6`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.API_TOKEN}`
+      }
+    }
   )
 
   return await res.json()
 }
 
-export const getArticulo = async (id: string | string[] | undefined) => {
+export const getArticulosBySize = async (size: number) => {
   const res = await fetch(
-    `https://strapi-production-d105.up.railway.app/api/articulos/${id}?populate[autor][populate][0]=area&populate[autor][populate][1]=fotoPerfil&populate[imagen][populate][2]=*&populate[categoria][populate][3]=*`,
+    `${process.env.NEXT_PUBLIC_API_URL}/posts?populate=*&sort[0]=id%3Adesc&pagination[page]=1&pagination[pageSize]=${size}&populate[0]=imagen`
+  )
+
+  return await res.json()
+}
+
+export const getArticulos = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/posts?populate=*`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.API_TOKEN}`
+      }
+    }
+  )
+
+  return await res.json()
+}
+
+export const getArticuloBySlug = async (url: string | string[] | undefined) => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/posts?filters[slug][$eq]=${url}&populate=*`,
     {
       headers: {
         Authorization: `Bearer ${process.env.API_TOKEN}`

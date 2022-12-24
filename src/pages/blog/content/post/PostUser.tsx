@@ -4,6 +4,7 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import { Redes } from '../../components'
 import remarkGfm from 'remark-gfm'
+import md5 from 'md5'
 
 function PostUser ({ data }: any): JSX.Element {
   const unixdate = Date.parse(data.fecha_publicacion)
@@ -13,6 +14,9 @@ function PostUser ({ data }: any): JSX.Element {
     day: 'numeric',
     year: 'numeric'
   })
+
+  const gravatar = md5(data.autor.avatar)
+
   return (
     <section className={styles.Section}>
       <div className={styles.Section__initial}>
@@ -28,7 +32,8 @@ function PostUser ({ data }: any): JSX.Element {
 
       <div className={styles.Autor}>
         <div className={styles.Autor__avatar}>
-          <Image src={data.autor.avatar} layout="fill" objectFit="cover" />
+          {/* <Image src={data.autor.avatar} layout="fill" objectFit="cover" /> */}
+          <Image src={`https://www.gravatar.com/avatar/${gravatar}?s=200`} layout="fill" objectFit="cover" />
         </div>
         <div className={styles.Autor__info}>
           <h5>{`${data.autor.nombre} ${data.autor.apellido}`}</h5>

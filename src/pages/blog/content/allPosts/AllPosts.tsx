@@ -12,7 +12,7 @@ function AllPosts ({ data, meta }: any): JSX.Element {
     <section className={styles.Section}>
       <div className={styles.Section__posts}>
         {data.map((post: any) => (
-          <Card key={post.id} post={post} />
+          <Card key={post.slug} post={post} />
         ))}
       </div>
       <div className={styles.Section__controls}>

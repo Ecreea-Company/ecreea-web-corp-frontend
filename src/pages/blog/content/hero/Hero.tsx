@@ -12,7 +12,7 @@ const Hero = ({ data }: any): JSX.Element => {
   })
   return (
     <section className={styles.Section}>
-      <Link href={`/blog/${data.id}`}>
+      <Link href={`/blog/${data.slug}`}>
         <a className={styles.Section__hero}>
           <div className={styles.Section__img}>
             <Image src={data.imagen} layout="fill" objectFit="cover" />
