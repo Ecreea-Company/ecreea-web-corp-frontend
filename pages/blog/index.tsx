@@ -19,10 +19,8 @@ const Blog: NextPage = ({ data, meta }: any) => {
 export default Blog
 
 export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
-  query: { page = 1 }, res
+  query: { page = 1 }
 }) => {
-  res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate')
-
   const dataCrudo: any = await getArticulosByPage(page)
 
   const data = dataCrudo.data.map((obj: any) => {
