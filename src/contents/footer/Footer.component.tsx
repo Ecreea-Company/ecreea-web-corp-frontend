@@ -1,5 +1,6 @@
+// styles
+import styles from './Footer.module.scss'
 // npm packages
-import { useWindowSize } from '@/hooks'
 import { useState } from 'react'
 import {
   AiFillFacebook,
@@ -9,12 +10,10 @@ import {
   AiOutlinePlus
 } from 'react-icons/ai'
 import { List } from './components'
-
-// styles
-import styles from './Footer.module.scss'
-
-import { footerData as data } from '@/data'
 import { LinkEcreea } from '@/components'
+
+import { useFooterLS, useWindowSize } from '@/hooks'
+import { FooterApiProps } from '@/models'
 
 const Footer = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -23,11 +22,18 @@ const Footer = (): JSX.Element => {
   const handleOpen = (): void => {
     setIsOpen(!isOpen)
   }
+
+  const { data } = useFooterLS()
+
+  if (!data.length) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div className={styles.Footer}>
       <div className={styles.Footer__Block1}>
-        {data.map((item, index) => (
-          <List key={index} title={item.title} items={item.items} />
+        {data.map((item: FooterApiProps) => (
+          <List key={item.id} title={item.title} items={item.item} />
         ))}
         <section className={styles.Block1__section}>
           {width > 1200
