@@ -1,0 +1,121 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  @include utilities.section(80vh);
+  @include utilities.background-image(
+    url('/pages/ecreea/aprende/bg-aprende-1.jpg')
+  );
+  
+  background-position-x: -15rem;
+
+  display: grid;
+  grid-template-rows: [first] 20% [line2] auto [line3];
+  text-align: center;
+  align-items: center;
+  color: white;
+  
+  .Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+    background-position-x: 0rem;
+  }
+}
+
+.Section2 {
+  @include utilities.section(100vh);
+
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 7vw, 5.5rem);
+  gap: 2rem;
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__title {
+      font-size: clamp(1.88rem,6vw,6.25rem);
+      font-weight: 700;
+    }
+    
+    &__subtitle {
+      font-size: clamp(1.25rem,3.5vw,3.75rem);
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__parrafo {
+    font-size: clamp(1.25rem,2vw,2.5rem);
+  }
+
+  .Imagenes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    img{
+      width: 30%;
+      aspect-ratio: 3/2;
+      object-fit: contain;
+    }
+  }
+
+  @include mediaQueries.for-desktop-new {
+    .Section2 {
+      &__parrafo {
+        padding-left: clamp(1rem,10vw,10rem);
+        padding-right: clamp(1rem,10vw,10rem);
+        padding-bottom: 4rem;
+        padding-top: 2rem;
+      }
+    }
+
+    .Imagenes {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 5rem;
+      img{
+        width: 15%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.Section3 {
+  @include utilities.section(80vh);
+  @include utilities.background-image(
+    url('/pages/ecreea/aprende/bg-aprende-2.jpg')
+  );
+
+  padding: clamp(2rem, 7vw, 5.5rem);
+  background-position-x: -28rem;
+  
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 2rem;
+  color: white;
+
+  &__title {
+      font-size: clamp(2.67rem,7vw,7.5rem);
+      font-weight: 700;
+    }
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+    background-position-x: 0rem;
+  }
+}

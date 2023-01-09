@@ -1,0 +1,33 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+
+  &__forma{
+    shape-outside: url("/pages/ecreea/Carlos-Ecreea.png");
+    shape-image-threshold: 0.5;
+    shape-margin: 20px;
+    float: right;
+  }
+
+  img {
+    width: clamp(20rem,47vw,56rem);
+    filter: drop-shadow(0 10px 20px var(--shadow))
+  }
+
+  .Container {
+    padding-left: clamp(2rem, 7vw, 5.5rem);
+    &__title {
+      font-size: clamp(1.9rem,5vw,5rem);
+      font-weight: 400;
+      font-family: Helvetica Light;
+      padding-top: clamp(5rem,13vw,16rem);
+      padding-bottom: 1.5rem;
+    }
+    
+    &__subtitle {
+      font-size: clamp(1.3rem,3vw,3.13rem);
+      font-weight: 400;
+      padding-bottom: 4rem;
+    }
+  }
+}

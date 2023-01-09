@@ -1,0 +1,8 @@
+export { default as CarlosDesktop } from './carlosDesktop/CarlosDesktop.component'
+export { default as CarlosMobile } from './carlosMobile/CarlosMobile.component'
+export { default as Contenedores } from './contenedores/Contenedores.component'
+export { default as Dropdown } from './dropdown/Dropdown.component'
+export { default as Flecha } from './flecha/Flecha.component'
+export { default as LinkEcreea } from './link-ecreea/LinkEcreea.component'
+export { default as LinkRedirect } from './link/LinkRedirect.component'
+export { default as Menu } from './menu/Menu.component'

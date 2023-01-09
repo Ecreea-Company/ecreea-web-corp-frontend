@@ -1,0 +1,65 @@
+@use 'styles/mixins/mediaQueries';
+
+.Dropdown {
+  visibility: visible;
+  position: absolute;
+  width: 100%;
+  background-color: var(--color-bg-navbar);
+  box-shadow: white;
+  padding: 1.8rem;
+  overflow: hidden;
+  z-index: 2;
+  transition: all 1s;
+
+  &__fadeIn {
+    margin-top: 9rem;
+    padding-bottom: 10.8rem;
+  }
+
+
+  &__fadeOut {
+    visibility: visible;
+    transition-delay: .5s;
+  }
+
+}
+
+.Data {
+  visibility: hidden;
+  z-index: 3;
+  &__dropDataIn {
+    overflow: hidden;
+    visibility: visible;
+    animation: fadeIn 2.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      left: -100%;
+      opacity: 0;
+    }
+    100% {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  &__dropDataOut {
+    visibility: hidden;
+    left: -100%;
+    animation: fadeOut 0.5s ease-in-out;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      visibility: visible;
+      left: 0;
+      opacity: 1;
+    }
+    100% {
+      visibility: visible;
+      left: -100%;
+      opacity: 0;
+    }
+  }
+}
