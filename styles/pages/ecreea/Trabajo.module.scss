@@ -1,0 +1,169 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  @include utilities.section(160vh);
+  @include utilities.background-image(
+    url('/pages/ecreea/trabajo/bg-futuro-trabajo.jpg')
+  );
+  background-position-x: -15rem;
+
+  display: grid;
+  grid-template-rows: [first] 10% [line2] 40% [line3] auto [line4];
+  text-align: center;
+  align-items: center;
+  color: white;
+  
+  .Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(200vh);
+    background-position-x: 0rem;
+  }
+}
+
+.Section2 {
+  @include utilities.section(100vh);
+
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 7vw, 5.5rem);
+  gap: 2rem;
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__title {
+      font-size: clamp(1.88rem,6vw,6.25rem);
+      font-weight: 700;
+    }
+    
+    &__subtitle {
+      font-size: clamp(1.25rem,3.5vw,3.75rem);
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__parrafo {
+    font-size: clamp(1.25rem,2vw,2.5rem);
+  }
+
+  &__parrafo2 {
+    font-size: clamp(1.25rem,2vw,2.5rem);
+  }
+
+  @include mediaQueries.for-desktop-new {
+    .Section2{
+      &__parrafo {
+        padding-left: clamp(1rem,2vw,3rem);
+        padding-right: clamp(1rem,2vw,3rem);
+      }
+    
+      &__parrafo2 {
+        padding-left: clamp(10rem,20vw,21rem);
+        padding-right: clamp(10rem,20vw,21rem);
+      }  
+    }
+  }
+}
+
+.Section3 {
+  @include utilities.section(80vh);
+  @include utilities.background-image(
+    url('/pages/ecreea/trabajo/bg-estudiante-trabajo.jpg')
+  );
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  padding: clamp(2rem, 7vw, 5.5rem);
+
+
+  &__parrafo {
+    font-size: clamp(1.25rem,4vw,4rem);
+    font-weight: 400;
+  }
+  
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+  }
+}
+
+.Section4 {
+  @include utilities.section(100vh);
+
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 7vw, 5.5rem);
+  gap: 2rem;
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__title {
+      font-size: clamp(1.88rem,6vw,6.25rem);
+      font-weight: 700;
+    }
+    
+    &__subtitle {
+      font-size: clamp(1.25rem,3.5vw,3.75rem);
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__parrafo {
+    font-size: clamp(1.25rem,2vw,2.5rem);
+
+    @include mediaQueries.for-desktop-new {
+      padding-left: clamp(1rem,2vw,3rem);
+      padding-right: clamp(1rem,2vw,3rem);
+    }
+  }
+
+  &__parrafo2 {
+    font-size: clamp(1.25rem,2vw,2.5rem);
+
+    @include mediaQueries.for-desktop-new {
+      padding-left: clamp(10rem,15vw,15rem);
+      padding-right: clamp(10rem,15vw,15rem);
+    }
+  }
+
+  .Imagenes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .centrado{
+      display: flex;
+      justify-content: center;
+      width: 25%;
+      aspect-ratio: 3/2;
+      object-fit: contain;
+      @include mediaQueries.for-desktop-new{
+        align-items: center;
+      }
+    }
+
+    @include mediaQueries.for-desktop-new{
+      align-items: center;
+      justify-content: center;
+      gap: 5rem;
+    }
+  }
+}

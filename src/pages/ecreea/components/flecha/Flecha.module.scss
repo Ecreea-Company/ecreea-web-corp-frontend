@@ -1,0 +1,14 @@
+.Container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+}
+
+.Flecha {
+  margin-top: 8.5rem;
+  font-size: 1.56rem;
+  padding-right: clamp(2rem, 7vw, 5.5rem);
+  z-index: 3;
+}
+

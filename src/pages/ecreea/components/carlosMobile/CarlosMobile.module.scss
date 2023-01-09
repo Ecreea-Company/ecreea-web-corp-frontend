@@ -1,0 +1,37 @@
+@use 'styles/mixins/utilities';
+
+.Section {
+  @include utilities.section(80vh);
+
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: clamp(2rem, 7vw, 5.5rem);
+  padding-right: clamp(2rem, 7vw, 5.5rem);
+  padding-left: clamp(2rem, 7vw, 5.5rem);
+
+  &__title {
+    font-size: clamp(1.9rem,5vw,5rem);
+    font-weight: 400;
+    font-family: Helvetica Light;
+  }
+  
+  &__subtitle {
+    font-size: clamp(1.3rem,3vw,3.13rem);
+    font-weight: 400;
+    
+  }
+
+  .Container {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: clamp(20rem,50vw,30rem);
+      filter: drop-shadow(0 5px 10px var(--shadow));
+      padding-left: 0.4rem;
+    }      
+  } 
+}

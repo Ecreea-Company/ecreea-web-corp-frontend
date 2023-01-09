@@ -1,0 +1,22 @@
+@use '/styles/mixins/mediaQueries';
+@use '/styles/mixins/utilities';
+
+.Menu {
+  display: flex;
+  gap: 2rem;
+  font-size: clamp(1rem,1.5vw,1.56rem);
+  z-index: 4;
+
+  &__row {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  &__column {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1rem;
+    padding-left: 2rem
+  }
+
+  @include utilities.disableLink;
+}

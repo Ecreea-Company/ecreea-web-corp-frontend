@@ -16,10 +16,5 @@
     h1 {
       font-weight: bold;
     }
-
-    @include mediaQueries.for-desktop-new {
-      padding-left: 7rem;
-      padding-right: 7rem;
-    }
   }
 }

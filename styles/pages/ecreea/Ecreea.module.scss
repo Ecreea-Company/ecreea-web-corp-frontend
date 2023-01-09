@@ -1,0 +1,266 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  @include utilities.section(160vh);
+  @include utilities.background-image(
+    url('/pages/ecreea/bg-ecreea.jpg')
+  );
+
+  background-size: 180vh;
+
+  display: grid;
+  grid-template-rows: [first] 10% [line2] 40% [line3] auto [line4];
+  text-align: center;
+  align-items: center;
+  color: white;
+  
+  .Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(200vh);
+    background-size: 200%;
+  }
+}
+
+.Section2 {
+  @include utilities.section(80vh);
+  @include utilities.background-image(
+    url('/pages/ecreea/bg-artista.jpg')
+  );
+
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: clamp(2rem, 7vw, 5.5rem);
+  color: white;
+
+  &__title {
+    font-size: clamp(2.7rem,7vw,7.5rem);
+    font-weight: 700;
+  }
+  
+  &__subtitle {
+    font-size: clamp(1.13rem,4vw,3.75rem);
+    font-weight: 400;
+  }
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+  }
+}
+
+.Section3 {
+  @include utilities.section(80vh);
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: clamp(2rem, 7vw, 5.5rem);
+
+  &__title {
+    font-size: clamp(1.6rem,3vw,3.13rem);
+    font-weight: 700;
+  }
+  
+  &__frase {
+    font-size: clamp(3.8rem,8vw,9rem);
+    font-weight: 700;
+    color: transparent;
+    background: linear-gradient(60deg, #ffde00, #e71d73, #ffde00);
+    background-size: 200%;
+    background-clip: text;
+    animation: text_animate 8s linear infinite;
+  }
+
+  @keyframes text_animate {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+
+  &__paragraph {
+    font-size: clamp(1.13rem,3vw,3.13rem);
+    font-weight: 400;
+  }
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+    &__paragraph {
+      padding-left: clamp(15rem,20vw,25rem);
+      padding-right: clamp(15rem,20vw,25rem);
+    }
+  }
+}
+
+.Section5 {
+  @include utilities.section(160vh);
+  @include utilities.background-image(
+    url('/pages/ecreea/bg-incanzable.jpg')
+  );
+  
+  background-size: 160vh;
+  background-position: -18rem 0rem;
+
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-direction: column;
+  padding: clamp(0.5rem, 5vw, 5.5rem);
+  color: white;
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    &__title {
+      font-size: clamp(2.7rem,8vw,9rem);
+      font-weight: 700;
+    }
+    
+    &__subtitle {
+      font-size: clamp(1.3rem,4vw,5rem);
+      font-weight: 400;
+      padding-bottom: clamp(1rem,5vw,5rem);
+    }
+  }
+
+  &__title {
+    font-size: clamp(2.7rem,8vw,9rem);
+    font-weight: 700;
+  }
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(200vh);
+    width: 100%;
+    background-size: 210vh;
+    background-position: 0rem 0rem;
+  }
+}
+
+.Section6 {
+  @include utilities.section(80vh);
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: clamp(1.7rem, 5vw, 5.5rem);
+  gap: 5rem;
+
+  .Container {
+    padding-left: .3rem;
+    padding-right: .3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__title {
+      font-size: clamp(2.7rem,5vw,5rem);
+      font-weight: 700;
+      color: transparent;
+      background: linear-gradient(60deg, #ffde00, #e71d73, #ffde00);
+      background-size: 200%;
+      background-clip: text;
+      animation: text_animate 8s linear infinite;
+    }
+
+    @keyframes text_animate {
+      0% {
+        background-position: 0%;
+      }
+      100% {
+        background-position: 200%;
+      }
+    }
+  
+    &__subtitle{
+      font-size: clamp(1.3rem,3vw,3.16rem);
+      font-weight: 400;
+    }
+  }
+
+  &__frase {
+    font-size: clamp(1.7rem,6vw,6.25rem);
+    font-weight: 700;
+    height: 9vh;
+    line-height: 9vh;
+    overflow: hidden;
+    @include mediaQueries.for-desktop-new {
+      height: 8.9rem;
+      line-height: 8.9rem;
+      padding-left: clamp(5rem,8vw,10rem);
+      padding-right: clamp(5rem,8vw,10rem);
+    }
+  }
+
+  .MaquinaEscribir {
+    &__item {
+      top: 0;
+      position: relative;
+      animation: slide 36s steps(4) infinite;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--background-color);
+        border-left: 3px solid #1d4cbd;
+        animation: typing 9s steps(40) infinite;
+      }
+      
+    }
+  
+    @keyframes slide {
+      100% {
+        top: -37vh;
+      }
+    }
+  
+    @include mediaQueries.for-desktop-new {
+      @keyframes slide {
+        100% {
+          top: -35rem;
+        }
+      }
+    }
+  
+    @keyframes typing {
+      40%,
+      60% {
+        left: calc(100%);
+      }
+      100% {
+        left: 0;
+      }
+    }
+  }
+
+  &__paragraph {
+    font-size: clamp(1.13rem,2vw,2.5rem);
+    font-weight: 400;
+    height: 7rem;
+    @include mediaQueries.for-desktop-new {
+      margin-left: clamp(10rem,18vw,18rem);
+      margin-right: clamp(10rem,18vw,18rem);
+    }
+  }
+    
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+  }
+}
