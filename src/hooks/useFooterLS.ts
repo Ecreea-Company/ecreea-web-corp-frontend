@@ -5,7 +5,9 @@ const useFooterLS = () => {
   const [data, setData] = useState([] as FooterApiProps[])
 
   useEffect(() => {
-    setData(JSON.parse(localStorage.getItem('footerData') ?? '[]'))
+    setTimeout(() => {
+      setData(JSON.parse(localStorage.getItem('footerData') ?? '[]'))
+    }, 1000)
   }, [])
 
   return { data }
