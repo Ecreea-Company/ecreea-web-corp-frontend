@@ -24,11 +24,11 @@ export const centralMenuItems: MenuItemProps[] = [
   {
     text: 'Sostenibilidad',
     href: '/sostenibilidad',
-    isDisabled: true
+    isDisabled: false
   },
   {
     text: 'ecreea',
     href: '/ecreea',
-    isDisabled: true
+    isDisabled: false
   }
 ]
