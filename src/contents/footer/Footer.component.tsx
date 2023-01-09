@@ -25,7 +25,7 @@ const Footer = (): JSX.Element => {
 
   const { data } = useFooterLS()
 
-  if (!data.length) {
+  if (!data) {
     return <div>Loading...</div>
   }
 

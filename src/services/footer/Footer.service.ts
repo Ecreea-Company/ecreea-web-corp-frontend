@@ -4,4 +4,4 @@ export const localStorageFooter = async (url: string) =>
     .then((json) => json.data)
     .then((json) => json.attributes)
     .then((json) => json.list)
-    .then((json) => localStorage.setItem('footerData', JSON.stringify(json)))
+    .then((json) => window.localStorage.setItem('footerData', JSON.stringify(json)))
