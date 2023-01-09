@@ -1,16 +1,13 @@
+import styles from './List.module.scss'
 import { useState } from 'react'
 import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 import { useWindowSize } from '@/hooks'
-import styles from './List.module.scss'
 import { LinkEcreea } from '@/components'
+import { FooterItemProps } from '@/models'
 
 interface ListProps {
   title: string
-  items: Array<{
-    text: string
-    url: string
-    disabled?: boolean
-  }>
+  items: FooterItemProps []
 }
 
 const List = ({ title, items }: ListProps): JSX.Element => {
@@ -20,6 +17,7 @@ const List = ({ title, items }: ListProps): JSX.Element => {
   const handleOpen = (): void => {
     setIsOpen(!isOpen)
   }
+
   return (
     <section className={styles.Block1__section}>
       {width > 1200
@@ -42,10 +40,10 @@ const List = ({ title, items }: ListProps): JSX.Element => {
             : styles.Block1__list
         }
       >
-        {items.map((item, index) => (
-          <li key={index}>
-            <LinkEcreea href={item.url} disabled={item.disabled}>
-              {item.text}
+        {items.map((item) => (
+          <li key={item.id}>
+            <LinkEcreea href={item.url} disabled={item.desactivar}>
+              {item.name}
             </LinkEcreea>
           </li>
         ))}

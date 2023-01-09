@@ -1,1 +1,2 @@
-export * from './menu-item/MenuItem'
+export * from './Footer.model'
+export * from './MenuItem.model'

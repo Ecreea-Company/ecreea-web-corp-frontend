@@ -21,6 +21,11 @@ export const footerData = [
         text: 'Sostenibilidad',
         url: '/sostenibilidad',
         disabled: true
+      },
+      {
+        text: 'Blog',
+        url: '/blog',
+        disabled: false
       }
     ]
   },
@@ -28,12 +33,17 @@ export const footerData = [
     title: '¡ecreea!',
     items: [
       {
-        text: 'Sé un creador',
+        text: 'El Trabajo en Ecreea',
         url: '/seuncreador',
         disabled: true
       },
       {
-        text: 'Aprendizaje continuo',
+        text: 'Aprende con nosotros',
+        url: '/aprendizajecontinuo',
+        disabled: true
+      },
+      {
+        text: 'Busca oportunidades',
         url: '/aprendizajecontinuo',
         disabled: true
       }
@@ -43,7 +53,7 @@ export const footerData = [
     title: 'Acerca de Ecreea',
     items: [
       {
-        text: 'Liderazgo de Ecreea',
+        text: 'Artistas',
         url: '/liderazgoecreea',
         disabled: true
       },
@@ -60,17 +70,22 @@ export const footerData = [
     ]
   },
   {
-    title: 'Ayuda',
+    title: 'Holding',
     items: [
       {
-        text: 'Centro de Ayuda',
-        url: '/centrodeayuda',
-        disabled: true
+        text: 'E2B',
+        url: 'https://www.e2b.pe/',
+        disabled: false
       },
       {
-        text: 'Preguntas Frecuentes',
-        url: '/preguntasfrecuentes',
-        disabled: true
+        text: 'Energix',
+        url: 'https://www.energix.pe/',
+        disabled: false
+      },
+      {
+        text: 'Ebuilding',
+        url: 'https://ebuilding.pe/',
+        disabled: false
       }
     ]
   }
