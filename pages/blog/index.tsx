@@ -2,7 +2,7 @@ import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import { Header } from '@/pages/blog/components'
 import { AllPosts, Hero } from '@/pages/blog/content'
-import { getArticulos } from '@/services'
+import { getArticulosBypage } from '@/services'
 import type { NextPage, GetServerSideProps } from 'next'
 
 const Blog: NextPage = ({ data, meta }: any) => {
@@ -19,13 +19,15 @@ const Blog: NextPage = ({ data, meta }: any) => {
 export default Blog
 
 export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
-  query: { page = 1 }
+  query: { page = 1 }, res
 }) => {
-  const dataCrudo: any = await getArticulos(page)
+  res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate')
+
+  const dataCrudo: any = await getArticulosBypage(page)
 
   const data = dataCrudo.data.map((obj: any) => {
     return {
-      id: obj.id,
+      slug: obj.attributes.slug,
       title: obj.attributes.titulo,
       fecha_publicacion: obj.attributes.publishedAt,
       categoria: obj.attributes.categoria.data.attributes.nombre,
