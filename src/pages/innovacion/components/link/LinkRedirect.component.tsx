@@ -5,12 +5,13 @@ interface LinkProps {
   text: string
   url: string
   colorText?: string
+  justifyContent?: string
 }
 
-function LinkRedirect ({ text, colorText, url }: LinkProps): JSX.Element {
+function LinkRedirect ({ text, colorText, url, justifyContent }: LinkProps): JSX.Element {
   return (
     <a href={url}>
-      <h2 className={styles.Link} style={{ color: colorText }}>
+      <h2 className={styles.Link} style={{ color: colorText, justifyContent }}>
         {text}
         <div className={styles.Link__icon}>
           <IoIosArrowForward />

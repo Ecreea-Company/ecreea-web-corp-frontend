@@ -12,7 +12,9 @@
   color: white;
 
   &__left {
-    padding: 5em;
+    padding-top: 5rem;
+    padding-left: clamp(2rem,7vw,7.5rem);
+  
   }
   &__right {
     padding-top: 5em;
@@ -39,6 +41,7 @@
 
     &__content {
       place-self: center;
+      align-items: center;
       display: flex;
       flex-direction: column;
       gap: 2em;

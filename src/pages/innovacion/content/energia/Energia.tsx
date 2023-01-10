@@ -27,14 +27,15 @@ function Energia (): JSX.Element {
       <div className={styles.Section__content}>
         <TitleIndustria title={title.title} subtitle={title.subtitle} />
         {itemsIndustria.map((item, index) => (
-          <ItemIndustria key={index} {...item} />
+          <ItemIndustria fontSizeTitle={'clamp(1.56rem,3vw,3.13rem)'} fontSizeText={'clamp(1.25rem,2.5vw,2.5rem)'} key={index} {...item} />
         ))}
-
+        <div className={styles.Section__centrar}>
         <LinkRedirect
           text="Impulsa con nosotros"
-          colorText="#FFC107"
+          colorText="white"
           url='https://www.energix.pe/'
         />
+      </div>
       </div>
     </div>
   )
