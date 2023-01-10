@@ -1,6 +1,11 @@
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
-import { Comercio, Energia, InnovarEsCrear, Logistica, ViajeCreativo } from '@/pages/innovacion/content'
+import {
+  Comercio,
+  Energia,
+  InnovarEsCrear,
+  Logistica,
+  ViajeCreativo
+} from '@/pages/innovacion/content'
 import type { NextPage } from 'next'
 
 const Creadores: NextPage = () => {
@@ -11,7 +16,6 @@ const Creadores: NextPage = () => {
       <Comercio />
       <Energia />
       <Logistica />
-      <Footer />
     </Public>
   )
 }

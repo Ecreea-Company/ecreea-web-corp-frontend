@@ -1,14 +1,12 @@
-// node modules
+import { Footer } from '@/contents'
 import Head from 'next/head'
-
-// content
 import { Navbar, Sidebar } from './content'
-
-// interfaces
-import { LayoutPublicProps } from '@/interfaces'
-
-// styles
 import styles from './Public.module.scss'
+
+export interface LayoutPublicProps {
+  children: React.ReactNode
+  titlePage?: string
+}
 
 const Public = ({
   children,
@@ -16,17 +14,17 @@ const Public = ({
 }: LayoutPublicProps): JSX.Element => {
   return (
     <div className={styles.PublicLayout}>
-      {/* meta datos */}
       <Head>
         <title>{`${titlePage} | Ecreea`}</title>
       </Head>
 
       <Navbar />
 
-      {/* Solo aparece en mobile and tablet */}
       <Sidebar />
 
       {children}
+
+      <Footer />
     </div>
   )
 }

@@ -1,4 +1,3 @@
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import styles from '@styles/sostenibilidad/Sostenibilidad.module.scss'
 import { Contenedores } from '@/pages/sostenibilidad/components'
@@ -91,7 +90,6 @@ const Sostenibilidad: NextPage = () => {
         </div>
       </div>
     </>
-    <Footer />
     </Public>
   )
 }

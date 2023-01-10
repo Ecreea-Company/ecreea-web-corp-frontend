@@ -1,4 +1,3 @@
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import { Header } from '@/pages/blog/components'
 import { PostUser, ShareSocial } from '@/pages/blog/content'
@@ -30,7 +29,6 @@ const Post: NextPage = ({ data }: any) => {
       {/* <StandLibro /> */}
       <ShareSocial slug={data.slug} />
       <RecomendPost />
-      <Footer />
     </Public>
   )
 }

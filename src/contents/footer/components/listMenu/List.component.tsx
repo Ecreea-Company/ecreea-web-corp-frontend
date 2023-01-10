@@ -3,11 +3,11 @@ import { useState } from 'react'
 import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 import { useWindowSize } from '@/hooks'
 import { LinkEcreea } from '@/components'
-import { FooterItemProps } from '@/models'
+import { ItemLinkProps } from '@/models'
 
 interface ListProps {
   title: string
-  items: FooterItemProps []
+  items: ItemLinkProps[]
 }
 
 const List = ({ title, items }: ListProps): JSX.Element => {

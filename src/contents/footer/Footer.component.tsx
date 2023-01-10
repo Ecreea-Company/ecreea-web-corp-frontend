@@ -12,7 +12,7 @@ import {
 import { List } from './components'
 import { LinkEcreea } from '@/components'
 
-import { useFooterLS, useWindowSize } from '@/hooks'
+import { useGetDataLocalStorage, useWindowSize } from '@/hooks'
 import { FooterApiProps } from '@/models'
 
 const Footer = (): JSX.Element => {
@@ -23,11 +23,13 @@ const Footer = (): JSX.Element => {
     setIsOpen(!isOpen)
   }
 
-  const { data } = useFooterLS()
+  const { data } = useGetDataLocalStorage<FooterApiProps[]>('footerData')
 
   if (!data) {
     return <div>Loading...</div>
   }
+
+  console.log(data)
 
   return (
     <div className={styles.Footer}>

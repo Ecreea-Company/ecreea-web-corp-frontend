@@ -1,4 +1,3 @@
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import styles from '@styles/ecreea/Aprende.module.scss'
 import type { NextPage } from 'next'
@@ -57,7 +56,6 @@ const Aprende: NextPage = () => {
           disabled= {true}
         />
       </div>
-      <Footer/>
     </Public>
   )
 }

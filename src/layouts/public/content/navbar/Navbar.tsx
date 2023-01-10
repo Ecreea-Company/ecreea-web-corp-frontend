@@ -1,10 +1,8 @@
+import styles from './Navbar.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import { BsGlobe2 } from 'react-icons/bs'
 import { useWindowSize } from '@/hooks'
-import { Logo, Menu, Humburger, ButtonMode } from '../../components'
-import styles from './Navbar.module.scss'
-import { LinkEcreea } from '@/components'
-import { centralMenuItems } from '@/data'
+import { LinkEcreea, Logo, ButtonMode, Menu, Humburger } from '@/components'
 
 const Navbar = (): JSX.Element => {
   const { width } = useWindowSize()
@@ -22,11 +20,7 @@ const Navbar = (): JSX.Element => {
         <Humburger customStyle={{ gridArea: 'centerMenu' }} />
           )
         : (
-        <Menu
-          itemsList={centralMenuItems}
-          customStyle={{ gridArea: 'centerMenu' }}
-          direction="row"
-        />
+        <Menu />
           )}
 
       <ul className={styles.Navbar__options}>
