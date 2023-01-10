@@ -2,28 +2,31 @@ import { useEffect, useState } from 'react'
 import { FlechaSharing } from '@/services'
 import styles from './Dropdown.module.scss'
 import { Menu } from '@/pages/ecreea/components'
-import { MenuItemProps } from '@/pages/ecreea/components/menu/Menu.component'
+import { ItemLinkProps } from '@/models'
 
 const fadeIn = styles.Dropdown__fadeIn
 const fadeOut = styles.Dropdown__fadeOut
 const dropDataIn = styles.Data__dropDataIn
 const dropDataOut = styles.Data__dropDataOut
 
-const centralMenuItems: MenuItemProps[] = [
+const centralMenuItems: ItemLinkProps[] = [
   {
-    text: 'El Trabajo en Ecreea',
-    href: '/ecreea/el-trabajo-en-ecreea',
-    isDisabled: false
+    name: 'El Trabajo en Ecreea',
+    url: '/ecreea/el-trabajo-en-ecreea',
+    desactivar: false,
+    id: 1
   },
   {
-    text: 'Aprende con nosotros',
-    href: '/ecreea/aprende-con-nosotros',
-    isDisabled: false
+    name: 'Aprende con nosotros',
+    url: '/ecreea/aprende-con-nosotros',
+    desactivar: false,
+    id: 2
   },
   {
-    text: 'Buscar oportunidades',
-    href: '/ecreea/buscar-oportunidades',
-    isDisabled: true
+    name: 'Buscar oportunidades',
+    url: '/ecreea/buscar-oportunidades',
+    desactivar: true,
+    id: 3
   }
 ]
 

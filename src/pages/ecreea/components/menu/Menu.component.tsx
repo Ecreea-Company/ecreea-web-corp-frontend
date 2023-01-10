@@ -1,16 +1,11 @@
+import { ItemLinkProps } from '@/models'
 import { LinkEcreea } from '@/pages/ecreea/components'
 import styles from './Menu.module.scss'
 
 export interface MenuProps {
-  itemsList: MenuItemProps[]
+  itemsList: ItemLinkProps[]
   customStyle?: React.CSSProperties
   direction: 'row' | 'column'
-}
-
-export interface MenuItemProps {
-  href: string
-  text: string
-  isDisabled: boolean
 }
 
 const Menu = ({
@@ -24,8 +19,8 @@ const Menu = ({
     <ul className={`${styles.Menu} ${menuDirection}`} style={customStyle}>
       {itemsList.map((item, index) => (
         <li key={index}>
-          <LinkEcreea href={item.href} disabled={item.isDisabled}>
-          {item.text}
+          <LinkEcreea href={item.url} disabled={item.desactivar}>
+          {item.name}
           </LinkEcreea>
         </li>
       ))}

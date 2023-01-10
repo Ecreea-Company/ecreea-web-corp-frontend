@@ -29,7 +29,7 @@ const Footer = (): JSX.Element => {
     return <div>Loading...</div>
   }
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <div className={styles.Footer}>
