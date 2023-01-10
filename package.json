@@ -1,6 +1,6 @@
 {
   "name": "ecreeawebcorp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -30,7 +30,6 @@
     "swr": "^2.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.29.1",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@types/md5": "^2.3.2",
