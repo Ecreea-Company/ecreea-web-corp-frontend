@@ -12,6 +12,7 @@ function LinkEcreea ({ children, href, disabled }: LinkEcreeaProps) {
     <Link href={disabled ? '#' : href}>
       <a className={styles.LinkEcreea} aria-disabled={disabled}
       onClick={(e) => (disabled ? e.preventDefault() : null)}
+
       >
         {children}
       </a>
