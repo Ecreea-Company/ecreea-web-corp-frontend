@@ -1,8 +1,12 @@
 .LinkEcreea[aria-disabled='true'] {
-  color: var(--text-font-color-disabled);
   display: flex;
   flex-direction: column;
   position: relative;
+  width: max-content;
+
+  & > * {
+    color: var(--text-font-color-disabled) !important;
+  }
 
   &::after {
     display: none;

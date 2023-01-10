@@ -10,15 +10,15 @@ body[data-theme='light'] {
   --background-color: white;
   --background-card: rgb(237, 237, 237);
   --link-color: #4b4b4b;
-  --shadow: rgba(0,0,0,0.5);
-  --logo-ucv: #21375D;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --logo-ucv: #21375d;
 }
 
 body[data-theme='dark'] {
   --url-bg-inpirarCrear: url('/pages/home/fondo-planeta.webp');
   --url-luz-mode: url('/pages/home/luz_mode_black.webp');
   --text-font-color: white;
-  --text-font-color-disabled: rgba(255, 255, 255, 0.5);
+  --text-font-color-disabled: #ffffff80;
   --backgorund-disabled: midnightblue;
   --color-bg-navbar: rgba(0, 0, 0, 0.5);
   --background-color: black;

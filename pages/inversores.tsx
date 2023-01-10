@@ -14,6 +14,7 @@ const Creadores: NextPage = () => {
       <Costo />
       <Huella />
       <Footer />
+
     </Public>
   )
 }
