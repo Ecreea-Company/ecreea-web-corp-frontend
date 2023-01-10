@@ -1,4 +1,4 @@
-import { ItemIndustria, TitleIndustria } from '../../components'
+import { ItemIndustria, LinkRedirect, TitleIndustria } from '../../components'
 import { useWindowSize } from '@/hooks'
 import styles from './Logistica.module.scss'
 
@@ -29,10 +29,19 @@ function Logistica (): JSX.Element {
         ? (
         <div className={styles.Section}>
           <div className={styles.Section__content}>
+            <>
             <TitleIndustria title={title.title} subtitle={title.subtitle} />
             {itemsIndustria.map((item, index) => (
-              <ItemIndustria key={index} {...item} />
+              <ItemIndustria fontSizeText key={index} {...item} />
             ))}
+            </>
+            <>
+            <LinkRedirect
+              text="Construye con nosotros"
+              colorText="white"
+              url='http://www.ebuilding.pe/'
+            />
+            </>
           </div>
         </div>
           )
@@ -43,8 +52,13 @@ function Logistica (): JSX.Element {
           </div>
           <div className={styles.Section__right}>
             {itemsIndustria.map((item, index) => (
-              <ItemIndustria key={index} {...item} />
+              <ItemIndustria fontSizeTitle={'clamp(1.56rem,3vw,3.13rem)'} fontSizeText={'clamp(1.25rem,2.5vw,2.5rem)'} key={index} {...item} />
             ))}
+            <LinkRedirect
+              text="Construye con nosotros"
+              colorText="white"
+              url='http://www.ebuilding.pe/'
+            />
           </div>
         </div>
           )}
