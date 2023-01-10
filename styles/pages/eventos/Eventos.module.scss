@@ -1,0 +1,127 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  @include utilities.section(80vh);
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: clamp(2.7rem, 12.5vw, 12.5rem);
+    font-weight: bold;
+    color: var(--text-font-color);
+    text-align: center;
+    @include mediaQueries.for-desktop-new {
+      padding-right: clamp(2rem,5vw,5rem);
+      padding-left: clamp(2rem,5vw,5rem);
+    }
+  }
+}
+
+.Section2 {
+  @include utilities.section(80vh);
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+  }
+  @include utilities.background-image(
+    url('/pages/eventos/bg-ideas.png')
+  );
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: clamp(2.7rem, 6vw, 6.25rem);
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.Section3 {
+  @include utilities.section(80vh);
+  @include utilities.background-image(
+    url('/pages/eventos/bg-beesply.jpg')
+  );
+  background-position-x: -15rem;
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+    background-position-x: 0rem;
+  }
+
+  @media (max-width: 650px) {
+    background-position-x: -37rem;
+  }
+
+  &__fondo {
+    width: 100vw;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @include mediaQueries.for-desktop-new {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: .7fr 1fr;
+      grid-template-rows: 1fr;
+    }
+  }
+
+  .Container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
+    @include mediaQueries.for-desktop-new {
+      align-items: flex-start;
+      padding-left: 4rem;
+    }
+
+    &__title {
+      font-size: clamp(2.7rem, 7.5vw, 7.5rem);
+      font-weight: bold;
+      color: white;
+      text-align: center;
+    }
+  
+    &__paragraph {
+      font-size: clamp(1.13rem, 2.5vw, 2.5rem);
+      font-weight: 400;
+      color: white;
+      text-align: center;
+      @include mediaQueries.for-desktop-new {
+        text-align: justify;
+      }
+      @media (max-width: 960px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+  
+    .Boton {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: white;
+      font-size: clamp(1.13rem,2.5vw,2.5rem);
+      gap: 1rem;
+  
+      &__icon {
+        width: max-content;
+      }
+    }
+  }
+  
+}
