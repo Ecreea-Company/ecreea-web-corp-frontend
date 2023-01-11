@@ -1,11 +1,19 @@
 import styles from './Navbar.module.scss'
 import { FiSearch } from 'react-icons/fi'
 import { BsGlobe2 } from 'react-icons/bs'
-import { useWindowSize } from '@/hooks'
-import { LinkEcreea, Logo, ButtonMode, Menu, Humburger } from '@/components'
+import { useGetDataLocalStorage, useWindowSize } from '@/hooks'
+import {
+  LinkEcreea,
+  Logo,
+  ButtonMode,
+  MenuNavbarDesktop,
+  MenuNavbarMobile
+} from '@/components'
+import { ItemLinkProps } from '@/models'
 
 const Navbar = (): JSX.Element => {
   const { width } = useWindowSize()
+  const { data } = useGetDataLocalStorage<ItemLinkProps[]>('navbarData')
 
   return (
     <div className={styles.Navbar}>
@@ -17,10 +25,10 @@ const Navbar = (): JSX.Element => {
 
       {width < 1200
         ? (
-        <Humburger customStyle={{ gridArea: 'centerMenu' }} />
+        <MenuNavbarMobile listItems={data} />
           )
         : (
-        <Menu />
+        <MenuNavbarDesktop listItems={data} />
           )}
 
       <ul className={styles.Navbar__options}>

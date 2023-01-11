@@ -1,12 +1,21 @@
 import { useEffect, useState } from 'react'
 
-export default function useGetDataLocalStorage <T> (key: string) {
+export default function useGetDataLocalStorage<T> (key: string) {
   const [data, setData] = useState<T>()
 
+  const timer = () =>
+    setTimeout(() => {
+      setData(JSON.parse(localStorage.getItem(key) as string))
+    }, 1000)
+
   useEffect(() => {
-    // setTimeout(() => {
-    setData(JSON.parse(localStorage.getItem(key) ?? '[]'))
-    // }, 1000)
+    if (!localStorage.getItem(key)) {
+      timer()
+    } else {
+      setData(JSON.parse(localStorage.getItem(key) as string))
+    }
+
+    return () => clearTimeout(timer())
   }, [])
 
   return { data }

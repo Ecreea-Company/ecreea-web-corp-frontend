@@ -1,6 +1,6 @@
-import { Footer } from '@/contents'
+import { Footer, Navbar } from '@/contents'
 import Head from 'next/head'
-import { Navbar, Sidebar } from './content'
+
 import styles from './Public.module.scss'
 
 export interface LayoutPublicProps {
@@ -19,8 +19,6 @@ const Public = ({
       </Head>
 
       <Navbar />
-
-      <Sidebar />
 
       {children}
 

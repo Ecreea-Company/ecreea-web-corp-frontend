@@ -9,8 +9,8 @@ import {
   AiOutlineClose,
   AiOutlinePlus
 } from 'react-icons/ai'
-import { List } from './components'
-import { LinkEcreea } from '@/components'
+
+import { LinkEcreea, ListItemsFooter } from '@/components'
 
 import { useGetDataLocalStorage, useWindowSize } from '@/hooks'
 import { FooterApiProps } from '@/models'
@@ -29,13 +29,11 @@ const Footer = (): JSX.Element => {
     return <div>Loading...</div>
   }
 
-  // console.log(data)
-
   return (
     <div className={styles.Footer}>
       <div className={styles.Footer__Block1}>
         {data.map((item: FooterApiProps) => (
-          <List key={item.id} title={item.title} items={item.item} />
+          <ListItemsFooter key={item.id} title={item.title} items={item.item} />
         ))}
         <section className={styles.Block1__section}>
           {width > 1200
