@@ -1,19 +1,16 @@
 import styles from './LoadingPages.module.scss'
-import Lottie from 'react-lottie'
+import Lottie from 'react-lottie-player'
 import animateLoading from '@/assets/lotties/loading-lottie.json'
 
 const LoadingPages = (): JSX.Element => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animateLoading,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  }
   return (
     <div className={styles.Loading}>
-      <Lottie options={defaultOptions} height={400} width={400} />
+      <Lottie
+        loop
+        animationData={animateLoading}
+        play
+        style={{ width: 400, height: 400 }}
+      />
     </div>
   )
 }

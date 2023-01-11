@@ -15,7 +15,7 @@ const Hero = ({ data }: any): JSX.Element => {
       <Link href={`/blog/${data.slug}`}>
         <a className={styles.Section__hero}>
           <div className={styles.Section__img}>
-            <Image src={data.imagen} layout="fill" objectFit="cover" />
+            <Image src={data.imagen} layout="fill" objectFit="cover" priority/>
           </div>
           <div className={styles.Section__descrip}>
             <p>{data.categoria}</p>
