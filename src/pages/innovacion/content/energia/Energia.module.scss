@@ -5,7 +5,7 @@
   @include utilities.section-100vh;
   @include utilities.background-image(url('/pages/innovacion/bg-energia.jpg'));
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   color: white;
 
@@ -27,6 +27,14 @@
     @include mediaQueries.for-phone {
       width: 90%;
       place-self: center;
+    }
+  }
+
+  &__centrar {
+    display: flex;
+    justify-content: center;
+    @include mediaQueries.for-desktop-new {
+      justify-content: flex-start;
     }
   }
 }

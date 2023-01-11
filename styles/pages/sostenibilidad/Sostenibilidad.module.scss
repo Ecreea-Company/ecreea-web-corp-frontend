@@ -38,6 +38,7 @@
     text-align: justify;
     align-items: center;
     font-size: clamp(1.13rem, 4vw ,4.06rem);
+    color: var(--logo-ucv)
   }
   
   @include mediaQueries.for-desktop-new {

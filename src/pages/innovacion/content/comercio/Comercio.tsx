@@ -28,14 +28,16 @@ const Comercio = (): JSX.Element => {
         <TitleIndustria title={title.title} subtitle={title.subtitle} />
         {
           itemsIndustria.map((item, index) => (
-            <ItemIndustria key={index} {...item} />
+            <ItemIndustria fontSizeTitle={'clamp(1.56rem,3vw,3.13rem)'} fontSizeText={'clamp(1.25rem,2.5vw,2.5rem)'} key={index} {...item} />
           ))
         }
-         <LinkRedirect
+        <div className={styles.Section__centrar}>
+        <LinkRedirect
           text="Inicia tu transformación digital aquí"
-          colorText="#6AE4FF"
+          colorText="white"
           url='https://www.e2b.pe/'
         />
+        </div>
       </div>
     </div>
   )

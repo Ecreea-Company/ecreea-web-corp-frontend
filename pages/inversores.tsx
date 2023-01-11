@@ -20,6 +20,7 @@ const Creadores: NextPage = () => {
       <Fuerza />
       <Costo />
       <Huella />
+
     </Public>
   )
 }

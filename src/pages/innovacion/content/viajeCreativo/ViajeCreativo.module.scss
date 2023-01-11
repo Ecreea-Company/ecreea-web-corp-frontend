@@ -11,17 +11,13 @@
     background-position: 0em;
   }
 
-  @include mediaQueries.for-tablet {
-    background-position: -38em;
-  }
-
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   color: white;
   &__OneBlock {
     @include utilities.flex(column, center, __);
-    font-size: 10em;
+    font-size: clamp(4.38rem,13vw,12.5rem);
     font-weight: bold;
     padding-left: 0.5em;
     width: 95%;
@@ -44,8 +40,8 @@
     grid-area: 1/2/3/3;
     width: 70%;
     place-self: center;
-    font-size: 2.2em;
-    font-weight: 300;
+    font-size: clamp(1.88rem,2vw,2.2rem);
+    font-weight: 400;
     text-align: justify;
     line-height: 1.5em;
     @include mediaQueries.for-phone {
