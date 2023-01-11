@@ -32,7 +32,7 @@ const Trabajo: NextPage = () => {
           : (
                 <Menu
                   itemsList={centralMenuItems}
-                  customStyle={{ padding: 'clamp(2rem, 7vw, 5.5rem)' }}
+                  customStyle={{ paddingRight: 'clamp(2rem, 7vw, 5.5rem)', paddingBottom: '2rem' }}
                   direction= 'row'
               />
             )}
@@ -45,7 +45,7 @@ const Trabajo: NextPage = () => {
           <h1 className={styles.Container__title}>Oportunidades para Gradudados</h1>
           <h1 className={styles.Container__subtitle}>Siempre hay espacio para crear</h1>
         </div>
-        <p className={styles.Section2__parrafo}>Trabajar en ecreea nunca será cómodo, este es el punto donde la ingeniería, tecnología y arte danzan, tienes que no estar preparado para ello, dejarte llevar por lo que amas hacer es primordial, así es como se desata la genialidad. Por eso nunca nos cansamos de buscar apasionados en todos las diciplinas, hay tanto que hacer, descubrir y oportunidades que desarrollar que lo que sobra es espacio para crear.</p>
+        <p className={styles.Section2__parrafo}>Trabajar en ecreea nunca será cómodo, este es el punto donde la ingeniería, tecnología y arte danzan, tienes que no estar preparado para ello, dejarte llevar por lo que amas hacer es primordial, así es como se desata la genialidad. Por eso, nunca nos cansamos de buscar apasionados en todos las disciplinas, hay tanto que hacer, descubrir y oportunidades que desarrollar que lo que sobra es espacio para crear.</p>
         <p className={styles.Section2__parrafo2}>Déjate descubrir. Preséntate y nos pondremos en contacto contigo si hay una oportunidad para tu perfil.</p>
         <LinkRedirect
           text="Da el primer paso"
