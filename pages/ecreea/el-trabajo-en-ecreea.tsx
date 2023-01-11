@@ -1,5 +1,4 @@
 import styles from '@styles/ecreea/Trabajo.module.scss'
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import type { NextPage } from 'next'
 import { LinkRedirect, Flecha, Menu, Contenedores } from '@/pages/ecreea/components'
@@ -86,7 +85,6 @@ const Trabajo: NextPage = () => {
           disabled={true}
         />
       </div>
-      <Footer/>
     </Public>
   )
 }

@@ -3,14 +3,17 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import GoogleAnalytics from '@bradgarropy/next-google-analytics'
 import { useEffect } from 'react'
-import { localStorageFooter } from '@/services'
+import { localStorageFooter, localStorageNavbar } from '@/services'
 
 function MyApp ({ Component, pageProps }: AppProps): JSX.Element {
   useEffect(() => {
-    localStorageFooter(`${process.env.NEXT_PUBLIC_API_URL}/footer?populate[list][populate][0]=item`)
-      .catch((error) => {
-        console.error('Error Interno', error)
-      })
+    localStorageFooter()
+      .then(() => console.log('Footer Inicializada'))
+      .catch(() => console.log('Error al inicializar el footer'))
+
+    localStorageNavbar()
+      .then(() => console.log('Navbar Inicializada'))
+      .catch(() => console.log('Error al inicializar el navbar'))
   }, [])
 
   return (

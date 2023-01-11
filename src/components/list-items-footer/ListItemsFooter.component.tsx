@@ -1,16 +1,16 @@
-import styles from './List.module.scss'
+import styles from './ListItemsFooter.module.scss'
 import { useState } from 'react'
 import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 import { useWindowSize } from '@/hooks'
 import { LinkEcreea } from '@/components'
-import { FooterItemProps } from '@/models'
+import { ItemLinkProps } from '@/models'
 
 interface ListProps {
   title: string
-  items: FooterItemProps []
+  items: ItemLinkProps[]
 }
 
-const List = ({ title, items }: ListProps): JSX.Element => {
+const ListItemsFooter = ({ title, items }: ListProps): JSX.Element => {
   const { width } = useWindowSize()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -52,4 +52,4 @@ const List = ({ title, items }: ListProps): JSX.Element => {
   )
 }
 
-export default List
+export default ListItemsFooter

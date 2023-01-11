@@ -1,6 +1,5 @@
+export * from './FlechaSharing.service'
 export * from './HumburgerSharing.service'
 export * from './articulos/Articulos.service'
-
 export * from './footer/Footer.service'
-
-export * from './FlechaSharing.service'
+export * from './navbar/Navbar.service'

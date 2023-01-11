@@ -1,14 +1,25 @@
+@use 'styles/mixins/mediaQueries';
+
+.Humburguer {
+  align-self: center;
+  font-size: 1.5rem;
+  width: 1.5rem;
+  margin-left: 2rem;
+  grid-area: centerMenu;
+}
+
 .Sidebar {
   visibility: hidden;
   overflow: hidden;
   position: fixed;
   background-color: var(--background-color);
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+
+  z-index: -1;
 
   &__fadeIn {
     visibility: visible;
@@ -44,4 +55,10 @@
       opacity: 0;
     }
   }
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }

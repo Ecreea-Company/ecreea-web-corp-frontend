@@ -1,4 +1,3 @@
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import {
   CreacionDeImpacto,
@@ -21,7 +20,7 @@ const Home: NextPage = () => {
       <Ecreadores />
       <NuestraEsencia />
       <UltimasInformaciones />
-      <Footer />
+
     </Public>
   )
 }

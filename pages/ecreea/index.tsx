@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import type { NextPage } from 'next'
 import styles from '@styles/ecreea/Ecreea.module.scss'
@@ -131,7 +130,6 @@ const Ecreea: NextPage = () => {
         </div>
       </div>
       </>
-      <Footer/>
     </Public>
   )
 }

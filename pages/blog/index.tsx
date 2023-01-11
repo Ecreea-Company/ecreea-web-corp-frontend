@@ -1,4 +1,3 @@
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import { Header } from '@/pages/blog/components'
 import { AllPosts, Hero } from '@/pages/blog/content'
@@ -11,7 +10,6 @@ const Blog: NextPage = ({ data, meta }: any) => {
       <Header />
       <Hero data={data[0]} />
       <AllPosts data={data} meta={meta} />
-      <Footer />
     </Public>
   )
 }
