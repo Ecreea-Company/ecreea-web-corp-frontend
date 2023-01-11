@@ -1,19 +1,22 @@
-import { MenuItemProps } from '@/models'
+import { ItemLinkProps } from '@/models'
 
-export const centralMenuItems: MenuItemProps[] = [
+export const centralMenuItems: ItemLinkProps[] = [
   {
-    text: 'El Trabajo en Ecreea',
-    href: '/ecreea/el-trabajo-en-ecreea',
-    isDisabled: false
+    name: 'El Trabajo en Ecreea',
+    url: '/ecreea/el-trabajo-en-ecreea',
+    desactivar: false,
+    id: 1
   },
   {
-    text: 'Aprende con nosotros',
-    href: '/ecreea/aprende-con-nosotros',
-    isDisabled: false
+    name: 'Aprende con nosotros',
+    url: '/ecreea/aprende-con-nosotros',
+    desactivar: false,
+    id: 2
   },
   {
-    text: 'Buscar oportunidades',
-    href: '/contacto',
-    isDisabled: true
+    name: 'Buscar oportunidades',
+    url: '/contacto',
+    desactivar: true,
+    id: 3
   }
 ]

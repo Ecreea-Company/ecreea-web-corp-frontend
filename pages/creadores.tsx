@@ -1,4 +1,3 @@
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import { ComoLoHacemos, PorqueLoHacemos, SomosArtistas, Transformamos, TransformamosObjetivos, TransformamosValores } from '@/pages/creadores/content'
 import type { NextPage } from 'next'
@@ -12,7 +11,6 @@ const Creadores: NextPage = () => {
       <Transformamos/>
       <TransformamosValores/>
       <TransformamosObjetivos/>
-      <Footer/>
     </Public>
   )
 }
