@@ -34,16 +34,22 @@ const Navbar = (): JSX.Element => {
       <ul className={styles.Navbar__options}>
         <li className={styles.Navbar__items}>
           <LinkEcreea href="#" disabled={true}>
-            <FiSearch />
+            <div style={{ maxWidth: '1rem' }}>
+              <BsGlobe2 />
+            </div>
           </LinkEcreea>
         </li>
         <li className={styles.Navbar__items}>
           <LinkEcreea href="#" disabled={true}>
-            <BsGlobe2 />
+            <div style={{ maxWidth: '1rem' }}>
+              <FiSearch />
+            </div>
           </LinkEcreea>
         </li>
         <li className={styles.Navbar__items}>
-          <ButtonMode />
+          <div style={{ maxWidth: '1rem' }}>
+            <ButtonMode />
+          </div>
         </li>
       </ul>
     </div>
