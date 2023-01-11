@@ -42,7 +42,7 @@ const Sostenibilidad: NextPage = () => {
             <h1 className={styles.Description__title}>Con nuestro equipo</h1>
             <p className={styles.Description__subtitle}>Creadores de éxito</p>
           </div>
-          <Contenedores text={firstParagraph.text} widthN={'clamp(19rem,80vw,75rem)'} alignItems={'flex-end'} paddingBot={'clamp(6rem,15vw,15rem)'}/>
+          <Contenedores text={firstParagraph.text} width={'clamp(19rem,75vw,75rem)'} alignItems={'flex-end'} paddingBot={'clamp(6rem,15vw,15rem)'}/>
         </div>
       </div>
 
@@ -53,7 +53,7 @@ const Sostenibilidad: NextPage = () => {
         </div>
         <div className={styles.Section4__paragraph}>
           <h1>Plataformas de Aprendizaje Continuo</h1>
-          <p>Cada talento participa de nuestro programa Ecreeador X, el objetivo es facilitar que los talentos  adquiriran nuevas habilidades en plataformas lideres en educacion: Platzi, Crehana y Udemy, que les ayuden a desarrollar su carrera, ya sea en ecreea o en cualquier otro lugar.</p>
+          <p>Cada talento participa de nuestro programa Ecreeador X, el objetivo es facilitar que los talentos  adquirirán nuevas habilidades en plataformas líderes en educación: Platzi, Crehana y Udemy.</p>
         </div>
         <div className={styles.Section4__paragraph}>
           <h1>Prácticas Pre - Profesionales</h1>
@@ -67,10 +67,10 @@ const Sostenibilidad: NextPage = () => {
           <p className={styles.Description__subtitle}>Apasionados y Comprometidos </p>
         </div>
         <div className={styles.Grid1}>
-          <Contenedores title={secondParagraph.title} text={secondParagraph.text} widthN={'clamp(19rem,40vw,50rem)'} alignItems={'flex-end'}/>
+          <Contenedores title={secondParagraph.title} text={secondParagraph.text} width={'clamp(19rem,40vw,50rem)'} alignItems={'flex-end'}/>
         </div>
         <div className={styles.Grid2}>
-          <Contenedores title={thirdParagraph.title} text={thirdParagraph.text} widthN={'clamp(22rem,80vw,75rem)'} alignItems={'flex-start'}/>
+          <Contenedores title={thirdParagraph.title} text={thirdParagraph.text} width={'clamp(22rem,75vw,75rem)'} alignItems={'flex-start'}/>
         </div>
       </div>
 

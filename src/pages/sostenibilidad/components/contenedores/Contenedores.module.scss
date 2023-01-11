@@ -9,9 +9,9 @@
     flex-direction: column;
     background-color: var(--background-color);
     text-align: justify;
-    font-size: clamp(1.13rem,2vw,3.16rem);
-    padding: clamp(2rem,4vw,4rem);
-    gap: 1rem;
+    font-size: clamp(1.13rem,3vw,3.16rem);
+    padding: clamp(2rem,5vw,5rem);
+    gap: 2rem;
   
     h1 {
       font-weight: bold;
