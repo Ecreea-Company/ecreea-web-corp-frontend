@@ -26,7 +26,7 @@ const Aprende: NextPage = () => {
           : (
                 <Menu
                   itemsList={centralMenuItems}
-                  customStyle={{ padding: 'clamp(2rem, 7vw, 5.5rem)' }}
+                  customStyle={{ paddingRight: 'clamp(2rem, 7vw, 5.5rem)', paddingBottom: '2rem' }}
                   direction= 'row'
               />
             )}
