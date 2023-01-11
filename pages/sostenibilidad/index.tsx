@@ -32,7 +32,7 @@ const Sostenibilidad: NextPage = () => {
 
       <div className={styles.Section2}>
         <p className={styles.Section2__paragraph}>
-          Nos comprometemos a crear una corporacion sostenible para nuestros clientes, nuestros equipo y las comunidades a las que pertenecen. Avanzamos hacia un futuro con cero emisiones netas de carbono, en el que todas las personas que forman parte de nuestra cadena de valor sean tratadas con dignidad y respeto.
+          Nos comprometemos a crear una corporación sostenible para nuestros clientes, nuestro equipo y las comunidades a las que pertenecen. Avanzamos hacia un futuro con cero emisiones netas de carbono, en el que todas las personas que forman parte de nuestra cadena de valor sean tratadas con dignidad y respeto.
         </p>
       </div>
 
