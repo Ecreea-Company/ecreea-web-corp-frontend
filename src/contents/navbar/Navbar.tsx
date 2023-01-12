@@ -4,11 +4,11 @@ import { BsGlobe2 } from 'react-icons/bs'
 import { useGetDataLocalStorage, useWindowSize } from '@/hooks'
 import {
   LinkEcreea,
-  Logo,
   ButtonMode,
   MenuNavbarDesktop,
   MenuNavbarMobile
 } from '@/components'
+import Logo from '@/assets/logo/Logo.component'
 import { ItemLinkProps } from '@/models'
 
 const Navbar = (): JSX.Element => {

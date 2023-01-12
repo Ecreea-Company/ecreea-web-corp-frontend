@@ -40,7 +40,7 @@ export const getArticuloBySlug = async (url: string | string[] | undefined) => {
         Authorization: `Bearer ${process.env.API_TOKEN}`
       }
     }
-  )
+  ).then(async (res) => await res.json())
 
-  return await res.json()
+  return res
 }
