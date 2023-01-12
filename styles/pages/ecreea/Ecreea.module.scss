@@ -40,15 +40,27 @@
   gap: 0.8rem;
   padding: clamp(2rem, 7vw, 5.5rem);
   color: white;
-
-  &__title {
-    font-size: clamp(2.7rem,7vw,7.5rem);
-    font-weight: 700;
+  @include mediaQueries.for-desktop-new {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
   }
-  
-  &__subtitle {
-    font-size: clamp(1.13rem,4vw,3.75rem);
-    font-weight: 400;
+
+  .Container{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+
+    &__title {
+      font-size: clamp(2.7rem,7vw,7.5rem);
+      font-weight: 700;
+    }
+    
+    &__subtitle {
+      font-size: clamp(1.13rem,4vw,3.75rem);
+      font-weight: 400;
+    }
   }
 
   @include mediaQueries.for-desktop-new {
@@ -79,6 +91,7 @@
     background-size: 200%;
     background-clip: text;
     animation: text_animate 8s linear infinite;
+    line-height: clamp(5rem,9vw,9rem);
   }
 
   @keyframes text_animate {
