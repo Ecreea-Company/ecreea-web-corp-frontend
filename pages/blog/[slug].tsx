@@ -3,7 +3,6 @@ import { Header } from '@/pages/blog/components'
 import { PostUser, ShareSocial } from '@/pages/blog/content'
 import RecomendPost from '@/pages/blog/content/recomendPosts/RecomendPost'
 import { getArticulos, getArticuloBySlug } from '@/services'
-
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 import Head from 'next/head'
 
@@ -26,7 +25,7 @@ const Post: NextPage = ({ data }: any) => {
       </Head>
       <Header />
       <PostUser data={data} />
-      {/* <StandLibro /> */}
+
       <ShareSocial slug={data.slug} />
       <RecomendPost />
     </Public>
@@ -51,8 +50,7 @@ export const getStaticProps: GetStaticProps<{ data: any }> = async ({
       nombre: dataCruda.attributes.createdBy.data.attributes.firstname,
       apellido: dataCruda.attributes.createdBy.data.attributes.lastname,
       area: dataCruda.attributes.rol_empresa,
-      avatar:
-      dataCruda.attributes.createdBy.data.attributes.username
+      avatar: dataCruda.attributes.createdBy.data.attributes.username
     },
     imagen: dataCruda.attributes.imagen.data.attributes.url,
     descripcion_imagen: dataCruda.attributes.descripcion_imagen,
@@ -62,7 +60,6 @@ export const getStaticProps: GetStaticProps<{ data: any }> = async ({
   return {
     props: {
       data: postAdapter
-
     },
     revalidate: 10
   }

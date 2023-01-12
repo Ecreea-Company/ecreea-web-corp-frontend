@@ -53,7 +53,7 @@ const Ecreea: NextPage = () => {
             : (
                 <Menu
                   itemsList={centralMenuItems}
-                  customStyle={{ padding: 'clamp(2rem, 7vw, 5.5rem)' }}
+                  customStyle={{ paddingRight: 'clamp(2rem, 7vw, 5.5rem)', paddingBottom: '2rem' }}
                   direction= 'row'
               />
               )}
@@ -62,10 +62,12 @@ const Ecreea: NextPage = () => {
       </div>
 
       <div className={styles.Section2}>
-        <h1 className={styles.Section2__title}>Sé Artista</h1>
-        <h1 className={styles.Section2__title}>Sé Apasionado</h1>
-        <h1 className={styles.Section2__title}>Sé un Creador</h1>
-        <h1 className={styles.Section2__subtitle}>Cree en ti y en tu poder creativo, eres capaz de crear lo que quieras.</h1>
+        <div className={styles.Container}>
+          <h1 className={styles.Container__title}>Sé Artista</h1>
+          <h1 className={styles.Container__title}>Sé Apasionado</h1>
+          <h1 className={styles.Container__title}>Sé un Creador</h1>
+          <h1 className={styles.Container__subtitle}>Cree en ti y en tu poder creativo, eres capaz de crear lo que quieras.</h1>
+        </div>
       </div>
 
       <div className={styles.Section3}>
