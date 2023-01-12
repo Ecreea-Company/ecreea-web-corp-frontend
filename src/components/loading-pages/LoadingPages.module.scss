@@ -2,6 +2,18 @@
   width: 100%;
   height: 100vh;
   background-color: var(--background-color);
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__logo {
+    width: clamp(10rem, 30vw, 30rem);
+  }
+
+  &__lottie {
+    width: clamp(20rem, 30vw, 30rem);
+    height: 5rem;
+    padding-left: clamp(0.6rem, 1vw, 1.5rem);
+  }
 }
