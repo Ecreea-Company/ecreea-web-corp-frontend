@@ -2,19 +2,12 @@ import 'styles/bases/main.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import GoogleAnalytics from '@bradgarropy/next-google-analytics'
-import { useEffect } from 'react'
-import { localStorageFooter, localStorageNavbar } from '@/services'
+import LoadingPages from '@/components/loading-pages/LoadingPages.component'
+import { useInitialValues, useStateLoading } from '@/hooks'
 
 function MyApp ({ Component, pageProps }: AppProps): JSX.Element {
-  useEffect(() => {
-    localStorageFooter()
-      .then(() => console.log('Footer Inicializada'))
-      .catch(() => console.log('Error al inicializar el footer'))
-
-    localStorageNavbar()
-      .then(() => console.log('Navbar Inicializada'))
-      .catch(() => console.log('Error al inicializar el navbar'))
-  }, [])
+  useInitialValues()
+  const { loading } = useStateLoading()
 
   return (
     <>
@@ -24,7 +17,7 @@ function MyApp ({ Component, pageProps }: AppProps): JSX.Element {
 
       <GoogleAnalytics measurementId="G-CQFPFTTPJ5" />
 
-      <Component {...pageProps} />
+      {loading ? <LoadingPages /> : <Component {...pageProps} />}
     </>
   )
 }
