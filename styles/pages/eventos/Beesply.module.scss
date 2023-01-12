@@ -1,0 +1,107 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  @include utilities.section(80vh);
+  @include utilities.background-image(
+    url('/pages/eventos/beesply/bg-beesply-2.jpg')
+  );
+  background-position-x: -31rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(2rem,5.5vw,5.5rem);
+  color: white;
+
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+    background-position-x: 0rem;
+    align-items: flex-start;
+  }
+  @media (min-width: 742px) {
+    background-position-x: 0rem;
+  }
+
+  &__rect {
+    background-color: rgba($color: #EC155A, $alpha: 0.6);
+    padding: 1rem clamp(1.5rem,4vw,4rem) 1rem clamp(1.5rem,4vw,4rem);
+    font-size: clamp(1.13rem, 2.5vw, 2.5rem);
+    font-weight: bold;
+  }
+
+  &__title {
+    font-size: clamp(3.75rem, 7.5vw, 7.5rem);
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.13rem, 2.5vw, 2.5rem);
+    font-weight: 400;
+  }
+}
+
+.Section2 {
+  @include utilities.section(80vh);
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(100vh);
+  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-left: clamp(2rem,5.5vw,5.5rem);
+  margin-right: clamp(2rem,5.5vw,5.5rem);
+
+  &__fecha {
+    font-size: clamp(1.13rem,2.5vw,2.5rem);
+    @include mediaQueries.for-desktop-new {
+      padding-bottom: 7rem;
+    }
+  }
+}
+
+.Section3 {
+  text-align: center;
+}
+
+.Section4 {
+  @include utilities.section(100vh);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: clamp(2rem,5.5vw,5.5rem);
+  margin-right: clamp(2rem,5.5vw,5.5rem);
+  margin-bottom: clamp(2rem,5.5vw,5.5rem);;
+  gap: clamp(4rem,7vw,7rem);
+
+  .Container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .Container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(1.13rem,2.5vw,2.5rem);
+    gap: clamp(2rem,3vw,3rem);
+
+    .Boton {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: .2rem;
+      font-weight: bold;
+  
+      &__icon {
+        width: max-content;
+      }
+    }
+  }
+}

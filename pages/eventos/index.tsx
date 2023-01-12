@@ -1,9 +1,8 @@
-import { Footer } from '@/contents'
 import { Public } from '@/layouts'
 import styles from '@styles/eventos/Eventos.module.scss'
 import type { NextPage } from 'next'
 import { LinkEcreea } from '@/components'
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight } from 'react-icons/bs'
 
 const Eventos: NextPage = () => {
   return (
@@ -34,7 +33,6 @@ const Eventos: NextPage = () => {
       </div>
     </div>
     </>
-    <Footer />
     </Public>
   )
 }
