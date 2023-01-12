@@ -41,5 +41,8 @@
     width: 14rem;
     text-align: center;
     color: #747474;
+    & b {
+      color: var(--text-font-color);
+    }
   }
 }

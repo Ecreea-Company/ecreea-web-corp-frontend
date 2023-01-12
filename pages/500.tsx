@@ -6,7 +6,7 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
-export default function FourOhFour () {
+export default function FiveOhFive () {
   const [nameUrl, setNameUrl] = useState<string>('')
   const router = useRouter()
 
@@ -20,7 +20,7 @@ export default function FourOhFour () {
         <Gato404 />
       </div>
       <Logo />
-      <h4>Página no encontrada</h4>
+      <h4>Error 500</h4>
       <p>
         La URL solicitada <b>{nameUrl}</b> no se encontró en este servidor.
       </p>
