@@ -1,6 +1,6 @@
 import styles from './LoadingPages.module.scss'
 import Lottie from 'react-lottie-player'
-import animateLoading from '@/assets/lotties/loading-lottie.json'
+import animateLoading from '@/assets/lotties/loading-lineal.json'
 
 const LoadingPages = (): JSX.Element => {
   return (
@@ -9,7 +9,8 @@ const LoadingPages = (): JSX.Element => {
         loop
         animationData={animateLoading}
         play
-        style={{ width: 400, height: 400 }}
+        style={{ width: 500 }}
+        rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
       />
     </div>
   )
