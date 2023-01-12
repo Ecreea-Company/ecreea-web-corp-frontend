@@ -45,6 +45,8 @@
   @include utilities.section(80vh);
   @include mediaQueries.for-desktop-new {
     @include utilities.section(100vh);
+    margin-top: clamp(2rem,5.5vw,5.5rem);
+    margin-bottom: clamp(2rem,5.5vw,5.5rem);
   }
   display: flex;
   justify-content: center;

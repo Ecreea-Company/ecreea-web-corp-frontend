@@ -44,7 +44,7 @@ const Eventos: NextPage = () => {
       <Contenedores title={secondParagraph.title} text={secondParagraph.text}></Contenedores>
     </div>
 
-    <Carousel className={styles.Section3} autoPlay={true} interval={3000} infiniteLoop={true} emulateTouch={true}>
+    <Carousel className={styles.Section3} autoPlay={true} interval={3000} infiniteLoop={true} emulateTouch={true} showThumbs={false}>
       <div>
         <Image src={'/pages/eventos/beesply/even_1.jpg'} width={1920} height={1080}/>
       </div>
