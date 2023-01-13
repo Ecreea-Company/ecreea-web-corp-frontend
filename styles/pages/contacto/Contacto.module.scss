@@ -1,0 +1,196 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  @include utilities.section(160vh);
+  @include mediaQueries.for-desktop-new {
+    @include utilities.background-image(
+    url('/pages/contacto/bg-contacto.png')
+    );
+    background-color: white;
+    gap: clamp(1rem,20vw,20rem);
+  }
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  .Fondo {
+    @media (max-width: 960px) {
+      @include utilities.background-image(
+      url('/pages/contacto/bg-contacto.png')
+      );
+      background-color: white;
+    }
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+    .Container1 {
+      
+      margin: clamp(1rem,5vw,5rem);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+
+      @include mediaQueries.for-desktop-new {
+        text-align: left;
+      }
+
+      &__title {
+        font-size: clamp(3.8rem,8vw,9rem);
+        font-weight: 700;
+        color: transparent;
+        background: linear-gradient(60deg, #ffde00, #e71d73, #ffde00);
+        background-size: 200%;
+        background-clip: text;
+        animation: text_animate 8s linear infinite;
+      }
+  
+      @keyframes text_animate {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 200%;
+        }
+      }
+    }
+  }
+
+  .Container2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: clamp(2rem,5vw,5rem);
+    gap: 6rem;
+
+    
+  .Line {
+    height: .05rem;
+    width: 100%;
+    background-color: #CBCBCB;
+  }
+
+    .Titulo {
+      &__title {
+        text-align: left;
+        font-size: clamp(2.7rem,5vw,5rem);
+        font-weight: bold;
+      }
+    }
+
+  }
+  
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(150vh);
+  }
+}
+
+.Section2 {
+  @include utilities.section(100vh);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: clamp(2rem,5vw,5rem);
+  gap: 6rem;
+  padding-bottom: 5rem;
+
+  .Titulo {
+    &__title {
+      text-align: left;
+      font-size: clamp(2.7rem,5vw,5rem);
+      font-weight: bold;
+    }
+  }
+
+  .Texto {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem,8vw,8rem);
+  }
+}
+
+.Section3 {
+  @include utilities.section(80vh);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: clamp(2rem,5vw,5rem);
+
+  .Line {
+    height: .05rem;
+    width: 100%;
+    background-color: #CBCBCB;
+  }
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    .Titulo {
+      &__title {
+        text-align: left;
+        font-size: clamp(2.7rem,5vw,5rem);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.Section4 {
+  background-color: var(--background-container);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: clamp(2rem,5vw,5rem);
+  padding: 5rem 2.5rem 5rem 2.5rem;
+  gap: 3rem;
+
+  .Titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mediaQueries.for-desktop-new {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    &__title {
+      font-size: clamp(1.56rem,3vw,3.13rem);
+      font-weight: bold;
+    }
+  }
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    font-size: clamp(1.13rem,2.5vw,2.5rem);
+    font-family: 'Helvetica Light';
+    @include mediaQueries.for-desktop-new {
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-around;
+    }
+
+    span{
+      font-family: 'Helvetica';
+    }
+    
+    &__caja {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      @include mediaQueries.for-desktop-new {
+        width: 23%;
+        
+      }
+    }
+
+  }
+}

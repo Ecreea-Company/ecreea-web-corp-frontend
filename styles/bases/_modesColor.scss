@@ -12,6 +12,7 @@ body[data-theme='light'] {
   --link-color: #4b4b4b;
   --shadow: rgba(0, 0, 0, 0.5);
   --logo-ucv: #001E42;
+  --background-container: #EDEDED;
 }
 
 body[data-theme='dark'] {
@@ -26,4 +27,5 @@ body[data-theme='dark'] {
   --link-color: #e8e8e8;
   --shadow: rgba(255, 255, 255, 0.5);
   --logo-ucv: white;
+  --background-container: #1E1E1E;
 }
