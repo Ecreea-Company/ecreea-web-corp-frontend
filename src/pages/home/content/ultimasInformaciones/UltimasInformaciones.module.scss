@@ -1,7 +1,7 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-100vh;
   @include utilities.flex(column, center, center, 2rem);
 
   &__title {
@@ -9,21 +9,15 @@
     font-weight: bold;
   }
 
-  &__video {
-    width: 90vw;
-    height: 70vh;
+  &__blogs {
+    width: 80%;
+    display: grid;
+    grid-auto-rows: 25rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+    overflow: hidden;
 
-    & div {
-      width: inherit;
-      height: inherit;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    & svg {
-      cursor: pointer;
-      width: max-content;
+    @include mediaQueries.for-desktop-new {
+      gap: 1rem;
     }
   }
 
@@ -32,6 +26,11 @@
     font-weight: bold;
     display: flex;
     align-items: center;
+    margin-bottom: 4rem;
+
+    @include mediaQueries.for-desktop-new {
+      margin-bottom: 10rem;
+    }
 
     &:hover i {
       display: block;
@@ -41,34 +40,5 @@
     & i {
       display: none;
     }
-  }
-}
-
-.LinkEcreea[aria-disabled='true'] {
-  color: var(--text-font-color-disabled);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
-  &::after {
-    display: none;
-    content: '¡Muy Pronto!';
-    font-size: 0.5rem;
-    font-weight: bold;
-    background-color: var(--backgorund-disabled);
-    color: white;
-    text-align: center;
-    width: 5rem;
-    height: 1rem;
-    line-height: 1rem;
-    border-radius: 0.4rem;
-    position: absolute;
-    top: 1.2rem;
-    left: calc(50% - 2.5rem);
-    opacity: 1;
-  }
-
-  &:hover::after {
-    display: block;
   }
 }

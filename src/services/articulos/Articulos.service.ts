@@ -44,3 +44,9 @@ export const getArticuloBySlug = async (url: string | string[] | undefined) => {
 
   return res
 }
+
+export const getArticulosForSWR = async (url: string) => {
+  const res = await fetch(url)
+
+  return await res.json()
+}

@@ -1,3 +1,4 @@
+import { cardBlogAdapter } from '@/adapters'
 import { Public } from '@/layouts'
 import { Header } from '@/pages/blog/components'
 import { AllPosts, Hero } from '@/pages/blog/content'
@@ -19,20 +20,12 @@ export default Blog
 export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
   query: { page = 1 }
 }) => {
-  const dataCrudo: any = await getArticulosByPage(page)
+  const dataApi: any = await getArticulosByPage(page)
 
-  const data = dataCrudo.data.map((obj: any) => {
-    return {
-      slug: obj.attributes.slug,
-      title: obj.attributes.titulo,
-      fecha_publicacion: obj.attributes.publishedAt,
-      categoria: obj.attributes.categoria.data.attributes.nombre,
-      imagen: obj.attributes.imagen.data.attributes.url
-    }
-  })
+  const data = cardBlogAdapter(dataApi)
 
   const meta = {
-    ...dataCrudo.meta
+    ...dataApi.meta
   }
 
   return {
