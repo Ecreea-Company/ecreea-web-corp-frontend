@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { Card } from '../../components'
+import { CardBlog } from '@/components'
 import styles from './AllPosts.module.scss'
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
 import { useRouter } from 'next/router'
+import { CardBlogProps } from '@/models'
 
 function AllPosts ({ data, meta }: any): JSX.Element {
   const router = useRouter()
@@ -11,8 +12,8 @@ function AllPosts ({ data, meta }: any): JSX.Element {
   return (
     <section className={styles.Section}>
       <div className={styles.Section__posts}>
-        {data.map((post: any) => (
-          <Card key={post.slug} post={post} />
+        {data.map((post: CardBlogProps) => (
+          <CardBlog key={post.slug} post={post} />
         ))}
       </div>
       <div className={styles.Section__controls}>
