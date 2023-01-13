@@ -1,4 +1,3 @@
-export { default as Card } from './card/Card.component'
 export { default as CardRecomend } from './cardRecomend/CardRecomend.component'
 export { default as Header } from './header/Header.component'
 export { default as Redes } from './redes/Redes.component'

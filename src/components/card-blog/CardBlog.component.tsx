@@ -1,8 +1,13 @@
-import styles from './Card.module.scss'
+import styles from './CardBlog.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import { CardBlogProps } from '@/models'
 
-function Card ({ post }: any): JSX.Element {
+interface Props{
+  post: CardBlogProps
+}
+
+function CardBlog ({ post }: Props): JSX.Element {
   const unixdate = Date.parse(post.fecha_publicacion)
   const dateObject = new Date(unixdate)
   const humanDateFormat = dateObject.toLocaleString('es-US', {
@@ -27,4 +32,4 @@ function Card ({ post }: any): JSX.Element {
   )
 }
 
-export default Card
+export default CardBlog
