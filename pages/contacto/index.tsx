@@ -62,10 +62,7 @@ const Sostenibilidad: NextPage = () => {
           </div>
           <div className={styles.Container__caja}>
             <p><b>RUC:</b> 20605479686</p>
-            <div>
-              <b>N° de Partida registral:</b>
-              <p>10234567890987654</p>
-            </div>
+            <p><b>N° de Partida registral:</b> <br/> 10234567890987654</p>
           </div>
           <div className={styles.Container__caja}>
             <p>Inscrito en el registro <br/> público de Trujillo, Perú</p>
