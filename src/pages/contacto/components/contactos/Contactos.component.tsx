@@ -1,22 +1,24 @@
 import styles from './Contactos.module.scss'
+import { ItemContactoProps } from '@/models'
 
-interface ContactoProps{
-  title: string
-  text1: string
-  text2: string
-  text3?: string
+export interface ContactoProps{
+  itemList: ItemContactoProps[]
 }
 
-function Contactos ({ title, text1, text2, text3 }: ContactoProps): JSX.Element {
+const Contactos = ({ itemList }: ContactoProps): JSX.Element => {
   return (
-    <div className={styles.Section}>
-      <h1 className={styles.Section__title}>{title}</h1>
-      <div className={styles.Textos}>
-        <p className={styles.Textos__text}>{text1}</p>
-        <p className={styles.Textos__text}>{text2}</p>
-        {text3 ? <p className={styles.Textos__text}>{text3}</p> : ''}
+    <>
+    {itemList.map((item, index) => (
+      <div className={styles.Section} key={index}>
+        <h1 className={styles.Section__title}>{item.title}</h1>
+        <div className={styles.Textos}>
+        {item.numberTelf ? <p className={styles.Textos__text}>{item.numberTelf}</p> : ''}
+        <p className={styles.Textos__text}>{item.numberCel}</p>
+        <p className={styles.Textos__text}>{item.correo}</p>
       </div>
     </div>
+    ))}
+    </>
   )
 }
 
