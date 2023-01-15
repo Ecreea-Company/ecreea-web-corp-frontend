@@ -5,9 +5,8 @@
   @include utilities.section(160vh);
   @include mediaQueries.for-desktop-new {
     @include utilities.background-image(
-    url('/pages/contacto/bg-contacto.png')
+    url('/pages/contacto/bg-contacto.jpg')
     );
-    background-color: white;
     gap: clamp(1rem,20vw,20rem);
   }
   
@@ -67,12 +66,19 @@
     margin: clamp(2rem,5vw,5rem);
     gap: 6rem;
 
+    @include mediaQueries.for-desktop-new {
+      color: black;
+    }
+
     
-  .Line {
-    height: .05rem;
-    width: 100%;
-    background-color: #CBCBCB;
-  }
+    .Line {
+      height: .05rem;
+      width: 100%;
+      background-color: #CBCBCB;
+      @include mediaQueries.for-desktop-new {
+        height: 0%;
+      }
+    }
 
     .Titulo {
       &__title {
@@ -96,6 +102,7 @@
   flex-direction: column;
   margin: clamp(2rem,5vw,5rem);
   gap: 6rem;
+  padding-top: clamp(0rem,4vw,4rem);
   padding-bottom: 5rem;
 
   .Titulo {
@@ -148,8 +155,8 @@
   flex-direction: column;
   text-align: center;
   margin: clamp(2rem,5vw,5rem);
-  padding: 5rem 2.5rem 5rem 2.5rem;
-  gap: 3rem;
+  padding: clamp(5rem,12vw,12rem) 2.5rem clamp(5rem,12vw,12rem) 2.5rem;
+  gap: clamp(3rem,4vw,4rem);
 
   .Titulo {
     display: flex;
@@ -170,22 +177,18 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    font-size: clamp(1.13rem,2.5vw,2.5rem);
-    font-family: 'Helvetica Light';
+    font-size: clamp(1.13rem,2vw,2rem);
+    font-weight: 300;
     @include mediaQueries.for-desktop-new {
       flex-direction: row;
       text-align: left;
       justify-content: space-around;
     }
 
-    span{
-      font-family: 'Helvetica';
-    }
-    
     &__caja {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2.5rem;
       @include mediaQueries.for-desktop-new {
         width: 23%;
         
