@@ -1,14 +1,10 @@
 import styles from './LoadingPages.module.scss'
 import Lottie from 'react-lottie-player'
-import animateLoading from '@/assets/lotties/loading-lineal.json'
-import Logo from '@/assets/logo/Logo.component'
+import animateLoading from '@/assets/lotties/loading-circle.json'
 
 const LoadingPages = (): JSX.Element => {
   return (
     <div className={styles.Loading}>
-      <div className={styles.Loading__logo}>
-        <Logo />
-      </div>
       <Lottie
         loop
         animationData={animateLoading}
