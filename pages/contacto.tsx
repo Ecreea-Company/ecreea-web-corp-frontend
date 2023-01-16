@@ -4,7 +4,7 @@ import { Contactos, Titulos } from '@/pages/contacto/components'
 import type { NextPage } from 'next'
 import { DataContactoTalento, DataContactoCorporativos, DataContactoInversores } from '@/data'
 
-const Sostenibilidad: NextPage = () => {
+const Contacto: NextPage = () => {
   return (
     <Public titlePage="Contacto">
       <>
@@ -65,4 +65,4 @@ const Sostenibilidad: NextPage = () => {
   )
 }
 
-export default Sostenibilidad
+export default Contacto
