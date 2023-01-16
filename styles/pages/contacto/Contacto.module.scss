@@ -79,15 +79,6 @@
         height: 0%;
       }
     }
-
-    .Titulo {
-      &__title {
-        text-align: left;
-        font-size: clamp(2.7rem,5vw,5rem);
-        font-weight: bold;
-      }
-    }
-
   }
   
   @include mediaQueries.for-desktop-new {
@@ -104,14 +95,6 @@
   gap: 6rem;
   padding-top: clamp(0rem,4vw,4rem);
   padding-bottom: 5rem;
-
-  .Titulo {
-    &__title {
-      text-align: left;
-      font-size: clamp(2.7rem,5vw,5rem);
-      font-weight: bold;
-    }
-  }
 
   .Texto {
     display: flex;
@@ -137,14 +120,6 @@
     display: flex;
     flex-direction: column;
     gap: 6rem;
-
-    .Titulo {
-      &__title {
-        text-align: left;
-        font-size: clamp(2.7rem,5vw,5rem);
-        font-weight: bold;
-      }
-    }
   }
 }
 

@@ -1,0 +1,9 @@
+@use 'styles/mixins/mediaQueries';
+
+.Titulo {
+  &__title {
+    text-align: left;
+    font-size: clamp(2.7rem,5vw,5rem);
+    font-weight: bold;
+  }
+}

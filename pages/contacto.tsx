@@ -1,6 +1,6 @@
 import { Public } from '@/layouts'
 import styles from '@styles/contacto/Contacto.module.scss'
-import { Contactos } from '@/pages/contacto/components'
+import { Contactos, Titulos } from '@/pages/contacto/components'
 import type { NextPage } from 'next'
 import { DataContactoTalento, DataContactoCorporativos, DataContactoInversores } from '@/data'
 
@@ -20,20 +20,14 @@ const Sostenibilidad: NextPage = () => {
           </div>
         </div>
         <div className={styles.Container2}>
-          <div className={styles.Titulo}>
-            <h1 className={styles.Titulo__title}>Contacto</h1>
-            <h1 className={styles.Titulo__title}>Inversores y Accionistas</h1>
-          </div>
+          <Titulos title={'Contacto'} subtitle={'Inversores y Accionistas'}/>
           <Contactos itemList={DataContactoInversores}></Contactos>
           <div className={styles.Line}></div>
         </div>
       </div>
 
       <div className={styles.Section2}>
-        <div className={styles.Titulo}>
-          <h1 className={styles.Titulo__title}>Contactos</h1>
-          <h1 className={styles.Titulo__title}>Corporativos</h1>
-        </div>
+        <Titulos title={'Contactos'} subtitle={'Corporativos'}/>
         <div className={styles.Texto}>
         <Contactos itemList={DataContactoCorporativos}></Contactos>
         </div>
@@ -42,10 +36,7 @@ const Sostenibilidad: NextPage = () => {
       <div className={styles.Section3}>
       <div className={styles.Line}></div>
         <div className={styles.Container}>
-          <div className={styles.Titulo}>
-            <h1 className={styles.Titulo__title}>Contacto</h1>
-            <h1 className={styles.Titulo__title}>Talento</h1>
-          </div>
+        <Titulos title={'Contacto'} subtitle={'Talento'}/>
         <Contactos itemList={DataContactoTalento}></Contactos>
         </div>
         <div className={styles.Line}></div>
