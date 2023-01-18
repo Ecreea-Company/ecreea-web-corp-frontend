@@ -2,45 +2,14 @@ import { Public } from '@/layouts'
 import styles from '@styles/contacto/Contacto.module.scss'
 import { Contactos, Titulos } from '@/pages/contacto/components'
 import type { NextPage } from 'next'
-import { DataContactoTalento, DataContactoCorporativos, DataContactoInversores } from '@/data'
+import { DataContacto } from '@/data'
 
 const Contacto: NextPage = () => {
   return (
     <Public titlePage="Contacto">
       <>
-      <div className={styles.Section}>
-        <div className={styles.Fondo}>
-          <div className={styles.Container1}>
-            <h1 className={styles.Container1__title}>
-            Siempre
-            </h1>
-            <h1 className={styles.Container1__title}>
-            conectados
-            </h1>
-          </div>
-        </div>
-        <div className={styles.Container2}>
-          <Titulos title={'Contacto'} subtitle={'Inversores y Accionistas'}/>
-          <Contactos itemList={DataContactoInversores}></Contactos>
-          <div className={styles.Line}></div>
-        </div>
-      </div>
 
-      <div className={styles.Section2}>
-        <Titulos title={'Contactos'} subtitle={'Corporativos'}/>
-        <div className={styles.Texto}>
-        <Contactos itemList={DataContactoCorporativos}></Contactos>
-        </div>
-      </div>
-
-      <div className={styles.Section3}>
-      <div className={styles.Line}></div>
-        <div className={styles.Container}>
-        <Titulos title={'Contacto'} subtitle={'Talento'}/>
-        <Contactos itemList={DataContactoTalento}></Contactos>
-        </div>
-        <div className={styles.Line}></div>
-      </div>
+      <Contactos itemList={DataContacto}></Contactos>
 
       <div className={styles.Section4}>
         <div className={styles.Titulo}>
