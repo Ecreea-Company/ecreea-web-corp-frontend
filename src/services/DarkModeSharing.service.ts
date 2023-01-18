@@ -1,3 +1,3 @@
 import { SubjectManager } from '../utilities/SubjectManager'
 
-export const HamburgerSharing = new SubjectManager()
+export const DarkModeSharing = new SubjectManager()

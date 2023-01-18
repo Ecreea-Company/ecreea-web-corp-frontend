@@ -1,3 +1,5 @@
+import type { NextPage } from 'next'
+import { useStateMode } from '@/hooks'
 import { Public } from '@/layouts'
 import {
   Costo,
@@ -8,19 +10,22 @@ import {
   Proyeccion,
   Somos
 } from '@/pages/inversores/content'
-import type { NextPage } from 'next'
+import Skeleton from 'react-loading-skeleton'
 
 const Creadores: NextPage = () => {
+  const mode = useStateMode()
+
+  if (mode === '') return <Skeleton height={100} />
+
   return (
     <Public titlePage="Inversores">
       <ModeloNegocio />
-      <CrecimientoSostenible />
-      <Somos />
-      <Proyeccion />
+      <CrecimientoSostenible mode={mode} />
+      <Somos mode={mode}/>
+      <Proyeccion mode={mode} />
       <Fuerza />
-      <Costo />
+      <Costo mode={mode}/>
       <Huella />
-
     </Public>
   )
 }

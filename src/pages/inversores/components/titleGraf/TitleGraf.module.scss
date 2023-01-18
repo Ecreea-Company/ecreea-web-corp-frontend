@@ -12,19 +12,15 @@
   }
 
   & h1 {
-    font-size: 3.3em;
+    font-size: clamp(2.5rem, 4vw, 5rem);
     font-weight: bold;
-    @include mediaQueries.for-phone {
-      font-size: 13vw;
-    }
   }
 
   & p {
-    font-size: 1.8em;
-    font-weight: 300;
+    font-size: clamp(1.2rem, 2vw, 3rem);
+    font-weight: 400;
     text-align: justify;
     @include mediaQueries.for-phone {
-      font-size: 5vw;
       text-align: center;
     }
   }

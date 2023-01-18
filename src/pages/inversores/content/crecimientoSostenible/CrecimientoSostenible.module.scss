@@ -2,9 +2,9 @@
 @use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section(100vh);
+  @include utilities.section(80vh);
   display: grid;
-  grid-template: repeat(4, 1fr) 0.5fr 1.5fr 1fr / auto;
+  grid-template: repeat(4, 1fr) 0.5fr 1.5fr 1fr / 1fr;
   margin: 0 2rem;
 
   @include mediaQueries.for-desktop-new {
@@ -55,6 +55,15 @@
       font-size: 1.5rem;
       font-weight: bold;
     }
+
+    & p span:nth-child(1)::after {
+      content: '\a';
+      white-space: pre;
+      @include mediaQueries.for-desktop-new {
+        content: '';
+        white-space: normal;
+      }
+    }
   }
 
   &__titleGraf {
@@ -62,18 +71,21 @@
     place-self: center;
     text-align: center;
     @include mediaQueries.for-desktop-new {
-      grid-area: 3/1/5/2;
+      grid-area: 4/1/5/2;
       margin: 0 5rem;
     }
   }
 
   &__graf {
-    grid-area: 6/1/7/2;
+    grid-area: 6/1/8/2;
+    place-self: center;
     @include mediaQueries.for-desktop-new {
       grid-area: 4/2/5/4;
-      width: 45rem;
-      height: 20rem;
-      place-self: start;
+      width: 60rem;
     }
   }
+}
+
+.ChartLine {
+  width: 100%;
 }

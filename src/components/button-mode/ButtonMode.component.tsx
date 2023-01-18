@@ -5,6 +5,8 @@ import { FiSun } from 'react-icons/fi'
 const ButtonMode = (): JSX.Element => {
   const { activeTheme, handleClick } = useThemeMode()
 
+  if (activeTheme === '') return <></>
+
   return (
     <a href="#" onClick={handleClick}>
       {activeTheme === 'dark' ? <HiOutlineMoon /> : <FiSun />}

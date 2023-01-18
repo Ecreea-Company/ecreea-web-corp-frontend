@@ -1,32 +1,40 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-100vh;
+  @include utilities.section(100vh);
   @include utilities.background-image(url('/pages/inversores/bg-fuerza.jpg'));
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: white;
+  @include mediaQueries.for-desktop-new {
+    align-items: flex-start;
+  }
 }
 
 .Description {
-  padding-left: 5vw;
   display: flex;
   flex-direction: column;
-  gap: 2vw;
-  font-size: 3.3vw;
-  font-weight: bold;
-  width: 44vw;
+  gap: 2rem;
+  width: 80vw;
+  text-align: center;
+  @include mediaQueries.for-desktop-new {
+    text-align: start;
+    width: 40vw;
+    margin-left: 5rem;
+  }
 
   &__title {
-    font-size: 3.3vw;
+    font-size: clamp(3rem, 3vw, 4rem);
     font-weight: bold;
     color: #f20b0b;
   }
 
   &__parrafo {
-    font-size: 2vw;
-    font-weight: 300;
-    text-align: justify;
+    font-size: clamp(1.4rem, 2vw, 3rem);
+    font-weight: 400;
   }
 }

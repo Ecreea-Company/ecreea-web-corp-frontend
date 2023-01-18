@@ -1,5 +1,5 @@
-import { TitleGraf } from '../../components'
 import styles from './Huella.module.scss'
+import { TitleGraf } from '../../components'
 
 function Huella (): JSX.Element {
   const title = {
@@ -40,7 +40,7 @@ function Huella (): JSX.Element {
         </div>
       </div>
       <div className={styles.Section__SecondBlock}>
-        <p>¡Ya emprendimos el viaje, acompáñanos a las estrellas!</p>
+        <p> <span>¡Ya </span> <span>emprendimos el viaje, acompáñanos a las estrellas!</span> </p>
       </div>
     </div>
   )
