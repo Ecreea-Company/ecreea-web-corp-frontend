@@ -1,77 +1,92 @@
 @use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section-200vh;
+  @include utilities.section(200vh);
   @include utilities.background-image(url('/pages/inversores/bg-huellas.jpg'));
   color: white;
+  background-position-x: 63%;
+  background-position-y: 0;
+  @include mediaQueries.for-desktop-new {
+    background-position-x: 40%;
+  }
 
   &__OneBlock {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: 30vh 1fr;
+    grid-template: 0.5fr 0.1fr 1fr / 1fr;
+    @include mediaQueries.for-desktop-new {
+      grid-template: 0.3fr 1fr / 0.5fr 1fr;
+    }
   }
   &__SecondBlock {
     @include utilities.flex(row, center, center);
     min-height: 100vh;
-    font-size: 6vw;
+    font-size: clamp(2.8rem, 8vw, 10rem);
     font-weight: bold;
     text-align: center;
 
     & p {
-      width: 80%;
+      width: 80vw;
+
+      & span:nth-child(1)::after {
+        content: '\a';
+        white-space: pre;
+        @include mediaQueries.for-desktop-new {
+          content: '';
+          white-space: normal;
+        }
+      }
     }
   }
 }
 
 .OneBlock {
   &__title {
-    grid-area: 1/1/2/3;
-    padding-left: 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    @include utilities.flex(row, center, center);
+
+    @include mediaQueries.for-desktop-new {
+      @include utilities.flex(row, flex-start, center);
+      margin-left: 4rem;
+      grid-area: 1/1/2/3;
+    }
   }
 
   &__desc {
-    grid-area: 2/1/3/2;
-    padding-left: 5vw;
-    padding-bottom: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    font-size: 2vw;
-    width: 70%;
-    text-align: justify;
+    place-self: center;
+    font-size: clamp(1.2rem, 3vw, 3rem);
+    width: 80%;
+    text-align: center;
+    font-weight: 400;
+    @include mediaQueries.for-desktop-new {
+      grid-area: 2/1/3/2;
+    }
   }
 
   &__Cohete {
-    display: grid;
-    grid-template-columns: 20vw 1fr;
+    @include utilities.flex(row, center, center, 4rem);
+    @include mediaQueries.for-desktop-new {
+      grid-area: 2/2/3/3;
+    }
   }
 }
 
 .Cohete {
   &__porcentaje {
-    @include utilities.flex(column, center, center, 8vw);
-    font-size: 4vw;
+    @include utilities.flex(column, center, center, 7rem);
+    font-size: clamp(3rem, 1.5vw, 2rem);
     font-weight: bold;
+    width: 10rem;
   }
 
   &__desc {
-    @include utilities.flex(column, center, __, 6vw);
-    padding-left: 4vw;
-    width: 80%;
+    @include utilities.flex(column, center, _, 7rem);
+    width: 10rem;
 
     & h3 {
-      font-size: 2vw;
+      font-size: clamp(1rem, 1.5vw, 2rem);
       font-weight: bold;
-      padding-bottom: 1vw;
-    }
-
-    & p {
-      font-size: 1.8vw;
-      font-weight: 300;
+      padding-bottom: 0.5rem;
     }
   }
 }

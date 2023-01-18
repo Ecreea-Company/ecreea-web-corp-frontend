@@ -1,5 +1,6 @@
 export { default as useGetDataLocalStorage } from './useGetDataLocalStorage'
 export { default as useInitialValues } from './useInitialValues'
 export { default as useStateLoading } from './useStateLoading'
+export { default as useStateMode } from './useStateMode'
 export { default as useThemeMode } from './useThemeMode'
 export { default as useWindowSize } from './useWindowSize'

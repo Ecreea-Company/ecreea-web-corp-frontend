@@ -2,13 +2,13 @@
 @use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section(100vh);
+  @include utilities.section(80vh);
   display: grid;
   grid-template: repeat(4, 1fr) 0.5fr 1.5fr 1fr / auto;
   margin: 0 2rem;
 
   @include mediaQueries.for-desktop-new {
-    grid-template: repeat(3, 0.5fr) 2fr / 1.5fr 1fr 1.5fr;
+    grid-template: repeat(2, 0.5fr) repeat(2, 1fr) / 1.5fr 1fr 1.5fr;
     margin-left: 5rem;
     font-size: 1.5rem;
     font-weight: 300;
@@ -32,6 +32,7 @@
     grid-area: 3/1/4/2;
     place-self: center;
     text-align: center;
+    font-size: clamp(1.4rem, 2vw, 2rem);
     @include mediaQueries.for-desktop-new {
       grid-area: 2/1/3/3;
       text-align: left;
@@ -39,28 +40,11 @@
     }
   }
 
-  &__descr {
+  &__titleGraf {
     grid-area: 4/1/5/2;
     place-self: center;
     text-align: center;
-
-    @include mediaQueries.for-desktop-new {
-      grid-area: 3/2/4/4;
-      text-align: left;
-      place-self: start;
-      align-self: center;
-    }
-
-    & h4 {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-  }
-
-  &__titleGraf {
-    grid-area: 5/1/6/2;
-    place-self: center;
-    text-align: center;
+    font-size: clamp(1.4rem, 1.5vw, 2rem);
     @include mediaQueries.for-desktop-new {
       grid-area: 3/1/5/2;
       margin: 0 5rem;
@@ -68,12 +52,15 @@
   }
 
   &__graf {
-    grid-area: 6/1/7/2;
+    grid-area: 5/1/7/2;
+    place-self: center;
     @include mediaQueries.for-desktop-new {
-      grid-area: 4/2/5/4;
-      width: 45rem;
-      height: 20rem;
-      place-self: start;
+      grid-area: 3/2/5/4;
+      width: 60rem;
     }
   }
+}
+
+.ChartLine {
+  width: 100%;
 }

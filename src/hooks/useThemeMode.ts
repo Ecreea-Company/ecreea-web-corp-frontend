@@ -1,4 +1,6 @@
 import { MouseEvent, useEffect, useState } from 'react'
+import { useUpdateEffect } from 'usehooks-ts'
+import { DarkModeSharing } from '@/services'
 
 interface ThemeModeProps {
   activeTheme: string
@@ -13,18 +15,14 @@ const useThemeMode = (): ThemeModeProps => {
   const handleClick = (e: MouseEvent<HTMLAnchorElement>): void => {
     e.preventDefault()
     setActiveTheme(inactiveTheme)
+    DarkModeSharing.setSubject(inactiveTheme)
   }
   useEffect(() => {
     const savedTheme = window.localStorage.getItem('theme')
-    savedTheme && setActiveTheme(savedTheme)
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
-      .matches
-      ? 'dark'
-      : 'light'
-    setActiveTheme(systemTheme)
+    savedTheme ? setActiveTheme(savedTheme) : setActiveTheme('light')
   }, [])
 
-  useEffect(() => {
+  useUpdateEffect(() => {
     document.body.dataset.theme = activeTheme
     window.localStorage.setItem('theme', activeTheme)
   }, [activeTheme])
