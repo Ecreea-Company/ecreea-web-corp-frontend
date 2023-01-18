@@ -1,129 +1,8 @@
 @use 'styles/mixins/utilities';
 @use 'styles/mixins/mediaQueries';
 
+
 .Section {
-  @include utilities.section(160vh);
-  @include mediaQueries.for-desktop-new {
-    @include utilities.background-image(
-    url('/pages/contacto/bg-contacto.jpg')
-    );
-    gap: clamp(1rem,20vw,20rem);
-  }
-  
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-
-  .Fondo {
-    @media (max-width: 960px) {
-      @include utilities.background-image(
-      url('/pages/contacto/bg-contacto.png')
-      );
-      background-color: white;
-    }
-
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-
-    .Container1 {
-      
-      margin: clamp(1rem,5vw,5rem);
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-
-      @include mediaQueries.for-desktop-new {
-        text-align: left;
-      }
-
-      &__title {
-        font-size: clamp(3.8rem,8vw,9rem);
-        font-weight: 700;
-        color: transparent;
-        background: linear-gradient(60deg, #ffde00, #e71d73, #ffde00);
-        background-size: 200%;
-        background-clip: text;
-        animation: text_animate 8s linear infinite;
-      }
-  
-      @keyframes text_animate {
-        0% {
-          background-position: 0%;
-        }
-        100% {
-          background-position: 200%;
-        }
-      }
-    }
-  }
-
-  .Container2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: clamp(2rem,5vw,5rem);
-    gap: 6rem;
-
-    @include mediaQueries.for-desktop-new {
-      color: black;
-    }
-
-    
-    .Line {
-      height: .05rem;
-      width: 100%;
-      background-color: #CBCBCB;
-      @include mediaQueries.for-desktop-new {
-        height: 0%;
-      }
-    }
-  }
-  
-  @include mediaQueries.for-desktop-new {
-    @include utilities.section(150vh);
-  }
-}
-
-.Section2 {
-  @include utilities.section(100vh);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: clamp(2rem,5vw,5rem);
-  gap: 6rem;
-  padding-top: clamp(0rem,4vw,4rem);
-  padding-bottom: 5rem;
-
-  .Texto {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(4rem,8vw,8rem);
-  }
-}
-
-.Section3 {
-  @include utilities.section(80vh);
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin: clamp(2rem,5vw,5rem);
-
-  .Line {
-    height: .05rem;
-    width: 100%;
-    background-color: #CBCBCB;
-  }
-
-  .Container {
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
-  }
-}
-
-.Section4 {
   background-color: var(--background-container);
   display: flex;
   justify-content: center;
@@ -169,6 +48,5 @@
         
       }
     }
-
   }
 }

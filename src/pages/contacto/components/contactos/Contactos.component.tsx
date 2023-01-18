@@ -1,4 +1,5 @@
 import styles from './Contactos.module.scss'
+import { ContactosData } from '..'
 import { ItemContactoProps } from '@/models'
 
 export interface ContactoProps{
@@ -6,8 +7,8 @@ export interface ContactoProps{
 }
 
 const Contactos = ({ itemList }: ContactoProps): JSX.Element => {
-  const firstData = itemList.slice(0, 1)
-  const filteredData = itemList.slice(-2)
+  const firstData = itemList[0]
+  const secondData = itemList.slice(1)
 
   return (
     <>
@@ -22,42 +23,20 @@ const Contactos = ({ itemList }: ContactoProps): JSX.Element => {
             </h1>
           </div>
         </div>
-        {firstData.map((item, index) => (
-          <div className={styles.Container2} key={index}>
-            <h1 className={styles.Container2__title}>{item.titleSection}</h1>
-            {item.dataSection.map((subitem, subindex) => (
-              <div className={styles.SubContainer} key={subindex}>
-                <h1 className={styles.SubContainer__title}>{subitem.title}</h1>
-                <div className={styles.Textos}>
-                {subitem.numberTelf ? <p className={styles.Textos__text}>{subitem.numberTelf}</p> : ''}
-                <p className={styles.Textos__text}>{subitem.numberCel}</p>
-                <p className={styles.Textos__text}>{subitem.correo}</p>
-              </div>
-            </div>
-            ))}
-            <div className={styles.Line}></div>
-          </div>
-        ))}
+        <div className={styles.Container2}>
+          <h1 className={styles.Container2__title}>{firstData.titleSection}</h1>
+          <ContactosData itemList={firstData.dataSection}/>
+        </div>
       </div>
 
-    {filteredData.map((item, index) => (
+      {secondData.map((item, index) => (
       <div className={styles.Section2} key={index}>
         <div className={styles.Container}>
           <h1 className={styles.Container__title}>{item.titleSection}</h1>
-          {item.dataSection.map((subitem, subindex) => (
-            <div className={styles.SubContainer} key={subindex}>
-              <h1 className={styles.SubContainer__title}>{subitem.title}</h1>
-              <div className={styles.Textos}>
-              {subitem.numberTelf ? <p className={styles.Textos__text}>{subitem.numberTelf}</p> : ''}
-              <p className={styles.Textos__text}>{subitem.numberCel}</p>
-              <p className={styles.Textos__text}>{subitem.correo}</p>
-              </div>
-            </div>
-          ))}
-          <div className={styles.Line}></div>
+          <ContactosData itemList={item.dataSection}/>
         </div>
       </div>
-    ))}
+      ))}
     </>
   )
 }

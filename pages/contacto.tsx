@@ -11,7 +11,7 @@ const Contacto: NextPage = () => {
 
       <Contactos itemList={DataContacto}></Contactos>
 
-      <div className={styles.Section4}>
+      <div className={styles.Section}>
         <div className={styles.Titulo}>
           <h1 className={styles.Titulo__title}>Información</h1>
           <h1 className={styles.Titulo__title}>corporativa</h1>
