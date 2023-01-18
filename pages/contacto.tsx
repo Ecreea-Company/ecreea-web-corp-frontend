@@ -1,6 +1,6 @@
 import { Public } from '@/layouts'
 import styles from '@styles/contacto/Contacto.module.scss'
-import { Contactos, Titulos } from '@/pages/contacto/components'
+import { Contactos } from '@/pages/contacto/components'
 import type { NextPage } from 'next'
 import { DataContacto } from '@/data'
 
