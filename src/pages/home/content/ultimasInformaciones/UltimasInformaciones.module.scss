@@ -13,10 +13,11 @@
     width: 80%;
     display: grid;
     grid-auto-rows: 25rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+    grid-template-columns: repeat(auto-fill, 100%);
     overflow: hidden;
 
     @include mediaQueries.for-desktop-new {
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
   }
