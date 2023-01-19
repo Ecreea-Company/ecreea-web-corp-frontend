@@ -58,7 +58,9 @@ const Footer = (): JSX.Element => {
                 : styles.Block1__list
             }
           >
-            <li>Centro de Atención</li>
+            <li><LinkEcreea href='/contacto'>
+              Centro de Atención
+            </LinkEcreea></li>
             <li className={styles.Block1__redes}>
               <a
                 href="https://www.facebook.com/ecreaacompany"
