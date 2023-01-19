@@ -1,2 +1,2 @@
-export { default as Contactos } from './contactos/Contactos.component'
-export { default as ContactosData } from './contactos-data/ContactosData.component'
+export { default as ContactosData } from './data-contact/ContactosData.component'
+export { default as ListContact } from './list-contact/ListContact.component'
