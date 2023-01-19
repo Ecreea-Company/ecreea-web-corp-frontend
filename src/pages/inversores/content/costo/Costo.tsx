@@ -72,7 +72,6 @@ function Costo ({ mode }: CostoProps): JSX.Element {
     }
 
     setOptions(options)
-    console.log(mode)
   }, [mode])
 
   return (

@@ -82,7 +82,6 @@ function CrecimientoSostenible ({
     }
 
     setOptions(options)
-    console.log(mode)
   }, [mode])
 
   return (

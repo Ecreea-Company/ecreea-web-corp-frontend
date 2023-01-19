@@ -72,7 +72,6 @@ function Proyeccion ({ mode }: ProyeccionProps): JSX.Element {
     }
 
     setOptions(options)
-    console.log(mode)
   }, [mode])
   return (
     <div className={styles.Section}>
