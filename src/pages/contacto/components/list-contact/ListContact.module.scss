@@ -1,0 +1,19 @@
+.Section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10rem;
+
+  .Container {
+    display: flex;
+    flex-direction: column;
+    margin: clamp(2rem,5vw,5rem);
+    gap: 6rem;
+
+    &__title {
+      text-align: left;
+      font-size: clamp(2.7rem,5vw,5rem);
+      font-weight: bold;
+    }
+  }
+}

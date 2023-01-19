@@ -2,7 +2,6 @@
 @use 'styles/mixins/mediaQueries';
 
 .Section {
-  @include utilities.section(160vh);
   @include mediaQueries.for-desktop-new {
     @include utilities.background-image(
     url('/pages/contacto/bg-contacto.jpg')
@@ -17,9 +16,8 @@
   .Fondo {
     @media (max-width: 960px) {
       @include utilities.background-image(
-      url('/pages/contacto/bg-contacto.png')
+      url('/pages/contacto/bg-contacto.jpg')
       );
-      background-color: white;
     }
 
       display: flex;
@@ -61,8 +59,8 @@
 
   .Container2 {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     margin: clamp(2rem,5vw,5rem);
     gap: 6rem;
 
@@ -70,24 +68,11 @@
       color: black;
     }
 
-    
-    .Line {
-      height: .05rem;
-      width: 100%;
-      background-color: #CBCBCB;
-      @include mediaQueries.for-desktop-new {
-        height: 0%;
-      }
+    &__title {
+      text-align: left;
+      font-size: clamp(2.7rem,5vw,5rem);
+      font-weight: bold;
     }
-
-    .Titulo {
-      &__title {
-        text-align: left;
-        font-size: clamp(2.7rem,5vw,5rem);
-        font-weight: bold;
-      }
-    }
-
   }
   
   @include mediaQueries.for-desktop-new {
@@ -96,59 +81,6 @@
 }
 
 .Section2 {
-  @include utilities.section(100vh);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: clamp(2rem,5vw,5rem);
-  gap: 6rem;
-  padding-top: clamp(0rem,4vw,4rem);
-  padding-bottom: 5rem;
-
-  .Titulo {
-    &__title {
-      text-align: left;
-      font-size: clamp(2.7rem,5vw,5rem);
-      font-weight: bold;
-    }
-  }
-
-  .Texto {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(4rem,8vw,8rem);
-  }
-}
-
-.Section3 {
-  @include utilities.section(80vh);
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin: clamp(2rem,5vw,5rem);
-
-  .Line {
-    height: .05rem;
-    width: 100%;
-    background-color: #CBCBCB;
-  }
-
-  .Container {
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
-
-    .Titulo {
-      &__title {
-        text-align: left;
-        font-size: clamp(2.7rem,5vw,5rem);
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-.Section4 {
   background-color: var(--background-container);
   display: flex;
   justify-content: center;
@@ -194,6 +126,5 @@
         
       }
     }
-
   }
 }

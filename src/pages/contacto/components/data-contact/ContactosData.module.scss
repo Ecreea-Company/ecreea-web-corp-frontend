@@ -1,6 +1,6 @@
 @use 'styles/mixins/mediaQueries';
 
-.Section {
+.SubContainer {
   display: grid;
   grid-template-rows: 0.5fr 1fr;
   text-align: left;
@@ -26,4 +26,11 @@
       font-size: clamp(1.38rem,2.5vw,2.5rem);
     }
   }
+}
+
+.Line {
+height: .05rem;
+width: 100%;
+background-color: #CBCBCB;
+
 }
