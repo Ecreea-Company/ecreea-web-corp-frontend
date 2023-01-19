@@ -1,17 +1,38 @@
 import { Public } from '@/layouts'
 import styles from '@styles/contacto/Contacto.module.scss'
-import { Contactos } from '@/pages/contacto/components'
+import { ContactosData, ListContact } from '@/pages/contacto/components'
 import type { NextPage } from 'next'
 import { DataContacto } from '@/data'
 
 const Contacto: NextPage = () => {
+  const firstData = DataContacto[0]
+  const secondData = DataContacto.slice(1)
+
   return (
     <Public titlePage="Contacto">
       <>
-
-      <Contactos itemList={DataContacto}></Contactos>
-
       <div className={styles.Section}>
+        <div className={styles.Fondo}>
+          <div className={styles.Container1}>
+            <h1 className={styles.Container1__title}>
+            Siempre
+            </h1>
+            <h1 className={styles.Container1__title}>
+            conectados
+            </h1>
+          </div>
+        </div>
+        <div className={styles.Container2}>
+          <h1 className={styles.Container2__title}>{firstData.titleSection}</h1>
+          <ContactosData itemList={firstData.dataSection}/>
+        </div>
+      </div>
+
+      {secondData.map((item, index) => (
+        <ListContact key={index} title={item.titleSection} data={item.dataSection} />
+      ))}
+
+      <div className={styles.Section2}>
         <div className={styles.Titulo}>
           <h1 className={styles.Titulo__title}>Información</h1>
           <h1 className={styles.Titulo__title}>corporativa</h1>
