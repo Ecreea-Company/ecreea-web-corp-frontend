@@ -1,0 +1,42 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Hero {
+  @include utilities.section(100vh);
+  position: relative;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  @include utilities.flex(row, center, center);
+
+  &__parrafos {
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    min-height: 88%;
+    @include utilities.flex(column, space-between);
+  }
+
+  &__parrafo {
+    text-align: right;
+    font-size: clamp(2rem, 5vw, 4rem);
+    & span::after {
+      @include utilities.break-word-span;
+    }
+
+    &__left {
+      & p {
+        font-size: clamp(2rem, 5vw, 4rem);
+        width: 90%;
+        margin-bottom: 1rem;
+        @include mediaQueries.for-desktop-new {
+          width: 60%;
+        }
+      }
+
+      & span {
+        font-size: clamp(1rem, 3vw, 2rem);
+        font-family: Helvetica, sans-serif;
+      }
+    }
+  }
+}
