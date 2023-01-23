@@ -1,0 +1,46 @@
+
+.Section {
+  display: flex;
+  flex-direction: column;
+  margin: clamp(1rem,2vw,2rem) clamp(2rem,5vw,5rem);
+  gap: clamp(1rem,2.3vw,2.3rem);
+  
+  .Title {
+    display: grid;
+    grid-template-columns: 1fr .1fr;
+    align-items: center;
+    text-align: left;
+    font-size: clamp(1.56rem,3.13vw,3.13rem);
+    font-weight: bold;
+
+    &__icon {
+      font-size: clamp(1.4rem,2.5vw,2.5rem);
+    }
+  }
+
+  .Paragraph{
+    text-align: justify;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    font-size: clamp(1.13rem,2.5vw,2.5rem);
+    white-space: pre-wrap;
+
+    & h1,
+    & h2,
+    & h3,
+    & h5,
+    & h6,
+    & ul,
+    & li,
+    & ol,
+    & strong {
+    font-weight: bold;
+    }
+}
+
+  .Line {
+    height: .05rem;
+    width: 100%;
+    background-color: var(--text-font-color);
+  }
+}
