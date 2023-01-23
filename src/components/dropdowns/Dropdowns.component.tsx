@@ -30,7 +30,7 @@ const Dropdown = ({ title, content }: DropdownProps): JSX.Element => {
           </button>
           {isOpen
             ? (
-          <ReactMarkdown className={styles.Paragragh} remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown className={styles.Paragraph} remarkPlugins={[remarkGfm]}>
             {content}
           </ReactMarkdown>
               )
