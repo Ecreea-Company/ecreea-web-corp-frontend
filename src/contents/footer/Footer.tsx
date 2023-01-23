@@ -104,7 +104,7 @@ const Footer = (): JSX.Element => {
               </LinkEcreea>
             </li>
             <li>
-              <LinkEcreea href="/cookies" disabled={true}>
+              <LinkEcreea href="/cookies" disabled={false}>
                 Cookies
               </LinkEcreea>
             </li>
