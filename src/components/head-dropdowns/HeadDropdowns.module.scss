@@ -1,0 +1,30 @@
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  margin: 10rem 2rem 6rem;
+
+  @include mediaQueries.for-desktop-new {
+    margin: clamp(10rem,15vw,15rem) clamp(2rem,14vw,14rem) clamp(6rem,12vw,12rem);
+  }
+
+  &__title {
+    font-size: clamp(1.88rem,6.25vw,6.25rem);
+    font-weight: bold;
+
+    @include mediaQueries.for-desktop-new {
+      padding-bottom: clamp(0rem,3vw,3rem);
+    }
+  }
+
+  &__paragragh{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    font-size: clamp(1.13rem,2.5vw,2.5rem);
+    white-space: pre-wrap;
+  }
+}

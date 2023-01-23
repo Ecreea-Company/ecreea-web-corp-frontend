@@ -8,3 +8,4 @@ export { default as MenuNavbarDesktop } from './menu-navbar-desktop/MenuNavbarDe
 export { default as MenuNavbarMobile } from './menu-navbar-mobile/MenuNavbarMobile.component'
 export { default as TitleDegradado } from './title-degradado/TitleDegradado.component'
 export { default as Dropdowns } from './dropdowns/Dropdowns.component'
+export { default as HeadDropdowns } from './head-dropdowns/HeadDropdowns.component'
