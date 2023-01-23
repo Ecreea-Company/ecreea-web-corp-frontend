@@ -1,0 +1,76 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+@font-face {
+  font-family: 'Make Magic';
+  src: url('/fonts/make-magic/make-magic.otf');
+}
+
+.Hero {
+  @include utilities.section(100vh);
+  position: relative;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  @include utilities.flex(row, center, center);
+
+  &__parrafos {
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    min-height: 90%;
+    @include utilities.flex(column, space-between);
+  }
+
+  &__parrafo {
+    margin-top: 2rem;
+    text-align: right;
+    font-size: clamp(2rem, 5vw, 4rem);
+    & span::after {
+      @include utilities.break-word-span;
+    }
+
+    &__left {
+      & p {
+        font-size: clamp(2rem, 5vw, 4rem);
+        width: 80%;
+        margin-bottom: 1rem;
+        @include mediaQueries.for-desktop-new {
+          width: 60%;
+        }
+      }
+
+      & span {
+        font-size: clamp(1rem, 3vw, 2rem);
+        font-family: Helvetica, sans-serif;
+      }
+    }
+  }
+}
+
+.Cita {
+  @include utilities.flex(column, _, center);
+  background: linear-gradient(
+    0deg,
+    rgba(217, 215, 216, 1) 0%,
+    rgba(245, 242, 246, 1) 100%
+  );
+  position: relative;
+  color: black;
+
+  & p {
+    width: 85%;
+    margin-top: clamp(10rem, 31vw, 30rem);
+    margin-bottom: clamp(2.5rem, 5vw, 6rem);
+    text-align: center;
+    font-size: clamp(2rem, 3.5vw, 4rem);
+    font-weight: 300;
+    z-index: 1;
+  }
+
+  & span {
+    font-family: 'Make Magic', sans-serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    margin-bottom: clamp(10rem, 31vw, 30rem);
+    z-index: 1;
+  }
+}

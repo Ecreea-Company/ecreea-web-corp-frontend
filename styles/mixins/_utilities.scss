@@ -28,7 +28,7 @@
   overflow: hidden;
 }
 
-@mixin flex($direction, $justify, $align, $gap: 0) {
+@mixin flex($direction, $justify, $align: stretch, $gap: 0) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
@@ -88,5 +88,14 @@
   @include mediaQueries.for-desktop-xxl {
     width: 38vw;
     height: 60vh;
+  }
+}
+
+@mixin break-word-span {
+  content: '\a';
+  white-space: pre;
+  @include mediaQueries.for-desktop-new {
+    content: '';
+    white-space: normal;
   }
 }
