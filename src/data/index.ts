@@ -4,4 +4,3 @@ export * from './terminos-uso/TerminosUso.data'
 export * from './politica-privacidad/PoliticaPrivacidad.data'
 export * from './etica-y-cumplimiento/EticaCumplimiento.data'
 export * from './legal/Legal.data'
-
