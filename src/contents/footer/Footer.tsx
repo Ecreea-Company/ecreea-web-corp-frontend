@@ -94,12 +94,12 @@ const Footer = (): JSX.Element => {
         <div className={styles.Block2__bottom}>
           <ul className={styles.Block2__list}>
             <li>
-              <LinkEcreea href="/politicaPrivacidad" disabled={true}>
+              <LinkEcreea href="/politica-de-privacidad" disabled={false}>
                 Política de privacidad
               </LinkEcreea>
             </li>
             <li>
-              <LinkEcreea href="/terminos-de-uso" disabled={true}>
+              <LinkEcreea href="/terminos-de-uso" disabled={false}>
                 Términos de uso
               </LinkEcreea>
             </li>
