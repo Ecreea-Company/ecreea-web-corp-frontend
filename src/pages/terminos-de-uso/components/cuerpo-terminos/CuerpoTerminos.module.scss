@@ -10,7 +10,7 @@
     grid-template-columns: 1fr .1fr;
     align-items: center;
     text-align: left;
-    font-size: clamp(1.56rem,3.13vw,3.13rem);
+    font-size: clamp(1.56rem,2.63vw,2.63rem);
     font-weight: bold;
   }
 
@@ -18,7 +18,7 @@
     text-align: justify;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    font-size: clamp(1.13rem,2.5vw,2.5rem);
+    font-size: clamp(1.13rem,2vw,2rem);
     white-space: pre-wrap;
 
     & h1,

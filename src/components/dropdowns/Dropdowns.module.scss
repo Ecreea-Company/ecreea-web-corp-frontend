@@ -10,7 +10,7 @@
     grid-template-columns: 1fr .1fr;
     align-items: center;
     text-align: left;
-    font-size: clamp(1.56rem,3.13vw,3.13rem);
+    font-size: clamp(1.56rem,2.63vw,2.63rem);
     font-weight: bold;
 
     &__icon {
@@ -22,7 +22,7 @@
     text-align: justify;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    font-size: clamp(1.13rem,2.5vw,2.5rem);
+    font-size: clamp(1.13rem,2vw,2rem);
     white-space: pre-wrap;
 
     & h1,
@@ -42,5 +42,9 @@
     height: .05rem;
     width: 100%;
     background-color: var(--text-font-color);
+  }
+
+  .PaddTopContent {
+    padding-top: clamp(3rem,6vw,6rem);
   }
 }

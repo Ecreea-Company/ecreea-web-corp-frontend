@@ -1,0 +1,35 @@
+.tableContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-top: clamp(3rem,6vw,6rem);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tableLeftColumn, .tableRightColumn {
+  display: grid;
+  grid-template-rows: clamp(4rem,5vw,5rem) 1fr 1fr;
+}
+
+.tableLeftColumnTitle, .tableRightColumnTitle {
+  display: flex;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.23rem,2vw,2rem);
+  background-color: #E8E8E8;
+}
+
+.tableLeftColumnContent, .tableRightColumnContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: clamp(1rem,3vw,3rem);
+  font-size: clamp(1.23rem,2vw,2rem);
+}

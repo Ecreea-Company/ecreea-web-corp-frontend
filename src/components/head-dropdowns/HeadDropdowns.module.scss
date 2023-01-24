@@ -13,11 +13,11 @@
   }
 
   .Title {
-    font-size: clamp(1.88rem,6.25vw,6.25rem);
+    font-size: clamp(1.88rem,5.75vw,5.75rem);
     font-weight: bold;
 
     &__subtitle {
-      font-size: clamp(1.25rem,3.12vw,3.12rem);
+      font-size: clamp(1.25rem,2.62vw,2.62rem);
       font-weight: 400;
     }
 
@@ -30,7 +30,7 @@
   &__paragraph{
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    font-size: clamp(1.13rem,2.5vw,2.5rem);
+    font-size: clamp(1.13rem,2vw,2rem);
     white-space: pre-wrap;
   }
 }
