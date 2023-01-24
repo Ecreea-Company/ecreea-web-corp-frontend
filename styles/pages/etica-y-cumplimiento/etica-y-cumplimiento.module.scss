@@ -1,0 +1,105 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+@font-face {
+  font-family: 'Make Magic';
+  src: url('/fonts/make-magic/make-magic.otf');
+}
+
+.Info {
+  @include utilities.flex(column, _, center);
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+
+  & h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  & p {
+    width: 80%;
+    text-align: justify;
+    font-size: clamp(1rem, 3vw, 2rem);
+  }
+}
+
+.Cita {
+  @include utilities.flex(column, _, center, 2rem);
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-color: black;
+  color: white;
+  & p {
+    width: 85%;
+    font-size: clamp(1.8rem, 5.5vw, 4.5rem);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & span {
+    font-family: 'Make Magic', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+  }
+}
+
+// Otro componente
+.Card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  &__img {
+    position: relative;
+
+    &_left {
+      grid-area: 1/1/2/2;
+    }
+
+    &_right {
+      grid-area: 1/2/2/3;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: 4rem 1rem;
+
+    @include mediaQueries.for-desktop-new {
+      margin: 8rem 8rem 8rem 4rem;
+    }
+
+    & h1 {
+      font-size: clamp(1.5rem, 4.5vw, 3.5rem);
+      font-weight: bold;
+    }
+
+    & p {
+      text-align: justify;
+      font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    & button {
+      width: max-content;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      & i {
+        width: 1rem;
+      }
+    }
+
+    &_left {
+      grid-area: 1/2/2/3;
+    }
+
+    &_right {
+      grid-area: 1/1/2/2;
+    }
+  }
+}
