@@ -11,11 +11,9 @@ const Legal: NextPage = () => {
     <Public titlePage="Legal">
       <HeadDropdowns title='Legal Ecreea' content={TermYCond.data}></HeadDropdowns>
 
-      <div>
-        {ContentDrop.map((item, index) => (
-          <Dropdowns key={index} title={item.title} content={item.data} />
-        ))}
-      </div>
+      {ContentDrop.map((item, index) => (
+        <Dropdowns key={index} title={item.title} content={item.data} />
+      ))}
     </Public>
   )
 }

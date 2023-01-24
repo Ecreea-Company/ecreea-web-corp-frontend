@@ -5,17 +5,25 @@ import styles from './HeadDropdowns.module.scss'
 
 interface HeadDropdownsProps {
   title: string
-  content: string
+  subtitle?: string
+  content?: string
 }
 
-const HeadDropdowns = ({ title, content }: HeadDropdownsProps): JSX.Element => {
+const HeadDropdowns = ({ title, content, subtitle }: HeadDropdownsProps): JSX.Element => {
   return (
     <div className={styles.Section}>
-      <h1 className={styles.Section__title}>{title}</h1>
-      <div className={styles.Section__paragragh}>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {content}
-        </ReactMarkdown>
+      <h1 className={styles.Title}>{title}</h1>
+      {subtitle ? <h2 className={styles.Title__subtitle}>{subtitle}</h2> : ''}
+      <div className={styles.Section__paragraph}>
+      {content
+        ? (
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {content}
+          </ReactMarkdown>
+          )
+        : (
+            ''
+          )}
       </div>
     </div>
   )
