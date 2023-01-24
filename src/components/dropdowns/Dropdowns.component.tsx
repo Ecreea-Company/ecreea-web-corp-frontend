@@ -2,14 +2,18 @@ import { useState } from 'react'
 import styles from './Dropdowns.module.scss'
 import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import { TablaPoliPriv } from '@/pages/politica-de-privacidad/components'
 import remarkGfm from 'remark-gfm'
+import { TablaPoliPrivProps } from '@/models/TablaPoliPriv.model'
 
 export interface DropdownProps{
   title?: string
   content: string
+  content2?: string
+  dataTable?: TablaPoliPrivProps[]
 }
 
-const Dropdown = ({ title, content }: DropdownProps): JSX.Element => {
+const Dropdown = ({ title, content, content2, dataTable }: DropdownProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
 
   // función para abrir/cerrar el dropdown al presionar el botón
@@ -30,9 +34,17 @@ const Dropdown = ({ title, content }: DropdownProps): JSX.Element => {
           </button>
           {isOpen
             ? (
-          <ReactMarkdown className={styles.Paragraph} remarkPlugins={[remarkGfm]}>
-            {content}
-          </ReactMarkdown>
+              <div className={styles.Paragraph}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {content}
+                </ReactMarkdown>
+                {dataTable && <TablaPoliPriv dataTabla={dataTable}/> }
+                {content2
+                  ? <ReactMarkdown className={styles.PaddTopContent} remarkPlugins={[remarkGfm]}>
+                  {content2}
+                </ReactMarkdown>
+                  : ''}
+              </div>
               )
             : !isOpen}
         <div className={styles.Line}/>
