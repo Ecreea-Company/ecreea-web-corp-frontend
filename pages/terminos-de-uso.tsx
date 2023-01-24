@@ -9,7 +9,7 @@ const Legal: NextPage = () => {
   const Content = DataTerminosUso
 
   return (
-    <Public titlePage="Legal">
+    <Public titlePage="Terminos de uso">
       <HeadDropdowns title='Términos de Uso' subtitle='Información Legal y Avisos'></HeadDropdowns>
       <div className={styles.Section}>
         <div className={styles.Line}/>
