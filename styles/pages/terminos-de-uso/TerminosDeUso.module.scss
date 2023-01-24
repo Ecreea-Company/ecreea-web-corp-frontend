@@ -1,0 +1,10 @@
+.Section {
+  margin: clamp(1rem, 2vw, 2rem) clamp(2rem, 5vw, 5rem);
+  padding-bottom: clamp(2rem,5vw,5rem);
+
+  .Line {
+    height: .05rem;
+    width: 100%;
+    background-color: #CBCBCB;
+  }
+}
