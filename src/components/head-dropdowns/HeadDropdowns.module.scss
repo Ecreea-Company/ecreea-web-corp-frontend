@@ -12,16 +12,22 @@
     margin: clamp(10rem,15vw,15rem) clamp(2rem,14vw,14rem) clamp(6rem,12vw,12rem);
   }
 
-  &__title {
+  .Title {
     font-size: clamp(1.88rem,6.25vw,6.25rem);
     font-weight: bold;
+
+    &__subtitle {
+      font-size: clamp(1.25rem,3.12vw,3.12rem);
+      font-weight: 400;
+    }
 
     @include mediaQueries.for-desktop-new {
       padding-bottom: clamp(0rem,3vw,3rem);
     }
   }
 
-  &__paragragh{
+
+  &__paragraph{
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
     font-size: clamp(1.13rem,2.5vw,2.5rem);
