@@ -46,3 +46,34 @@
     }
   }
 }
+
+.Table {
+  border: 1px solid #020202;
+  width: 80%;
+
+  & ul:nth-child(2n) {
+    background-color: #a09e9e;
+  }
+
+  &__titles {
+    display: flex;
+    background-color: #747474;
+    color: aliceblue;
+
+    & > li {
+      flex-grow: 1;
+      text-align: center;
+      padding: 1rem 0;
+    }
+  }
+
+  &__rows {
+    display: flex;
+
+    & > li {
+      flex-grow: 1;
+      text-align: center;
+      padding: 1rem 0;
+    }
+  }
+}

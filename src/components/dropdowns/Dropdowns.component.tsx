@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm'
 import { TablaPoliPrivProps } from '@/models/TablaPoliPriv.model'
 
 export interface DropdownProps{
-  title?: string
+  title?: string // title?: string
   content: string
   content2?: string
   dataTable?: TablaPoliPrivProps[]

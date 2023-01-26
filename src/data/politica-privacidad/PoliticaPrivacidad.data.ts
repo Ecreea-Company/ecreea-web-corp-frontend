@@ -1,5 +1,26 @@
 import { ItemDropdownsProps } from '@/models'
 
+export const DataTabla =
+  {
+    titles: ['Titulo1', 'Titulo2'],
+    content: [
+      {
+        colummn1: 'F1',
+        colummn2: 'F1'
+      },
+      {
+        colummn1: 'F2',
+        colummn2: 'F2'
+      },
+      {
+        colummn1: 'F3',
+        colummn2: 'F3'
+      }
+
+    ]
+
+  }
+
 export const DataPrivacidad: ItemDropdownsProps[] = [
   {
     data: 'Ecreaa está comprometida con tu privacidad. Lea nuestra Política de privacidad del cliente para obtener una explicación clara de cómo recopilamos, usamos, divulgamos, transferimos y almacenamos su información.'
@@ -23,6 +44,7 @@ export const DataPrivacidad: ItemDropdownsProps[] = [
         titleRight: '+ Info',
         ContentRight1: 'Sólo tratamos los datos personales que sean estrictamente necesarios para gestionar o resolver tu solicitud o petición.',
         ContentRight2: 'Si accedes a nuestra Plataforma, te informamos de que trataremos tus datos de navegación para fines analíticos y estadísticos, es decir, para entender la forma en la que los usuarios interactúan con nuestra Plataforma y así ser capaces de introducir mejoras en la misma, así como para atender las sugerencias de mejora que como usuario puedas remitirnos.'
+
       }
     ]
   },

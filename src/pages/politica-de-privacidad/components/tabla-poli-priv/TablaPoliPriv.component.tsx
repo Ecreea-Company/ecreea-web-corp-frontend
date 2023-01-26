@@ -7,6 +7,7 @@ interface TablaPrivProps{
   dataTabla: TablaPoliPrivProps[]
 }
 function TablaPoliPriv ({ dataTabla }: TablaPrivProps): JSX.Element {
+  console.log(dataTabla)
   return (
     <div className={styles.tableContainer}>
       {dataTabla.map((row, index) => (
