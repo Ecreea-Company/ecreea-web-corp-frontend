@@ -5,31 +5,39 @@
 }
 
 .tableRow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
 }
 
-.tableLeftColumn, .tableRightColumn {
-  display: grid;
-  grid-template-rows: clamp(4rem,5vw,5rem) 1fr 1fr;
-}
-
-.tableLeftColumnTitle, .tableRightColumnTitle {
+.tableTitle {
   display: flex;
   font-weight: bold;
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1.23rem,2vw,2rem);
   background-color: #E8E8E8;
+  height: clamp(3rem,4vw,4rem);
 }
 
-.tableLeftColumnContent, .tableRightColumnContent {
+.tableColumnContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.table {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 50%;
   gap: 2rem;
-  margin: clamp(1rem,3vw,3rem);
-  font-size: clamp(1.23rem,2vw,2rem);
+  align-items: center;
+  font-size: clamp(1rem,2vw,2rem);
+  padding: clamp(1rem,3vw,3rem);
+}
+
+.tableColumnContent2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #F9F9F9;
 }

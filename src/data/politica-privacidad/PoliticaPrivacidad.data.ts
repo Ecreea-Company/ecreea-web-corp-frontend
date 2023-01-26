@@ -20,7 +20,7 @@ export const DataPrivacidad: ItemDropdownsProps[] = [
         titleLeft: 'Finalidad',
         ContentLeft1: 'Para atender las solicitudes o peticiones que realices a través de los canales de Contacto Profesional y Atención al Cliente.',
         ContentLeft2: 'Análisis de usabilidad y de calidad para la mejora de nuestros servicios.',
-        titleRight: '+⠀Info',
+        titleRight: '+ Info',
         ContentRight1: 'Sólo tratamos los datos personales que sean estrictamente necesarios para gestionar o resolver tu solicitud o petición.',
         ContentRight2: 'Si accedes a nuestra Plataforma, te informamos de que trataremos tus datos de navegación para fines analíticos y estadísticos, es decir, para entender la forma en la que los usuarios interactúan con nuestra Plataforma y así ser capaces de introducir mejoras en la misma, así como para atender las sugerencias de mejora que como usuario puedas remitirnos.'
       }
