@@ -108,6 +108,11 @@ const Footer = (): JSX.Element => {
                 Cookies
               </LinkEcreea>
             </li>
+            <li>
+              <LinkEcreea href="/legal" disabled={false}>
+                Legal
+              </LinkEcreea>
+            </li>
           </ul>
           <div className={styles.Block2__bandera}>
             <p>Somos libres, seámoslo siempre </p>

@@ -11,20 +11,18 @@ function TablaPoliPriv ({ dataTabla }: TablaPrivProps): JSX.Element {
     <div className={styles.tableContainer}>
       {dataTabla.map((row, index) => (
       <div className={styles.tableRow} key={index}>
-        <div className={styles.tableLeftColumn}>
-          <div className={styles.tableLeftColumnTitle}><ReactMarkdown remarkPlugins={[remarkGfm]}>{row.titleLeft}</ReactMarkdown></div>
-          <div className={styles.tableLeftColumnContent}><ReactMarkdown remarkPlugins={[remarkGfm]}>{row.ContentLeft1}</ReactMarkdown></div>
-          <div className={styles.tableLeftColumnContent}><ReactMarkdown remarkPlugins={[remarkGfm]}>{row.ContentLeft2}</ReactMarkdown></div>
-        </div>
-        <div className={styles.tableRightColumn}>
-          <div className={styles.tableRightColumnTitle}><ReactMarkdown remarkPlugins={[remarkGfm]}>{row.titleRight}</ReactMarkdown></div>
-          <div className={styles.tableRightColumnContent}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{row.ContentRight1}</ReactMarkdown>
+          <div className={styles.tableTitle}>
+            <div className={styles.table}>{row.titleLeft}</div>
+            <div className={styles.table}>{row.titleRight}</div>
           </div>
-          <div className={styles.tableRightColumnContent}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{row.ContentRight2}</ReactMarkdown>
+          <div className={styles.tableColumnContent}>
+            <div className={styles.table}><ReactMarkdown remarkPlugins={[remarkGfm]}>{row.ContentLeft1}</ReactMarkdown></div>
+            <div className={styles.table}><ReactMarkdown remarkPlugins={[remarkGfm]}>{row.ContentRight1}</ReactMarkdown></div>
           </div>
-        </div>
+          <div className={styles.tableColumnContent2}>
+            <div className={styles.table}><ReactMarkdown remarkPlugins={[remarkGfm]}>{row.ContentLeft2}</ReactMarkdown></div>
+            <div className={styles.table}><ReactMarkdown remarkPlugins={[remarkGfm]}>{row.ContentRight2}</ReactMarkdown></div>
+          </div>
       </div>
       ))}
     </div>
