@@ -7,7 +7,7 @@ import { TablesProps } from '@/models/Tables.model'
 import Tables from '../tables/Tables.component'
 
 export interface DropdownProps{
-  title?: string
+  title: string
   content: string
   content2?: string
   dataTable?: TablesProps
@@ -39,9 +39,7 @@ const Dropdown = ({ title, content, content2, dataTable }: DropdownProps): JSX.E
                   {content}
                 </ReactMarkdown>
                 {dataTable && <Tables dataTabla={dataTable}/> }
-                {content2 && <ReactMarkdown className={styles.PaddTopContent} remarkPlugins={[remarkGfm]}>
-                  {content2}
-                </ReactMarkdown>}
+                {content2 && <ReactMarkdown className={styles.PaddTopContent} remarkPlugins={[remarkGfm]}>{content2}</ReactMarkdown>}
               </div>
               )
             : !isOpen}
