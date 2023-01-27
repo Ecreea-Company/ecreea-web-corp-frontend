@@ -2,15 +2,15 @@ import { useState } from 'react'
 import styles from './Dropdowns.module.scss'
 import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import { TablaPoliPriv } from '@/pages/politica-de-privacidad/components'
 import remarkGfm from 'remark-gfm'
-import { TablaPoliPrivProps } from '@/models/TablaPoliPriv.model'
+import { TablesProps } from '@/models/Tables.model'
+import Tables from '../tables/Tables.component'
 
 export interface DropdownProps{
-  title?: string
+  title: string
   content: string
   content2?: string
-  dataTable?: TablaPoliPrivProps[]
+  dataTable?: TablesProps
 }
 
 const Dropdown = ({ title, content, content2, dataTable }: DropdownProps): JSX.Element => {
@@ -38,12 +38,8 @@ const Dropdown = ({ title, content, content2, dataTable }: DropdownProps): JSX.E
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {content}
                 </ReactMarkdown>
-                {dataTable && <TablaPoliPriv dataTabla={dataTable}/> }
-                {content2
-                  ? <ReactMarkdown className={styles.PaddTopContent} remarkPlugins={[remarkGfm]}>
-                  {content2}
-                </ReactMarkdown>
-                  : ''}
+                {dataTable && <Tables dataTabla={dataTable}/> }
+                {content2 && <ReactMarkdown className={styles.PaddTopContent} remarkPlugins={[remarkGfm]}>{content2}</ReactMarkdown>}
               </div>
               )
             : !isOpen}

@@ -1,8 +1,8 @@
-import { TablaPoliPrivProps } from '.'
+import { TablesProps } from '.'
 
 export interface ItemDropdownsProps {
-  title?: string
+  title: string
   data: string
-  dataTable?: TablaPoliPrivProps[]
+  dataTable?: TablesProps
   data2?: string
 }

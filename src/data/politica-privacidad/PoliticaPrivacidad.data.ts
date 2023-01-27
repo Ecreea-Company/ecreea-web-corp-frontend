@@ -2,9 +2,6 @@ import { ItemDropdownsProps } from '@/models'
 
 export const DataPrivacidad: ItemDropdownsProps[] = [
   {
-    data: 'Ecreaa está comprometida con tu privacidad. Lea nuestra Política de privacidad del cliente para obtener una explicación clara de cómo recopilamos, usamos, divulgamos, transferimos y almacenamos su información.'
-  },
-  {
     title: 'Nuestra política de privacidad de un vistazo',
     data: '**¿Quiénes somos?** Somos una corporación ECREEA COMPANNY S.A. y tratamos tus datos personales como responsable del tratamiento. Esto quiere decir que nos hacemos cargo de cómo usar y proteger tus datos.\n\n**¿Para qué usamos tus datos?** Usaremos tus datos (facilitados online o a través de otros medios), entre otras finalidades, para atender tus consultas, dudas y sugerencias.\n\n**¿Para qué los usamos?** Estamos legitimados para tratar tus datos porque tenemos interés legítimo en atender tus consultas y satisfacer tus dudas y sugerencias.\n\n**¿Con quién compartimos tus datos?** Compartiremos tus datos con prestadores de servicios que nos ayudan o dan soporte, ya sean empresas del propio Grupo Ecreea o colaboradores externos con quien hemos llegado a un acuerdo, y ya estén ubicados dentro o fuera de Perú.\n\n**Tus derechos.** En algunos casos, también tienes otros derechos, por ejemplo, a oponerte a que usemos tus datos o a portarlos, como te explicamos en detalle más abajo.'
   },
@@ -15,44 +12,56 @@ export const DataPrivacidad: ItemDropdownsProps[] = [
   {
     title: '¿Con qué finalidad tratamos tus datos personales?',
     data: 'Dependiendo de los productos, servicios o funcionalidades de los que quieras disfrutar en cada momento necesitaremos tratar unos datos u otros, que en general serán, según el caso, los siguientes:\n\n• Tus datos identificativos (por ejemplo, tu nombre, apellido, idioma y mercado desde el que interactúas con nosotros, y datos de contacto,etc.)\n• Información transaccional (por ejemplo, información que nos aportes acerca de tus tiques de compra, pedidos, devoluciones, etc.);\n• Datos de conexión, y navegación.\n\nRecuerda que, cuando te pidamos que rellenes tus datos personales para darte acceso a alguna funcionalidad o servicio de la Plataforma, marcaremos algunos campos como obligatorios, puesto que son datos que necesitamos para poder prestarte el servicio o darte acceso a la funcionalidad en cuestión.\n\nPor favor, ten en cuenta que, si decides no facilitarnos esos datos, es posible que no puedas disfrutar de esos servicios o funcionalidades.\n\nTrataremos tus datos personales para las siguientes finalidades:',
-    dataTable: [
-      {
-        titleLeft: 'Finalidad',
-        ContentLeft1: 'Para atender las solicitudes o peticiones que realices a través de los canales de Contacto Profesional y Atención al Cliente.',
-        ContentLeft2: 'Análisis de usabilidad y de calidad para la mejora de nuestros servicios.',
-        titleRight: '+ Info',
-        ContentRight1: 'Sólo tratamos los datos personales que sean estrictamente necesarios para gestionar o resolver tu solicitud o petición.',
-        ContentRight2: 'Si accedes a nuestra Plataforma, te informamos de que trataremos tus datos de navegación para fines analíticos y estadísticos, es decir, para entender la forma en la que los usuarios interactúan con nuestra Plataforma y así ser capaces de introducir mejoras en la misma, así como para atender las sugerencias de mejora que como usuario puedas remitirnos.'
-      }
-    ]
+    dataTable:
+    {
+      titles: ['Finalidad', '+ Info'],
+      content: [
+        {
+          colum1: 'Para atender las solicitudes o peticiones que realices a través de los canales de Contacto Profesional y Atención al Cliente.',
+          colum2: 'Sólo tratamos los datos personales que sean estrictamente necesarios para gestionar o resolver tu solicitud o petición.'
+        },
+        {
+          colum1: 'Análisis de usabilidad y de calidad para la mejora de nuestros servicios.',
+          colum2: 'Si accedes a nuestra Plataforma, te informamos de que trataremos tus datos de navegación para fines analíticos y estadísticos, es decir, para entender la forma en la que los usuarios interactúan con nuestra Plataforma y así ser capaces de introducir mejoras en la misma, así como para atender las sugerencias de mejora que como usuario puedas remitirnos.'
+        }
+      ]
+    }
   },
   {
     title: '¿Cuál es la legitimación para el tratamiento de tus datos?',
     data: 'La base legal que nos permite tratar tus datos personales también depende de la finalidad para la que los tratemos, según lo explicado en la siguiente tabla:',
-    dataTable: [
-      {
-        titleLeft: 'Finalidad',
-        ContentLeft1: 'Contacto Profesional y Atención al Cliente',
-        ContentLeft2: 'Análisis de usabilidad y de calidad',
-        titleRight: 'Legitimación',
-        ContentRight1: 'Consideramos que tenemos un interés legítimo para atender las solicitudes o consultas que nos plantees a través de los diversos medios de contacto existentes. Entendemos que el tratamiento de estos datos resulta también beneficioso para ti en tanto que nos permite poder atenderte adecuadamente y resolver las consultas planteadas.\n\nCuando nos contactes, en particular, para la gestión de incidencias relacionadas con tu pedido o el producto/ servicio de nuestras marcas adquirido a través de la oficina operada por las empresas del Grupo Ecreea, el tratamiento es necesario para la ejecución del contrato de compraventa.\n\nCuando tu consulta esté relacionada con el ejercicio de los derechos sobre los que te informamos más abajo, o con reclamaciones relacionadas con los productos o servicios de las marcas del Grupo Ecreea company, lo que nos legitima para tratar tus datos es el cumplimiento de obligaciones legales por nuestra parte.',
-        ContentRight2: 'Consideramos que tenemos un interés legítimo para analizar la usabilidad de la Plataforma y el grado de satisfacción del usuario ya que entendemos que el tratamiento de estos datos también resulta beneficioso para ti porque la finalidad es mejorar la experiencia del usuario y ofrecer un servicio de mayor calidad, así como atender las sugerencias que nos remitas.'
-      }
-    ]
+    dataTable:
+    {
+      titles: ['Finalidad', 'Legitimación'],
+      content: [
+        {
+          colum1: 'Contacto Profesional y Atención al Cliente',
+          colum2: 'Consideramos que tenemos un interés legítimo para atender las solicitudes o consultas que nos plantees a través de los diversos medios de contacto existentes. Entendemos que el tratamiento de estos datos resulta también beneficioso para ti en tanto que nos permite poder atenderte adecuadamente y resolver las consultas planteadas.\n\nCuando nos contactes, en particular, para la gestión de incidencias relacionadas con tu pedido o el producto/ servicio de nuestras marcas adquirido a través de la oficina operada por las empresas del Grupo Ecreea, el tratamiento es necesario para la ejecución del contrato de compraventa.\n\nCuando tu consulta esté relacionada con el ejercicio de los derechos sobre los que te informamos más abajo, o con reclamaciones relacionadas con los productos o servicios de las marcas del Grupo Ecreea company, lo que nos legitima para tratar tus datos es el cumplimiento de obligaciones legales por nuestra parte.'
+        },
+        {
+          colum1: 'Análisis de usabilidad y de calidad',
+          colum2: 'Consideramos que tenemos un interés legítimo para analizar la usabilidad de la Plataforma y el grado de satisfacción del usuario ya que entendemos que el tratamiento de estos datos también resulta beneficioso para ti porque la finalidad es mejorar la experiencia del usuario y ofrecer un servicio de mayor calidad, así como atender las sugerencias que nos remitas.'
+        }
+      ]
+    }
   },
   {
     title: '¿Durante cuánto tiempo conservaremos tus datos?',
     data: 'El plazo de conservación de tus datos dependerá de las finalidades para las que los tratemos, según lo explicado a continuación:',
-    dataTable: [
-      {
-        titleLeft: 'Finalidad',
-        ContentLeft1: 'Contacto Profesional y Atención al Cliente',
-        ContentLeft2: 'Análisis de usabilidad y de calidad',
-        titleRight: 'Plazo de conservación',
-        ContentRight1: 'Trataremos tus datos durante el tiempo que sea necesario para atender tu solicitud o petición.',
-        ContentRight2: 'Trataremos tus datos puntualmente durante el tiempo en el que procedamos a realizar una acción o encuesta de calidad concreta o hasta que anonimicemos tus datos de navegación. Así como durante el tiempo que sea necesario para atender tu sugerencia.'
-      }
-    ],
+    dataTable:
+    {
+      titles: ['Finalidad', 'Plazo de conservación'],
+      content: [
+        {
+          colum1: 'Contacto Profesional y Atención al Cliente',
+          colum2: 'Trataremos tus datos durante el tiempo que sea necesario para atender tu solicitud o petición.'
+        },
+        {
+          colum1: 'Análisis de usabilidad y de calidad',
+          colum2: 'Trataremos tus datos puntualmente durante el tiempo en el que procedamos a realizar una acción o encuesta de calidad concreta o hasta que anonimicemos tus datos de navegación. Así como durante el tiempo que sea necesario para atender tu sugerencia.'
+        }
+      ]
+    },
     data2: 'Independientemente de tratemos tus datos durante el tiempo estrictamente necesario para cumplir con la finalidad correspondiente, los conservaremos posteriormente debidamente guardados y protegidos durante el tiempo en que pudieran surgir responsabilidades derivadas del tratamiento, en cumplimiento con la normativa vigente en cada momento. Una vez prescriban las posibles acciones en cada caso, procederemos a la supresión de los datos personales.'
   },
   {

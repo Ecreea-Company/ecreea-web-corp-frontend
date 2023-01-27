@@ -9,3 +9,4 @@ export { default as MenuNavbarMobile } from './menu-navbar-mobile/MenuNavbarMobi
 export { default as TitleDegradado } from './title-degradado/TitleDegradado.component'
 export { default as Dropdowns } from './dropdowns/Dropdowns.component'
 export { default as HeadDropdowns } from './head-dropdowns/HeadDropdowns.component'
+export { default as Tables } from './tables/Tables.component'
