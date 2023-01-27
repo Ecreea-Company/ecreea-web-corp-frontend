@@ -4,14 +4,11 @@ import { Dropdowns, HeadDropdowns } from '@/components'
 import { DataPrivacidad } from '@/data'
 
 const Legal: NextPage = () => {
-  const ParrafoPriv = DataPrivacidad[0]
-  const ContentDrop = DataPrivacidad.slice(1)
-
   return (
     <Public titlePage="Politica de Privacidad">
-      <HeadDropdowns title='Política de Privacidad' content={ParrafoPriv.data}></HeadDropdowns>
+      <HeadDropdowns title='Política de Privacidad' content='Ecreaa está comprometida con tu privacidad. Lea nuestra Política de privacidad del cliente para obtener una explicación clara de cómo recopilamos, usamos, divulgamos, transferimos y almacenamos su información.'></HeadDropdowns>
 
-      {ContentDrop.map((item, index) => (
+      {DataPrivacidad.map((item, index) => (
         <Dropdowns key={index} dataTable={item.dataTable} title={item.title} content={item.data} content2={item.data2} />
       ))}
     </Public>

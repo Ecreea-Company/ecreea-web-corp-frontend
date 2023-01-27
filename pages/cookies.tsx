@@ -4,14 +4,11 @@ import { Dropdowns, HeadDropdowns } from '@/components'
 import { DataCookies } from '@/data'
 
 const Legal: NextPage = () => {
-  const PolitCookie = DataCookies[0]
-  const ContentDrop = DataCookies.slice(1)
-
   return (
     <Public titlePage="Cookies">
-      <HeadDropdowns title='Política de Cookies' content={PolitCookie.data}></HeadDropdowns>
+      <HeadDropdowns title='Política de Cookies' content={'En esta Política de Cookies encontrarás información sobre el uso que realizamos de las cookies y dispositivos similares que se instalan en los terminales de nuestros clientes y usuarios.'}></HeadDropdowns>
 
-      {ContentDrop.map((item, index) => (
+      {DataCookies.map((item, index) => (
         <Dropdowns key={index} title={item.title} content={item.data} />
       ))}
     </Public>
