@@ -2,10 +2,6 @@ import { ItemDropdownsProps } from '@/models'
 
 export const DataCookies: ItemDropdownsProps[] = [
   {
-    data: 'En esta Política de Cookies encontrarás información sobre el uso que realizamos de las cookies y dispositivos similares que se instalan en los terminales de nuestros clientes y usuarios.'
-
-  },
-  {
     title: '¿Qué es una Cookie?',
     data: 'Una Cookie es un pequeño fichero de texto que un sitio web, app u otra plataforma almacena en tu ordenador, tableta, teléfono inteligente o cualquier otro dispositivo similar, con información sobre tu navegación o uso, como una etiqueta que identifica tu dispositivo. Las Cookies son necesarias por ejemplo para facilitar la navegación y conocer la manera en que interactúan los usuarios con las plataformas, de manera que puedan ser mejoradas. También son muy útiles para poder ofrecer publicidad según las preferencias del usuario, así como para otras finalidades que se detallan más adelante. Las Cookies no dañan tu ordenador o dispositivo.\n\nCuando hablamos de "Cookies" también nos referimos a otras tecnologías similares de instalación y/o recogida de información en o sobre tu dispositivo (tales como flash cookies, web beacons o bugs, pixels, HTML5 (de almacenamiento local), y tecnologías SDK para formatos app. Asimismo, el término “Cookies” también resulta de aplicación al uso de técnicas de fingerprinting, es decir, aquellas técnicas de combinación de información que nos ayudan a identificar tu dispositivo. En ocasiones, estas tecnologías funcionan de manera conjunta con cookies para recopilar y almacenar información, bien para proporcionarte ciertas funcionalidades o servicios en nuestra Plataforma, o bien para mostrarte publicidad en las plataformas de terceros, teniendo en cuenta tu navegación.\n\nEsta explicación es una muestra general de lo que se entiende por Cookies a meros efectos informativos. Las Cookies que utilizamos de manera específica se detallan en el panel de configuración de cookies accesible en nuestra Plataforma.'
   },

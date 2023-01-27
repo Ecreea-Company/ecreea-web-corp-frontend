@@ -2,9 +2,6 @@ import { ItemDropdownsProps } from '@/models'
 
 export const DataPrivacidad: ItemDropdownsProps[] = [
   {
-    data: 'Ecreaa está comprometida con tu privacidad. Lea nuestra Política de privacidad del cliente para obtener una explicación clara de cómo recopilamos, usamos, divulgamos, transferimos y almacenamos su información.'
-  },
-  {
     title: 'Nuestra política de privacidad de un vistazo',
     data: '**¿Quiénes somos?** Somos una corporación ECREEA COMPANNY S.A. y tratamos tus datos personales como responsable del tratamiento. Esto quiere decir que nos hacemos cargo de cómo usar y proteger tus datos.\n\n**¿Para qué usamos tus datos?** Usaremos tus datos (facilitados online o a través de otros medios), entre otras finalidades, para atender tus consultas, dudas y sugerencias.\n\n**¿Para qué los usamos?** Estamos legitimados para tratar tus datos porque tenemos interés legítimo en atender tus consultas y satisfacer tus dudas y sugerencias.\n\n**¿Con quién compartimos tus datos?** Compartiremos tus datos con prestadores de servicios que nos ayudan o dan soporte, ya sean empresas del propio Grupo Ecreea o colaboradores externos con quien hemos llegado a un acuerdo, y ya estén ubicados dentro o fuera de Perú.\n\n**Tus derechos.** En algunos casos, también tienes otros derechos, por ejemplo, a oponerte a que usemos tus datos o a portarlos, como te explicamos en detalle más abajo.'
   },
