@@ -50,7 +50,7 @@ const Trabajo: NextPage = () => {
         <LinkRedirect
           text="Da el primer paso"
           colorText="var(--text-font-color)"
-          url='/contacto'
+          url='/buscar-oportunidades'
           disabled={true}
         />
       </div>
@@ -81,7 +81,7 @@ const Trabajo: NextPage = () => {
         <LinkRedirect
           text="Ven a descubrirte"
           colorText="var(--text-font-color)"
-          url='/contacto'
+          url='/buscar-oportunidades'
           disabled={true}
         />
       </div>
