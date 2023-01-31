@@ -43,7 +43,7 @@ const Aprende: NextPage = () => {
           text="Da el primer paso"
           colorText="var(--text-font-color)"
           url='/contacto'
-          disabled= {true}
+          disabled= {false}
         />
       </div>
 
@@ -53,7 +53,7 @@ const Aprende: NextPage = () => {
           text="Aprende con nosotros"
           colorText="white"
           url='/contacto'
-          disabled= {true}
+          disabled= {false}
         />
       </div>
     </Public>

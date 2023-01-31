@@ -3,6 +3,7 @@
 
 .Menu {
   display: flex;
+  align-items: center;
   gap: 2rem;
   font-size: clamp(1rem,1.4vw,1.38rem);
   z-index: 4;
@@ -17,6 +18,19 @@
     padding-top: 1rem;
     padding-left: 2rem
   }
+
+  & li {
+    padding-left:.6rem;
+  }
+
+  & li:nth-child(3n) {
+    background: rgba(60, 60, 60, 0.8);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    padding: .5rem .7rem;
+    margin-right: 1rem;
+  }
+
 
   @include utilities.disableLink;
 }

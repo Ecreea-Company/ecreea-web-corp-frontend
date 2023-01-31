@@ -75,10 +75,10 @@ const Ecreea: NextPage = () => {
         <h1 className={styles.Section3__frase}>Únete a nosotros y ama tus sueños</h1>
         <p className={styles.Section3__paragraph}>Descubre cómo puedes crear, conoce nuestra filosofía, forma de trabajar y oportunidades de desarrollo.</p>
         <LinkRedirect
-          text="Más Información"
+          text="Conoce como es trabajar en Ecreea"
           colorText="var(--text-font-color)"
           url='/contacto'
-          disabled={true}
+          disabled={false}
         />
       </div>
 
@@ -95,10 +95,10 @@ const Ecreea: NextPage = () => {
           <h1 className={styles.Container__title}>Aprende incanzablemente</h1>
           <h1 className={styles.Container__subtitle}>Invierte en tu futuro</h1>
           <LinkRedirect
-          text="Más Información"
+          text="Aprende con nosotros"
           colorText="white"
-          url='/contacto'
-          disabled={true}
+          url='/ecreea/aprende-con-nosotros'
+          disabled={false}
         />
         </div>
         <h1 className={styles.Section5__title}>Nuestros valores se centran en todo lo que creamos</h1>
@@ -130,6 +130,13 @@ const Ecreea: NextPage = () => {
           {TEXTS[index]}
         </TextTransition>
         </div>
+
+        <LinkRedirect
+          text="Buscar oportunidades"
+          colorText="white"
+          url='/buscar-oportunidades'
+          disabled={true}
+        />
       </div>
       </>
     </Public>
