@@ -1,14 +1,22 @@
-.Container {
+
+.Section {
+  width: 100%;
+  position: absolute;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  flex-direction: column;
+  z-index: 1;
 
-}
-
-.Flecha {
-  margin-top: 8.5rem;
-  font-size: 1.56rem;
-  padding-right: clamp(2rem, 7vw, 5.5rem);
-  z-index: 3;
+  .Container {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--link-color);
+  }
+  
+  .Flecha {
+    padding-top: 3.3rem;
+    font-size: 1.56rem;
+    padding-right: clamp(2rem, 7vw, 5.5rem);
+    z-index: 3;
+  }
 }
 
