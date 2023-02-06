@@ -11,12 +11,17 @@ import {
 import Logo from '@/assets/logo/Logo.component'
 import { ItemLinkProps } from '@/models'
 
-const Navbar = (): JSX.Element => {
+export interface NavbarProps {
+  isFixed?: boolean
+}
+
+const Navbar = ({ isFixed = true }: NavbarProps): JSX.Element => {
   const { width } = useWindowSize()
   const { data } = useGetDataLocalStorage<ItemLinkProps[]>('navbarData')
+  const position = isFixed ? styles.FixedPosition : styles.StaticPosition
 
   return (
-    <div className={styles.Navbar}>
+    <div className={`${styles.Navbar} ${position}`}>
       <div className={styles.Navbar__logo} style={{ gridArea: 'logo' }}>
         <LinkEcreea href="/">
           <Logo />
