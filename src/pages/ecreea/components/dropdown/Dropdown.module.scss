@@ -1,19 +1,19 @@
 @use 'styles/mixins/mediaQueries';
 
 .Dropdown {
+  margin-top: 2.55rem;
   visibility: visible;
   position: absolute;
   width: 100%;
   background-color: var(--color-bg-navbar);
   box-shadow: white;
-  padding: 1.8rem;
+  padding: 1.5rem;
   overflow: hidden;
   z-index: 2;
   transition: all 1s;
 
   &__fadeIn {
-    margin-top: 9rem;
-    padding-bottom: 10.8rem;
+    padding-bottom: 12rem;
   }
 
 

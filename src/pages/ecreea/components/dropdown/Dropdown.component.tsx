@@ -2,33 +2,12 @@ import { useEffect, useState } from 'react'
 import { FlechaSharing } from '@/services'
 import styles from './Dropdown.module.scss'
 import { Menu } from '@/pages/ecreea/components'
-import { ItemLinkProps } from '@/models'
+import { DropItems } from '@/data'
 
 const fadeIn = styles.Dropdown__fadeIn
 const fadeOut = styles.Dropdown__fadeOut
 const dropDataIn = styles.Data__dropDataIn
 const dropDataOut = styles.Data__dropDataOut
-
-const centralMenuItems: ItemLinkProps[] = [
-  {
-    name: 'El Trabajo en Ecreea',
-    url: '/ecreea/el-trabajo-en-ecreea',
-    desactivar: false,
-    id: 1
-  },
-  {
-    name: 'Aprende con nosotros',
-    url: '/ecreea/aprende-con-nosotros',
-    desactivar: false,
-    id: 2
-  },
-  {
-    name: 'Buscar oportunidades',
-    url: '/ecreea/buscar-oportunidades',
-    desactivar: true,
-    id: 3
-  }
-]
 
 const Dropdown = (): JSX.Element => {
   const [DropdownStyles, setDropdownStyles] = useState('')
@@ -46,7 +25,7 @@ const Dropdown = (): JSX.Element => {
     <>
     <aside className={`${styles.Dropdown} ${DropdownStyles}`}/>
     <div className={`${styles.Data} ${DataStyles}`}>
-      <Menu itemsList={centralMenuItems} direction="column"/>
+      <Menu itemsList={DropItems} direction="column"/>
     </div>
     </>
   )
