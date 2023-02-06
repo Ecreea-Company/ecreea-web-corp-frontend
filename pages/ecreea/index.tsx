@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react'
 import { Public } from '@/layouts'
 import type { NextPage } from 'next'
 import styles from '@styles/ecreea/Ecreea.module.scss'
-import { LinkRedirect, CarlosMobile, CarlosDesktop, Flecha, Menu, Contenedores } from '@/pages/ecreea/components'
+import { LinkRedirect, CarlosMobile, CarlosDesktop, Contenedores, DropMenu } from '@/pages/ecreea/components'
 import { useWindowSize } from '@/hooks'
-import { centralMenuItems } from '@/pages/ecreea/data'
 import TextTransition, { presets } from 'react-text-transition'
 
 const Ecreea: NextPage = () => {
@@ -39,24 +38,9 @@ const Ecreea: NextPage = () => {
   }, [index])
 
   return (
-    <Public titlePage='Ecreea'>
-      <>
+    <Public isFixed={false} titlePage='Ecreea'>
+      <DropMenu/>
       <div className={styles.Section}>
-          {width < 960
-            ? (
-              <>
-              <div className={styles.Container}>
-              <Flecha/>
-              </div>
-              </>
-              )
-            : (
-                <Menu
-                  itemsList={centralMenuItems}
-                  customStyle={{ paddingRight: 'clamp(2rem, 7vw, 5.5rem)', paddingBottom: '2rem' }}
-                  direction= 'row'
-              />
-              )}
         <Contenedores text={firstParagraph.text} fontSizeText={'clamp(1.13rem, 4vw ,4.06rem)'} padding={'clamp(2rem, 7vw, 5.5rem)'}/>
         <Contenedores title={secondParagraph.title} text={secondParagraph.text} fontSizeTitle={'clamp(3.7rem,16vw,18.75rem)'} fontSizeText={'clamp(1.13rem, 4vw ,4.06rem)'} padding={'clamp(2rem, 7vw, 5.5rem)'} />
       </div>
@@ -138,7 +122,6 @@ const Ecreea: NextPage = () => {
           disabled={true}
         />
       </div>
-      </>
     </Public>
   )
 }

@@ -1,14 +1,10 @@
 import styles from '@styles/ecreea/Trabajo.module.scss'
 import { Public } from '@/layouts'
 import type { NextPage } from 'next'
-import { LinkRedirect, Flecha, Menu, Contenedores } from '@/pages/ecreea/components'
+import { LinkRedirect, Contenedores, DropMenu } from '@/pages/ecreea/components'
 import { UCV, UPAO, UPN } from '@/assets/logos'
-import { useWindowSize } from '@/hooks'
-import { centralMenuItems } from '@/pages/ecreea/data'
 
 const Trabajo: NextPage = () => {
-  const { width } = useWindowSize()
-
   const firstParagraph = {
     title: 'El futuro le pertenece a quienes crean',
     text: 'Ven a crear cosas grades con nosotros'
@@ -19,23 +15,9 @@ const Trabajo: NextPage = () => {
     text: 'Ten la valentía de amar tus sueños y perseguirlos, si aún no estás seguro que amas hacer ¡sirve!, el camino hallará tu propósito y harás “eso” por lo cual viniste a la tierra.'
   }
   return (
-    <Public titlePage='El trabajo en Ecreea'>
+    <Public isFixed={false} titlePage='El trabajo en Ecreea'>
+      <DropMenu/>
       <div className={styles.Section}>
-        {width < 960
-          ? (
-              <>
-              <div className={styles.Container}>
-              <Flecha/>
-              </div>
-              </>
-            )
-          : (
-                <Menu
-                  itemsList={centralMenuItems}
-                  customStyle={{ paddingRight: 'clamp(2rem, 7vw, 5.5rem)', paddingBottom: '2rem' }}
-                  direction= 'row'
-              />
-            )}
         <Contenedores title={firstParagraph.title} text={firstParagraph.text} fontSizeTitle={'clamp(2.7rem,9vw,9rem)'} fontSizeText={'clamp(1.13rem, 5vw ,5rem)'} gap={'1rem'} padding={'clamp(2rem, 7vw, 5.5rem)'}/>
         <Contenedores title={secondParagraph.title} text={secondParagraph.text} fontSizeTitle={'clamp(2.7rem,9vw,9rem)'} fontSizeText={'clamp(1.13rem, 3vw ,3.13rem)'} gap={'1rem'} padding={'clamp(2rem, 7vw, 5.5rem)'}/>
       </div>

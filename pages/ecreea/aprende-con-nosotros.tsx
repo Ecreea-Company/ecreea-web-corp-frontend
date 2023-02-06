@@ -1,36 +1,18 @@
 import { Public } from '@/layouts'
 import styles from '@styles/ecreea/Aprende.module.scss'
 import type { NextPage } from 'next'
-import { LinkRedirect, Flecha, Menu, Contenedores } from '@/pages/ecreea/components'
-import { useWindowSize } from '@/hooks'
-import { centralMenuItems } from '@/pages/ecreea/data'
+import { LinkRedirect, Contenedores, DropMenu } from '@/pages/ecreea/components'
 
 const Aprende: NextPage = () => {
-  const { width } = useWindowSize()
-
   const firstParagraph = {
     title: 'Aprende Incanzable',
     text: 'Invierte en tu futuro'
   }
   return (
-    <Public titlePage="Aprende con Nosotros">
+    <Public isFixed={false} titlePage="Aprende con Nosotros">
+      <DropMenu/>
       <div className={styles.Section}>
-        {width < 960
-          ? (
-              <>
-              <div className={styles.Container}>
-              <Flecha/>
-              </div>
-              </>
-            )
-          : (
-                <Menu
-                  itemsList={centralMenuItems}
-                  customStyle={{ paddingRight: 'clamp(2rem, 7vw, 5.5rem)', paddingBottom: '2rem' }}
-                  direction= 'row'
-              />
-            )}
-        <Contenedores title={firstParagraph.title} text={firstParagraph.text} fontSizeTitle={'clamp(2.7rem,9vw,9rem)'} fontSizeText={'clamp(1.13rem, 5vw ,5rem)'} gap={'1rem'} paddingBot={'10rem'}/>
+        <Contenedores title={firstParagraph.title} text={firstParagraph.text} fontSizeTitle={'clamp(2.7rem,9vw,9rem)'} fontSizeText={'clamp(1.13rem, 5vw ,5rem)'} gap={'1rem'}/>
       </div>
 
       <div className={styles.Section2}>
