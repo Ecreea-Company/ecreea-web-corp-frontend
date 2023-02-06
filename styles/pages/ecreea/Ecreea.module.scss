@@ -10,16 +10,10 @@
   background-size: 180vh;
 
   display: grid;
-  grid-template-rows: [first] 10% [line2] 40% [line3] auto [line4];
+  grid-template-rows: [first] auto [line2] auto [line3];
   text-align: center;
   align-items: center;
   color: white;
-  
-  .Container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
   @include mediaQueries.for-desktop-new {
     @include utilities.section(200vh);
