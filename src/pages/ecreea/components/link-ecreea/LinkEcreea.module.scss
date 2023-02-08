@@ -1,3 +1,5 @@
+@use '/styles/mixins/mediaQueries';
+
 .LinkEcreea[aria-disabled='true'] {
   color: white;
   display: flex;
@@ -28,9 +30,18 @@
 }
 
 .LinkEcreea {
-  color: white;
+  color: var(--text-font-color);
+  @include mediaQueries.for-desktop-new {
+    color: white;
+  }
 
   &:hover {
-    color: #D1D1D1;
+    color: #666666;
+  }
+}
+
+.LinkScroll {
+  @include mediaQueries.for-desktop-new {
+    color: var(--text-font-color);
   }
 }
