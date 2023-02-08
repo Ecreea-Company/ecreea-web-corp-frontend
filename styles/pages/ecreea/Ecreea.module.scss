@@ -10,7 +10,7 @@
   background-size: 180vh;
 
   display: grid;
-  grid-template-rows: [first] auto [line2] auto [line3];
+  grid-template-rows: [first] 1fr [line2] 1fr [line3];
   text-align: center;
   align-items: center;
   color: white;
