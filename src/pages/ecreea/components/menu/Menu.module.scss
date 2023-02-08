@@ -40,3 +40,10 @@
 
   @include utilities.disableLink;
 }
+
+.Scrolled {
+  @include mediaQueries.for-desktop-new {
+    background: var(--color-bg-navbar);
+    padding-bottom: .8rem;
+  }
+}
