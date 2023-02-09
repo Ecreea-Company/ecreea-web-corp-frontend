@@ -41,7 +41,7 @@
     padding-bottom: 0.5rem;
 
     @include mediaQueries.for-phone {
-      width: 5rem;
+      width: 7rem;
     }
   }
 
@@ -49,10 +49,7 @@
     place-self: center;
     display: flex;
     gap: 1rem;
-    font-size: 0.8rem;
-    @include mediaQueries.for-phone {
-      font-size: 1rem;
-    }
+    font-size: 0.9rem;
   }
 
   &__items {
