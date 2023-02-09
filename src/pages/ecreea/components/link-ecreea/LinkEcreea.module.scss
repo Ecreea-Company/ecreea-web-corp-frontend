@@ -30,18 +30,20 @@
 }
 
 .LinkEcreea {
-  color: var(--text-font-color);
+  color: var(--link-color);
   @include mediaQueries.for-desktop-new {
     color: white;
   }
-
-  &:hover {
-    color: #666666;
-  }
+  font-size: 0.8rem;
+  
 }
 
 .LinkScroll {
   @include mediaQueries.for-desktop-new {
-    color: var(--text-font-color);
+    color: var(--link-color);
+
+    &:hover {
+      color: var(--text-font-color);
+    }
   }
 }
