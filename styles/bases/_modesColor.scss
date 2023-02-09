@@ -15,6 +15,7 @@ body[data-theme='light'] {
   --background-container: #EDEDED;
   --bg-table-title: #E8E8E8;
   --bg-table-content: #F9F9F9;
+  --rectangle-link: rgba(0, 0, 0, 0.7);
 }
 
 body[data-theme='dark'] {
@@ -32,4 +33,5 @@ body[data-theme='dark'] {
   --background-container: #1E1E1E;
   --bg-table-title: #BBBBBB;
   --bg-table-content: #CBCBCB;
+  --rectangle-link: rgba(255, 255, 255, 0.7);
 }
