@@ -30,10 +30,10 @@
   }
 
   & li:nth-child(3n) {
-    background: rgba(60, 60, 60, 0.8);
+    background: var(--rectangle-link);
     backdrop-filter: blur(2px);
-    border-radius: 10px;
-    padding: .5rem .7rem;
+    border-radius: 6px;
+    padding: .25rem .7rem;
     margin-right: 1rem;
   }
 
