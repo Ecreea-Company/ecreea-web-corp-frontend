@@ -9,17 +9,11 @@
   
   background-position-x: -15rem;
 
-  display: grid;
-  grid-template-rows: [first] 20% [line2] auto [line3];
+  display: flex;
   text-align: center;
   align-items: center;
+  justify-content: center;
   color: white;
-  
-  .Container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
   @include mediaQueries.for-desktop-new {
     @include utilities.section(100vh);

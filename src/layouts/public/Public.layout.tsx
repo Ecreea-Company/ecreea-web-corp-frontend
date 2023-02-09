@@ -6,19 +6,17 @@ import styles from './Public.module.scss'
 export interface LayoutPublicProps {
   children: React.ReactNode
   titlePage?: string
+  isFixed?: boolean
 }
 
-const Public = ({
-  children,
-  titlePage = ' Ecreea Company'
-}: LayoutPublicProps): JSX.Element => {
+const Public = ({ children, titlePage = ' Ecreea Company', isFixed }: LayoutPublicProps): JSX.Element => {
   return (
     <div className={styles.PublicLayout}>
       <Head>
         <title>{`${titlePage} | Ecreea`}</title>
       </Head>
 
-      <Navbar />
+      <Navbar isFixed={isFixed} />
 
       {children}
 

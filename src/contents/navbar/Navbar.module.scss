@@ -1,6 +1,14 @@
 @use '/styles/mixins/mediaQueries';
 @use '/styles/mixins/utilities';
 
+.FixedPosition {
+  position: fixed;
+}
+
+.StaticPosition {
+  position: absolute;
+}
+
 .Navbar {
   background-color: var(--color-bg-navbar);
   backdrop-filter: blur(10px);
@@ -8,7 +16,6 @@
   grid-template-columns: 20rem 1fr 20rem;
   grid-template-rows: 1fr;
   grid-template-areas: 'logo centerMenu optionsMenu';
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 10;

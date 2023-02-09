@@ -17,7 +17,7 @@ const Flecha = ({ customStyle }: FlechaProps): JSX.Element => {
   }
 
   return (
-    <>
+    <div className={styles.Section}>
       <div className={styles.Container}>
         <a
         href="#"
@@ -32,7 +32,7 @@ const Flecha = ({ customStyle }: FlechaProps): JSX.Element => {
         </a>
       </div>
       <Dropdown/>
-    </>
+    </div>
   )
 }
 

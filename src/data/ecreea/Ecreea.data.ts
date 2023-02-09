@@ -1,6 +1,6 @@
 import { ItemLinkProps } from '@/models'
 
-export const centralMenuItems: ItemLinkProps[] = [
+export const DropItems: ItemLinkProps[] = [
   {
     name: 'El Trabajo en Ecreea',
     url: '/ecreea/el-trabajo-en-ecreea',
