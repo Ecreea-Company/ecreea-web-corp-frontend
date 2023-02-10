@@ -43,7 +43,8 @@
 
 .Scrolled {
   @include mediaQueries.for-desktop-new {
-    background: var(--color-bg-navbar);
+    background-color: var(--color-bg-navbar);
     padding-bottom: .8rem;
+    backdrop-filter: blur(10px);
   }
 }
