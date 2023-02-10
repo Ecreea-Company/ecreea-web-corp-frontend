@@ -11,7 +11,7 @@
 
   img {
     width: clamp(20rem,47vw,56rem);
-    filter: drop-shadow(0 10px 20px var(--shadow))
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5))
   }
 
   .Container {

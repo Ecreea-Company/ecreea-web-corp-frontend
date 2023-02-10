@@ -11,6 +11,7 @@
   overflow: hidden;
   z-index: 2;
   transition: all 1s;
+  backdrop-filter: blur(10px);
 
   &__fadeIn {
     padding-bottom: 12rem;

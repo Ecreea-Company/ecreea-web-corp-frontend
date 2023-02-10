@@ -30,7 +30,7 @@
 
     img {
       width: clamp(20rem,50vw,30rem);
-      filter: drop-shadow(0 5px 10px var(--shadow));
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
       padding-left: 0.4rem;
     }      
   } 
