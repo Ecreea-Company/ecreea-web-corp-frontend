@@ -1,57 +1,59 @@
 import styles from './Card.module.scss'
-import { useState } from 'react'
-import { AiOutlinePlus, AiOutlineClose } from 'react-icons/ai'
 import Image from 'next/image'
 
 interface CardProps {
-  directionImage?: 'left' | 'right'
+  direction?: 'up' | 'down' | 'left' | 'right'
   srcImg: string
   title: string
   content: string
 }
 
-const conditionImg = (directionImage: string) =>
-  directionImage === 'left' ? styles.Card__img_left : styles.Card__img_right
-
-const conditionInfo = (directionImage: string) =>
-  directionImage === 'left' ? styles.Card__info_left : styles.Card__info_right
+const conditionStyles = (direction: string) => {
+  switch (direction) {
+    case 'up':
+      return {
+        image: styles.Card__imagen_up,
+        info: styles.Card__info_down,
+        gridTemplateRows: styles.Card__gridrow1
+      }
+    case 'down':
+      return {
+        image: styles.Card__imagen_down,
+        info: styles.Card__info_up,
+        gridTemplateRows: styles.Card__gridrow2
+      }
+    case 'left':
+      return {
+        image: styles.Card__imagen_left,
+        info: styles.Card__info_right,
+        gridTemplateColumns: styles.Card__gridcolum1
+      }
+    case 'right':
+      return {
+        image: styles.Card__imagen_right,
+        info: styles.Card__info_left,
+        gridTemplateColumns: styles.Card__gridcolum2
+      }
+    default:
+      return {}
+  }
+}
 
 const Card = ({
-  directionImage = 'left',
+  direction = 'up',
   srcImg,
   content,
   title
 }: CardProps) => {
-  const [isOpen, setIsOpen] = useState(true)
+  const { image, info, gridTemplateRows, gridTemplateColumns } = conditionStyles(direction)
   return (
-    <section className={styles.Card}>
-      <div className={`${styles.Card__img} ${conditionImg(directionImage)}`}>
-        <Image layout="fill" src={srcImg} objectFit="cover" />
+    <section className={`${styles.Card} ${gridTemplateRows} ${gridTemplateColumns}`}>
+      <div className={`${styles.Card__imagen} ${image}`}>
+        <Image layout="fill" src={srcImg} objectFit="cover"/>
       </div>
-      <div className={`${styles.Card__info} ${conditionInfo(directionImage)}`}>
-        {isOpen
-          ? (
-          <>
-            <h1>{title}</h1>
-            <button onClick={() => setIsOpen(!isOpen)}>
-              <i>
-                <AiOutlinePlus />
-              </i>
-              Más
-            </button>
-          </>
-            )
-          : (
-          <>
-            <p>{content}</p>
-            <button onClick={() => setIsOpen(!isOpen)}>
-              <i>
-                <AiOutlineClose />
-              </i>
-              Cerrar
-            </button>
-          </>
-            )}
+      <div className={`${styles.Card__info} ${info}`}>
+        <h1>{title}</h1>
+        <p>{content}</p>
       </div>
     </section>
   )
