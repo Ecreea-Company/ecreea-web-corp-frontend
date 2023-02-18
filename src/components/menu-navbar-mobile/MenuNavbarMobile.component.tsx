@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { IoMenu, IoCloseSharp } from 'react-icons/io5'
+import { IoCloseSharp } from 'react-icons/io5'
+import { IoIosMenu } from 'react-icons/io'
 
 import { LinkEcreea } from '@/components'
 
@@ -34,7 +35,7 @@ const MenuNavbarMobile = ({
           handleClick()
         }}
       >
-        {isOpen ? <IoCloseSharp /> : <IoMenu />}
+        {isOpen ? <IoCloseSharp /> : <IoIosMenu />}
       </a>
 
       <aside
