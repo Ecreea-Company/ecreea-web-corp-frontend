@@ -1,7 +1,7 @@
 import { Public } from '@/layouts'
 import { NextPage } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/busqueda-de-oportunidades.module.scss'
-import { TexfieldOp, TrabajoDesktopOP, TypographyOp } from '@/pages/busqueda-de-oportunidades/components'
+import { TexfieldOp, TrabajoOP, TypographyOp } from '@/pages/busqueda-de-oportunidades/components'
 
 const Artistas: NextPage = () => {
   return (
@@ -11,7 +11,7 @@ const Artistas: NextPage = () => {
         <TexfieldOp/>
       </section>
 
-      <TrabajoDesktopOP/>
+      <TrabajoOP/>
 
     </Public>
   )
