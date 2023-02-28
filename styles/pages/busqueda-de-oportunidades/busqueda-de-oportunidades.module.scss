@@ -1,0 +1,38 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.Section {
+  @include utilities.section(55vh);
+  @include mediaQueries.for-desktop-new {
+    @include utilities.section(80vh);
+  }
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+
+  .Title {
+    color: transparent;
+    background: linear-gradient(60deg, #ffde00, #e71d73, #ffde00);
+    background-size: 200%;
+    background-clip: text;
+    animation: text_animate 8s linear infinite;
+    width: 90%;
+    @include mediaQueries.for-desktop-new {
+      width: 69%;
+    }
+  }
+  
+  @keyframes text_animate {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+}
+
+  
