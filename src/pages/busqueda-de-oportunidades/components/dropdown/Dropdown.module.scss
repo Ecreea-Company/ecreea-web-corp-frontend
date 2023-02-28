@@ -1,0 +1,47 @@
+@use 'styles/mixins/mediaQueries';
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  @include mediaQueries.for-desktop-new {
+    width: max-content;
+  }
+
+  .dropdownHeader {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: clamp(1.13rem, 2.5vw, 2.5rem);
+    @include mediaQueries.for-desktop-new {
+      gap: 4rem;
+    }
+
+    &__icon {
+      font-size: clamp(1rem,1.5vw,1.5rem);
+    }
+  }
+  
+  .dropdownOptions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .5rem;
+    margin-top: clamp(1.5rem,2.5vw,2.5rem);
+    font-size: clamp(1rem, 1.8vw, 1.8rem);
+
+    .checkbox {
+      display: flex;
+      gap: 1.8rem;
+    }
+  }
+  
+  .Line {
+    margin-top: 1rem;
+    height: .05rem;
+    background-color: #CBCBCB;
+  }
+  
+}
+
