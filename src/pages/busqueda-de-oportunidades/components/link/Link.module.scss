@@ -1,0 +1,26 @@
+.Link {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: clamp(1.13rem,2.5vw,2.5rem);
+  width: max-content;
+  &__icon {
+    width: max-content;
+  }
+
+  &:hover .Link__icon {
+    animation: arrowForward 1s linear infinite;
+
+    @keyframes arrowForward {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+}
