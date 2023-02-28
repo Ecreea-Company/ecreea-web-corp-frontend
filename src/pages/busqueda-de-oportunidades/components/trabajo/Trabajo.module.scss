@@ -1,0 +1,80 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.SlideBTN {
+  display: block;
+  @include mediaQueries.for-desktop-new {
+    display: none;
+  }
+}
+
+.Section {
+  display: flex;
+  margin: 0 clamp(2rem,5vw,5rem);
+  gap: clamp(3rem,6vw,6rem);
+
+  .Dropdown {
+    display: none;
+    @include mediaQueries.for-desktop-new {
+      display: flex;
+      justify-content: flex-end;
+      .Line {
+        margin-left: 1rem;
+        width: .05rem;
+        background-color: #CBCBCB;
+      }
+    }
+  }
+
+  .Trabajo {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    .Line {
+      margin-top: 1rem;
+      height: .05rem;
+      background-color: #CBCBCB;
+    }
+    
+    .Row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .Texto {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        :nth-child( 3 ){ 
+          color: #9C9C9C ;
+        }
+      }
+
+      .MostrarBtn {
+        display: none;
+        @include mediaQueries.for-desktop-new {
+          display: block;
+        }
+      }
+    }
+  
+    .Row2 {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .MostrarTypo {
+        display: none;
+        @include mediaQueries.for-desktop-new {
+          display: block;
+        }
+      }
+
+      .linkWidth {
+        width: max-content;
+      }
+    }
+  }
+}
