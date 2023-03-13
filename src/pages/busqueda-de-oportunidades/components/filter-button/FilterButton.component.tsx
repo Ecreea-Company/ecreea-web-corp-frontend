@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DropdownOp } from '..'
+import { DropdownMapOp } from '..'
 import styles from './FilterButton.module.scss'
 import { GrFormFilter } from 'react-icons/gr'
 import { IoCloseSharp } from 'react-icons/io5'
@@ -27,7 +27,7 @@ const SlideButton = (): JSX.Element => {
             <IoCloseSharp />
           </button>
           <div className={styles.PopupContent}>
-            <DropdownOp />
+            <DropdownMapOp width={'100%'}/>
         </div>
       </div>
       )}

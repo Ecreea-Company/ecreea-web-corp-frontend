@@ -1,28 +1,22 @@
 import { useState } from 'react'
 import styles from './Dropdown.module.scss'
 import { AiOutlineDown, AiOutlineClose } from 'react-icons/ai'
+import { DropdownOPProps, OpcionDropdownOPProps } from '@/models'
 
-interface Option {
-  label: string
-  value: string
+export interface DropdownComponentProps{
+  nombre: string
+  width?: string
+  data: DropdownOPProps
 }
 
-const options: Option[] = [
-  { label: 'Ejemplo1', value: '1' },
-  { label: 'Ejemplo2', value: '2' },
-  { label: 'Ejemplo3', value: '3' }
-]
-
-const Dropdown = (): JSX.Element => {
+const DropdownOP = ({ data, width }: DropdownComponentProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedOptions, setSelectedOptions] = useState<Option[]>([])
+  const [selectedOptions, setSelectedOptions] = useState<OpcionDropdownOPProps[]>([])
 
-  const handleOptionClick = (option: Option) => {
-    if (selectedOptions.includes(option)) {
-      setSelectedOptions(selectedOptions.filter((o) => o !== option))
-    } else {
-      setSelectedOptions([...selectedOptions, option])
-    }
+  const handleOptionClick = (option: OpcionDropdownOPProps) => {
+    selectedOptions.includes(option)
+      ? setSelectedOptions(selectedOptions.filter((o) => o !== option))
+      : setSelectedOptions([...selectedOptions, option])
   }
 
   const toggleOpen = () => {
@@ -30,31 +24,33 @@ const Dropdown = (): JSX.Element => {
   }
 
   return (
-    <div className={styles.dropdown}>
-      <div className={styles.dropdownHeader} onClick={toggleOpen}>
-        <span>Dropdown</span>
-        <div className={styles.dropdownHeader__icon}>
-          {isOpen ? <AiOutlineClose /> : <AiOutlineDown />}
+    <>
+      <div key={data.id} className={styles.dropdown} style={ { width } }>
+        <div className={styles.dropdownHeader} onClick={toggleOpen}>
+          <span>{data.nombre}</span>
+          <div className={styles.dropdownHeader__icon}>
+            {isOpen ? <AiOutlineClose /> : <AiOutlineDown />}
+          </div>
         </div>
+        {isOpen && (
+          <div className={styles.dropdownOptions}>
+            {data.opciones.map((opcion) => (
+              <label key={opcion.id} className={styles.checkbox}>
+                <input
+                  type="checkbox"
+                  value={opcion.nombre}
+                  checked={selectedOptions.includes(opcion)}
+                  onChange={() => handleOptionClick(opcion)}
+                />
+                {opcion.nombre}
+              </label>
+            ))}
+          </div>
+        )}
+        <div className={styles.Line}/>
       </div>
-      {isOpen && (
-        <div className={styles.dropdownOptions}>
-          {options.map((option) => (
-            <label key={option.value} className={styles.checkbox}>
-              <input
-                type="checkbox"
-                value={option.value}
-                checked={selectedOptions.includes(option)}
-                onChange={() => handleOptionClick(option)}
-              />
-              {option.label}
-            </label>
-          ))}
-        </div>
-      )}
-      <div className={styles.Line}/>
-    </div>
+    </>
   )
 }
 
-export default Dropdown
+export default DropdownOP

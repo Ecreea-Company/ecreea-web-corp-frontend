@@ -4,9 +4,7 @@
   display: flex;
   flex-direction: column;
   padding: .5rem;
-  @include mediaQueries.for-desktop-new {
-    width: max-content;
-  }
+  width: 22vw;
 
   .dropdownHeader {
     cursor: pointer;
@@ -14,12 +12,10 @@
     align-items: center;
     justify-content: space-between;
     font-size: clamp(1.13rem, 2.5vw, 2.5rem);
-    @include mediaQueries.for-desktop-new {
-      gap: 4rem;
-    }
 
     &__icon {
       font-size: clamp(1rem,1.5vw,1.5rem);
+      width: max-content;
     }
   }
   
