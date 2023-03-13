@@ -1,0 +1,61 @@
+{
+  "trabajo": [
+    {
+      "id": 1,
+      "empleo": "Ejecutiva comercial",
+      "tipo_empleo": "Prácticas Pre-Profesionales",
+      "fecha": "14 de Enero de 2023",
+      "resumen": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "ubicacion": "Trujillo",
+      "tipo_contrato": "Prácticas"
+    },
+    {
+      "id": 2,
+      "empleo": "Marketing",
+      "tipo_empleo": "Prácticas Pre-Profesionales",
+      "fecha": "12 de Enero de 2023",
+      "resumen": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "ubicacion": "Lima",
+      "tipo_contrato": "Prácticas"
+    },
+    {
+      "id": 3,
+      "empleo": "Gestión de Proyectos",
+      "tipo_empleo": "Oferta Laboral",
+      "fecha": "12 de Enero de 2023",
+      "resumen": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      "ubicacion": "Trujillo",
+      "tipo_contrato": "Trabajo"
+    }
+  ],
+  "dropdown": [
+    {
+      "id": 1,
+      "nombre": "Ubicaciones",
+      "opciones": [
+        {
+          "id": 1,
+          "nombre": "Trujillo"
+        },
+        {
+          "id": 2,
+          "nombre": "Lima"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Tipo de contrato",
+      "opciones": [
+        {
+          "id": 1,
+          "nombre": "Prácticas"
+        },
+        {
+          "id": 2,
+          "nombre": "Trabajo"
+        }
+      ]
+    }
+  ]
+}
