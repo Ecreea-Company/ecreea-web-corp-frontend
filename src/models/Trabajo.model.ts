@@ -1,7 +1,7 @@
 export interface TrabajoProps {
   id: number
-  empleo: string
-  tipo_empleo: string
+  nombre_puesto: string
+  tipo_contrato: string
   fecha: string
-  resumen: string
+  descripcion: string
 }

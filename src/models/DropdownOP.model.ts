@@ -1,7 +1,7 @@
-import { OpcionDropdownOPProps } from './OpcionDropdownOP.model'
+import { DropdownOption } from '.'
 
-export interface DropdownOPProps {
+export interface DropdownProps {
   id: number
-  nombre: string
-  opciones: OpcionDropdownOPProps[]
+  name: string
+  options: DropdownOption[]
 }
