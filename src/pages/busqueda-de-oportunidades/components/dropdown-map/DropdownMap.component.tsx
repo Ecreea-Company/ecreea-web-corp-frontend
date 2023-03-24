@@ -1,29 +1,24 @@
 import { useFetchData } from '@/hooks'
-import { DropdownOPProps } from '@/models'
-import { DropdownOp } from '..'
+import { DropdownOption } from '@/models'
+import DropdownOP from '../dropdown/Dropdown.component'
 
 export interface WidthProp{
   width?: string
 }
 
-const TextField = ({ width }: WidthProp): JSX.Element => {
-  const { data: dataDrop, error, loading } = useFetchData<{ data: DropdownOPProps[] }>('http://localhost:1337/api/drops')
+const Dropdowns = ({ width }: WidthProp): JSX.Element => {
+  const { data: ubicaciones } = useFetchData<{ data: DropdownOption[] }>('http://localhost:1337/api/ubicacions')
 
-  if (loading) {
-    return <div>Loading...</div>
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>
-  }
+  const ubicacionesOptions = ubicaciones?.data.map((ubicacion) => ({
+    id: ubicacion.id,
+    name: ubicacion.attributes.nombre
+  }))
 
   return (
-    <>
-    {dataDrop?.data.map((item: any) => (
-      <DropdownOp key={item.id} nombre={item.attributes.nombre} data={item} width={width} />
-    ))}
-    </>
+    <div>
+      <DropdownOP name="Ubicaciones" data={{ options: ubicacionesOptions }} width={width} />
+    </div>
   )
 }
 
-export default TextField
+export default Dropdowns

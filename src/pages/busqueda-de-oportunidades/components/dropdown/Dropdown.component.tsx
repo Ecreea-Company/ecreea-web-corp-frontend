@@ -1,55 +1,60 @@
 import { useState } from 'react'
 import styles from './Dropdown.module.scss'
 import { AiOutlineDown, AiOutlineClose } from 'react-icons/ai'
-import { DropdownOPProps, OpcionDropdownOPProps } from '@/models'
+import { DropdownProps, DropdownOption } from '@/models'
 
 export interface DropdownComponentProps{
-  nombre: string
+  name: string
   width?: string
-  data: DropdownOPProps
+  data: DropdownProps
 }
 
-const DropdownOP = ({ data, width }: DropdownComponentProps): JSX.Element => {
+const DropdownOP = ({ name, data, width }: DropdownComponentProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedOptions, setSelectedOptions] = useState<OpcionDropdownOPProps[]>([])
-
-  const handleOptionClick = (option: OpcionDropdownOPProps) => {
-    selectedOptions.includes(option)
-      ? setSelectedOptions(selectedOptions.filter((o) => o !== option))
-      : setSelectedOptions([...selectedOptions, option])
-  }
+  const [selectedOptions, setSelectedOptions] = useState<DropdownOption[]>([])
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
   }
 
+  const handleOptionClick = (option: DropdownOption) => {
+    const alreadySelected = selectedOptions.find((selectedOption) => selectedOption.id === option.id)
+    alreadySelected
+      ? setSelectedOptions(selectedOptions.filter((selectedOption) => selectedOption.id !== option.id))
+      : setSelectedOptions([...selectedOptions, option])
+  }
+
   return (
-    <>
-      <div key={data.id} className={styles.dropdown} style={ { width } }>
+  <>
+    {data && (
+      <div key={data.id} className={styles.dropdown} style={{ width }}>
         <div className={styles.dropdownHeader} onClick={toggleOpen}>
-          <span>{data.nombre}</span>
+          <span>{name}</span>
           <div className={styles.dropdownHeader__icon}>
             {isOpen ? <AiOutlineClose /> : <AiOutlineDown />}
           </div>
-        </div>
-        {isOpen && (
-          <div className={styles.dropdownOptions}>
-            {data.opciones.map((opcion) => (
-              <label key={opcion.id} className={styles.checkbox}>
-                <input
-                  type="checkbox"
-                  value={opcion.nombre}
-                  checked={selectedOptions.includes(opcion)}
-                  onChange={() => handleOptionClick(opcion)}
-                />
-                {opcion.nombre}
-              </label>
-            ))}
           </div>
-        )}
-        <div className={styles.Line}/>
+            {isOpen && data
+              ? (
+              <div className={styles.dropdownOptions}>
+                {data.options.map((option) => (
+                  <label key={option.id} className={styles.checkbox}>
+                    <input
+                    type="checkbox"
+                    value={option.name}
+                    checked={selectedOptions.includes(option)}
+                    onChange={() => handleOptionClick(option)}
+                    />
+                    {option.name}
+                  </label>
+                ))}
+              </div>
+                )
+              : null}
+        <div className={styles.Line} />
       </div>
-    </>
+    )}
+  </>
   )
 }
 
