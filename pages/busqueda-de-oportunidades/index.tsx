@@ -6,16 +6,23 @@ import { TrabajoProps } from '@/models'
 import { useFetchData } from '@/hooks'
 import { LoadingPages } from '@/components'
 
-const BusquedaOportunidades: NextPage = () => {
-  const { data: dataTrabajo, error, loading } = useFetchData<{ data: TrabajoProps[] }>('http://localhost:1337/api/jobs')
+export async function getServerSideProps () {
+  const res = await fetch('http://localhost:1337/api/jobs?populate=*')
+  const data = await res.json()
 
-  if (loading) {
-    return <LoadingPages/>
+  return {
+    props: {
+      jobs: data
+    }
   }
+}
 
-  if (error) {
-    return <div>Error: {error.message}</div>
-  }
+export default function BusquedaOportunidades ({ jobs }: any) {
+  // const { data: dataTrabajo, loading } = useFetchData<{ data: TrabajoProps[] }>('http://localhost:1337/api/jobs')
+
+  // if (loading) {
+  // return <LoadingPages/>
+  // }
 
   return (
     <Public titlePage="Busqueda de Oportunidades">
@@ -35,13 +42,13 @@ const BusquedaOportunidades: NextPage = () => {
           <div className={styles.Line}/>
         </div>
         <div className={styles.Position}>
-          {dataTrabajo?.data.map((item: any) => (
+          {jobs?.map((item: any) => (
             <div key={item.id} className={styles.Trabajo}>
               <div className={styles.Line}></div>
               <div className={styles.Row}>
                 <div className={styles.Texto}>
-                  <TypographyOp variant="h2">{item.attributes.empleo}</TypographyOp>
-                  <TypographyOp variant="h3">{item.attributes.tipo_empleo}</TypographyOp>
+                  <TypographyOp variant="h2">{item.attributes.nombre_puesto}</TypographyOp>
+                  <TypographyOp variant="h3">{item.attributes.tipo_contrato.data.attributes.nombre}</TypographyOp>
                   <TypographyOp variant="h3">{new Date(item.attributes.createdAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</TypographyOp>
                 </div>
                 <div className={styles.MostrarBtn}>
@@ -50,7 +57,7 @@ const BusquedaOportunidades: NextPage = () => {
               </div>
               <div className={styles.Row2}>
                 <div className={styles.MostrarTypo}>
-                  <TypographyOp variant="p">{item.attributes.resumen}</TypographyOp>
+                  <TypographyOp variant="p">{item.attributes.descripcion}</TypographyOp>
                 </div>
                 <div className={styles.linkWidth}>
                   <LinkRedirectOp text='Saber más' url='#'/>
@@ -63,5 +70,3 @@ const BusquedaOportunidades: NextPage = () => {
     </Public>
   )
 }
-
-export default BusquedaOportunidades
