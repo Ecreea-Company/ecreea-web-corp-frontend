@@ -1,11 +1,16 @@
 import React from 'react'
 import styles from './Button.module.scss'
 
-const Button = (): JSX.Element => {
+interface BtnProps {
+  url: string
+  className?: string
+}
+
+const Button = ({ url, className }: BtnProps): JSX.Element => {
   return (
-    <button className={styles.button}>
+    <a className={`${styles.button} ${className}`} href={url}>
       Enviar CV
-    </button>
+    </a>
   )
 }
 
