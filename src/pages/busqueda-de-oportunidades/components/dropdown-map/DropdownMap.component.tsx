@@ -1,35 +1,24 @@
-import DropdownOP from '../dropdown/Dropdown.component'
 import { getFetcherSWR } from '@/services'
+import DropdownOP from '../dropdown/Dropdown.component'
 import useSWR from 'swr'
 
 interface DropdownsProps {
   width?: string
 }
 
+const useEndpointData = (endpoint: string) => {
+  const { data } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`, getFetcherSWR)
+  return data?.data.map((item: any) => ({
+    id: item.id,
+    name: item.attributes.nombre
+  }))
+}
+
 const Dropdowns = ({ width }: DropdownsProps) => {
-  const { data: ubicacionesData } = useSWR('http://127.0.0.1:1337/api/ubicacions', getFetcherSWR)
-  const ubicaciones = ubicacionesData?.data.map((ubicacion: any) => ({
-    id: ubicacion.id,
-    name: ubicacion.attributes.nombre
-  }))
-
-  const { data: tipoContratoData } = useSWR('http://127.0.0.1:1337/api/tipo-contratoes', getFetcherSWR)
-  const tipoContrato = tipoContratoData?.data.map((ubicacion: any) => ({
-    id: ubicacion.id,
-    name: ubicacion.attributes.nombre
-  }))
-
-  const { data: areaTrabajoData } = useSWR('http://127.0.0.1:1337/api/area-trabajos', getFetcherSWR)
-  const areaTrabajo = areaTrabajoData?.data.map((ubicacion: any) => ({
-    id: ubicacion.id,
-    name: ubicacion.attributes.nombre
-  }))
-
-  const { data: modalidadTrabajoData } = useSWR('http://127.0.0.1:1337/api/modalidad-trabajos', getFetcherSWR)
-  const modalidadTrabajo = modalidadTrabajoData?.data.map((ubicacion: any) => ({
-    id: ubicacion.id,
-    name: ubicacion.attributes.nombre
-  }))
+  const ubicaciones = useEndpointData('ubicacions')
+  const tipoContrato = useEndpointData('tipo-contratoes')
+  const areaTrabajo = useEndpointData('area-trabajos')
+  const modalidadTrabajo = useEndpointData('modalidad-trabajos')
 
   const itemsDrops = [
     { name: 'Ubicación', options: ubicaciones },
