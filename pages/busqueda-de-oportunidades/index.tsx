@@ -1,28 +1,11 @@
 import { Public } from '@/layouts'
-import { NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/busqueda-de-oportunidades.module.scss'
 import { ButtonOp, DropdownMapOp, LinkRedirectOp, SlideButtonOP, TexfieldOp, TypographyOp } from '@/pages/busqueda-de-oportunidades/components'
-import { TrabajoProps } from '@/models'
-import { useFetchData } from '@/hooks'
-import { LoadingPages } from '@/components'
+import { getTrabajos } from '@/services/trabajos/Trabajo.service'
 
-export async function getServerSideProps () {
-  const res = await fetch('http://localhost:1337/api/jobs?populate=*')
-  const data = await res.json()
-
-  return {
-    props: {
-      jobs: data
-    }
-  }
-}
-
-export default function BusquedaOportunidades ({ jobs }: any) {
-  // const { data: dataTrabajo, loading } = useFetchData<{ data: TrabajoProps[] }>('http://localhost:1337/api/jobs')
-
-  // if (loading) {
-  // return <LoadingPages/>
-  // }
+const BusquedaOportunidades: NextPage = ({ data, dataDrop }: any) => {
+  const jobs = Array.isArray(data) ? data : [data]
 
   return (
     <Public titlePage="Busqueda de Oportunidades">
@@ -43,24 +26,24 @@ export default function BusquedaOportunidades ({ jobs }: any) {
         </div>
         <div className={styles.Position}>
           {jobs?.map((item: any) => (
-            <div key={item.id} className={styles.Trabajo}>
+            <div key={item.slug} className={styles.Trabajo}>
               <div className={styles.Line}></div>
               <div className={styles.Row}>
                 <div className={styles.Texto}>
-                  <TypographyOp variant="h2">{item.attributes.nombre_puesto}</TypographyOp>
-                  <TypographyOp variant="h3">{item.attributes.tipo_contrato.data.attributes.nombre}</TypographyOp>
-                  <TypographyOp variant="h3">{new Date(item.attributes.createdAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</TypographyOp>
+                  <TypographyOp variant="h2">{item.nombre_puesto}</TypographyOp>
+                  <TypographyOp variant="h3">{item.tipo_contrato}</TypographyOp>
+                  <TypographyOp variant="h3">{item.createdAt}</TypographyOp>
                 </div>
                 <div className={styles.MostrarBtn}>
-                  <ButtonOp/>
+                  <ButtonOp url={`/busqueda-de-oportunidades/${item.slug}`}/>
                 </div>
               </div>
               <div className={styles.Row2}>
                 <div className={styles.MostrarTypo}>
-                  <TypographyOp variant="p">{item.attributes.descripcion}</TypographyOp>
+                  <TypographyOp variant="p">{item.descripcion}</TypographyOp>
                 </div>
                 <div className={styles.linkWidth}>
-                  <LinkRedirectOp text='Saber más' url='#'/>
+                  <LinkRedirectOp text='Saber más' url={`/busqueda-de-oportunidades/${item.slug}`}/>
                 </div>
               </div>
             </div>
@@ -69,4 +52,24 @@ export default function BusquedaOportunidades ({ jobs }: any) {
       </section>
     </Public>
   )
+}
+
+export default BusquedaOportunidades
+
+export const getServerSideProps: GetStaticProps<{ data: any }> = async () => {
+  const res = await getTrabajos()
+  const jobsDataCruda = await res.data
+  const jobsAdapter = jobsDataCruda.map((dataCruda: any) => ({
+    slug: dataCruda.attributes.slug,
+    nombre_puesto: dataCruda.attributes.nombre_puesto,
+    tipo_contrato: dataCruda.attributes.tipo_contrato.data.attributes.nombre,
+    createdAt: new Date(dataCruda.attributes.createdAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }),
+    descripcion: dataCruda.attributes.descripcion
+  }))
+
+  return {
+    props: {
+      data: jobsAdapter
+    }
+  }
 }
