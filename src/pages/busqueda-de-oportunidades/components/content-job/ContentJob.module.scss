@@ -1,0 +1,35 @@
+@use 'styles/mixins/mediaQueries';
+
+.All {
+  display: flex;
+  flex-direction: column;
+  .grid {
+    display: grid;
+    grid-template-columns: 28% 72%;
+  
+    .left {
+      .title {
+        font-size: clamp(1.56rem,3.13vw,3.13rem);
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+    
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      grid-column: 1 / -1;
+      @include mediaQueries.for-desktop-new {
+        grid-column: 2 / 3;
+      }
+    }
+  }
+}
+
+.Line {
+  margin: 5rem 0;
+  height: .05rem;
+  background-color: #CBCBCB;
+}
