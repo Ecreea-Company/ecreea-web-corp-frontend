@@ -1,0 +1,53 @@
+@use 'styles/mixins/utilities';
+@use 'styles/mixins/mediaQueries';
+
+.All {
+  margin: 0 clamp(2rem,4vw,4rem);
+  .Section{
+    @include mediaQueries.for-desktop-new {
+      @include utilities.section(100vh);
+    }
+    @include utilities.section(90vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+  
+    .title{
+      font-weight: 500;
+    }
+
+    .ubicacion{
+      display: flex;
+      align-items: center;
+      color: #8F8F8F;
+      gap: .5rem;
+      margin-bottom: 3rem;
+      .icon{
+        font-size: clamp(.8rem,1.5vw,1.5rem);
+        max-width: min-content;
+      }
+    }
+
+    .btn{
+      margin-bottom: 5rem;
+    }
+  }
+
+  .contentJobDrop{
+    margin: clamp(1rem, 2vw, 2rem) 0;
+  }
+
+  .contentjob {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .last_btn{
+    margin: clamp(6rem,8vw,8rem) 0;
+    display: flex;
+    justify-content: center;
+  }
+}
