@@ -6,11 +6,13 @@
   padding: clamp(.6rem,1.5vw,1.5rem) 0;
   width: 75%;
   margin: 0 auto;
+  color: black;
 
   .textPad {
     display: flex;
     padding: 0 clamp(1.5rem,3vw,3rem);
     gap: clamp(.8rem,2vw,2rem);
+    width: 100%;
 
     & .iconContainer {
       display: flex;
@@ -27,4 +29,3 @@
     }
   } 
 }
-
