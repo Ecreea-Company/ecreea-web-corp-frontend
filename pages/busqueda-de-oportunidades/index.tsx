@@ -9,15 +9,15 @@ const BusquedaOportunidades: NextPage = ({ data, dataDrop }: any) => {
 
   return (
     <Public titlePage="Busqueda de Oportunidades">
-      <section className={styles.Section}>
+      <div className={styles.Section}>
         <TypographyOp className={styles.Title} variant="h1">Únete a nosotros y haz la diferencia</TypographyOp>
         <TexfieldOp/>
-      </section>
+      </div>
 
       <div className={styles.SlideBTN}>
         <SlideButtonOP/>
       </div>
-      <section className={styles.Section2}>
+      <div className={styles.Section2}>
         <div className={styles.DropdownLine}>
           <div className={styles.Dropdown}>
             <DropdownMapOp/>
@@ -49,7 +49,7 @@ const BusquedaOportunidades: NextPage = ({ data, dataDrop }: any) => {
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </Public>
   )
 }
