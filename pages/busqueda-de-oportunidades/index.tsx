@@ -1,11 +1,16 @@
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Public } from '@/layouts'
-import { GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/busqueda-de-oportunidades.module.scss'
 import { ButtonOp, DropdownMapOp, LinkRedirectOp, SlideButtonOP, TexfieldOp, TypographyOp } from '@/pages/busqueda-de-oportunidades/components'
-import { getTrabajos } from '@/services/trabajos/Trabajo.service'
+import { getTrabajosByPage } from '@/services/trabajos/Trabajo.service'
+import { useRouter } from 'next/router'
+import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
 
-const BusquedaOportunidades: NextPage = ({ data, dataDrop }: any) => {
+const BusquedaOportunidades: NextPage = ({ data, meta }: any) => {
   const jobs = Array.isArray(data) ? data : [data]
+  const router = useRouter()
 
   return (
     <Public titlePage="Busqueda de Oportunidades">
@@ -48,6 +53,32 @@ const BusquedaOportunidades: NextPage = ({ data, dataDrop }: any) => {
               </div>
             </div>
           ))}
+          <div className={styles.Section3}>
+            <button
+              className={styles.Control}
+              disabled={meta.pagination.page === 1}
+              onClick={async () =>
+                await router.push(`/busqueda-de-oportunidades?page=${meta.pagination.page - 1}`)
+              }
+            >
+              <span>
+                <MdArrowBackIos size={'1.5rem'} />
+              </span>
+              <span className={styles.Control__text}>Anterior</span>
+            </button>
+            <button
+              className={styles.Control}
+              disabled={meta.pagination.pageCount === meta.pagination.page}
+              onClick={async () =>
+                await router.push(`/busqueda-de-oportunidades?page=${meta.pagination.page + 1}`)
+              }
+            >
+              <span className={styles.Control__text}>Siguiente</span>
+              <span>
+                <MdArrowForwardIos size={'1.5rem'} />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </Public>
@@ -56,8 +87,10 @@ const BusquedaOportunidades: NextPage = ({ data, dataDrop }: any) => {
 
 export default BusquedaOportunidades
 
-export const getServerSideProps: GetStaticProps<{ data: any }> = async () => {
-  const res = await getTrabajos()
+export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
+  query: { page = 1 }
+}) => {
+  const res = await getTrabajosByPage(page)
   const jobsDataCruda = await res.data
   const jobsAdapter = jobsDataCruda.map((dataCruda: any) => ({
     slug: dataCruda.attributes.slug,
@@ -67,9 +100,14 @@ export const getServerSideProps: GetStaticProps<{ data: any }> = async () => {
     descripcion: dataCruda.attributes.descripcion
   }))
 
+  const meta = {
+    ...res.meta
+  }
+
   return {
     props: {
-      data: jobsAdapter
+      data: jobsAdapter,
+      meta
     }
   }
 }
