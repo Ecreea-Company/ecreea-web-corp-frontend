@@ -23,16 +23,46 @@
       display: flex;
       align-items: center;
       color: #8F8F8F;
+      margin-bottom: clamp(0rem,1vw,1rem);
       gap: .5rem;
-      margin-bottom: 3rem;
       .icon{
         font-size: clamp(.8rem,1.5vw,1.5rem);
         max-width: min-content;
       }
     }
 
+    .convocatoria_abierta{
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: clamp(1.5rem,3vw,3rem);
+      background-color: #d1e7dd;
+      border-radius: 50rem;
+      padding: .5rem 1rem;
+      color: #0a3622;
+      font-size: clamp(.7rem,1vw,1rem);
+      .icon{
+        max-width: min-content;
+      }
+    }
+
+    .convocatoria_cerrada{
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: clamp(1.5rem,3vw,3rem);
+      background-color: #f8d7da;
+      border-radius: 50rem;
+      padding: .5rem 1rem;
+      color: #58151c;
+      font-size: clamp(.7rem,1vw,1rem);
+      .icon{
+        max-width: min-content;
+      }
+    }
+
     .btn{
-      margin-bottom: 5rem;
+      margin-bottom: clamp(2.5rem,5vw,5rem);
     }
   }
 

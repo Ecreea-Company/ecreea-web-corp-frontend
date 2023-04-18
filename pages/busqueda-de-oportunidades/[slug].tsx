@@ -3,9 +3,10 @@ import { ButtonOp, ContentJob, TypographyOp } from '@/pages/busqueda-de-oportuni
 import { getTrabajosBySlug } from '@/services/trabajos/Trabajo.service'
 import { GetServerSideProps, NextPage } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/slug.module.scss'
-import { BsGeoAltFill } from 'react-icons/bs'
+import { BsExclamationCircle, BsGeoAltFill } from 'react-icons/bs'
 import { useWindowSize } from '@/hooks'
 import Dropdown from '@/components/dropdowns/Dropdowns.component'
+import { FiCheckCircle } from 'react-icons/fi'
 
 const Job: NextPage = ({ data }: any) => {
   const { width } = useWindowSize()
@@ -31,7 +32,16 @@ const Job: NextPage = ({ data }: any) => {
             <BsGeoAltFill className={styles.icon}/>
             <TypographyOp variant="h3">{data.ubicacion}</TypographyOp>
           </div>
-          <ButtonOp className={styles.btn} url=''/>
+          {data.convocatoria_cerrada
+            ? <div className={styles.convocatoria_cerrada}>
+                <BsExclamationCircle className={styles.icon} />
+                <p>Convocatoria cerrada</p>
+                </div>
+            : <div className={styles.convocatoria_abierta}>
+                <FiCheckCircle className={styles.icon} />
+                <p>Vacante disponible</p>
+              </div> }
+          <ButtonOp className={styles.btn} url='#' isDisabled={data.convocatoria_cerrada}/>
           <TypographyOp variant="h3">{data.descripcion}</TypographyOp>
         </section>
         {width < 960
@@ -50,7 +60,7 @@ const Job: NextPage = ({ data }: any) => {
           </section>
             )}
         <section className={styles.last_btn}>
-          <ButtonOp className={styles.btn} url=''/>
+          <ButtonOp className={styles.btn} url='' isDisabled={data.convocatoria_cerrada}/>
         </section>
       </section>
     </Public>
@@ -79,7 +89,8 @@ export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
     carreras: dataCruda.attributes.carreras.map((carrera: any) => carrera.nombre),
     conocimiento_deseado: dataCruda.attributes.conocimiento_deseado.map((conocimiento: any) => conocimiento.nombre),
     idiomas: dataCruda.attributes.idiomas,
-    modalidad_trabajo: dataCruda.attributes.modalidad_trabajo.data.attributes.nombre
+    modalidad_trabajo: dataCruda.attributes.modalidad_trabajo.data.attributes.nombre,
+    convocatoria_cerrada: dataCruda.attributes.convocatoria_cerrada
   }
 
   return {
