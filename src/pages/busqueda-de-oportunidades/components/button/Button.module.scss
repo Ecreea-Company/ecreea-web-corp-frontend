@@ -8,7 +8,12 @@
   border-radius: .4rem;
   cursor: pointer;
 
-  &:hover {
+  &:hover:not(.disabled) {
     background: linear-gradient(90deg, darken(#FC6C40, 20%) 0%, darken(#E14260, 20%) 100%);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 }
