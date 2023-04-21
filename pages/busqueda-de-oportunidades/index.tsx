@@ -12,6 +12,29 @@ const BusquedaOportunidades: NextPage = ({ data, meta }: any) => {
   const jobs = Array.isArray(data) ? data : [data]
   const router = useRouter()
 
+  const handlePageNavigation = (direction: string) => {
+    const currentPage = parseInt(router.query.page as string) || 1
+    const nextPage = direction === 'next' ? currentPage + 1 : currentPage - 1
+
+    // Conserva los filtros actuales en la URL
+    const currentFilters = new URLSearchParams(router.asPath.split('?')[1] || '')
+    currentFilters.set('page', nextPage.toString())
+
+    const errorMessage = direction === 'next' ? 'Error al navegar a la siguiente página:' : 'Error al navegar a la página anterior:'
+
+    router.push(`${router.pathname}?${currentFilters.toString()}`).catch((err) => {
+      console.error(errorMessage, err)
+    })
+  }
+
+  const handleNextPage = () => {
+    handlePageNavigation('next')
+  }
+
+  const handlePreviousPage = () => {
+    handlePageNavigation('previous')
+  }
+
   return (
     <Public titlePage="Busqueda de Oportunidades">
       <div className={styles.Section}>
@@ -57,9 +80,7 @@ const BusquedaOportunidades: NextPage = ({ data, meta }: any) => {
             <button
               className={styles.Control}
               disabled={meta.pagination.page === 1}
-              onClick={async () =>
-                await router.push(`/busqueda-de-oportunidades?page=${meta.pagination.page - 1}`)
-              }
+              onClick={handlePreviousPage}
             >
               <span>
                 <MdArrowBackIos size={'1.5rem'} />
@@ -69,9 +90,7 @@ const BusquedaOportunidades: NextPage = ({ data, meta }: any) => {
             <button
               className={styles.Control}
               disabled={meta.pagination.pageCount === meta.pagination.page}
-              onClick={async () =>
-                await router.push(`/busqueda-de-oportunidades?page=${meta.pagination.page + 1}`)
-              }
+              onClick={handleNextPage}
             >
               <span className={styles.Control__text}>Siguiente</span>
               <span>
@@ -88,9 +107,9 @@ const BusquedaOportunidades: NextPage = ({ data, meta }: any) => {
 export default BusquedaOportunidades
 
 export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
-  query: { page = 1 }
+  query: { page = 1, ...filters }
 }) => {
-  const res = await getTrabajosByPage(page)
+  const res = await getTrabajosByPage(page, filters)
   const jobsDataCruda = await res.data
   const jobsAdapter = jobsDataCruda.map((dataCruda: any) => ({
     slug: dataCruda.attributes.slug,
