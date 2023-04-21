@@ -1,6 +1,7 @@
 import { getFetcherSWR } from '@/services'
 import DropdownOP from '../dropdown/Dropdown.component'
 import useSWR from 'swr'
+import { useRouter } from 'next/router'
 
 interface DropdownsProps {
   width?: string
@@ -9,12 +10,14 @@ interface DropdownsProps {
 const useEndpointData = (endpoint: string) => {
   const { data } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`, getFetcherSWR)
   return data?.data.map((item: any) => ({
-    id: item.id,
+    slug: item.attributes.slug,
     name: item.attributes.nombre
   }))
 }
 
-const Dropdowns = ({ width }: DropdownsProps) => {
+const DropdownsMapOP = ({ width }: DropdownsProps) => {
+  const router = useRouter()
+
   const ubicaciones = useEndpointData('ubicacions')
   const tipoContrato = useEndpointData('tipo-contratoes')
   const areaTrabajo = useEndpointData('area-trabajos')
@@ -29,11 +32,18 @@ const Dropdowns = ({ width }: DropdownsProps) => {
 
   return (
     <div>
-      {itemsDrops.map((item, index) => (
-        <DropdownOP key={index} name={item.name} options={item.options} width={width} />
-      ))}
+      {ubicaciones && tipoContrato && areaTrabajo && modalidadTrabajo &&
+        itemsDrops.map((item, index) => (
+          <DropdownOP
+            key={index}
+            name={item.name}
+            options={item.options}
+            width={width}
+            router={router}
+          />
+        ))}
     </div>
   )
 }
 
-export default Dropdowns
+export default DropdownsMapOP
