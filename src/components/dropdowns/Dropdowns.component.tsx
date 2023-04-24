@@ -5,15 +5,18 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import remarkGfm from 'remark-gfm'
 import { TablesProps } from '@/models/Tables.model'
 import Tables from '../tables/Tables.component'
+import { ContentJob } from '@/pages/busqueda-de-oportunidades/components'
 
 export interface DropdownProps{
   title: string
-  content: string
+  content?: string
   content2?: string
   dataTable?: TablesProps
+  className?: string
+  items?: string
 }
 
-const Dropdown = ({ title, content, content2, dataTable }: DropdownProps): JSX.Element => {
+const Dropdown = ({ title, content, content2, dataTable, className, items }: DropdownProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
 
   // función para abrir/cerrar el dropdown al presionar el botón
@@ -23,7 +26,7 @@ const Dropdown = ({ title, content, content2, dataTable }: DropdownProps): JSX.E
 
   return (
     <>
-      <div className={styles.Section}>
+      <div className={`${styles.Section} ${className}`}>
         <button onClick={toggleDropdown}>
           <div className={styles.Title}>
             {title}
@@ -35,11 +38,10 @@ const Dropdown = ({ title, content, content2, dataTable }: DropdownProps): JSX.E
           {isOpen
             ? (
               <div className={styles.Paragraph}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {content}
-                </ReactMarkdown>
+                {content && <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>}
                 {dataTable && <Tables dataTabla={dataTable}/> }
                 {content2 && <ReactMarkdown className={styles.PaddTopContent} remarkPlugins={[remarkGfm]}>{content2}</ReactMarkdown>}
+                {items && <ContentJob items={items} showLine={false}/>}
               </div>
               )
             : !isOpen}
