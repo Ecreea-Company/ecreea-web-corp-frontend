@@ -1,3 +1,4 @@
+export { default as FormularioCV } from './formularioCV/FormularioCV.component'
 export { default as DropdownOp } from './dropdown/Dropdown.component'
 export { default as LinkRedirectOp } from './link/LinkRedirect.component'
 export { default as TexfieldOp } from './textfield/Textfield.component'

@@ -5,13 +5,26 @@ interface BtnProps {
   url: string
   className?: string
   isDisabled?: boolean
+  [key: string]: any
 }
 
-const Button = ({ url, className, isDisabled = false }: BtnProps): JSX.Element => {
-  const buttonStyle = isDisabled ? `${styles.button} ${styles.disabled}` : `${styles.button} ${className}`
+const Button = ({
+  url,
+  className,
+  isDisabled = false,
+  ...props
+}: BtnProps): JSX.Element => {
+  const buttonStyle = isDisabled
+    ? `${styles.button} ${styles.disabled}`
+    : `${styles.button} ${className}`
 
   return (
-    <a className={`${buttonStyle} ${className}`} href={url} aria-disabled={isDisabled}>
+    <a
+      className={`${buttonStyle} ${className}`}
+      href={url}
+      aria-disabled={isDisabled}
+      {...props}
+    >
       Enviar CV
     </a>
   )
