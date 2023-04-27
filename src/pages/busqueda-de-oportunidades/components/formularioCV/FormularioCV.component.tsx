@@ -1,11 +1,13 @@
 import { useRef, useState } from 'react'
 import styles from './FormularioCV.module.scss'
 import Image from 'next/image'
+import { IoCloseOutline } from 'react-icons/io5'
 
 const FormularioCV = () => {
   const wrapperRef = useRef({} as any)
 
   const [file, setFile] = useState({} as File)
+  const [isChecked, setIsChecked] = useState(false)
 
   const sizeFile = parseInt((file.size / (1024 * 1024)).toFixed(2))
 
@@ -28,6 +30,14 @@ const FormularioCV = () => {
     }
   }
 
+  const removeFile = () => {
+    setFile({} as File)
+  }
+
+  const handleCheckbox = (e: any) => {
+    setIsChecked(e.target.checked)
+  }
+
   return (
     <div className={styles.Form}>
       <form action="">
@@ -44,12 +54,15 @@ const FormularioCV = () => {
             className={styles.FileUpload}
             style={{ borderColor: sizeFile < 10 ? '#2d7c03' : 'red' }}
           >
+            <div className={styles.FileUpload__Position}>
             <Image
               src="/pages/busqueda-de-oportunidades/upload.png"
               width={41}
               height={55}
             />
             <p>{file.name}</p>
+            </div>
+            <button style={{ fontSize: '2rem', cursor: 'pointer' }} onClick={removeFile}><IoCloseOutline /></button>
           </div>
             )
           : (
@@ -79,7 +92,7 @@ const FormularioCV = () => {
           Límite de carga: 10MB Uso actual: {file.size ? (file.size / (1024 * 1024)).toFixed(2) : 0} MB
         </p>
         <div className={styles.Form__checkbox}>
-          <input type="checkbox" name="terminos" id="terminos" required />
+          <input type="checkbox" name="terminos" id="terminos" onChange={handleCheckbox} required />
           <label htmlFor="terminos">
             Al hacer clic en la casilla de verificación, usted declara
             expresamente que autoriza libre y voluntariamente a ECREEA a ponerse
@@ -89,7 +102,7 @@ const FormularioCV = () => {
           </label>
         </div>
         <div className={styles.Form__btn}>
-          <button type="submit">Enviar CV</button>
+          <button type="submit" disabled={!isChecked} className={!isChecked ? 'disabled' : ''}>Enviar CV</button>
         </div>
       </form>
     </div>

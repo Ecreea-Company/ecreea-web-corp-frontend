@@ -14,7 +14,6 @@ import Dropdown from '@/components/dropdowns/Dropdowns.component'
 import { FiCheckCircle } from 'react-icons/fi'
 import { useState } from 'react'
 import { IoCloseOutline } from 'react-icons/io5'
-import Image from 'next/image'
 
 const Job: NextPage = ({ data }: any) => {
   const { width } = useWindowSize()
