@@ -15,7 +15,7 @@ export const DropItems: ItemLinkProps[] = [
   },
   {
     name: 'Buscar oportunidades',
-    url: '/contacto',
+    url: '/busqueda-de-oportunidades',
     desactivar: false,
     id: 3
   }
