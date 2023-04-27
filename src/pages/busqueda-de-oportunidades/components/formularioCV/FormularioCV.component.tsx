@@ -1,13 +1,38 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { useRef, useState } from 'react'
 import styles from './FormularioCV.module.scss'
 import Image from 'next/image'
 import { IoCloseOutline } from 'react-icons/io5'
 
-const FormularioCV = () => {
-  const wrapperRef = useRef({} as any)
+interface FormularioCVPorps {
+  idJob: number
+}
 
+interface FormPostulante {
+  email: string
+  job: {
+    id: number
+  }
+}
+
+const FormularioCV = ({ idJob }: FormularioCVPorps) => {
+  const wrapperRef = useRef({} as any)
+  const [postulante, setPostulante] = useState({
+    email: '',
+    job: {
+      id: idJob
+    }
+  } as FormPostulante)
   const [file, setFile] = useState({} as File)
   const [isChecked, setIsChecked] = useState(false)
+  const [isUploaded, setIsUploaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  const handleChange = (e: any) => {
+    const name = e.target.name
+    const value = e.target.value
+    setPostulante((values) => ({ ...values, [name]: value }))
+  }
 
   const sizeFile = parseInt((file.size / (1024 * 1024)).toFixed(2))
 
@@ -38,14 +63,43 @@ const FormularioCV = () => {
     setIsChecked(e.target.checked)
   }
 
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+
+    const formData = new FormData()
+    formData.append('data', JSON.stringify(postulante))
+    formData.append('files.cv', file)
+    setIsLoaded(true)
+
+    await fetch('https://strapi.ecreea.com/api/postulantes', {
+      method: 'POST',
+      body: formData
+    })
+      .catch((error) => {
+        console.error('Error:', error)
+      })
+      .then(() => {
+        setIsUploaded(true)
+        setIsLoaded(false)
+      })
+
+    setTimeout(() => {
+      e.target.reset()
+      setFile({} as File)
+      setIsChecked(false)
+      setIsUploaded(false)
+    }, 4000)
+  }
+
   return (
     <div className={styles.Form}>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <input
           type="email"
-          name="emailCV"
-          id="emailCV"
+          name="email"
           placeholder="Correo electrónico"
+          value={postulante.email || ''}
+          onChange={handleChange}
           required
         />
         {file.name
@@ -55,14 +109,19 @@ const FormularioCV = () => {
             style={{ borderColor: sizeFile < 10 ? '#2d7c03' : 'red' }}
           >
             <div className={styles.FileUpload__Position}>
-            <Image
-              src="/pages/busqueda-de-oportunidades/upload.png"
-              width={41}
-              height={55}
-            />
-            <p>{file.name}</p>
+              <Image
+                src="/pages/busqueda-de-oportunidades/upload.png"
+                width={41}
+                height={55}
+              />
+              <p>{file.name}</p>
             </div>
-            <button style={{ fontSize: '2rem', cursor: 'pointer' }} onClick={removeFile}><IoCloseOutline /></button>
+            <button
+              style={{ fontSize: '2rem', cursor: 'pointer' }}
+              onClick={removeFile}
+            >
+              <IoCloseOutline />
+            </button>
           </div>
             )
           : (
@@ -81,18 +140,30 @@ const FormularioCV = () => {
               />
               <h2>Carga tu CV aquí</h2>
               <p>
-                Comparte tu currículum en cualquiera de estos formatos: PDF,
-                WORD, JPG o PNG.
+                Comparte tu currículum en cualquiera de estos formatos: PDF.
               </p>
             </div>
             <input type="file" onChange={onFileDrop} required />
           </div>
             )}
         <p style={{ color: file.size && sizeFile > 10 ? 'red' : '' }}>
-          Límite de carga: 10MB Uso actual: {file.size ? (file.size / (1024 * 1024)).toFixed(2) : 0} MB
+          Límite de carga: 10MB Uso actual:{' '}
+          {file.size ? (file.size / (1024 * 1024)).toFixed(2) : 0} MB
         </p>
+        {isUploaded && (
+          <p style={{ color: 'green' }}>
+            ¡Gracias por postular! Nos pondremos en contacto contigo.
+          </p>
+        )}
+        {isLoaded && <p style={{ color: 'green' }}>Cargando...</p>}
         <div className={styles.Form__checkbox}>
-          <input type="checkbox" name="terminos" id="terminos" onChange={handleCheckbox} required />
+          <input
+            type="checkbox"
+            name="terminos"
+            id="terminos"
+            onChange={handleCheckbox}
+            required
+          />
           <label htmlFor="terminos">
             Al hacer clic en la casilla de verificación, usted declara
             expresamente que autoriza libre y voluntariamente a ECREEA a ponerse
@@ -102,7 +173,13 @@ const FormularioCV = () => {
           </label>
         </div>
         <div className={styles.Form__btn}>
-          <button type="submit" disabled={!isChecked} className={!isChecked ? 'disabled' : ''}>Enviar CV</button>
+          <button
+            type="submit"
+            disabled={!isChecked}
+            className={!isChecked ? 'disabled' : ''}
+          >
+            Enviar CV
+          </button>
         </div>
       </form>
     </div>

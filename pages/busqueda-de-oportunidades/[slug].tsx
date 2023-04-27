@@ -119,7 +119,7 @@ const Job: NextPage = ({ data }: any) => {
               <p>Si eres Estudiante o Bachiller, ¡Envíanos tu Hoja de Vida!</p>
             </div>
           </div>
-         <FormularioCV />
+         <FormularioCV idJob={data.id}/>
         </div>
       </div>
     </Public>
@@ -135,6 +135,7 @@ export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
   const dataCruda = res.data[0]
 
   const jobsAdapter = {
+    id: dataCruda.id,
     slug: dataCruda.attributes.slug,
     nombre_puesto: dataCruda.attributes.nombre_puesto,
     tipo_contrato: dataCruda.attributes.tipo_contrato.data.attributes.nombre,
