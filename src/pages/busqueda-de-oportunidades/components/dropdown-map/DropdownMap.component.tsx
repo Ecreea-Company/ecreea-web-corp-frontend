@@ -22,17 +22,19 @@ const DropdownsMapOP = ({ width }: DropdownsProps) => {
   const tipoContrato = useEndpointData('tipo-contratoes')
   const areaTrabajo = useEndpointData('area-trabajos')
   const modalidadTrabajo = useEndpointData('modalidad-trabajos')
+  const compania = useEndpointData('companias')
 
   const itemsDrops = [
     { name: 'Ubicación', options: ubicaciones },
     { name: 'Tipo de Contrato', options: tipoContrato },
     { name: 'Área de Trabajo', options: areaTrabajo },
-    { name: 'Modalidad', options: modalidadTrabajo }
+    { name: 'Modalidad', options: modalidadTrabajo },
+    { name: 'Empresa', options: compania }
   ]
 
   return (
     <div>
-      {ubicaciones && tipoContrato && areaTrabajo && modalidadTrabajo &&
+      {ubicaciones && tipoContrato && areaTrabajo && modalidadTrabajo && compania &&
         itemsDrops.map((item, index) => (
           <DropdownOP
             key={index}

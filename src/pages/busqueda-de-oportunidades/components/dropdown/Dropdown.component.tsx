@@ -20,7 +20,8 @@ const DropdownOP = ({ options, width, name, router }: DropdownComponentProps): J
     'Ubicación': 'ubicacion',
     'Tipo de Contrato': 'tipo_contrato',
     'Área de Trabajo': 'area_trabajo',
-    'Modalidad': 'modalidad_trabajo'
+    'Modalidad': 'modalidad_trabajo',
+    'Empresa': 'compania'
   }
 
   const filterKey = filterKeyMap[name]
