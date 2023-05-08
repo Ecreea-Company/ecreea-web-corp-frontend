@@ -61,6 +61,7 @@ const BusquedaOportunidades: NextPage = ({ data, meta }: any) => {
                   <TypographyOp variant="h2">{item.nombre_puesto}</TypographyOp>
                   <TypographyOp variant="h3">{item.tipo_contrato}</TypographyOp>
                   <TypographyOp variant="h3">{item.createdAt}</TypographyOp>
+                  <TypographyOp variant="h3">{item.empresa}</TypographyOp>
                 </div>
                 <div className={styles.MostrarBtn}>
                   <ButtonOp url={`/busqueda-de-oportunidades/${item.slug}`}/>
@@ -116,7 +117,8 @@ export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
     nombre_puesto: dataCruda.attributes.nombre_puesto,
     tipo_contrato: dataCruda.attributes.tipo_contrato.data.attributes.nombre,
     createdAt: new Date(dataCruda.attributes.createdAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }),
-    descripcion: dataCruda.attributes.descripcion
+    descripcion: dataCruda.attributes.descripcion,
+    empresa: dataCruda.attributes.compania.data.attributes.nombre
   }))
 
   const meta = {
