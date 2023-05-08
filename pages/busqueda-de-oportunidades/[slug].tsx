@@ -21,8 +21,8 @@ const Job: NextPage = ({ data }: any) => {
 
   const itemsJobs = [
     { title: 'Área de trabajo', dataJob: data.area_trabajo },
-    { title: 'Funciones', dataJob: data.funciones },
     { title: 'Beneficios', dataJob: data.beneficios },
+    { title: 'Funciones', dataJob: data.funciones },
     { title: 'Competencias', dataJob: data.competencias },
     { title: 'Carreras', dataJob: data.carreras },
     { title: 'Conocimiento deseados', dataJob: data.conocimiento_deseado },
@@ -66,8 +66,8 @@ const Job: NextPage = ({ data }: any) => {
             isDisabled={data.convocatoria_cerrada}
             onClick={handleModal}
           />
-          <TypographyOp variant="h3">{data.descripcion}</TypographyOp>
         </section>
+        <TypographyOp className={styles.description} variant="h3">{data.descripcion}</TypographyOp>
         {width < 960
           ? (
           <>
