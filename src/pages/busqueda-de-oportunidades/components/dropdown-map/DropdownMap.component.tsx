@@ -25,11 +25,11 @@ const DropdownsMapOP = ({ width }: DropdownsProps) => {
   const compania = useEndpointData('companias')
 
   const itemsDrops = [
+    { name: 'Empresa', options: compania },
     { name: 'Ubicación', options: ubicaciones },
     { name: 'Tipo de Contrato', options: tipoContrato },
     { name: 'Área de Trabajo', options: areaTrabajo },
-    { name: 'Modalidad', options: modalidadTrabajo },
-    { name: 'Empresa', options: compania }
+    { name: 'Modalidad', options: modalidadTrabajo }
   ]
 
   return (
