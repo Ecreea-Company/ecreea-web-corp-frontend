@@ -42,6 +42,7 @@ const Job: NextPage = ({ data }: any) => {
           <TypographyOp className={styles.title} variant="h1">
             {data.nombre_puesto}
           </TypographyOp>
+          <TypographyOp variant="h3" className={styles.empresa}>{data.empresa}</TypographyOp>
           <TypographyOp variant="h3">{data.tipo_contrato}</TypographyOp>
           <div className={styles.ubicacion}>
             <BsGeoAltFill className={styles.icon} />
@@ -164,7 +165,8 @@ export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
     idiomas: dataCruda.attributes.idiomas,
     modalidad_trabajo:
       dataCruda.attributes.modalidad_trabajo.data.attributes.nombre,
-    convocatoria_cerrada: dataCruda.attributes.convocatoria_cerrada
+    convocatoria_cerrada: dataCruda.attributes.convocatoria_cerrada,
+    empresa: dataCruda.attributes.compania.data.attributes.nombre
   }
 
   return {
