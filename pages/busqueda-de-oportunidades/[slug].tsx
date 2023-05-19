@@ -5,7 +5,7 @@ import {
   FormularioCV,
   TypographyOp
 } from '@/pages/busqueda-de-oportunidades/components'
-import { getTrabajosBySlug } from '@/services/trabajos/Trabajo.service'
+import { getJobBySlug } from '@/services/trabajos/Trabajo.service'
 import { GetServerSideProps, NextPage } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/slug.module.scss'
 import { BsExclamationCircle, BsGeoAltFill } from 'react-icons/bs'
@@ -132,7 +132,7 @@ export default Job
 export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
   params
 }) => {
-  const res = await getTrabajosBySlug(params?.slug)
+  const res = await getJobBySlug(params?.slug)
   const dataCruda = res.data[0]
 
   const jobsAdapter = {
