@@ -17,7 +17,6 @@ import { useRouter } from 'next/router'
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
 import { adapterJobs } from '@/adapters'
 import { getFechtApi } from '@/services'
-import { get } from 'http'
 
 interface Props {
   data: Job[]
@@ -137,15 +136,24 @@ const BusquedaOportunidades = ({ data: jobs, pagination }: Props) => {
 export default BusquedaOportunidades
 
 export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
-  query: { page = 1, ...filters }
+  query: { page = 1, ...queries }
 }) => {
-  const res = await getTrabajosByPage(page, filters)
+  const res = await getTrabajosByPage(page, queries)
 
-  const paths = ['ubicacions', 'tipo-contratoes', 'area-trabajos', 'modalidad-trabajos', 'companias']
+  const paths = [
+    'ubicacions',
+    'tipo-contratoes',
+    'area-trabajos',
+    'modalidad-trabajos',
+    'companias'
+  ]
 
-  // const promises = await getFechtApi()
-
-  // console.log(promises)
+  const filters = await Promise.all(
+    paths.map(async (path) => {
+      const res = await getFechtApi(path)
+      return res.data
+    })
+  ).then((res) => res)
 
   const jobsData = await res.data
   const newData = adapterJobs(jobsData)
@@ -154,7 +162,8 @@ export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
   return {
     props: {
       data: newData,
-      pagination
+      pagination,
+      filters
     }
   }
 }
