@@ -18,6 +18,14 @@ export const getTrabajosByPage = async (page: string | number | string[], filter
   return res
 }
 
+export const getJob = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/jobs?populate=*`
+  ).then(async (res) => await res.json())
+
+  return res
+}
+
 export const getJobBySlug = async (url: string | string[] | undefined) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/jobs?filters[slug][$eq]=${url}&populate=*`
