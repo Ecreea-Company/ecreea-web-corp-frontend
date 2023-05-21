@@ -6,12 +6,13 @@ interface LinkProps {
   url: string
   colorText?: string
   disabled?: boolean
+  className?: string
 }
 
-function LinkRedirect ({ text, colorText, url, disabled }: LinkProps): JSX.Element {
+function LinkRedirect ({ text, colorText, url, disabled, className }: LinkProps): JSX.Element {
   return (
     <a href={url}>
-      <h2 className={styles.Link} aria-disabled={disabled}
+      <h2 className={`${styles.Link} ${className}`} aria-disabled={disabled}
     onClick={(e) => (disabled ? e.preventDefault() : null)} style={{ color: colorText }}>
         {text}
         <div className={styles.Link__icon}>
