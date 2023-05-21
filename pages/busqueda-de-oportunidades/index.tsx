@@ -12,6 +12,7 @@ import {
 } from '@/pages/busqueda-de-oportunidades/components'
 import { adapterJobs } from '@/adapters'
 import { getFechtApi } from '@/services'
+import DestacadoJobs from '@/pages/busqueda-de-oportunidades/components/destacado-jobs/DestacadoJobs.component'
 
 interface BusquedaOportunidadesPageProps {
   jobs: Job[]
@@ -50,6 +51,8 @@ const BusquedaOportunidades = ({ jobs, pagination, filters }: BusquedaOportunida
         </Typography>
         {/* <TexfieldOp /> */}
       </div>
+
+      <DestacadoJobs jobs={jobs}/>
 
       <div className={styles.SlideBTN}>
         <FilterButton />
