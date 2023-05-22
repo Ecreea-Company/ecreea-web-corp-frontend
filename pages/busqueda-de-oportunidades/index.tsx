@@ -12,6 +12,8 @@ import {
 } from '@/pages/busqueda-de-oportunidades/components'
 import { adapterJobs } from '@/adapters'
 import { getFechtApi } from '@/services'
+import { useState } from 'react'
+import { LoadingBlock } from '@/components'
 import DestacadoJobs from '@/pages/busqueda-de-oportunidades/components/destacado-jobs/DestacadoJobs.component'
 
 interface BusquedaOportunidadesPageProps {
@@ -20,7 +22,12 @@ interface BusquedaOportunidadesPageProps {
   filters: any
 }
 
-const BusquedaOportunidades = ({ jobs, pagination, filters }: BusquedaOportunidadesPageProps) => {
+const BusquedaOportunidades = ({
+  jobs,
+  pagination,
+  filters
+}: BusquedaOportunidadesPageProps) => {
+  const [isLoad, setIsLoad] = useState<boolean>(false)
   // const handlePageNavigation = (direction: string) => {
   //   const currentPage = parseInt(router.query.page as string) || 1
   //   const nextPage = direction === 'next' ? currentPage + 1 : currentPage - 1
@@ -60,13 +67,15 @@ const BusquedaOportunidades = ({ jobs, pagination, filters }: BusquedaOportunida
       <div className={styles.Section2}>
         <div className={styles.DropdownLine}>
           <div className={styles.Dropdown}>
-            <DropdownMap />
+              <DropdownMap />
           </div>
           <div className={styles.Line} />
         </div>
         <div className={styles.Position}>
-          <ListJobs jobs={jobs} />
-          <PaginationButton pagination={pagination} />
+          <LoadingBlock state={isLoad}>
+            <ListJobs jobs={jobs} />
+            <PaginationButton pagination={pagination} setIsLoad={setIsLoad} />
+          </LoadingBlock>
         </div>
       </div>
     </Public>
@@ -87,9 +96,9 @@ export const getJobsByPage = async ({ page }: GetJobs) => {
   return res
 }
 
-export const getServerSideProps: GetServerSideProps<BusquedaOportunidadesPageProps> = async ({
-  query: { page = 1, ...queries }
-}) => {
+export const getServerSideProps: GetServerSideProps<
+BusquedaOportunidadesPageProps
+> = async ({ query: { page = 1, ...queries } }) => {
   // const res = await getTrabajosByPage(page, queries)
 
   const pathsForFilters = [
@@ -107,12 +116,27 @@ export const getServerSideProps: GetServerSideProps<BusquedaOportunidadesPagePro
     })
   ).then((res) => res)
 
-  const [data, pagination] = await getJobsByPage({ page: page as number })
-    .then(res => [res.data, res.meta.pagination])
+  const [data, pagination] = await getJobsByPage({ page: page as number }).then(
+    (res) => [res.data, res.meta.pagination]
+  )
 
   const jobs = data.map((job: Job) => {
-    const { slug, nombreJob, tipoContrato, fechaPublicacion, empresa, descripcion } = adapterJobs(job)
-    return { slug, nombreJob, tipoContrato, fechaPublicacion, empresa, descripcion }
+    const {
+      slug,
+      nombreJob,
+      tipoContrato,
+      fechaPublicacion,
+      empresa,
+      descripcion
+    } = adapterJobs(job)
+    return {
+      slug,
+      nombreJob,
+      tipoContrato,
+      fechaPublicacion,
+      empresa,
+      descripcion
+    }
   })
 
   return {
