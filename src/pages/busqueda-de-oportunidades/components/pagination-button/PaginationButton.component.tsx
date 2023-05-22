@@ -2,20 +2,28 @@ import { useRouter } from 'next/router'
 import styles from './PaginationButton.module.scss'
 import { PaginationAPI } from '@/models'
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
+import React from 'react'
 
-function PaginationButton ({ pagination }: { pagination: PaginationAPI }) {
+interface PaginationButtonProps {
+  pagination: PaginationAPI
+  // Buscar el tipo de dato correcto
+  // eliminar el any
+  setIsLoad: (newState: boolean) => any
+}
+
+function PaginationButton ({ pagination, setIsLoad }: PaginationButtonProps) {
   const router = useRouter()
   const pathname = router.pathname
 
   const handleNextPage = async () => {
     // handlePageNavigation('next')
-    await router.push(`${pathname}?page=${pagination.page + 1}`)
+    await router.push(`${pathname}?page=${pagination.page + 1}`).then(setIsLoad(true)).finally(() => setIsLoad(false))
   }
 
   const handlePreviousPage = async () => {
     // handlePageNavigation('previous')
 
-    await router.push(`${pathname}?page=${pagination.page - 1}`)
+    await router.push(`${pathname}?page=${pagination.page - 1}`).then(setIsLoad(true)).finally(() => setIsLoad(false))
   }
 
   return (

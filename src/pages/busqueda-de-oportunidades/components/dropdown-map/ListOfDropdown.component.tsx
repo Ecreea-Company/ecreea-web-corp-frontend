@@ -8,14 +8,17 @@ interface DropdownsProps {
 }
 
 const useEndpointData = (endpoint: string) => {
-  const { data } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`, getFetcherSWR)
+  const { data } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`,
+    getFetcherSWR
+  )
   return data?.data.map((item: any) => ({
     slug: item.attributes.slug,
     name: item.attributes.nombre
   }))
 }
 
-const DropdownsMapOP = ({ width }: DropdownsProps) => {
+const ListOfDropdown = ({ width }: DropdownsProps) => {
   const router = useRouter()
 
   const ubicaciones = useEndpointData('ubicacions')
@@ -34,7 +37,11 @@ const DropdownsMapOP = ({ width }: DropdownsProps) => {
 
   return (
     <div>
-      {ubicaciones && tipoContrato && areaTrabajo && modalidadTrabajo && compania &&
+      {ubicaciones &&
+        tipoContrato &&
+        areaTrabajo &&
+        modalidadTrabajo &&
+        compania &&
         itemsDrops.map((item, index) => (
           <DropdownOP
             key={index}
@@ -48,4 +55,4 @@ const DropdownsMapOP = ({ width }: DropdownsProps) => {
   )
 }
 
-export default DropdownsMapOP
+export default ListOfDropdown
