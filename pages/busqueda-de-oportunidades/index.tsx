@@ -12,9 +12,10 @@ import {
 } from '@/pages/busqueda-de-oportunidades/components'
 import { adapterJobs } from '@/adapters'
 
-import { getFechtApi, getJob } from '@/services'
+import { getFechtApi, getJob,getJobDestacado } from '@/services'
 import { useState } from 'react'
 import { LoadingBlock } from '@/components'
+
 
 import DestacadoJobs from '@/pages/busqueda-de-oportunidades/components/destacado-jobs/DestacadoJobs.component'
 
@@ -157,7 +158,9 @@ BusquedaOportunidadesPageProps
     }
   })
 
-  const destacados = await getJob().then((res) => res.data)
+  const destacados = await getJobDestacado()
+    .then(res => res.data)
+
 
   const jobsDestacados = destacados.map((dest: Job) => {
     const { idJob, slug, nombreJob, tipoContrato, descripcion, destacado } =

@@ -6,15 +6,16 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { useWindowSize } from '@/hooks'
 
 function DestacadoJobs ({ jobs }: {jobs: Job[]}) {
+  if (jobs.length === 0) return null
   const windowSize = useWindowSize()
   const isMobile = windowSize.width < 960
 
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const trabajosDestacados = jobs.filter(job => job.destacado)
+
   const visibleJobs = isMobile
-    ? trabajosDestacados.slice(currentIndex, currentIndex + 1)
-    : trabajosDestacados.slice(currentIndex, currentIndex + 3)
+    ? jobs.slice(currentIndex, currentIndex + 1)
+    : jobs.slice(currentIndex, currentIndex + 3)
 
   const handleNextClick = () => {
     setCurrentIndex(prevIndex => prevIndex + (isMobile ? 1 : 3))
@@ -24,12 +25,8 @@ function DestacadoJobs ({ jobs }: {jobs: Job[]}) {
     setCurrentIndex(prevIndex => prevIndex - (isMobile ? 1 : 3))
   }
 
-  const canGoNext = currentIndex + (isMobile ? 1 : 3) < trabajosDestacados.length
+  const canGoNext = currentIndex + (isMobile ? 1 : 3) < jobs.length
   const canGoPrev = currentIndex > 0
-
-  if (visibleJobs.length === 0) {
-    return null
-  }
 
   return (
     <div className={styles.card}>
