@@ -9,7 +9,7 @@ export interface Job {
   stateJobCall: boolean
   descripcion: string
   specialityJob: RequirementItem[]
-  destacado?: boolean
+  destacado: boolean
 }
 
 export interface RequirementItem {

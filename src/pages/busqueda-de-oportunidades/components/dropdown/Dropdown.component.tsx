@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import styles from './Dropdown.module.scss'
 import { AiOutlineDown, AiOutlineClose } from 'react-icons/ai'
 import { DropdownOption } from '@/models'
-import { NextRouter } from 'next/router'
+import { NextRouter, useRouter } from 'next/router'
 
 interface DropdownComponentProps {
   width?: string
@@ -12,16 +12,17 @@ interface DropdownComponentProps {
   router: NextRouter
 }
 
-const DropdownOP = ({ options, width, name, router }: DropdownComponentProps): JSX.Element => {
+const DropdownOP = ({ options, width, name }: DropdownComponentProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOptions, setSelectedOptions] = useState<DropdownOption[]>([])
+  const router = useRouter()
 
   const filterKeyMap: any = {
-    'Ubicación': 'ubicacion',
-    'Tipo de Contrato': 'tipo_contrato',
-    'Área de Trabajo': 'area_trabajo',
-    'Modalidad': 'modalidad_trabajo',
-    'Empresa': 'compania'
+    'ubicacions': 'Ubicación',
+    'tipo-contratoes': 'Tipo de Contrato',
+    'area-trabajos': 'Área de Trabajo',
+    'modalidad-trabajos': 'Modalidad',
+    'companias': 'Empresa'
   }
 
   const filterKey = filterKeyMap[name]
@@ -90,7 +91,7 @@ const DropdownOP = ({ options, width, name, router }: DropdownComponentProps): J
     <>
       <div className={styles.dropdown} style={{ width }}>
         <div className={styles.dropdownHeader} onClick={toggleOpen}>
-          <span>{name}</span>
+          <span>{filterKey}</span>
           <div className={styles.dropdownHeader__icon}>
             {isOpen ? <AiOutlineClose /> : <AiOutlineDown />}
           </div>

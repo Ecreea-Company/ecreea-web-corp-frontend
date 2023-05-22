@@ -25,9 +25,12 @@ interface BusquedaOportunidadesPageProps {
   jobsDestacados: Job[]
 }
 
-
-const BusquedaOportunidades = ({ jobs, pagination, filters, jobsDestacados }: BusquedaOportunidadesPageProps) => {
-
+const BusquedaOportunidades = ({
+  jobs,
+  pagination,
+  filters,
+  jobsDestacados
+}: BusquedaOportunidadesPageProps) => {
   const [isLoad, setIsLoad] = useState<boolean>(false)
 
   // const handlePageNavigation = (direction: string) => {
@@ -61,7 +64,7 @@ const BusquedaOportunidades = ({ jobs, pagination, filters, jobsDestacados }: Bu
         {/* <TexfieldOp /> */}
       </div>
 
-      <DestacadoJobs jobs={jobsDestacados}/>
+      <DestacadoJobs jobs={jobsDestacados} />
 
       <div className={styles.SlideBTN}>
         <FilterButton />
@@ -69,7 +72,7 @@ const BusquedaOportunidades = ({ jobs, pagination, filters, jobsDestacados }: Bu
       <div className={styles.Section2}>
         <div className={styles.DropdownLine}>
           <div className={styles.Dropdown}>
-            <ListOfDropdown />
+            <ListOfDropdown filters={filters} />
           </div>
           <div className={styles.Line} />
         </div>
@@ -98,6 +101,11 @@ export const getJobsByPage = async ({ page }: GetJobs) => {
   return res
 }
 
+interface Filter {
+  name: string
+  options: string[]
+}
+
 export const getServerSideProps: GetServerSideProps<
 BusquedaOportunidadesPageProps
 > = async ({ query: { page = 1, ...queries } }) => {
@@ -111,10 +119,18 @@ BusquedaOportunidadesPageProps
     'companias'
   ]
 
-  const filters = await Promise.all(
+  const filters: Filter[] = await Promise.all(
     pathsForFilters.map(async (path) => {
       const res = await getFechtApi(path)
-      return res.data
+      return {
+        name: path,
+        options: res.data.map((item: any) => {
+          return {
+            slug: item.attributes.slug,
+            name: item.attributes.nombre
+          }
+        })
+      }
     })
   ).then((res) => res)
 
@@ -141,11 +157,11 @@ BusquedaOportunidadesPageProps
     }
   })
 
-  const destacados = await getJob()
-    .then(res => res.data)
+  const destacados = await getJob().then((res) => res.data)
 
   const jobsDestacados = destacados.map((dest: Job) => {
-    const { idJob, slug, nombreJob, tipoContrato, descripcion, destacado } = adapterJobs(dest)
+    const { idJob, slug, nombreJob, tipoContrato, descripcion, destacado } =
+      adapterJobs(dest)
     return { idJob, slug, nombreJob, tipoContrato, descripcion, destacado }
   })
 
