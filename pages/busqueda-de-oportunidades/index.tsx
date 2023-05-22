@@ -4,14 +4,19 @@ import { Job, PaginationAPI } from '@/models'
 import { GetServerSideProps } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/busqueda-de-oportunidades.module.scss'
 import {
-  DropdownMap,
+  ListOfDropdown,
   FilterButton,
   Typography,
   ListJobs,
   PaginationButton
 } from '@/pages/busqueda-de-oportunidades/components'
 import { adapterJobs } from '@/adapters'
-import { getFechtApi, getJobDestacado } from '@/services'
+
+import { getFechtApi, getJob,getJobDestacado } from '@/services'
+import { useState } from 'react'
+import { LoadingBlock } from '@/components'
+
+
 import DestacadoJobs from '@/pages/busqueda-de-oportunidades/components/destacado-jobs/DestacadoJobs.component'
 
 interface BusquedaOportunidadesPageProps {
@@ -21,7 +26,14 @@ interface BusquedaOportunidadesPageProps {
   jobsDestacados: Job[]
 }
 
-const BusquedaOportunidades = ({ jobs, pagination, filters, jobsDestacados }: BusquedaOportunidadesPageProps) => {
+const BusquedaOportunidades = ({
+  jobs,
+  pagination,
+  filters,
+  jobsDestacados
+}: BusquedaOportunidadesPageProps) => {
+  const [isLoad, setIsLoad] = useState<boolean>(false)
+
   // const handlePageNavigation = (direction: string) => {
   //   const currentPage = parseInt(router.query.page as string) || 1
   //   const nextPage = direction === 'next' ? currentPage + 1 : currentPage - 1
@@ -53,7 +65,7 @@ const BusquedaOportunidades = ({ jobs, pagination, filters, jobsDestacados }: Bu
         {/* <TexfieldOp /> */}
       </div>
 
-      <DestacadoJobs jobs={jobsDestacados}/>
+      <DestacadoJobs jobs={jobsDestacados} />
 
       <div className={styles.SlideBTN}>
         <FilterButton />
@@ -61,13 +73,15 @@ const BusquedaOportunidades = ({ jobs, pagination, filters, jobsDestacados }: Bu
       <div className={styles.Section2}>
         <div className={styles.DropdownLine}>
           <div className={styles.Dropdown}>
-            <DropdownMap />
+            <ListOfDropdown filters={filters} />
           </div>
           <div className={styles.Line} />
         </div>
         <div className={styles.Position}>
-          <ListJobs jobs={jobs} />
-          <PaginationButton pagination={pagination} />
+          <LoadingBlock state={isLoad}>
+            <ListJobs jobs={jobs} />
+            <PaginationButton pagination={pagination} setIsLoad={setIsLoad} />
+          </LoadingBlock>
         </div>
       </div>
     </Public>
@@ -88,9 +102,14 @@ export const getJobsByPage = async ({ page }: GetJobs) => {
   return res
 }
 
-export const getServerSideProps: GetServerSideProps<BusquedaOportunidadesPageProps> = async ({
-  query: { page = 1, ...queries }
-}) => {
+interface Filter {
+  name: string
+  options: string[]
+}
+
+export const getServerSideProps: GetServerSideProps<
+BusquedaOportunidadesPageProps
+> = async ({ query: { page = 1, ...queries } }) => {
   // const res = await getTrabajosByPage(page, queries)
 
   const pathsForFilters = [
@@ -101,26 +120,51 @@ export const getServerSideProps: GetServerSideProps<BusquedaOportunidadesPagePro
     'companias'
   ]
 
-  const filters = await Promise.all(
+  const filters: Filter[] = await Promise.all(
     pathsForFilters.map(async (path) => {
       const res = await getFechtApi(path)
-      return res.data
+      return {
+        name: path,
+        options: res.data.map((item: any) => {
+          return {
+            slug: item.attributes.slug,
+            name: item.attributes.nombre
+          }
+        })
+      }
     })
   ).then((res) => res)
 
-  const [data, pagination] = await getJobsByPage({ page: page as number })
-    .then(res => [res.data, res.meta.pagination])
+  const [data, pagination] = await getJobsByPage({ page: page as number }).then(
+    (res) => [res.data, res.meta.pagination]
+  )
 
   const jobs = data.map((job: Job) => {
-    const { slug, nombreJob, tipoContrato, fechaPublicacion, empresa, descripcion } = adapterJobs(job)
-    return { slug, nombreJob, tipoContrato, fechaPublicacion, empresa, descripcion }
+    const {
+      slug,
+      nombreJob,
+      tipoContrato,
+      fechaPublicacion,
+      empresa,
+      descripcion
+    } = adapterJobs(job)
+    return {
+      slug,
+      nombreJob,
+      tipoContrato,
+      fechaPublicacion,
+      empresa,
+      descripcion
+    }
   })
 
   const destacados = await getJobDestacado()
     .then(res => res.data)
 
+
   const jobsDestacados = destacados.map((dest: Job) => {
-    const { idJob, slug, nombreJob, tipoContrato, descripcion, destacado } = adapterJobs(dest)
+    const { idJob, slug, nombreJob, tipoContrato, descripcion, destacado } =
+      adapterJobs(dest)
     return { idJob, slug, nombreJob, tipoContrato, descripcion, destacado }
   })
 

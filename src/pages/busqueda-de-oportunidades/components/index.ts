@@ -1,6 +1,6 @@
 export { default as Button } from './button/Button.component'
 export { default as ContentJob } from './content-job/ContentJob.component'
-export { default as DropdownMap } from './dropdown-map/DropdownMap.component'
+export { default as ListOfDropdown } from './list-of-dropdown/ListOfDropdown.component'
 export { default as Dropdown } from './dropdown/Dropdown.component'
 export { default as FilterButton } from './filter-button/FilterButton.component'
 export { default as FormularioCV } from './formularioCV/FormularioCV.component'

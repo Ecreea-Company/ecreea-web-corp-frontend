@@ -6,7 +6,7 @@ import {
   Typography
 } from '@/pages/busqueda-de-oportunidades/components'
 
-function ListJobs ({ jobs }: { jobs: Job[] }) {
+function ListJobs ({ jobs }: {jobs: Job[]}) {
   if (jobs.length === 0 || !jobs) return <h1>No hay trabajos disponibles</h1>
 
   return (

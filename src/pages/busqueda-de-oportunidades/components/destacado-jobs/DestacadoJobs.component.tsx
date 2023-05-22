@@ -12,6 +12,7 @@ function DestacadoJobs ({ jobs }: {jobs: Job[]}) {
 
   const [currentIndex, setCurrentIndex] = useState(0)
 
+
   const visibleJobs = isMobile
     ? jobs.slice(currentIndex, currentIndex + 1)
     : jobs.slice(currentIndex, currentIndex + 3)
