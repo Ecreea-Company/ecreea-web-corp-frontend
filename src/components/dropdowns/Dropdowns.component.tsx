@@ -13,7 +13,7 @@ export interface DropdownProps{
   content2?: string
   dataTable?: TablesProps
   className?: string
-  items?: string
+  items?: string | string[]
 }
 
 const Dropdown = ({ title, content, content2, dataTable, className, items }: DropdownProps): JSX.Element => {

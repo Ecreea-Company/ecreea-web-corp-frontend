@@ -1,6 +1,6 @@
 export interface Job {
   idJob: number
-  fechaPublicacion: string
+  fechaPublicacion?: string
   slug: string
   nombreJob: string
   empresa: string
@@ -8,16 +8,11 @@ export interface Job {
   ubicacion: string
   stateJobCall: boolean
   descripcion: string
-  specialityJob: RequirementJob
+  specialityJob: RequirementItem[]
+  destacado?: boolean
 }
 
-export interface RequirementJob {
-  areaTrabajo: string[]
-  beneficios: string[]
-  funciones: string[]
-  competencias: string[]
-  carreras: string[]
-  conocimientoDeseado: string[]
-  idiomas: string
-  modalidadTrabajo: string
+export interface RequirementItem {
+  title: string
+  dataJob: string[]
 }

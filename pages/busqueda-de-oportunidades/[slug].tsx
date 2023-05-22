@@ -1,35 +1,26 @@
 import { Public } from '@/layouts'
 import {
-  ButtonOp,
-  ContentJob,
+  Button,
   FormularioCV,
-  TypographyOp
+  JobRequirements,
+  Typography
 } from '@/pages/busqueda-de-oportunidades/components'
 import { getJob, getJobBySlug } from '@/services/trabajos/Trabajo.service'
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/slug.module.scss'
 import { BsExclamationCircle, BsGeoAltFill } from 'react-icons/bs'
-import { useWindowSize } from '@/hooks'
-import Dropdown from '@/components/dropdowns/Dropdowns.component'
 import { FiCheckCircle } from 'react-icons/fi'
 import { useState } from 'react'
 import { IoCloseOutline } from 'react-icons/io5'
 import { adapterJobs } from '@/adapters'
+import { Job } from '@/models'
 
-const Job: NextPage = ({ data }: any) => {
-  const { width } = useWindowSize()
+interface JobSlugProps{
+  data: Job
+}
+
+const JobSlug = ({ data }: JobSlugProps) => {
   const [isActivedModal, setIsActivedModal] = useState(false)
-
-  const itemsJobs = [
-    { title: 'Área de trabajo', dataJob: data.specialityJob.areaTrabajo },
-    { title: 'Beneficios', dataJob: data.specialityJob.beneficios },
-    { title: 'Funciones', dataJob: data.specialityJob.funciones },
-    { title: 'Competencias', dataJob: data.specialityJob.competencias },
-    { title: 'Carreras', dataJob: data.specialityJob.carreras },
-    { title: 'Conocimiento deseados', dataJob: data.specialityJob.conocimientoDeseado },
-    { title: 'Idiomas', dataJob: data.specialityJob.idiomas },
-    { title: 'Modalidad de Trabajo', dataJob: data.specialityJob.modalidadTrabajo }
-  ]
 
   const handleModal = (e: any) => {
     e.preventDefault()
@@ -37,19 +28,19 @@ const Job: NextPage = ({ data }: any) => {
   }
 
   return (
-    <Public titlePage={data.nombre_puesto}>
+    <Public titlePage={data.nombreJob}>
       <section className={styles.All}>
         <section className={styles.Section}>
-          <TypographyOp className={styles.title} variant="h1">
+          <Typography className={styles.title} variant="h1">
             {data.nombreJob}
-          </TypographyOp>
-          <TypographyOp variant="h3" className={styles.empresa}>{data.empresa}</TypographyOp>
-          <TypographyOp variant="h3">{data.tipoContrato}</TypographyOp>
+          </Typography>
+          <Typography variant="h3" className={styles.empresa}>{data.empresa}</Typography>
+          <Typography variant="h3">{data.tipoContrato}</Typography>
           <div className={styles.ubicacion}>
             <BsGeoAltFill className={styles.icon} />
-            <TypographyOp variant="h3">{data.ubicacion}</TypographyOp>
+            <Typography variant="h3">{data.ubicacion}</Typography>
           </div>
-          {data.convocatoria_cerrada
+          {data.stateJobCall
             ? (
             <div className={styles.convocatoria_cerrada}>
               <BsExclamationCircle className={styles.icon} />
@@ -62,39 +53,20 @@ const Job: NextPage = ({ data }: any) => {
               <p>Vacante disponible</p>
             </div>
               )}
-          <ButtonOp
+          <Button
             className={styles.btn}
             url="#"
-            isDisabled={data.convocatoria_cerrada}
+            isDisabled={data.stateJobCall}
             onClick={handleModal}
           />
         </section>
-        <TypographyOp className={styles.description} variant="h3">{data.descripcion}</TypographyOp>
-        {width < 960
-          ? (
-          <>
-            {itemsJobs.map((item, index) => (
-              <Dropdown
-                className={styles.contentJobDrop}
-                key={index}
-                title={item.title}
-                items={item.dataJob}
-              />
-            ))}
-          </>
-            )
-          : (
-          <section className={styles.contentjob}>
-            {itemsJobs.map((item, index) => (
-              <ContentJob key={index} title={item.title} items={item.dataJob} />
-            ))}
-          </section>
-            )}
+        <Typography className={styles.description} variant="h3">{data.descripcion}</Typography>
+        <JobRequirements itemsJobs={data.specialityJob}/>
         <section className={styles.last_btn}>
-          <ButtonOp
+          <Button
             className={styles.btn}
             url="#"
-            isDisabled={data.convocatoria_cerrada}
+            isDisabled={data.stateJobCall}
             onClick={handleModal}
           />
         </section>
@@ -110,9 +82,9 @@ const Job: NextPage = ({ data }: any) => {
             <IoCloseOutline />
           </button>
           <div className={styles.Modal__descrip}>
-            <TypographyOp className={styles.Modal__Title} variant="h1">
+            <Typography className={styles.Modal__Title} variant="h1">
               Conecta con Nosotros
-            </TypographyOp>
+            </Typography>
             <div className={styles.Modal__parrafos}>
               <p>
                 Explora una cultura colaborativa de crecimiento y originalidad,
@@ -121,26 +93,38 @@ const Job: NextPage = ({ data }: any) => {
               <p>Si eres Estudiante o Bachiller, ¡Envíanos tu Hoja de Vida!</p>
             </div>
           </div>
-         <FormularioCV idJob={data.id}/>
+         <FormularioCV idJob={data.idJob}/>
         </div>
       </div>
     </Public>
   )
 }
 
-export default Job
+export default JobSlug
 
-export const getStaticProps: GetStaticProps<{ data: any }> = async ({
+export const getStaticProps: GetStaticProps<JobSlugProps> = async ({
   params
 }) => {
   const res = await getJobBySlug(params?.slug)
   const slugJobData = res.data[0]
 
-  const newData = adapterJobs(slugJobData)
+  const { idJob, slug, nombreJob, empresa, tipoContrato, ubicacion, stateJobCall, descripcion, specialityJob } = adapterJobs(slugJobData)
+
+  const data = {
+    idJob,
+    slug,
+    nombreJob,
+    empresa,
+    tipoContrato,
+    ubicacion,
+    stateJobCall,
+    descripcion,
+    specialityJob
+  }
 
   return {
     props: {
-      data: newData
+      data
     }
   }
 }

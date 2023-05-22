@@ -11,23 +11,25 @@ import {
   PaginationButton
 } from '@/pages/busqueda-de-oportunidades/components'
 import { adapterJobs } from '@/adapters'
-import { getFechtApi } from '@/services'
+
+import { getFechtApi, getJob } from '@/services'
 import { useState } from 'react'
 import { LoadingBlock } from '@/components'
+
 import DestacadoJobs from '@/pages/busqueda-de-oportunidades/components/destacado-jobs/DestacadoJobs.component'
 
 interface BusquedaOportunidadesPageProps {
   jobs: Job[]
   pagination: PaginationAPI
   filters: any
+  jobsDestacados: Job[]
 }
 
-const BusquedaOportunidades = ({
-  jobs,
-  pagination,
-  filters
-}: BusquedaOportunidadesPageProps) => {
+
+const BusquedaOportunidades = ({ jobs, pagination, filters, jobsDestacados }: BusquedaOportunidadesPageProps) => {
+
   const [isLoad, setIsLoad] = useState<boolean>(false)
+
   // const handlePageNavigation = (direction: string) => {
   //   const currentPage = parseInt(router.query.page as string) || 1
   //   const nextPage = direction === 'next' ? currentPage + 1 : currentPage - 1
@@ -59,7 +61,7 @@ const BusquedaOportunidades = ({
         {/* <TexfieldOp /> */}
       </div>
 
-      <DestacadoJobs jobs={jobs}/>
+      <DestacadoJobs jobs={jobsDestacados}/>
 
       <div className={styles.SlideBTN}>
         <FilterButton />
@@ -139,11 +141,20 @@ BusquedaOportunidadesPageProps
     }
   })
 
+  const destacados = await getJob()
+    .then(res => res.data)
+
+  const jobsDestacados = destacados.map((dest: Job) => {
+    const { idJob, slug, nombreJob, tipoContrato, descripcion, destacado } = adapterJobs(dest)
+    return { idJob, slug, nombreJob, tipoContrato, descripcion, destacado }
+  })
+
   return {
     props: {
       jobs,
       pagination,
-      filters
+      filters,
+      jobsDestacados
     }
   }
 }
