@@ -38,6 +38,14 @@ export const getJob = async () => {
   return res
 }
 
+export const getJobDestacado = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/jobs?filters[destacado][$eq]=true&populate=*`
+  ).then(async (res) => await res.json())
+
+  return res
+}
+
 // refact
 export const getJobBySlug = async (url: string | string[] | undefined) => {
   const res = await fetch(
