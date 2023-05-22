@@ -4,7 +4,7 @@ import { Job, PaginationAPI } from '@/models'
 import { GetServerSideProps } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/busqueda-de-oportunidades.module.scss'
 import {
-  DropdownMap,
+  ListOfDropdown,
   FilterButton,
   Typography,
   ListJobs,
@@ -67,7 +67,7 @@ const BusquedaOportunidades = ({
       <div className={styles.Section2}>
         <div className={styles.DropdownLine}>
           <div className={styles.Dropdown}>
-              <DropdownMap />
+            <ListOfDropdown />
           </div>
           <div className={styles.Line} />
         </div>
