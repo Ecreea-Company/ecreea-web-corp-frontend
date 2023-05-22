@@ -11,7 +11,7 @@ import {
   PaginationButton
 } from '@/pages/busqueda-de-oportunidades/components'
 import { adapterJobs } from '@/adapters'
-import { getFechtApi, getJob } from '@/services'
+import { getFechtApi, getJobDestacado } from '@/services'
 import DestacadoJobs from '@/pages/busqueda-de-oportunidades/components/destacado-jobs/DestacadoJobs.component'
 
 interface BusquedaOportunidadesPageProps {
@@ -116,7 +116,7 @@ export const getServerSideProps: GetServerSideProps<BusquedaOportunidadesPagePro
     return { slug, nombreJob, tipoContrato, fechaPublicacion, empresa, descripcion }
   })
 
-  const destacados = await getJob()
+  const destacados = await getJobDestacado()
     .then(res => res.data)
 
   const jobsDestacados = destacados.map((dest: Job) => {
