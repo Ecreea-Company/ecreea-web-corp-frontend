@@ -13,10 +13,20 @@ import { FiCheckCircle } from 'react-icons/fi'
 import { useState } from 'react'
 import { IoCloseOutline } from 'react-icons/io5'
 import { adapterJobs } from '@/adapters'
-import { Job } from '@/models'
+import { RequirementItem } from '@/models'
 
-interface JobSlugProps{
-  data: Job
+interface JobSlugProps {
+  data: {
+    idJob: number
+    slug: string
+    nombreJob: string
+    empresa: string
+    tipoContrato: string
+    ubicacion: string
+    stateJobCall: boolean
+    descripcion: string
+    specialityJob: RequirementItem[]
+  }
 }
 
 const JobSlug = ({ data }: JobSlugProps) => {
@@ -34,7 +44,9 @@ const JobSlug = ({ data }: JobSlugProps) => {
           <Typography className={styles.title} variant="h1">
             {data.nombreJob}
           </Typography>
-          <Typography variant="h3" className={styles.empresa}>{data.empresa}</Typography>
+          <Typography variant="h3" className={styles.empresa}>
+            {data.empresa}
+          </Typography>
           <Typography variant="h3">{data.tipoContrato}</Typography>
           <div className={styles.ubicacion}>
             <BsGeoAltFill className={styles.icon} />
@@ -60,8 +72,10 @@ const JobSlug = ({ data }: JobSlugProps) => {
             onClick={handleModal}
           />
         </section>
-        <Typography className={styles.description} variant="h3">{data.descripcion}</Typography>
-        <JobRequirements itemsJobs={data.specialityJob}/>
+        <Typography className={styles.description} variant="h3">
+          {data.descripcion}
+        </Typography>
+        <JobRequirements itemsJobs={data.specialityJob} />
         <section className={styles.last_btn}>
           <Button
             className={styles.btn}
@@ -93,7 +107,7 @@ const JobSlug = ({ data }: JobSlugProps) => {
               <p>Si eres Estudiante o Bachiller, ¡Envíanos tu Hoja de Vida!</p>
             </div>
           </div>
-         <FormularioCV idJob={data.idJob}/>
+          <FormularioCV idJob={data.idJob} />
         </div>
       </div>
     </Public>
@@ -102,13 +116,21 @@ const JobSlug = ({ data }: JobSlugProps) => {
 
 export default JobSlug
 
-export const getStaticProps: GetStaticProps<JobSlugProps> = async ({
-  params
-}) => {
+export const getStaticProps: GetStaticProps<JobSlugProps> = async ({ params }) => {
   const res = await getJobBySlug(params?.slug)
   const slugJobData = res.data[0]
 
-  const { idJob, slug, nombreJob, empresa, tipoContrato, ubicacion, stateJobCall, descripcion, specialityJob } = adapterJobs(slugJobData)
+  const {
+    idJob,
+    slug,
+    nombreJob,
+    empresa,
+    tipoContrato,
+    ubicacion,
+    stateJobCall,
+    descripcion,
+    specialityJob
+  } = adapterJobs(slugJobData)
 
   const data = {
     idJob,
