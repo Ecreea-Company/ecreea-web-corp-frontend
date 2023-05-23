@@ -1,6 +1,6 @@
 export interface Job {
   idJob: number
-  fechaPublicacion?: string
+  fechaPublicacion: string
   slug: string
   nombreJob: string
   empresa: string
