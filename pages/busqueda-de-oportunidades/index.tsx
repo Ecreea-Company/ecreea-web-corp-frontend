@@ -45,7 +45,7 @@ const BusquedaOportunidades = ({
       <DestacadoJobs jobs={jobsDestacados} />
 
       <div className={styles.SlideBTN}>
-        <FilterButton />
+        <FilterButton filters={filters} />
       </div>
       <div className={styles.Section2}>
         <div className={styles.DropdownLine}>

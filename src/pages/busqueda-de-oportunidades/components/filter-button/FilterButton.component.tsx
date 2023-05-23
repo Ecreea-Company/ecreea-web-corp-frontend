@@ -1,10 +1,14 @@
 import { useState } from 'react'
-import { DropdownMap } from '..'
 import styles from './FilterButton.module.scss'
-import { GrFormFilter } from 'react-icons/gr'
+import { IoIosFunnel } from 'react-icons/io'
 import { IoCloseSharp } from 'react-icons/io5'
+import ListOfDropdown from '../list-of-dropdown/ListOfDropdown.component'
 
-const SlideButton = (): JSX.Element => {
+interface FilterButtonProps{
+  filters: any
+}
+
+const SlideButton = ({ filters }: FilterButtonProps): JSX.Element => {
   const [show, setShow] = useState(false)
 
   const handleButtonClick = () => {
@@ -18,7 +22,7 @@ const SlideButton = (): JSX.Element => {
   return (
     <div className={styles.ButtonPopup}>
       <button className={styles.FilterBTN} onClick={handleButtonClick}>
-        <GrFormFilter className={styles.Icon}/>
+        <IoIosFunnel className={styles.Icon}/>
         Filters
       </button>
       {show && (
@@ -27,7 +31,7 @@ const SlideButton = (): JSX.Element => {
             <IoCloseSharp />
           </button>
           <div className={styles.PopupContent}>
-            <DropdownMap width={'100%'}/>
+            <ListOfDropdown filters={filters} width={'100%'}/>
         </div>
       </div>
       )}
