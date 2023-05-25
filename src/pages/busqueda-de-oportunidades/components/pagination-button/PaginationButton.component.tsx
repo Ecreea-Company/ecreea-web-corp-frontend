@@ -16,13 +16,10 @@ function PaginationButton ({ pagination, setIsLoad }: PaginationButtonProps) {
   const pathname = router.pathname
 
   const handleNextPage = async () => {
-    // handlePageNavigation('next')
     await router.push(`${pathname}?page=${pagination.page + 1}`).then(setIsLoad(true)).finally(() => setIsLoad(false))
   }
 
   const handlePreviousPage = async () => {
-    // handlePageNavigation('previous')
-
     await router.push(`${pathname}?page=${pagination.page - 1}`).then(setIsLoad(true)).finally(() => setIsLoad(false))
   }
 

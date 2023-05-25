@@ -1,4 +1,4 @@
-import DropdownOP from '../dropdown/Dropdown.component'
+import { Dropdown } from '@/pages/busqueda-de-oportunidades/components'
 import { useRouter } from 'next/router'
 
 const ListOfDropdown = ({
@@ -13,7 +13,7 @@ const ListOfDropdown = ({
   return (
     <div>
       {filters.map((filter: any) => (
-        <DropdownOP
+        <Dropdown
           key={filter.name}
           name={filter.name}
           options={filter.options}

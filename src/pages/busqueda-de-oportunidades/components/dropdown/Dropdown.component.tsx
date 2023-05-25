@@ -18,6 +18,7 @@ const DropdownOP = ({ options, width, name }: DropdownComponentProps): JSX.Eleme
   const router = useRouter()
 
   const filterKeyMap: any = {
+
     'ubicacions': 'Ubicación',
     'tipo-contratoes': 'Tipo de Contrato',
     'area-trabajos': 'Área de Trabajo',
