@@ -2,20 +2,23 @@
 import { useEffect, useState } from 'react'
 import styles from './Dropdown.module.scss'
 import { AiOutlineDown, AiOutlineClose } from 'react-icons/ai'
-import { DropdownOption } from '@/models'
 import { NextRouter, useRouter } from 'next/router'
 
+interface DropdownOption {
+  slug: string
+  name: string
+}
+
 interface DropdownComponentProps {
-  width?: string
   name: string
   options: DropdownOption[]
   router: NextRouter
 }
 
-const DropdownOP = ({ options, width, name }: DropdownComponentProps): JSX.Element => {
+const DropdownOP = ({ options, name }: DropdownComponentProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOptions, setSelectedOptions] = useState<DropdownOption[]>([])
-  const router = useRouter()
+  /* const router = useRouter()
 
   const filterKeyMap: any = {
 
@@ -38,7 +41,7 @@ const DropdownOP = ({ options, width, name }: DropdownComponentProps): JSX.Eleme
     } else {
       setSelectedOptions([])
     }
-  }, [router.query, options])
+  }, [router.query, options]) */
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
@@ -76,7 +79,7 @@ const DropdownOP = ({ options, width, name }: DropdownComponentProps): JSX.Eleme
 
     setSelectedOptions(newSelectedOptions)
 
-    // Si hay opciones seleccionadas, actualiza el valor del filtro
+    /* // Si hay opciones seleccionadas, actualiza el valor del filtro
     const filterValue = newSelectedOptions.length > 0 ? newSelectedOptions[0].slug : ''
 
     const newUrl: string = filterValue
@@ -85,14 +88,14 @@ const DropdownOP = ({ options, width, name }: DropdownComponentProps): JSX.Eleme
 
     router.push(newUrl).catch((err) => {
       console.error('Error al actualizar la URL:', err)
-    })
+    }) */
   }
 
   return (
     <>
-      <div className={styles.dropdown} style={{ width }}>
+      <div className={styles.dropdown}>
         <div className={styles.dropdownHeader} onClick={toggleOpen}>
-          <span>{filterKey}</span>
+          <span>{name}</span>
           <div className={styles.dropdownHeader__icon}>
             {isOpen ? <AiOutlineClose /> : <AiOutlineDown />}
           </div>
@@ -103,7 +106,7 @@ const DropdownOP = ({ options, width, name }: DropdownComponentProps): JSX.Eleme
             {options.map((option) => (
               <label key={option.slug} className={styles.checkbox}>
                 <input
-                  type="checkbox"
+                  type="radio"
                   value={option.slug}
                   checked={selectedOptions.some(
                     (selectedOption) => selectedOption.slug === option.slug
