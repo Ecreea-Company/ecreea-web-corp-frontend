@@ -4,7 +4,10 @@
   display: flex;
   flex-direction: column;
   padding: .5rem;
-  width: 22vw;
+  width: 100%;
+  @include mediaQueries.for-desktop-new {
+    width: 22vw;
+  }
 
   .dropdownHeader {
     cursor: pointer;
@@ -28,9 +31,31 @@
     font-size: clamp(1rem, 1.8vw, 1.8rem);
 
     .checkbox {
-      display: flex;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1% 90%;
       gap: 1.8rem;
+      cursor: pointer;
+    
+      & input[type="radio"] {
+        appearance: none;
+        border: 1px solid black;
+        width: .8rem;
+        height: .8rem;
+        cursor: pointer;
+    
+        &:hover {
+          background-color: gray;
+        }
+    
+        &:checked {
+          background-color: black;
+          transform: rotate(90deg);
+          transition: all 0.2s ease;
+        }
+      }
     }
+    
   }
   
   .Line {
