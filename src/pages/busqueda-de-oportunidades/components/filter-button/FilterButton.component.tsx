@@ -31,7 +31,7 @@ const SlideButton = ({ filters }: FilterButtonProps): JSX.Element => {
             <IoCloseSharp />
           </button>
           <div className={styles.PopupContent}>
-            <ListOfDropdown filters={filters} width={'100%'}/>
+            <ListOfDropdown filters={filters}/>
         </div>
       </div>
       )}
