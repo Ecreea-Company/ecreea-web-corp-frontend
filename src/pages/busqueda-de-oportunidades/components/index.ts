@@ -8,6 +8,5 @@ export { default as JobRequirements } from './job-requirements/JobRequirements.c
 export { default as LinkRedirect } from './link/LinkRedirect.component'
 export { default as ListJobs } from './list-jobs/ListJobs.component'
 export { default as PaginationButton } from './pagination-button/PaginationButton.component'
-export { default as TextfieldDropdown } from './textfield-dropdown/TextfieldDropdown'
 export { default as Textfield } from './textfield/Textfield.component'
 export { default as Typography } from './typography/Typography.component'
