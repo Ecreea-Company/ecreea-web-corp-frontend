@@ -7,9 +7,9 @@ import algoliasearch from 'algoliasearch'
 const searchClient = algoliasearch(
   'AQS72RFZ2Q',
   'e31895120604407ae53189e47a8bcccb'
-);
+)
 
-const TextField = ({dropJobs}: any): JSX.Element => {
+const TextField = ({ dropJobs }: any): JSX.Element => {
   return (
       <Autocomplete
         openOnFocus={false}
@@ -17,24 +17,24 @@ const TextField = ({dropJobs}: any): JSX.Element => {
         placeholder="Encuentra tu oportunidad"
         getSources={({ query }: any) => [
           {
-            sourceId: "jobs",
-            getItems() {
+            sourceId: 'jobs',
+            getItems () {
               return getAlgoliaResults({
                 searchClient,
                 queries: [
                   {
-                    indexName: "development_job",
-                    query,
+                    indexName: 'development_job',
+                    query
                   }
                 ]
               })
             },
             templates: {
-              item({ item, components}: any) {
-                return <SearchItem hit={item} components={components} />;
+              item ({ item, components }: any) {
+                return <SearchItem hit={item} components={components} />
               }
             }
-          },
+          }
         ]}
       />
   )
