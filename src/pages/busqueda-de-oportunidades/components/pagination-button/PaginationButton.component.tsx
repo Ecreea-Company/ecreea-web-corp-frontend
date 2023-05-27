@@ -6,21 +6,24 @@ import React from 'react'
 
 interface PaginationButtonProps {
   pagination: PaginationAPI
-  // Buscar el tipo de dato correcto
-  // eliminar el any
   setIsLoad: (newState: boolean) => any
 }
 
 function PaginationButton ({ pagination, setIsLoad }: PaginationButtonProps) {
   const router = useRouter()
-  const pathname = router.pathname
 
   const handleNextPage = async () => {
-    await router.push(`${pathname}?page=${pagination.page + 1}`).then(setIsLoad(true)).finally(() => setIsLoad(false))
+    await router.push({
+      pathname: '/busqueda-de-oportunidades',
+      query: { ...router.query, page: pagination.page + 1 }
+    }).then(setIsLoad(true)).finally(() => setIsLoad(false))
   }
 
   const handlePreviousPage = async () => {
-    await router.push(`${pathname}?page=${pagination.page - 1}`).then(setIsLoad(true)).finally(() => setIsLoad(false))
+    await router.push({
+      pathname: '/busqueda-de-oportunidades',
+      query: { ...router.query, page: pagination.page - 1 }
+    }).then(setIsLoad(true)).finally(() => setIsLoad(false))
   }
 
   return (
@@ -37,7 +40,7 @@ function PaginationButton ({ pagination, setIsLoad }: PaginationButtonProps) {
       </button>
       <button
         className={styles.Control}
-        disabled={pagination.pageCount === pagination.page}
+        disabled={pagination.pageCount === pagination.page || pagination.pageCount === 0}
         onClick={handleNextPage}
       >
         <span className={styles.Control__text}>Siguiente</span>

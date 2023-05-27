@@ -1,30 +1,29 @@
-const filtersToQueryString = (filters: Record<string, any>) => {
-  return Object.entries(filters)
-    .map(([key, value]) => {
-      if (Array.isArray(value)) {
-        return value.map((v) => `filters[${key}][slug][$eq]=${v}`).join('&')
-      }
-      return `filters[${key}][slug][$eq]=${value}`
+export interface FiltersQuery {
+  property: string
+  value: string | string[]
+}
+
+const filtersToQueryString = (filters: FiltersQuery[]) => {
+  const filterQuery = filters
+    .map((filter) => {
+      const { property, value } = filter
+      return value === '' ? '' : `filters[${property}][slug][$eq]=${value}`
     })
     .join('&')
+
+  return filterQuery
 }
-// refact
-export const getTrabajosByPage = async (page: string | number | string[], filters: Record<string, any> = {}) => {
+
+export const getJobsByPage = async ({
+  page,
+  filters
+}: {
+  page: number
+  filters: FiltersQuery[]
+}) => {
   const filterQuery = filtersToQueryString(filters)
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/jobs?populate=*&sort[0]=id%3Adesc&pagination[page]=${page}&pagination[pageSize]=5&${filterQuery}`
-  ).then(async (res) => await res.json())
-
-  return res
-}
-
-interface GetJobs {
-  page: number
-}
-
-export const getJobsByPage = async ({ page }: GetJobs) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/jobs?populate=*&sort[0]=id%3Adesc&pagination[page]=${page}&pagination[pageSize]=5`
   ).then(async (res) => await res.json())
 
   return res

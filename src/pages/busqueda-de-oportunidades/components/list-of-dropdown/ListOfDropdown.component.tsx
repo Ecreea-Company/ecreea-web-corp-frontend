@@ -1,25 +1,15 @@
 import { Dropdown } from '@/pages/busqueda-de-oportunidades/components'
-import { useRouter } from 'next/router'
+import { DropdownComponentProps } from '@/pages/busqueda-de-oportunidades/components/dropdown/Dropdown.component'
 
-const ListOfDropdown = ({ filters }: any) => {
-  const router = useRouter()
-
-  const filterKeyMap: any = {
-    ubicacions: 'Ubicación',
-    'tipo-contratoes': 'Tipo de Contrato',
-    'area-trabajos': 'Área de Trabajo',
-    'modalidad-trabajos': 'Modalidad',
-    companias: 'Empresa'
-  }
-
+const ListOfDropdown = ({ filters }: { filters: DropdownComponentProps[] }) => {
   return (
     <div>
-      {filters.map((filter: any) => (
+      {filters.map((filter: DropdownComponentProps) => (
         <Dropdown
           key={filter.name}
-          name={filterKeyMap[filter.name]}
+          name={filter.name}
+          slug={filter.slug}
           options={filter.options}
-          router={router}
         />
       ))}
     </div>

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
 import { Public } from '@/layouts'
 import { Job, PaginationAPI } from '@/models'
 import { GetServerSideProps } from 'next'
@@ -12,16 +11,17 @@ import {
 } from '@/pages/busqueda-de-oportunidades/components'
 import { adapterJobs } from '@/adapters'
 
-import { getFechtApi, getJobDestacado } from '@/services'
+import { getFechtApi, getJobDestacado, getJobsByPage } from '@/services'
 import { useState } from 'react'
 import { LoadingBlock } from '@/components'
 
 import DestacadoJobs from '@/pages/busqueda-de-oportunidades/components/destacado-jobs/DestacadoJobs.component'
+import { DropdownComponentProps } from '@/pages/busqueda-de-oportunidades/components/dropdown/Dropdown.component'
 
 interface BusquedaOportunidadesPageProps {
   jobs: Job[]
   pagination: PaginationAPI
-  filters: any
+  filters: DropdownComponentProps[]
   jobsDestacados: Job[]
 }
 
@@ -44,14 +44,14 @@ const BusquedaOportunidades = ({
 
       <DestacadoJobs jobs={jobsDestacados} />
 
-      <div className={styles.SlideBTN}>
-        <FilterButton filters={filters} />
-      </div>
+      <FilterButton filters={filters} />
+
       <div className={styles.Section2}>
         <div className={styles.DropdownLine}>
           <div className={styles.Dropdown}>
             <ListOfDropdown filters={filters} />
           </div>
+
           <div className={styles.Line} />
         </div>
         <div className={styles.Position}>
@@ -67,27 +67,25 @@ const BusquedaOportunidades = ({
 
 export default BusquedaOportunidades
 
-interface GetJobs {
-  page: number
-}
-
-export const getJobsByPage = async ({ page }: GetJobs) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/jobs?populate=*&sort[0]=id%3Adesc&pagination[page]=${page}&pagination[pageSize]=5`
-  ).then(async (res) => await res.json())
-
-  return res
-}
-
-interface Filter {
-  name: string
-  options: string[]
-}
-
 export const getServerSideProps: GetServerSideProps<
 BusquedaOportunidadesPageProps
-> = async ({ query: { page = 1, ...queries } }) => {
-  // const res = await getTrabajosByPage(page, queries)
+> = async ({
+  query: {
+    page = 1,
+    ubicacions = '',
+    tipocontratoes = '',
+    areatrabajos = '',
+    modalidadtrabajos = '',
+    companias = ''
+  }
+}) => {
+  const filtersQuery = [
+    { property: 'ubicacion', value: ubicacions },
+    { property: 'tipo_contrato', value: tipocontratoes },
+    { property: 'area_trabajo', value: areatrabajos },
+    { property: 'modalidad_trabajo', value: modalidadtrabajos },
+    { property: 'compania', value: companias }
+  ]
 
   const pathsForFilters = [
     'ubicacions',
@@ -97,11 +95,20 @@ BusquedaOportunidadesPageProps
     'companias'
   ]
 
-  const filters: Filter[] = await Promise.all(
+  const filterKeyMap: any = {
+    ubicacions: 'Ubicación',
+    'tipo-contratoes': 'Tipo de Contrato',
+    'area-trabajos': 'Área de Trabajo',
+    'modalidad-trabajos': 'Modalidad',
+    companias: 'Empresa'
+  }
+
+  const filters: DropdownComponentProps[] = await Promise.all(
     pathsForFilters.map(async (path) => {
       const res = await getFechtApi(path)
       return {
-        name: path,
+        name: filterKeyMap[path],
+        slug: path.replace('-', ''),
         options: res.data.map((item: any) => {
           return {
             slug: item.attributes.slug,
@@ -112,9 +119,10 @@ BusquedaOportunidadesPageProps
     })
   ).then((res) => res)
 
-  const [data, pagination] = await getJobsByPage({ page: page as number }).then(
-    (res) => [res.data, res.meta.pagination]
-  )
+  const [data, pagination] = await getJobsByPage({
+    page: page as number,
+    filters: filtersQuery
+  }).then((res) => [res.data, res.meta.pagination])
 
   const jobs = data.map((job: Job) => {
     const {
@@ -135,8 +143,7 @@ BusquedaOportunidadesPageProps
     }
   })
 
-  const destacados = await getJobDestacado()
-    .then(res => res.data)
+  const destacados = await getJobDestacado().then((res) => res.data)
 
   const jobsDestacados = destacados.map((dest: Job) => {
     const { idJob, slug, nombreJob, tipoContrato, descripcion, destacado } =

@@ -1,124 +1,79 @@
-/* eslint-disable quote-props */
-import { useEffect, useState } from 'react'
+import { ChangeEvent, MouseEvent, useState } from 'react'
 import styles from './Dropdown.module.scss'
 import { AiOutlineDown, AiOutlineClose } from 'react-icons/ai'
-import { NextRouter, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
-interface DropdownOption {
+export interface DropdownOption {
   slug: string
   name: string
 }
 
-interface DropdownComponentProps {
+export interface DropdownComponentProps {
   name: string
+  slug: string
   options: DropdownOption[]
-  router: NextRouter
 }
 
-const DropdownOP = ({ options, name }: DropdownComponentProps): JSX.Element => {
+const DropdownOP = ({
+  options,
+  name,
+  slug
+}: DropdownComponentProps): JSX.Element => {
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedOptions, setSelectedOptions] = useState<DropdownOption[]>([])
-  /* const router = useRouter()
-
-  const filterKeyMap: any = {
-
-    'ubicacions': 'Ubicación',
-    'tipo-contratoes': 'Tipo de Contrato',
-    'area-trabajos': 'Área de Trabajo',
-    'modalidad-trabajos': 'Modalidad',
-    'companias': 'Empresa'
-  }
-
-  const filterKey = filterKeyMap[name]
-
-  useEffect(() => {
-    const filterValue = router.query[filterKey]
-
-    if (filterValue && typeof filterValue === 'string') {
-      const selectedSlugs = filterValue.split(',')
-      const newSelectedOptions = options.filter((option) => selectedSlugs.includes(option.slug))
-      setSelectedOptions(newSelectedOptions)
-    } else {
-      setSelectedOptions([])
-    }
-  }, [router.query, options]) */
+  const [selectedOption, setSelectedOption] = useState('')
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
   }
 
-  /* const handleOptionClick = (option: DropdownOption) => {
-    const alreadySelected = selectedOptions.find(
-      (selectedOption) => selectedOption.slug === option.slug
-    )
-    const newSelectedOptions = alreadySelected
-      ? selectedOptions.filter((selectedOption) => selectedOption.slug !== option.slug)
-      : [...selectedOptions, option]
+  const handleOptionChange = async (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target
+    setSelectedOption((prevOption) => (prevOption === value ? '' : value))
 
-    setSelectedOptions(newSelectedOptions)
-
-    const filterValue = newSelectedOptions.map((option) => option.slug).join(',')
-
-    const newUrl: string = filterValue
-      ? `${router.pathname}?${filterKey}=${filterValue}`
-      : router.pathname
-
-    router.push(newUrl).catch((err) => {
-      console.error('Error al actualizar la URL:', err)
+    await router.push({
+      pathname: '/busqueda-de-oportunidades',
+      query: { ...router.query, [slug]: value }
     })
-  } */
+  }
 
-  const handleOptionClick = (option: DropdownOption) => {
-    // Verifica si el option ya está seleccionado
-    const isSelected = selectedOptions.find((selectedOption) => selectedOption.slug === option.slug)
+  const handleOptionClick = async (event: MouseEvent<HTMLInputElement>) => {
+    const { value } = event.currentTarget
 
-    // Si está seleccionado, lo deselecciona, de lo contrario, lo selecciona
-    const newSelectedOptions = isSelected
-      ? selectedOptions.filter((selectedOption) => selectedOption.slug !== option.slug)
-      : [option]
-
-    setSelectedOptions(newSelectedOptions)
-
-    /* // Si hay opciones seleccionadas, actualiza el valor del filtro
-    const filterValue = newSelectedOptions.length > 0 ? newSelectedOptions[0].slug : ''
-
-    const newUrl: string = filterValue
-      ? `${router.pathname}?${filterKey}=${filterValue}`
-      : router.pathname
-
-    router.push(newUrl).catch((err) => {
-      console.error('Error al actualizar la URL:', err)
-    }) */
+    if (value === selectedOption) {
+      setSelectedOption('')
+      await router.push({
+        pathname: '/busqueda-de-oportunidades',
+        query: { ...router.query, [slug]: '', page: 1 }
+      })
+    }
   }
 
   return (
     <>
       <div className={styles.dropdown}>
         <div className={styles.dropdownHeader} onClick={toggleOpen}>
-          <span>{name}</span>
+          <h4>{name}</h4>
           <div className={styles.dropdownHeader__icon}>
             {isOpen ? <AiOutlineClose /> : <AiOutlineDown />}
           </div>
         </div>
-        {isOpen && options && Array.isArray(options)
-          ? (
+        {isOpen && (
           <div className={styles.dropdownOptions}>
             {options.map((option) => (
               <label key={option.slug} className={styles.checkbox}>
                 <input
                   type="radio"
                   value={option.slug}
-                  checked={selectedOptions.some(
-                    (selectedOption) => selectedOption.slug === option.slug
-                  )}
-                  onChange={() => handleOptionClick(option)}
+                  checked={selectedOption === option.slug}
+                  onChange={handleOptionChange}
+                  onClick={handleOptionClick}
                 />
                 {option.name}
               </label>
             ))}
           </div>
-            )
-          : null}
+        )}
         <div className={styles.Line} />
       </div>
     </>

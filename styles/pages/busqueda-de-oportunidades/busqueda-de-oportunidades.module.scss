@@ -35,13 +35,6 @@
   }
 }
 
-.SlideBTN {
-  display: block;
-  @include mediaQueries.for-desktop-new {
-    display: none;
-  }
-}
-
 .Section2 {
   display: flex;
   margin: 0 clamp(2rem, 5vw, 5rem);
