@@ -21,10 +21,6 @@
     "@typescript-eslint/restrict-template-expressions": "off",
     "no-unused-expressions": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-unused-expressions": "off",
-    "@typescript-eslint/no-misused-promises": [
-      "error",
-      {"checksVoidReturn": {"attributes": false}}
-    ]
+    "@typescript-eslint/no-unused-expressions": "off"
   }
 }
