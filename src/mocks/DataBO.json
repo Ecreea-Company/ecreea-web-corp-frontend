@@ -1,0 +1,1871 @@
+{
+  "data": [
+    {
+      "id": 16,
+      "attributes": {
+        "slug": "programa-talent-trainee",
+        "nombre_puesto": "Programa Talent Trainee",
+        "descripcion": "Dirigido a estudiantes de 7mo ciclo en adelante de las carreras de Ing. Industrial, Administracion, Psicologia o afines con interes en el área de Recursos Humanos.",
+        "createdAt": "2023-05-16T18:26:35.609Z",
+        "updatedAt": "2023-05-16T18:32:17.667Z",
+        "publishedAt": "2023-05-16T18:32:17.568Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 327,
+            "nombre": "- Realizar filtro de Cv´s de las convocatorias activas."
+          },
+          { "id": 328, "nombre": "- Realizacion de perfiles para puesto." },
+          { "id": 325, "nombre": "- Apoyo en la actualizacion del MOF." },
+          {
+            "id": 324,
+            "nombre": "- Realizacion de filtro telefonico y derivación a entrevista. "
+          },
+          {
+            "id": 326,
+            "nombre": "- Actualizacion constante de las bolsas laborales o de empleabilidad."
+          },
+          {
+            "id": 341,
+            "nombre": "- Redaccion y organizacion de documentacion interna."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 329,
+            "nombre": "- Oportunidad de desarrollo profesional y aprendizaje constante."
+          },
+          {
+            "id": 330,
+            "nombre": "- Constancia de pasantia del programa Talent Trainee."
+          },
+          { "id": 331, "nombre": "- Linea de carrera." }
+        ],
+        "competencias": [
+          { "id": 332, "nombre": "- Trabajo en equipo." },
+          { "id": 333, "nombre": "- Resiliencia." },
+          { "id": 335, "nombre": "- Eficacia." },
+          { "id": 336, "nombre": "- Capacidad de aprendizaje." },
+          { "id": 337, "nombre": "- Proactivo." },
+          { "id": 338, "nombre": "- Alegre." }
+        ],
+        "carreras": [
+          { "id": 339, "nombre": "- Psicología." },
+          { "id": 344, "nombre": "- Ing. Industrial." },
+          { "id": 343, "nombre": "- Administración." },
+          { "id": 342, "nombre": "- Carreras afines." }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 345,
+            "nombre": "- Dominio de herramientas Informática - Nivel Intermedio - Office actualizado."
+          },
+          { "id": 346, "nombre": "- Notion." }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "nombre": "Lima",
+              "createdAt": "2023-03-30T16:17:36.662Z",
+              "updatedAt": "2023-04-19T08:21:20.911Z",
+              "publishedAt": "2023-03-30T16:17:41.698Z",
+              "slug": "lima"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Prácticas Pre-Profesionales",
+              "createdAt": "2023-03-30T16:15:40.611Z",
+              "updatedAt": "2023-04-19T08:22:17.880Z",
+              "publishedAt": "2023-03-30T16:15:49.589Z",
+              "slug": "practicas-pre-profesionales"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "nombre": "Área de Gestión del Talento Humano",
+              "createdAt": "2023-04-29T16:34:55.162Z",
+              "updatedAt": "2023-05-04T17:41:22.119Z",
+              "publishedAt": "2023-04-29T16:34:58.275Z",
+              "slug": "area-de-gestion-del-talento-humano"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "nombre": "Remoto",
+              "createdAt": "2023-03-30T16:13:37.229Z",
+              "updatedAt": "2023-04-19T08:24:11.126Z",
+              "publishedAt": "2023-03-30T16:13:42.618Z",
+              "slug": "remoto"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "createdAt": "2023-05-06T11:38:18.354Z",
+              "updatedAt": "2023-05-06T18:28:48.864Z",
+              "publishedAt": "2023-05-06T11:38:27.856Z",
+              "nombre": "Ecreea",
+              "slug": "ecreea"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 15,
+      "attributes": {
+        "slug": "ejecutiva-comercial-1",
+        "nombre_puesto": "Ejecutiva Comercial ",
+        "descripcion": "Ejecutiva comercial, estudiante o egresado de la carrera de Ing. Industrial o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-05-15T20:14:15.899Z",
+        "updatedAt": "2023-05-15T20:14:27.506Z",
+        "publishedAt": "2023-05-15T20:14:27.413Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 301,
+            "nombre": "- Orientación a la captación y fidelización de clientes corporativos."
+          },
+          {
+            "id": 302,
+            "nombre": "Desarrollo de estrategias y proyectos comerciales se Diversas Industrias – E2B."
+          },
+          {
+            "id": 303,
+            "nombre": "- Desarrollo de mejora continua y Post Venta Industrial."
+          },
+          {
+            "id": 304,
+            "nombre": "- Establecer y cumplir los objetivos de ventas."
+          },
+          {
+            "id": 305,
+            "nombre": "- Seguimiento de las métricas y KPI’s conseguidos."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 306,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 307,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          {
+            "id": 308,
+            "nombre": "- Capacitaciones constantes referente al rubro del negocio."
+          },
+          {
+            "id": 309,
+            "nombre": "- Acompañamiento psicológico a los colaboradores."
+          },
+          {
+            "id": 310,
+            "nombre": "- Ingreso a Planilla, posterior al proceso de prueba y evaluación de rendimiento."
+          },
+          { "id": 311, "nombre": "- Comisiones comerciales por industria." }
+        ],
+        "competencias": [
+          { "id": 312, "nombre": "- Planificación y organización." },
+          { "id": 313, "nombre": "- Análisis de datos." },
+          { "id": 314, "nombre": "- Capacidad de aprendizaje." },
+          { "id": 316, "nombre": "- Proactividad Constante." },
+          {
+            "id": 315,
+            "nombre": " - Iniciativa y capacidad para encontrar soluciones."
+          }
+        ],
+        "carreras": [
+          { "id": 317, "nombre": "- Ing. Agroindustrial" },
+          { "id": 318, "nombre": "- Ing. Empresarial" },
+          { "id": 320, "nombre": "- Administración" },
+          { "id": 319, "nombre": "- Carreras afines" }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 321,
+            "nombre": "- Conocimiento y/o manejo de cartera comercial Ecommerce."
+          },
+          {
+            "id": 322,
+            "nombre": "- Dominio de herramientas Informática - Nivel Intermedio - Office actualizado."
+          },
+          { "id": 323, "nombre": "- ERP Sprinter." }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Área Comercial",
+              "createdAt": "2023-03-30T16:12:55.262Z",
+              "updatedAt": "2023-05-04T17:40:34.062Z",
+              "publishedAt": "2023-03-30T16:34:32.204Z",
+              "slug": "area-comercial"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "createdAt": "2023-05-06T11:39:29.614Z",
+              "updatedAt": "2023-05-06T11:39:40.711Z",
+              "publishedAt": "2023-05-06T11:39:40.354Z",
+              "nombre": "E2B",
+              "slug": "e2b"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 14,
+      "attributes": {
+        "slug": "asistente-logistico-1",
+        "nombre_puesto": "Asistente Logístico",
+        "descripcion": "Asistente logístico, estudiante o egresado de la carrera de Ing. Industrial o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-05-15T18:52:42.914Z",
+        "updatedAt": "2023-05-15T19:27:23.303Z",
+        "publishedAt": "2023-05-15T19:06:37.014Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 285,
+            "nombre": "- Seguimiento de Unidades Logística en comercio de Hidrocarburos para el Sector Agrícola."
+          },
+          {
+            "id": 284,
+            "nombre": "- Desarrollo de requerimientos e ingreso de materiales, órdenes de compra, cotizaciones."
+          },
+          {
+            "id": 286,
+            "nombre": "- Desarrollar Informes de análisis y KPI Logístico."
+          },
+          {
+            "id": 281,
+            "nombre": "- Registrar, procesar y controlar información de las diferentes etapas del área Logística – Sector Hidrocarburos."
+          },
+          {
+            "id": 282,
+            "nombre": "- Análisis en Rotación de Inventarios en base data: Logistica – Importaciones -Finanzas."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 280,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          {
+            "id": 275,
+            "nombre": "- Capacitación y especialización en Logistica."
+          },
+          { "id": 279, "nombre": "- Línea de carrera." },
+          {
+            "id": 276,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 277,
+            "nombre": "- Diplomado y Especialización, de acuerdo a evaluación."
+          }
+        ],
+        "competencias": [
+          { "id": 292, "nombre": "- Capacidad de aprendizaje." },
+          {
+            "id": 290,
+            "nombre": "- Iniciativa y capacidad para encontrar soluciones."
+          },
+          { "id": 289, "nombre": "- Análisis de datos." },
+          { "id": 291, "nombre": "- Pasión por la innovación." },
+          { "id": 288, "nombre": "- Planificación y organización." },
+          { "id": 287, "nombre": "- Proactividad Constante." }
+        ],
+        "carreras": [
+          { "id": 293, "nombre": "- Ing. Industrial" },
+          { "id": 295, "nombre": "- Carreras afines" },
+          { "id": 294, "nombre": "- Ing. Agroindustrial" }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 300,
+            "nombre": "- Conocimiento en Reglamento de Seguridad y Almacenamiento de Hidrocarburos."
+          },
+          { "id": 296, "nombre": "- ERP Sprinter." },
+          {
+            "id": 297,
+            "nombre": "- Dominio de herramientas Informática - Office actualizado - Nivel Intermedio."
+          }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "nombre": "Área de Logistica",
+              "createdAt": "2023-04-17T20:58:45.762Z",
+              "updatedAt": "2023-05-04T17:40:57.414Z",
+              "publishedAt": "2023-04-17T20:59:14.971Z",
+              "slug": "area-de-logistica"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "createdAt": "2023-05-06T11:40:01.753Z",
+              "updatedAt": "2023-05-06T11:40:10.953Z",
+              "publishedAt": "2023-05-06T11:40:10.597Z",
+              "nombre": "Energix",
+              "slug": "energix"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 13,
+      "attributes": {
+        "slug": "asistente-de-marketing",
+        "nombre_puesto": "Asistente de Marketing",
+        "descripcion": "Asistente de Marketing, estudiante o egresado de la carrera de Marketing o afines, con metas de superación y crecimento profesional.",
+        "createdAt": "2023-05-04T19:33:45.331Z",
+        "updatedAt": "2023-05-15T19:44:57.666Z",
+        "publishedAt": "2023-05-06T16:56:57.068Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 235,
+            "nombre": "- Desarrollo de Branding Integral (Sales, Web, Omnicanalidad, relaciones públicas, etc)."
+          },
+          {
+            "id": 236,
+            "nombre": "- Desarrollo de campañas en redes sociales (Facebook, LinkedIn, Instagram) y herramientas digitales (Google Ads, Business Manager y Google Analytics)."
+          },
+          {
+            "id": 237,
+            "nombre": "- Desarrollo y análisis de estrategias Marketing Digital , SEO, SEM en sitios web de mediano o alto tráfico."
+          },
+          {
+            "id": 272,
+            "nombre": "- Estrategias de posicionamiento en el mercado."
+          },
+          { "id": 273, "nombre": "- Desarrollar la imagen de la empresa." },
+          {
+            "id": 271,
+            "nombre": "- Desarrollar una estrategia de marketing para la empresa y un plan de acción concreto."
+          },
+          {
+            "id": 274,
+            "nombre": "- Desarrollo de estrategias de promoción de la marca de la empresa."
+          },
+          {
+            "id": 270,
+            "nombre": "- Desarrollo de la Comunicación externa e interna."
+          },
+          {
+            "id": 234,
+            "nombre": "- Análisis, desarrollo y ejecución del Plan Comercial y Marketing (Estudio de mercado, de la competencia, identificación y creación de las estrategias de posicionamiento)."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 238,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          {
+            "id": 240,
+            "nombre": "- Ingreso a Planilla, posterior al proceso de prueba."
+          },
+          {
+            "id": 239,
+            "nombre": "- Diplomado en Marketing Digital & Ecommerce Omnicanal - Camara de Comercio Electronico (CAPECE)* Valorizado en s/.4000.00."
+          },
+          {
+            "id": 241,
+            "nombre": "Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          }
+        ],
+        "competencias": [
+          { "id": 242, "nombre": "- Creatividad" },
+          { "id": 243, "nombre": "- Proactividad constante." },
+          {
+            "id": 244,
+            "nombre": "- Iniciativa y capacidad para encontrar soluciones."
+          },
+          { "id": 245, "nombre": "-  Planificación y organización." },
+          { "id": 246, "nombre": "- Comunicación constante. " }
+        ],
+        "carreras": [
+          { "id": 247, "nombre": "- Marketing" },
+          { "id": 248, "nombre": "- Comunicaciones " }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 250,
+            "nombre": "- Programas correspondientes a Ofimática (Pack Office)."
+          },
+          {
+            "id": 251,
+            "nombre": "- Manejo de Herramientas de Diseño Profesional: Pack de Adobe 2021 ( Adobe Photoshop, Ilustrator, After Effects, Adobe Premiere Pro, etc) * Indispensable."
+          },
+          {
+            "id": 252,
+            "nombre": "- ERP / CRM - Nivel Básico * No indispensable."
+          },
+          { "id": 249, "nombre": "- Inglés Intermedio." }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 7,
+            "attributes": {
+              "nombre": "Área de Diseño y Marketing",
+              "createdAt": "2023-05-04T17:49:30.756Z",
+              "updatedAt": "2023-05-06T15:02:08.829Z",
+              "publishedAt": "2023-05-06T15:02:08.738Z",
+              "slug": "area-de-diseno-y-marketing"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "nombre": "Híbrido",
+              "createdAt": "2023-04-18T16:25:32.953Z",
+              "updatedAt": "2023-04-19T08:23:38.311Z",
+              "publishedAt": "2023-04-18T16:25:41.406Z",
+              "slug": "hibrido"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "createdAt": "2023-05-06T11:38:18.354Z",
+              "updatedAt": "2023-05-06T18:28:48.864Z",
+              "publishedAt": "2023-05-06T11:38:27.856Z",
+              "nombre": "Ecreea",
+              "slug": "ecreea"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 12,
+      "attributes": {
+        "slug": "disenador-grafico",
+        "nombre_puesto": "Diseñador Gráfico",
+        "descripcion": "Diseñador(a), estudiante o egresado de la carrera de Diseño Gráfico o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-05-04T19:25:17.276Z",
+        "updatedAt": "2023-05-08T20:04:28.832Z",
+        "publishedAt": "2023-05-06T15:04:55.574Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 215,
+            "nombre": "- Análisis, desarrollo y ejecución del Plan Comercial y Marketing."
+          },
+          {
+            "id": 218,
+            "nombre": "- Desarrollo de Branding Integral (Sales, Web, relaciones públicas, etc). "
+          },
+          {
+            "id": 216,
+            "nombre": "- Manejo de Herramientas de Diseño Profesional: Pack de Adobe 2021 (Adobe Photoshop, Ilustrator, After Effects, etc). "
+          },
+          {
+            "id": 217,
+            "nombre": "- Desarrollo de campañas en redes sociales. Desarrollo y análisis de estrategias Marketing Digital."
+          }
+        ],
+        "beneficios": [
+          { "id": 223, "nombre": "- Línea de carrera." },
+          {
+            "id": 265,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 219,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          {
+            "id": 220,
+            "nombre": "- Diplomado y Especialización, linea de carrera,  de acuerdo a evaluación."
+          },
+          {
+            "id": 221,
+            "nombre": "- Subvención Económica de acuerdo a evaluación."
+          },
+          { "id": 222, "nombre": "- Equipo con excelente clima laboral." }
+        ],
+        "competencias": [
+          { "id": 227, "nombre": "- Autodidacta " },
+          { "id": 228, "nombre": "- Creatividad " },
+          { "id": 224, "nombre": "- Trabajo en equipo." },
+          { "id": 225, "nombre": "- Proactividad constante." },
+          { "id": 226, "nombre": "- Análisis de data." }
+        ],
+        "carreras": [
+          { "id": 229, "nombre": "- Diseño Gráfico" },
+          { "id": 230, "nombre": "- Marketing" }
+        ],
+        "conocimiento_deseado": [
+          { "id": 231, "nombre": "- Creative Cloud " },
+          { "id": 232, "nombre": "- Ilustrator " },
+          { "id": 233, "nombre": "- Photoshop" }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 7,
+            "attributes": {
+              "nombre": "Área de Diseño y Marketing",
+              "createdAt": "2023-05-04T17:49:30.756Z",
+              "updatedAt": "2023-05-06T15:02:08.829Z",
+              "publishedAt": "2023-05-06T15:02:08.738Z",
+              "slug": "area-de-diseno-y-marketing"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "nombre": "Híbrido",
+              "createdAt": "2023-04-18T16:25:32.953Z",
+              "updatedAt": "2023-04-19T08:23:38.311Z",
+              "publishedAt": "2023-04-18T16:25:41.406Z",
+              "slug": "hibrido"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "createdAt": "2023-05-06T11:38:18.354Z",
+              "updatedAt": "2023-05-06T18:28:48.864Z",
+              "publishedAt": "2023-05-06T11:38:27.856Z",
+              "nombre": "Ecreea",
+              "slug": "ecreea"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 11,
+      "attributes": {
+        "slug": "asistente-de-contabilidad",
+        "nombre_puesto": "Asistente de Contabilidad ",
+        "descripcion": "Asistente de Contabilidad, estudiante o egresado de la carrera de Contabilidad o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-05-04T19:16:52.470Z",
+        "updatedAt": "2023-05-15T19:22:29.498Z",
+        "publishedAt": "2023-05-06T15:04:10.485Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 298,
+            "nombre": "- Elaborar y enviar los Estados de Cuentas a los clientes semanalmente."
+          },
+          {
+            "id": 197,
+            "nombre": "- Cumplir y hacer cumplir el Plan Contable General Empresarial."
+          },
+          {
+            "id": 199,
+            "nombre": "- Elaborar los informes, balances, estados de ganancias y pérdidas mensual, trimestral y anual."
+          },
+          {
+            "id": 198,
+            "nombre": "- Analizar y dar conformidad a todos los documentos que sustentan las obligaciones de pago o desembolso de fondos."
+          },
+          {
+            "id": 200,
+            "nombre": "- Proporcionar información contable - presupuestal que se requiere para fines internos y externos de la empresa."
+          },
+          { "id": 201, "nombre": "- Declaración PDT 621 y PLAME." },
+          {
+            "id": 299,
+            "nombre": "- Ingresar la información contable al ERP - Sprinter."
+          }
+        ],
+        "beneficios": [
+          { "id": 264, "nombre": "- Línea de carrera." },
+          {
+            "id": 263,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 202,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          {
+            "id": 204,
+            "nombre": "- Diplomado, especialización de acuerdo a evaluación."
+          },
+          { "id": 205, "nombre": "- Equipo con excelente clima laboral." }
+        ],
+        "competencias": [
+          { "id": 206, "nombre": "- Trabajo en equipo." },
+          { "id": 207, "nombre": "- Proactividad constante." },
+          { "id": 210, "nombre": "- Análisis de data." },
+          { "id": 209, "nombre": "- Autodidacta" },
+          { "id": 208, "nombre": "- Creatividad" }
+        ],
+        "carreras": [
+          { "id": 211, "nombre": "- Contabilidad" },
+          { "id": 212, "nombre": "- Contabilidad y Finanzas" }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 213,
+            "nombre": "- Programas correspondientes a Ofimática (Correos corporativos - Office)."
+          },
+          { "id": 214, "nombre": "- ERP / CRM - Nivel Básico " }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 6,
+            "attributes": {
+              "nombre": "Área de Contabilidad ",
+              "createdAt": "2023-05-04T17:42:34.746Z",
+              "updatedAt": "2023-05-06T14:12:02.693Z",
+              "publishedAt": "2023-05-06T14:12:02.586Z",
+              "slug": "area-de-contabilidad"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "createdAt": "2023-05-06T11:40:01.753Z",
+              "updatedAt": "2023-05-06T11:40:10.953Z",
+              "publishedAt": "2023-05-06T11:40:10.597Z",
+              "nombre": "Energix",
+              "slug": "energix"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "attributes": {
+        "slug": "asistente-de-servicios-industriales",
+        "nombre_puesto": "Asistente de Servicios Industriales",
+        "descripcion": "Asistente de Servicios Industriales, estudiante o egresado de la carrera de Ing. Industrial o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-05-04T19:09:01.901Z",
+        "updatedAt": "2023-05-15T19:44:24.148Z",
+        "publishedAt": "2023-05-06T15:03:49.999Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 176,
+            "nombre": "- Programacion de visitas tecnicas a fundos agricolas y mineras."
+          },
+          {
+            "id": 179,
+            "nombre": "- Evaluacion de oportunidad de mejora en fundos."
+          },
+          {
+            "id": 177,
+            "nombre": "- Plan de mantenimiento preventivo de equipos, tractores, tanques de combustible, unidades de transporte y grupos electrogenos."
+          },
+          {
+            "id": 178,
+            "nombre": "- Supervision de servicios de mantenimiento."
+          },
+          { "id": 180, "nombre": "- Manejo de Sistema ERP Sprinter." },
+          {
+            "id": 181,
+            "nombre": "- Garantizar los requisitos marcados y metas de cada area."
+          },
+          {
+            "id": 175,
+            "nombre": "- Gestionar los Proyectos & Servicios para garantizar la eficiencia en términos de servicio, coste y calidad."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 182,
+            "nombre": "- Capacitación y especialización en Servicios de Mantenimiento industrial."
+          },
+          {
+            "id": 183,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 184,
+            "nombre": "- Diplomado y Especialización, de acuerdo a evaluación."
+          },
+          {
+            "id": 185,
+            "nombre": "- Subvención Económica de acuerdo a evaluación."
+          },
+          { "id": 186, "nombre": "- Línea de carrera." }
+        ],
+        "competencias": [
+          { "id": 187, "nombre": "- Proactividad constante." },
+          { "id": 188, "nombre": "- Análisis de datos." },
+          { "id": 189, "nombre": "- Liderazgo estrategico." },
+          { "id": 190, "nombre": "- Planificación y organización." },
+          { "id": 191, "nombre": "- Trabajo en equipo." }
+        ],
+        "carreras": [
+          { "id": 192, "nombre": "- Ing. Industrial" },
+          { "id": 193, "nombre": "- Ing. Mecánica" }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 194,
+            "nombre": "- Programas correspondientes a Ofimática (Pack Office)."
+          },
+          {
+            "id": 195,
+            "nombre": "-   Plataformas Ecommerce B2C/ B2B * No indispensable."
+          },
+          {
+            "id": 196,
+            "nombre": "- ERP / CRM - Nivel Básico * No indispensable."
+          }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 5,
+            "attributes": {
+              "nombre": "Área de Servicios",
+              "createdAt": "2023-05-04T17:41:54.072Z",
+              "updatedAt": "2023-05-06T15:03:01.505Z",
+              "publishedAt": "2023-05-06T15:03:01.412Z",
+              "slug": "area-de-servicios"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "createdAt": "2023-05-06T11:40:01.753Z",
+              "updatedAt": "2023-05-06T11:40:10.953Z",
+              "publishedAt": "2023-05-06T11:40:10.597Z",
+              "nombre": "Energix",
+              "slug": "energix"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 8,
+      "attributes": {
+        "slug": "asistente-de-operaciones",
+        "nombre_puesto": "Asistente de Operaciones",
+        "descripcion": "Asistente de Operaciones, estudiante o egresado de la carrera de Ing. Industrial, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-04-19T18:12:21.877Z",
+        "updatedAt": "2023-05-15T19:44:03.092Z",
+        "publishedAt": "2023-04-19T18:12:40.952Z",
+        "idiomas": "Ingles",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 155,
+            "nombre": "- Registrar, procesar y controlar información de las diferentes areas – Ecommerce B2B– Sector Agrícola & Minería."
+          },
+          {
+            "id": 156,
+            "nombre": "- Gestionar los Proyectos & Servicios para garantizar la eficiencia en términos de servicio, coste y calidad."
+          },
+          {
+            "id": 61,
+            "nombre": "- Supervision de areas generales, evaluacion de reportes."
+          },
+          {
+            "id": 157,
+            "nombre": "- Programacion de visitas tecnicas a fundos agricolas y mineras."
+          },
+          { "id": 158, "nombre": "- Supervision de servicios." },
+          { "id": 159, "nombre": "- Sistema ERP+CRM & Ecommerce B2B." },
+          {
+            "id": 160,
+            "nombre": "- Mejorar de forma continua los indicadores de funcionamiento, maximizando la productividad del área."
+          },
+          {
+            "id": 161,
+            "nombre": "- Garantizar los requisitos marcados y metas de cada area."
+          },
+          {
+            "id": 162,
+            "nombre": "- Definir el plan de inversiones según las necesidades de la compañía."
+          },
+          {
+            "id": 163,
+            "nombre": "- Asegurar el flujo financiero en toda la cadena de suministro."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 165,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 166,
+            "nombre": "- Diplomado y Especialización, de acuerdo a evaluación."
+          },
+          {
+            "id": 167,
+            "nombre": "- Subvención Económica de acuerdo a evaluación."
+          },
+          { "id": 168, "nombre": "- Línea de carrera." },
+          {
+            "id": 62,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          {
+            "id": 164,
+            "nombre": "- Capacitación y especialización en Operaciones - Ecommerce B2B."
+          }
+        ],
+        "competencias": [
+          { "id": 170, "nombre": "- Liderazgo estratégico." },
+          { "id": 171, "nombre": "- Planificación y organización." },
+          { "id": 172, "nombre": "- Trabajo en equipo." },
+          { "id": 63, "nombre": "-Proactividad constante." },
+          { "id": 169, "nombre": "-  Análisis de datos." }
+        ],
+        "carreras": [{ "id": 64, "nombre": "Ing. Industrial" }],
+        "conocimiento_deseado": [
+          {
+            "id": 173,
+            "nombre": "-   Plataformas Ecommerce B2C/ B2B * No indispensable."
+          },
+          {
+            "id": 174,
+            "nombre": "- ERP / CRM - Nivel Básico * No indispensable."
+          },
+          {
+            "id": 65,
+            "nombre": "- Programas correspondientes a Ofimática (Pack Office)."
+          }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Parcial",
+              "createdAt": "2023-03-30T16:16:28.923Z",
+              "updatedAt": "2023-04-19T08:23:16.790Z",
+              "publishedAt": "2023-03-30T16:16:34.190Z",
+              "slug": "trabajo-tiempo-parcial"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 9,
+            "attributes": {
+              "nombre": "Área de Operaciones",
+              "createdAt": "2023-05-04T18:55:40.649Z",
+              "updatedAt": "2023-05-06T15:02:48.263Z",
+              "publishedAt": "2023-05-06T15:02:48.171Z",
+              "slug": "area-de-operaciones"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "createdAt": "2023-05-06T11:39:29.614Z",
+              "updatedAt": "2023-05-06T11:39:40.711Z",
+              "publishedAt": "2023-05-06T11:39:40.354Z",
+              "nombre": "E2B",
+              "slug": "e2b"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "attributes": {
+        "slug": "desarrollador-programador-junior",
+        "nombre_puesto": "Desarrollador | Programador Junior",
+        "descripcion": "Asistente de TI, estudiante o egresado de la carrera de Ing. de Sistemas o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-04-18T00:40:14.467Z",
+        "updatedAt": "2023-05-15T19:43:44.208Z",
+        "publishedAt": "2023-04-18T00:46:34.268Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 48,
+            "nombre": "- Diseño, planificación e implementación de proyectos STARTUP (web/e-commerce e /integración de plataformas y sistemas)."
+          },
+          {
+            "id": 135,
+            "nombre": "- Análisis, diseño y programación detallado de los sistemas a desarrollar basado en el diseño conceptual y programación orientada a objetivos."
+          },
+          { "id": 136, "nombre": "- Análisis & desarrollo Web / Sistemas." },
+          { "id": 137, "nombre": "- Programación Frontend / Backend." },
+          {
+            "id": 138,
+            "nombre": "- Programación en HTML, CSS, y JavaScript, base de datos SQL y MYSQL."
+          },
+          {
+            "id": 139,
+            "nombre": "- Soporte y mantenimiento a los sistemas ya en uso por parte del proyecto."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 140,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 142,
+            "nombre": "- Capacitación y especialización en Programación - Ecommerce B2B."
+          },
+          {
+            "id": 141,
+            "nombre": "- Subvención Económica de acuerdo a evaluación."
+          },
+          { "id": 144, "nombre": "- Equipo con excelente clima laboral." },
+          {
+            "id": 49,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          { "id": 143, "nombre": "- Línea de carrera." }
+        ],
+        "competencias": [
+          { "id": 148, "nombre": "- Proactividad constante." },
+          { "id": 145, "nombre": "- Análisis de data." },
+          { "id": 146, "nombre": "- Autodidacta" },
+          { "id": 50, "nombre": "- Trabajo en equipo." },
+          { "id": 147, "nombre": "- Creatividad" }
+        ],
+        "carreras": [
+          { "id": 149, "nombre": "- Software" },
+          { "id": 150, "nombre": "- Informática" },
+          { "id": 51, "nombre": "- Ing. de Sistemas" }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 151,
+            "nombre": "- Conocimiento del ciclo de desarrollo de software - Nivel Básico."
+          },
+          {
+            "id": 152,
+            "nombre": "- Manejo de Base de datos Mysql - Nivel Básico."
+          },
+          { "id": 153, "nombre": "- Conocimiento en API Manager." },
+          {
+            "id": 154,
+            "nombre": "- Conocimiento Frontend / Backend - Nivel Básico."
+          },
+          {
+            "id": 52,
+            "nombre": "- Conocimientos en HTML, CSS, JavaScript,  y patrones de diseño."
+          }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 8,
+            "attributes": {
+              "nombre": "Área de TI ",
+              "createdAt": "2023-05-04T17:50:33.020Z",
+              "updatedAt": "2023-05-06T14:52:35.372Z",
+              "publishedAt": "2023-05-06T14:52:35.280Z",
+              "slug": "area-de-ti"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "nombre": "Híbrido",
+              "createdAt": "2023-04-18T16:25:32.953Z",
+              "updatedAt": "2023-04-19T08:23:38.311Z",
+              "publishedAt": "2023-04-18T16:25:41.406Z",
+              "slug": "hibrido"
+            }
+          }
+        },
+        "postulantes": {
+          "data": [
+            {
+              "id": 25,
+              "attributes": {
+                "email": "vicenzoastemedina@gmail.com",
+                "createdAt": "2023-05-15T20:04:59.798Z",
+                "updatedAt": "2023-05-15T20:04:59.798Z",
+                "publishedAt": "2023-05-15T20:04:59.743Z"
+              }
+            },
+            {
+              "id": 26,
+              "attributes": {
+                "email": "vicenzoastemedina@gmail.com",
+                "createdAt": "2023-05-15T20:05:04.815Z",
+                "updatedAt": "2023-05-15T20:05:04.815Z",
+                "publishedAt": "2023-05-15T20:05:04.756Z"
+              }
+            }
+          ]
+        },
+        "compania": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "createdAt": "2023-05-06T11:38:18.354Z",
+              "updatedAt": "2023-05-06T18:28:48.864Z",
+              "publishedAt": "2023-05-06T11:38:27.856Z",
+              "nombre": "Ecreea",
+              "slug": "ecreea"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "attributes": {
+        "slug": "gestion-del-talento-humano",
+        "nombre_puesto": "Gestión del Talento Humano ",
+        "descripcion": "Asistente de Recursos Humanos, estudiante o egresado de la carrera de Psicología o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-04-17T20:47:11.557Z",
+        "updatedAt": "2023-05-15T19:42:57.685Z",
+        "publishedAt": "2023-04-17T20:49:15.388Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          { "id": 35, "nombre": "- Reclutamiento de personal." },
+          { "id": 107, "nombre": "- Elaboración y seguimiento de contratos." },
+          { "id": 36, "nombre": "- Búsqueda de bolsas de trabajo." },
+          {
+            "id": 108,
+            "nombre": "- Revisión y/o ejecución de comités y reglamentos. "
+          },
+          { "id": 106, "nombre": "- Documentación organizada." },
+          {
+            "id": 105,
+            "nombre": "- Seguimiento de requerimientos de personal."
+          }
+        ],
+        "beneficios": [
+          { "id": 109, "nombre": "- Equipo con excelente clima laboral." },
+          {
+            "id": 37,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          {
+            "id": 262,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 38,
+            "nombre": "- Subvención Económica de acuerdo a evaluación."
+          }
+        ],
+        "competencias": [
+          { "id": 110, "nombre": "- Proactividad constante." },
+          { "id": 111, "nombre": "- Análisis de data." },
+          { "id": 112, "nombre": "- Autodidacta" },
+          { "id": 113, "nombre": "- Creatividad" },
+          { "id": 39, "nombre": "- Trabajo en equipo." }
+        ],
+        "carreras": [
+          { "id": 114, "nombre": "- Recursos Humanos" },
+          { "id": 115, "nombre": "- Administración " },
+          { "id": 40, "nombre": "- Psicología" }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 41,
+            "nombre": "- Programas correspondientes a Ofimática (Pack Office). "
+          }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "nombre": "Área de Gestión del Talento Humano",
+              "createdAt": "2023-04-29T16:34:55.162Z",
+              "updatedAt": "2023-05-04T17:41:22.119Z",
+              "publishedAt": "2023-04-29T16:34:58.275Z",
+              "slug": "area-de-gestion-del-talento-humano"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "createdAt": "2023-05-06T11:38:18.354Z",
+              "updatedAt": "2023-05-06T18:28:48.864Z",
+              "publishedAt": "2023-05-06T11:38:27.856Z",
+              "nombre": "Ecreea",
+              "slug": "ecreea"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "attributes": {
+        "slug": "asistente-logistico-2",
+        "nombre_puesto": "Asistente Logístico",
+        "descripcion": "Asistente logístico, estudiante o egresado de la carrera de Ing. Industrial o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-04-13T20:11:24.866Z",
+        "updatedAt": "2023-05-08T19:47:24.725Z",
+        "publishedAt": "2023-04-13T20:11:36.612Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 92,
+            "nombre": "- Desarrollo de requerimientos e ingreso de materiales, órdenes de compra, cotizaciones."
+          },
+          { "id": 91, "nombre": "- Sistema ERP+CRM & Ecommerce E2B." },
+          {
+            "id": 93,
+            "nombre": "- Seguimiento de Unidades Logística en comercio de Hidrocarburos para el Sector Agrícola."
+          },
+          {
+            "id": 94,
+            "nombre": "- Desarrollar Informes de análisis y KPI Logístico."
+          },
+          {
+            "id": 90,
+            "nombre": "- Análisis en Rotación de Inventarios en base data: Logistica – Importaciones -Finanzas."
+          },
+          {
+            "id": 42,
+            "nombre": "- Registrar, procesar y controlar información de las diferentes etapas del área Logística – Ecommerce E2B– Sector Agrícola & Minería."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 95,
+            "nombre": "- Capacitación y especialización en Logistica - Ecommerce E2B."
+          },
+          {
+            "id": 96,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 97,
+            "nombre": "- Diplomado y Especialización, de acuerdo a evaluación."
+          },
+          {
+            "id": 98,
+            "nombre": "- Subvención Económica de acuerdo a evaluación."
+          },
+          { "id": 99, "nombre": "- Línea de carrera." },
+          {
+            "id": 31,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          }
+        ],
+        "competencias": [
+          { "id": 100, "nombre": "- Análisis de datos." },
+          { "id": 101, "nombre": "- Creatividad." },
+          { "id": 102, "nombre": "- Planificación y organización." },
+          { "id": 32, "nombre": "- Proactividad constante." }
+        ],
+        "carreras": [{ "id": 33, "nombre": "Ing. Industrial " }],
+        "conocimiento_deseado": [
+          {
+            "id": 104,
+            "nombre": "- ERP / CRM - Nivel Básico * No indispensable."
+          },
+          {
+            "id": 34,
+            "nombre": "- Programas correspondientes a Ofimática (Pack Office)."
+          },
+          {
+            "id": 103,
+            "nombre": "- Plataformas Ecommerce B2C/ B2B * No indispensable."
+          }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "nombre": "Área de Logistica",
+              "createdAt": "2023-04-17T20:58:45.762Z",
+              "updatedAt": "2023-05-04T17:40:57.414Z",
+              "publishedAt": "2023-04-17T20:59:14.971Z",
+              "slug": "area-de-logistica"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "createdAt": "2023-05-06T11:39:29.614Z",
+              "updatedAt": "2023-05-06T11:39:40.711Z",
+              "publishedAt": "2023-05-06T11:39:40.354Z",
+              "nombre": "E2B",
+              "slug": "e2b"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "slug": "finanzas",
+        "nombre_puesto": "Jefe de finanzas",
+        "descripcion": "Jefe de finanzas egresado de la carrera de Finanzas o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-04-13T20:09:47.657Z",
+        "updatedAt": "2023-05-08T19:42:59.751Z",
+        "publishedAt": "2023-04-13T20:09:53.211Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 259,
+            "nombre": "- Aprobar o rechazar los presupuestos presentados por el equipo de finanzas."
+          },
+          {
+            "id": 73,
+            "nombre": "- Evaluar y tomar decisiones sobre las inversiones."
+          },
+          { "id": 258, "nombre": "- Supervisar a un equipo de contables." },
+          {
+            "id": 74,
+            "nombre": "- Cumplir y hacer cumplir el Plan Contable General Empresarial."
+          },
+          {
+            "id": 260,
+            "nombre": "- Asignar recursos y gestionar los flujos de caja."
+          },
+          {
+            "id": 75,
+            "nombre": "- Preparar o elaborar los informes, balances, estados de ganancias y pérdidas y otros en forma mensual, trimestral y anual, a fin de ser presentados dentro de la fecha establecida al gerente general."
+          },
+          {
+            "id": 257,
+            "nombre": "- Gestionar los riesgos de las inversiones futuras."
+          },
+          {
+            "id": 76,
+            "nombre": "- Hacer previsiones de los resultados mensuales, trimestrales y anuales."
+          },
+          {
+            "id": 77,
+            "nombre": "- Desarrollar procedimientos seguros para mantener la confidencialidad de la información."
+          },
+          {
+            "id": 25,
+            "nombre": "- Preparación de información financiero y presentación de indicadores. "
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 78,
+            "nombre": "- Diplomado y Especialización, de acuerdo a evaluación."
+          },
+          {
+            "id": 79,
+            "nombre": "- Subvención Económica de acuerdo a al cumplimiento de indicadores."
+          },
+          { "id": 80, "nombre": "- Equipo con excelente clima laboral." },
+          {
+            "id": 261,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          },
+          {
+            "id": 266,
+            "nombre": "- Acompañamiento psicológico a los colaboradores."
+          }
+        ],
+        "competencias": [
+          { "id": 82, "nombre": "- Proactividad constante." },
+          { "id": 83, "nombre": "- Autodidacta ." },
+          { "id": 84, "nombre": "- Creatividad." },
+          { "id": 89, "nombre": "- Análisis de data." },
+          { "id": 27, "nombre": "- Trabajo en equipo." }
+        ],
+        "carreras": [
+          { "id": 85, "nombre": "- Economía" },
+          { "id": 86, "nombre": "- Contabilidad y Finanzas " },
+          { "id": 28, "nombre": "- Finanzas " }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 87,
+            "nombre": "- Programas correspondientes a Ofimática (Pack Office actualizado)."
+          },
+          { "id": 88, "nombre": "- ERP - Nivel Básico * No indispensable." }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Área de Finanzas",
+              "createdAt": "2023-05-04T17:39:16.389Z",
+              "updatedAt": "2023-05-06T15:02:26.313Z",
+              "publishedAt": "2023-05-06T15:02:26.216Z",
+              "slug": "area-de-finanzas"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "createdAt": "2023-05-06T11:38:18.354Z",
+              "updatedAt": "2023-05-06T18:28:48.864Z",
+              "publishedAt": "2023-05-06T11:38:27.856Z",
+              "nombre": "Ecreea",
+              "slug": "ecreea"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 1,
+      "attributes": {
+        "slug": "ejecutiva-comercial",
+        "nombre_puesto": "Ejecutiva Comercial ",
+        "descripcion": "Ejecutiva comercial, estudiante o egresado de la carrera de Ing. Industrial o afines, con metas de superacion y crecimento profesional.",
+        "createdAt": "2023-03-30T16:29:43.771Z",
+        "updatedAt": "2023-05-15T18:47:04.854Z",
+        "publishedAt": "2023-03-30T16:34:21.368Z",
+        "idiomas": "Español",
+        "convocatoria_cerrada": false,
+        "funciones": [
+          {
+            "id": 2,
+            "nombre": "- Desarrollo de estrategias y proyectos comerciales de Diversas Industrias."
+          },
+          {
+            "id": 5,
+            "nombre": "- Seguimiento de las métricas y KPI’s conseguidos."
+          },
+          {
+            "id": 1,
+            "nombre": "- Gestionar la venta directa e indirecta mediante cartera de clientes."
+          },
+          {
+            "id": 4,
+            "nombre": "- Orientación a la captación y fidelización de clientes corporativos."
+          },
+          {
+            "id": 269,
+            "nombre": "- Establecer y cumplir los objetivos de ventas."
+          },
+          {
+            "id": 6,
+            "nombre": "- Desarrollo de mejora continua y Post Venta Industrial."
+          }
+        ],
+        "beneficios": [
+          {
+            "id": 267,
+            "nombre": "- Acompañamiento psicológico a los colaboradores."
+          },
+          {
+            "id": 253,
+            "nombre": "- Capacitaciones constantes referente al rubro del negocio."
+          },
+          {
+            "id": 9,
+            "nombre": "- Ingreso a Planilla, posterior al proceso de prueba y evaluación de rendimiento."
+          },
+          { "id": 10, "nombre": "- Comisiones comerciales por industria." },
+          {
+            "id": 8,
+            "nombre": "- Beneficios de convenio de prácticas profesionales."
+          },
+          {
+            "id": 12,
+            "nombre": "- Certificaciones en Plataformas Digitales: Platzi, Udemy , Crehana."
+          }
+        ],
+        "competencias": [
+          { "id": 13, "nombre": "- Proactividad Constante." },
+          { "id": 254, "nombre": "- Pasión por la innovación." },
+          {
+            "id": 15,
+            "nombre": "- Iniciativa y capacidad para encontrar soluciones."
+          },
+          { "id": 14, "nombre": "- Planificación y organización." },
+          { "id": 17, "nombre": "- Análisis de datos." },
+          { "id": 268, "nombre": "- Capacidad de aprendizaje." }
+        ],
+        "carreras": [
+          { "id": 18, "nombre": "- Administración" },
+          { "id": 20, "nombre": "- Ing. Industrial" },
+          { "id": 19, "nombre": "- Ing. Agroindustrial" },
+          { "id": 21, "nombre": "- Ing. Empresarial" },
+          { "id": 255, "nombre": "- Carreras afines" }
+        ],
+        "conocimiento_deseado": [
+          {
+            "id": 256,
+            "nombre": "- Conocimiento y/o manejo de cartera comercial."
+          },
+          {
+            "id": 23,
+            "nombre": "- Dominio de herramientas Informática - Nivel Intermedio - Office actualizado."
+          },
+          { "id": 22, "nombre": "- ERP Sprinter." }
+        ],
+        "ubicacion": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Trujillo",
+              "createdAt": "2023-03-30T16:17:15.047Z",
+              "updatedAt": "2023-04-19T08:21:54.428Z",
+              "publishedAt": "2023-03-30T16:17:24.807Z",
+              "slug": "trujillo"
+            }
+          }
+        },
+        "tipo_contrato": {
+          "data": {
+            "id": 4,
+            "attributes": {
+              "nombre": "Trabajo Tiempo Completo",
+              "createdAt": "2023-03-30T16:16:47.480Z",
+              "updatedAt": "2023-04-19T08:23:01.213Z",
+              "publishedAt": "2023-03-30T16:16:54.280Z",
+              "slug": "trabajo-tiempo-completo"
+            }
+          }
+        },
+        "area_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Área Comercial",
+              "createdAt": "2023-03-30T16:12:55.262Z",
+              "updatedAt": "2023-05-04T17:40:34.062Z",
+              "publishedAt": "2023-03-30T16:34:32.204Z",
+              "slug": "area-comercial"
+            }
+          }
+        },
+        "modalidad_trabajo": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "nombre": "Presencial",
+              "createdAt": "2023-03-30T16:13:13.655Z",
+              "updatedAt": "2023-04-19T08:23:54.413Z",
+              "publishedAt": "2023-03-30T16:13:50.050Z",
+              "slug": "presencial"
+            }
+          }
+        },
+        "postulantes": { "data": [] },
+        "compania": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "createdAt": "2023-05-06T11:40:01.753Z",
+              "updatedAt": "2023-05-06T11:40:10.953Z",
+              "publishedAt": "2023-05-06T11:40:10.597Z",
+              "nombre": "Energix",
+              "slug": "energix"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": { "page": 1, "pageSize": 25, "pageCount": 1, "total": 13 }
+  }
+}

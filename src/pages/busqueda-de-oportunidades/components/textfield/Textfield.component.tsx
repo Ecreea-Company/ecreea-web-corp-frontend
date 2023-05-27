@@ -1,48 +1,42 @@
-import { BsSearch } from 'react-icons/bs'
-import styles from './Textfield.module.scss'
-import useSWR from 'swr'
-import { getFetcherSWR } from '@/services'
-import { useState } from 'react'
-import { TextfieldApiProps } from '@/models'
-import { TextfieldDropdown } from '..'
+import './Textfield.module.scss'
+import { Autocomplete } from '../autocomplete/Autocomplete.component'
+import { getAlgoliaResults } from '@algolia/autocomplete-js'
+import SearchItem from '../search-item/SearchItem.component'
+import algoliasearch from 'algoliasearch'
 
-const useEndpointData = (endpoint: string) => {
-  const { data } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`, getFetcherSWR)
-  return data?.data.map((item: any): TextfieldApiProps => ({
-    id: item.id,
-    slug: item.attributes.slug,
-    name: item.attributes.nombre_puesto,
-    tipo_contrato: item.attributes.tipo_contrato.data.attributes.nombre
-  }))
-}
+const searchClient = algoliasearch(
+  'AQS72RFZ2Q',
+  'e31895120604407ae53189e47a8bcccb'
+);
 
-const TextField = (): JSX.Element => {
-  const jobs = useEndpointData('jobs?populate=*')
-
-  const [filteredData, setFilteredData] = useState<TextfieldApiProps[]>([])
-
-  function handleChange (event: React.ChangeEvent<HTMLInputElement>) {
-    const query = event.target.value.toLowerCase()
-    const filtered = query
-      ? jobs.filter((item: any) =>
-        item.name.toLowerCase().startsWith(query)
-      )
-      : []
-    setFilteredData(filtered)
-  }
-
+const TextField = ({dropJobs}: any): JSX.Element => {
   return (
-    <>
-      <div className={styles.textField}>
-        <div className={styles.textPad}>
-          <span className={styles.iconContainer}>
-            <BsSearch/>
-          </span>
-          <input type="text" placeholder="Encuentra tu oportunidad" onChange={handleChange}/>
-        </div>
-      </div>
-      <TextfieldDropdown filteredData={filteredData} />
-    </>
+      <Autocomplete
+        openOnFocus={false}
+        detachedMediaQuery='none'
+        placeholder="Encuentra tu oportunidad"
+        getSources={({ query }: any) => [
+          {
+            sourceId: "jobs",
+            getItems() {
+              return getAlgoliaResults({
+                searchClient,
+                queries: [
+                  {
+                    indexName: "development_job",
+                    query,
+                  }
+                ]
+              })
+            },
+            templates: {
+              item({ item, components}: any) {
+                return <SearchItem hit={item} components={components} />;
+              }
+            }
+          },
+        ]}
+      />
   )
 }
 

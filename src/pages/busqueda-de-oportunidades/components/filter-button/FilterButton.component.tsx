@@ -1,10 +1,17 @@
 import { useState } from 'react'
-import { DropdownMapOp } from '..'
 import styles from './FilterButton.module.scss'
-import { GrFormFilter } from 'react-icons/gr'
+import { IoIosFunnel } from 'react-icons/io'
 import { IoCloseSharp } from 'react-icons/io5'
+import ListOfDropdown from '../list-of-dropdown/ListOfDropdown.component'
+import { useWindowSize } from 'usehooks-ts'
 
-const SlideButton = (): JSX.Element => {
+interface FilterButtonProps{
+  filters: any
+}
+
+const SlideButton = ({ filters }: FilterButtonProps) => {
+  const { width } = useWindowSize()
+
   const [show, setShow] = useState(false)
 
   const handleButtonClick = () => {
@@ -15,10 +22,12 @@ const SlideButton = (): JSX.Element => {
     setShow(false)
   }
 
+  if (width > 960) return null
+
   return (
     <div className={styles.ButtonPopup}>
       <button className={styles.FilterBTN} onClick={handleButtonClick}>
-        <GrFormFilter className={styles.Icon}/>
+        <IoIosFunnel className={styles.Icon}/>
         Filters
       </button>
       {show && (
@@ -27,7 +36,8 @@ const SlideButton = (): JSX.Element => {
             <IoCloseSharp />
           </button>
           <div className={styles.PopupContent}>
-            <DropdownMapOp width={'100%'}/>
+
+            <ListOfDropdown filters={filters}/>
         </div>
       </div>
       )}

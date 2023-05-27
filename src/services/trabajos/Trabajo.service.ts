@@ -1,32 +1,52 @@
-const filtersToQueryString = (filters: Record<string, any>) => {
-  return Object.entries(filters)
-    .map(([key, value]) => {
-      if (Array.isArray(value)) {
-        return value.map((v) => `filters[${key}][slug][$eq]=${v}`).join('&')
-      }
-      return `filters[${key}][slug][$eq]=${value}`
-    })
-    .join('&')
+export interface FiltersQuery {
+  property: string
+  value: string | string[]
 }
 
-export const getTrabajosByPage = async (page: string | number | string[], filters: Record<string, any> = {}) => {
+const filtersToQueryString = (filters: FiltersQuery[]) => {
+  const filterQuery = filters
+    .map((filter) => {
+      const { property, value } = filter
+      return value === '' ? '' : `filters[${property}][slug][$eq]=${value}`
+    })
+    .join('&')
+
+  return filterQuery
+}
+
+export const getJobsByPage = async ({
+  page,
+  filters
+}: {
+  page: number
+  filters: FiltersQuery[]
+}) => {
   const filterQuery = filtersToQueryString(filters)
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/jobs?populate=*&sort[0]=id%3Adesc&pagination[page]=${page}&pagination[pageSize]=5&${filterQuery}`
-  )
+  ).then(async (res) => await res.json())
 
-  return await res.json()
+  return res
 }
 
-export const getTrabajos = async () => {
+export const getJob = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/jobs?populate=*`
-  )
+  ).then(async (res) => await res.json())
 
-  return await res.json()
+  return res
 }
 
-export const getTrabajosBySlug = async (url: string | string[] | undefined) => {
+export const getJobDestacado = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/jobs?filters[destacado][$eq]=true&populate=*`
+  ).then(async (res) => await res.json())
+
+  return res
+}
+
+// refact
+export const getJobBySlug = async (url: string | string[] | undefined) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/jobs?filters[slug][$eq]=${url}&populate=*`
   ).then(async (res) => await res.json())

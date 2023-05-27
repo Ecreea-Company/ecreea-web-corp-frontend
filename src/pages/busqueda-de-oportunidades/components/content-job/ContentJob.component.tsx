@@ -1,5 +1,5 @@
 import React from 'react'
-import { TypographyOp } from '..'
+import { Typography } from '..'
 import styles from './ContentJob.module.scss'
 
 export interface ContentJobProps{
@@ -15,18 +15,18 @@ function ContentJob ({ title, items, showLine = true, showGridLeft = true }: Con
       <div className={styles.All}>
         <div className={styles.grid}>
           {showGridLeft && <div className={styles.left}>
-            <TypographyOp variant={'h3'} className={styles.title}>{title}</TypographyOp>
+            <Typography variant={'h3'} className={styles.title}>{title}</Typography>
           </div>}
           <div className={`${styles.right} ${showGridLeft ? '' : styles.fullWidth}`}>
 
             {Array.isArray(items)
               ? (
                   items?.map((item: any, index: number) => (
-                  <TypographyOp variant={'h3'} key={index}>{item}</TypographyOp>
+                  <Typography variant={'h3'} key={index}>{item}</Typography>
                   ))
                 )
               : (
-                <TypographyOp variant={'h3'}>{items}</TypographyOp>
+                <Typography variant={'h3'}>{items}</Typography>
                 )}
           </div>
         </div>

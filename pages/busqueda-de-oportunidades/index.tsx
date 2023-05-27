@@ -1,104 +1,65 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Public } from '@/layouts'
-import { GetServerSideProps, NextPage } from 'next'
+import { Job, PaginationAPI } from '@/models'
+import { GetServerSideProps } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/busqueda-de-oportunidades.module.scss'
-import { ButtonOp, DropdownMapOp, LinkRedirectOp, SlideButtonOP, TexfieldOp, TypographyOp } from '@/pages/busqueda-de-oportunidades/components'
-import { getTrabajosByPage } from '@/services/trabajos/Trabajo.service'
-import { useRouter } from 'next/router'
-import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
+import {
+  ListOfDropdown,
+  FilterButton,
+  Typography,
+  ListJobs,
+  PaginationButton,
+  Textfield
+} from '@/pages/busqueda-de-oportunidades/components'
+import { adapterJobs } from '@/adapters'
 
-const BusquedaOportunidades: NextPage = ({ data, meta }: any) => {
-  const jobs = Array.isArray(data) ? data : [data]
-  const router = useRouter()
+import { getFechtApi, getJobDestacado, getJobsByPage } from '@/services'
+import { useState } from 'react'
+import { LoadingBlock } from '@/components'
 
-  const handlePageNavigation = (direction: string) => {
-    const currentPage = parseInt(router.query.page as string) || 1
-    const nextPage = direction === 'next' ? currentPage + 1 : currentPage - 1
+import DestacadoJobs from '@/pages/busqueda-de-oportunidades/components/destacado-jobs/DestacadoJobs.component'
+import { DropdownComponentProps } from '@/pages/busqueda-de-oportunidades/components/dropdown/Dropdown.component'
 
-    // Conserva los filtros actuales en la URL
-    const currentFilters = new URLSearchParams(router.asPath.split('?')[1] || '')
-    currentFilters.set('page', nextPage.toString())
+interface BusquedaOportunidadesPageProps {
+  jobs: Job[]
+  pagination: PaginationAPI
+  filters: DropdownComponentProps[]
+  jobsDestacados: Job[]
+}
 
-    const errorMessage = direction === 'next' ? 'Error al navegar a la siguiente página:' : 'Error al navegar a la página anterior:'
-
-    router.push(`${router.pathname}?${currentFilters.toString()}`).catch((err) => {
-      console.error(errorMessage, err)
-    })
-  }
-
-  const handleNextPage = () => {
-    handlePageNavigation('next')
-  }
-
-  const handlePreviousPage = () => {
-    handlePageNavigation('previous')
-  }
+const BusquedaOportunidades = ({
+  jobs,
+  pagination,
+  filters,
+  jobsDestacados
+}: BusquedaOportunidadesPageProps) => {
+  const [isLoad, setIsLoad] = useState<boolean>(false)
 
   return (
     <Public titlePage="Busqueda de Oportunidades">
       <div className={styles.Section}>
-        <TypographyOp className={styles.Title} variant="h1">Únete a nosotros y haz la diferencia</TypographyOp>
-        <TexfieldOp/>
+        <Typography className={styles.Title} variant="h1">
+          Únete a nosotros y haz la diferencia
+        </Typography>
+        <Textfield />
       </div>
 
-      <div className={styles.SlideBTN}>
-        <SlideButtonOP/>
-      </div>
+      <DestacadoJobs jobs={jobsDestacados} />
+
+      <FilterButton filters={filters} />
+
       <div className={styles.Section2}>
         <div className={styles.DropdownLine}>
           <div className={styles.Dropdown}>
-            <DropdownMapOp/>
+            <ListOfDropdown filters={filters} />
           </div>
-          <div className={styles.Line}/>
+
+          <div className={styles.Line} />
         </div>
         <div className={styles.Position}>
-          {jobs?.map((item: any) => (
-            <div key={item.slug} className={styles.Trabajo}>
-              <div className={styles.Line}></div>
-              <div className={styles.Row}>
-                <div className={styles.Texto}>
-                  <TypographyOp variant="h2">{item.nombre_puesto}</TypographyOp>
-                  <TypographyOp variant="h3">{item.tipo_contrato}</TypographyOp>
-                  <TypographyOp variant="h3">{item.createdAt}</TypographyOp>
-                  <TypographyOp variant="h3">{item.empresa}</TypographyOp>
-                </div>
-                <div className={styles.MostrarBtn}>
-                  <ButtonOp url={`/busqueda-de-oportunidades/${item.slug}`}/>
-                </div>
-              </div>
-              <div className={styles.Row2}>
-                <div className={styles.MostrarTypo}>
-                  <TypographyOp variant="p">{item.descripcion}</TypographyOp>
-                </div>
-                <div className={styles.linkWidth}>
-                  <LinkRedirectOp text='Saber más' url={`/busqueda-de-oportunidades/${item.slug}`}/>
-                </div>
-              </div>
-            </div>
-          ))}
-          <div className={styles.Section3}>
-            <button
-              className={styles.Control}
-              disabled={meta.pagination.page === 1}
-              onClick={handlePreviousPage}
-            >
-              <span>
-                <MdArrowBackIos size={'1.5rem'} />
-              </span>
-              <span className={styles.Control__text}>Anterior</span>
-            </button>
-            <button
-              className={styles.Control}
-              disabled={meta.pagination.pageCount === meta.pagination.page}
-              onClick={handleNextPage}
-            >
-              <span className={styles.Control__text}>Siguiente</span>
-              <span>
-                <MdArrowForwardIos size={'1.5rem'} />
-              </span>
-            </button>
-          </div>
+          <LoadingBlock state={isLoad}>
+            <ListJobs jobs={jobs} />
+            <PaginationButton pagination={pagination} setIsLoad={setIsLoad} />
+          </LoadingBlock>
         </div>
       </div>
     </Public>
@@ -107,28 +68,96 @@ const BusquedaOportunidades: NextPage = ({ data, meta }: any) => {
 
 export default BusquedaOportunidades
 
-export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
-  query: { page = 1, ...filters }
-}) => {
-  const res = await getTrabajosByPage(page, filters)
-  const jobsDataCruda = await res.data
-  const jobsAdapter = jobsDataCruda.map((dataCruda: any) => ({
-    slug: dataCruda.attributes.slug,
-    nombre_puesto: dataCruda.attributes.nombre_puesto,
-    tipo_contrato: dataCruda.attributes.tipo_contrato.data.attributes.nombre,
-    createdAt: new Date(dataCruda.attributes.createdAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }),
-    descripcion: dataCruda.attributes.descripcion,
-    empresa: dataCruda.attributes.compania.data.attributes.nombre
-  }))
-
-  const meta = {
-    ...res.meta
+export const getServerSideProps: GetServerSideProps<
+BusquedaOportunidadesPageProps
+> = async ({
+  query: {
+    page = 1,
+    ubicacions = '',
+    tipocontratoes = '',
+    areatrabajos = '',
+    modalidadtrabajos = '',
+    companias = ''
   }
+}) => {
+  const filtersQuery = [
+    { property: 'ubicacion', value: ubicacions },
+    { property: 'tipo_contrato', value: tipocontratoes },
+    { property: 'area_trabajo', value: areatrabajos },
+    { property: 'modalidad_trabajo', value: modalidadtrabajos },
+    { property: 'compania', value: companias }
+  ]
+
+  const pathsForFilters = [
+    'ubicacions',
+    'tipo-contratoes',
+    'area-trabajos',
+    'modalidad-trabajos',
+    'companias'
+  ]
+
+  const filterKeyMap: any = {
+    ubicacions: 'Ubicación',
+    'tipo-contratoes': 'Tipo de Contrato',
+    'area-trabajos': 'Área de Trabajo',
+    'modalidad-trabajos': 'Modalidad',
+    companias: 'Empresa'
+  }
+
+  const filters: DropdownComponentProps[] = await Promise.all(
+    pathsForFilters.map(async (path) => {
+      const res = await getFechtApi(path)
+      return {
+        name: filterKeyMap[path],
+        slug: path.replace('-', ''),
+        options: res.data.map((item: any) => {
+          return {
+            slug: item.attributes.slug,
+            name: item.attributes.nombre
+          }
+        })
+      }
+    })
+  ).then((res) => res)
+
+  const [data, pagination] = await getJobsByPage({
+    page: page as number,
+    filters: filtersQuery
+  }).then((res) => [res.data, res.meta.pagination])
+
+  const jobs = data.map((job: Job) => {
+    const {
+      slug,
+      nombreJob,
+      tipoContrato,
+      fechaPublicacion,
+      empresa,
+      descripcion
+    } = adapterJobs(job)
+    return {
+      slug,
+      nombreJob,
+      tipoContrato,
+      fechaPublicacion,
+      empresa,
+      descripcion
+    }
+  })
+
+  const destacados = await getJobDestacado().then((res) => res.data)
+
+  const jobsDestacados = destacados.map((dest: Job) => {
+    const { idJob, slug, nombreJob, tipoContrato, descripcion, destacado } =
+      adapterJobs(dest)
+    return { idJob, slug, nombreJob, tipoContrato, descripcion, destacado }
+  })
 
   return {
     props: {
-      data: jobsAdapter,
-      meta
+      jobs,
+      pagination,
+      filters,
+      jobsDestacados
     }
   }
 }

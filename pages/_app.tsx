@@ -18,6 +18,7 @@ function MyApp ({ Component, pageProps }: AppProps): JSX.Element {
       <GoogleAnalytics measurementId="G-CQFPFTTPJ5" />
 
       {loading ? <LoadingPages /> : <Component {...pageProps} />}
+
     </>
   )
 }

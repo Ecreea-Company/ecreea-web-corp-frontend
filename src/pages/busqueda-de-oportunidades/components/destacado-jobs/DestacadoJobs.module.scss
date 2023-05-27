@@ -1,0 +1,83 @@
+@use 'styles/mixins/mediaQueries';
+
+.card{
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 4rem;
+    justify-content: space-evenly;
+
+    .cardDestacado{
+        border-radius:1rem ;
+        box-shadow:0px 0px 5px 3px var(--sombra) ;
+        padding: 1.5rem;
+        display: flex;
+        width: 85vw;
+        background-color: var(background-card);
+        @include mediaQueries.for-desktop-new {
+          width: 30vw;
+        }
+    
+        .Item{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.5rem;
+            .Titulo {
+              &__desing{
+                font-weight: bold;
+                font-size: 1.5rem;
+                padding-bottom: .5rem;
+              }
+            }
+            .Descripcion {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              &__parrafo{
+                margin-bottom: clamp(0.7rem,1vw,1rem);
+                font-size: clamp(0.9rem,1vw,1rem);
+             }
+             &__link{
+               font-size: clamp(1.4rem,1.7vw,1.7rem);
+             }
+            }
+        }
+    }
+
+    .navigation {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%); 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+  
+      .prevButton,
+      .nextButton {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(2rem,3vw,3rem);
+        height: clamp(2rem,3vw,3rem);
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px 3px var(--sombra);
+        font-size: clamp(1rem,1.5vw,1.5rem);
+        background-color: white;
+        color: black;
+      }
+      
+      .prevButton {
+        margin-right: auto;
+      }
+      
+      .nextButton {
+        margin-left: auto;
+      }
+    }
+}
+

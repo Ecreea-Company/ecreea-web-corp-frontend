@@ -1,34 +1,36 @@
 import { Public } from '@/layouts'
 import {
-  ButtonOp,
-  ContentJob,
+  Button,
   FormularioCV,
-  TypographyOp
+  JobRequirements,
+  Typography
 } from '@/pages/busqueda-de-oportunidades/components'
-import { getTrabajosBySlug } from '@/services/trabajos/Trabajo.service'
-import { GetServerSideProps, NextPage } from 'next'
+import { getJob, getJobBySlug } from '@/services/trabajos/Trabajo.service'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import styles from '@styles/busqueda-de-oportunidades/slug.module.scss'
 import { BsExclamationCircle, BsGeoAltFill } from 'react-icons/bs'
-import { useWindowSize } from '@/hooks'
-import Dropdown from '@/components/dropdowns/Dropdowns.component'
 import { FiCheckCircle } from 'react-icons/fi'
 import { useState } from 'react'
 import { IoCloseOutline } from 'react-icons/io5'
+import { adapterJobs } from '@/adapters'
+import { RequirementItem } from '@/models'
 
-const Job: NextPage = ({ data }: any) => {
-  const { width } = useWindowSize()
+interface JobSlugProps {
+  data: {
+    idJob: number
+    slug: string
+    nombreJob: string
+    empresa: string
+    tipoContrato: string
+    ubicacion: string
+    stateJobCall: boolean
+    descripcion: string
+    specialityJob: RequirementItem[]
+  }
+}
+
+const JobSlug = ({ data }: JobSlugProps) => {
   const [isActivedModal, setIsActivedModal] = useState(false)
-
-  const itemsJobs = [
-    { title: 'Área de trabajo', dataJob: data.area_trabajo },
-    { title: 'Beneficios', dataJob: data.beneficios },
-    { title: 'Funciones', dataJob: data.funciones },
-    { title: 'Competencias', dataJob: data.competencias },
-    { title: 'Carreras', dataJob: data.carreras },
-    { title: 'Conocimiento deseados', dataJob: data.conocimiento_deseado },
-    { title: 'Idiomas', dataJob: data.idiomas },
-    { title: 'Modalidad de Trabajo', dataJob: data.modalidad_trabajo }
-  ]
 
   const handleModal = (e: any) => {
     e.preventDefault()
@@ -36,19 +38,21 @@ const Job: NextPage = ({ data }: any) => {
   }
 
   return (
-    <Public titlePage={data.nombre_puesto}>
+    <Public titlePage={data.nombreJob}>
       <section className={styles.All}>
         <section className={styles.Section}>
-          <TypographyOp className={styles.title} variant="h1">
-            {data.nombre_puesto}
-          </TypographyOp>
-          <TypographyOp variant="h3" className={styles.empresa}>{data.empresa}</TypographyOp>
-          <TypographyOp variant="h3">{data.tipo_contrato}</TypographyOp>
+          <Typography className={styles.title} variant="h1">
+            {data.nombreJob}
+          </Typography>
+          <Typography variant="h3" className={styles.empresa}>
+            {data.empresa}
+          </Typography>
+          <Typography variant="h3">{data.tipoContrato}</Typography>
           <div className={styles.ubicacion}>
             <BsGeoAltFill className={styles.icon} />
-            <TypographyOp variant="h3">{data.ubicacion}</TypographyOp>
+            <Typography variant="h3">{data.ubicacion}</Typography>
           </div>
-          {data.convocatoria_cerrada
+          {data.stateJobCall
             ? (
             <div className={styles.convocatoria_cerrada}>
               <BsExclamationCircle className={styles.icon} />
@@ -61,39 +65,22 @@ const Job: NextPage = ({ data }: any) => {
               <p>Vacante disponible</p>
             </div>
               )}
-          <ButtonOp
+          <Button
             className={styles.btn}
             url="#"
-            isDisabled={data.convocatoria_cerrada}
+            isDisabled={data.stateJobCall}
             onClick={handleModal}
           />
         </section>
-        <TypographyOp className={styles.description} variant="h3">{data.descripcion}</TypographyOp>
-        {width < 960
-          ? (
-          <>
-            {itemsJobs.map((item, index) => (
-              <Dropdown
-                className={styles.contentJobDrop}
-                key={index}
-                title={item.title}
-                items={item.dataJob}
-              />
-            ))}
-          </>
-            )
-          : (
-          <section className={styles.contentjob}>
-            {itemsJobs.map((item, index) => (
-              <ContentJob key={index} title={item.title} items={item.dataJob} />
-            ))}
-          </section>
-            )}
+        <Typography className={styles.description} variant="h3">
+          {data.descripcion}
+        </Typography>
+        <JobRequirements itemsJobs={data.specialityJob} />
         <section className={styles.last_btn}>
-          <ButtonOp
+          <Button
             className={styles.btn}
             url="#"
-            isDisabled={data.convocatoria_cerrada}
+            isDisabled={data.stateJobCall}
             onClick={handleModal}
           />
         </section>
@@ -109,9 +96,9 @@ const Job: NextPage = ({ data }: any) => {
             <IoCloseOutline />
           </button>
           <div className={styles.Modal__descrip}>
-            <TypographyOp className={styles.Modal__Title} variant="h1">
+            <Typography className={styles.Modal__Title} variant="h1">
               Conecta con Nosotros
-            </TypographyOp>
+            </Typography>
             <div className={styles.Modal__parrafos}>
               <p>
                 Explora una cultura colaborativa de crecimiento y originalidad,
@@ -120,58 +107,58 @@ const Job: NextPage = ({ data }: any) => {
               <p>Si eres Estudiante o Bachiller, ¡Envíanos tu Hoja de Vida!</p>
             </div>
           </div>
-         <FormularioCV idJob={data.id}/>
+          <FormularioCV idJob={data.idJob} />
         </div>
       </div>
     </Public>
   )
 }
 
-export default Job
+export default JobSlug
 
-export const getServerSideProps: GetServerSideProps<{ data: any }> = async ({
-  params
-}) => {
-  const res = await getTrabajosBySlug(params?.slug)
-  const dataCruda = res.data[0]
+export const getStaticProps: GetStaticProps<JobSlugProps> = async ({ params }) => {
+  const res = await getJobBySlug(params?.slug)
+  const slugJobData = res.data[0]
 
-  const jobsAdapter = {
-    id: dataCruda.id,
-    slug: dataCruda.attributes.slug,
-    nombre_puesto: dataCruda.attributes.nombre_puesto,
-    tipo_contrato: dataCruda.attributes.tipo_contrato.data.attributes.nombre,
-    createdAt: new Date(dataCruda.attributes.createdAt).toLocaleDateString(
-      'es-ES',
-      { day: 'numeric', month: 'long', year: 'numeric' }
-    ),
-    descripcion: dataCruda.attributes.descripcion,
-    ubicacion: dataCruda.attributes.ubicacion.data.attributes.nombre,
-    area_trabajo: dataCruda.attributes.area_trabajo.data.attributes.nombre,
-    funciones: dataCruda.attributes.funciones.map(
-      (funcion: any) => funcion.nombre
-    ),
-    beneficios: dataCruda.attributes.beneficios.map(
-      (beneficio: any) => beneficio.nombre
-    ),
-    competencias: dataCruda.attributes.competencias.map(
-      (competencia: any) => competencia.nombre
-    ),
-    carreras: dataCruda.attributes.carreras.map(
-      (carrera: any) => carrera.nombre
-    ),
-    conocimiento_deseado: dataCruda.attributes.conocimiento_deseado.map(
-      (conocimiento: any) => conocimiento.nombre
-    ),
-    idiomas: dataCruda.attributes.idiomas,
-    modalidad_trabajo:
-      dataCruda.attributes.modalidad_trabajo.data.attributes.nombre,
-    convocatoria_cerrada: dataCruda.attributes.convocatoria_cerrada,
-    empresa: dataCruda.attributes.compania.data.attributes.nombre
+  const {
+    idJob,
+    slug,
+    nombreJob,
+    empresa,
+    tipoContrato,
+    ubicacion,
+    stateJobCall,
+    descripcion,
+    specialityJob
+  } = adapterJobs(slugJobData)
+
+  const data = {
+    idJob,
+    slug,
+    nombreJob,
+    empresa,
+    tipoContrato,
+    ubicacion,
+    stateJobCall,
+    descripcion,
+    specialityJob
   }
 
   return {
     props: {
-      data: jobsAdapter
+      data
     }
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const jobs = await getJob()
+  const paths = jobs.data.map((obj: any) => ({
+    params: { slug: obj.attributes.slug.toString() }
+  }))
+
+  return {
+    paths,
+    fallback: 'blocking'
   }
 }

@@ -6,7 +6,13 @@ export default function useStateLoading () {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    const handleStart = (url: any) => url !== router.asPath && setLoading(true)
+    const handleStart = (url: string) => {
+      if (url.includes('?')) {
+        return setLoading(false)
+      }
+      return url !== router.asPath && setLoading(true)
+    }
+
     const handleComplete = (url: any) =>
       url === router.asPath && setLoading(false)
 
