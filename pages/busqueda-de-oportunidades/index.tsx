@@ -8,7 +8,8 @@ import {
   FilterButton,
   Typography,
   ListJobs,
-  PaginationButton
+  PaginationButton,
+  Textfield
 } from '@/pages/busqueda-de-oportunidades/components'
 import { adapterJobs } from '@/adapters'
 
@@ -39,7 +40,7 @@ const BusquedaOportunidades = ({
         <Typography className={styles.Title} variant="h1">
           Únete a nosotros y haz la diferencia
         </Typography>
-        {/* <Textfield /> */}
+        <Textfield />
       </div>
 
       <DestacadoJobs jobs={jobsDestacados} />
