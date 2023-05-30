@@ -33,6 +33,7 @@ const JobSlug = ({ data }: JobSlugProps) => {
   const [isActivedModal, setIsActivedModal] = useState(false)
 
   const handleModal = (e: any) => {
+    if (data.stateJobCall) return
     e.preventDefault()
     setIsActivedModal(!isActivedModal)
   }
@@ -116,7 +117,9 @@ const JobSlug = ({ data }: JobSlugProps) => {
 
 export default JobSlug
 
-export const getStaticProps: GetStaticProps<JobSlugProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<JobSlugProps> = async ({
+  params
+}) => {
   const res = await getJobBySlug(params?.slug)
   const slugJobData = res.data[0]
 
