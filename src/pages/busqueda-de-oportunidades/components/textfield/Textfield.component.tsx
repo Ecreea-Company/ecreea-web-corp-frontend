@@ -23,7 +23,7 @@ const TextField = ({ dropJobs }: any): JSX.Element => {
                 searchClient,
                 queries: [
                   {
-                    indexName: 'development_job',
+                    indexName: 'production_job',
                     query
                   }
                 ]
