@@ -7,7 +7,7 @@ const filtersToQueryString = (filters: FiltersQuery[]) => {
   const filterQuery = filters
     .map((filter) => {
       const { property, value } = filter
-      return value === '' ? '' : `filters[${property}][slug][$eq]=${value}`
+      return value === '' ? '' : property === 'compania' ? `filters[empresa][$eq]=${value}` : `filters[${property}][slug][$eq]=${value}`
     })
     .join('&')
 

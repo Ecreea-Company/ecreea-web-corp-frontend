@@ -9,7 +9,7 @@ export const adapterJobs = (data: any): Job => {
     ),
     slug: data.attributes.slug,
     nombreJob: data.attributes.nombre_puesto,
-    empresa: data.attributes.compania.data.attributes.nombre,
+    empresa: data.attributes.empresa,
     tipoContrato: data.attributes.tipo_contrato.data.attributes.nombre,
     ubicacion: data.attributes.ubicacion.data.attributes.nombre,
     stateJobCall: data.attributes.convocatoria_cerrada,
