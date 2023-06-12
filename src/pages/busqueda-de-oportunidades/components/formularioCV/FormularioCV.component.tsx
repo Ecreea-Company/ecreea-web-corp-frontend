@@ -69,6 +69,11 @@ const FormularioCV = ({ idJob }: FormularioCVPorps) => {
     const formData = new FormData()
     formData.append('data', JSON.stringify(postulante))
     formData.append('files.cv', file)
+
+    const postulanteData = {
+      email: postulante.email
+    }
+
     setIsLoaded(true)
 
     await fetch('https://strapi.ecreea.com/api/postulantes', {
@@ -76,11 +81,22 @@ const FormularioCV = ({ idJob }: FormularioCVPorps) => {
       body: formData
     })
       .catch((error) => {
-        console.error('Error:', error)
+        console.error('Error en Strapi:', error)
       })
+
+    await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postulanteData)
+    })
       .then(() => {
         setIsUploaded(true)
         setIsLoaded(false)
+      })
+      .catch((error) => {
+        console.error('Error al enviar el correo electrónico:', error)
       })
 
     setTimeout(() => {
