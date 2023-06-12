@@ -5,11 +5,11 @@ import SearchItem from '../search-item/SearchItem.component'
 import algoliasearch from 'algoliasearch'
 
 const searchClient = algoliasearch(
-  'AQS72RFZ2Q',
-  'e31895120604407ae53189e47a8bcccb'
+  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID as string,
+  process.env.NEXT_PUBLIC_ALGOLIA_API_KEY as string
 )
 
-const TextField = ({ dropJobs }: any): JSX.Element => {
+const TextField = (): JSX.Element => {
   return (
       <Autocomplete
         openOnFocus={false}
