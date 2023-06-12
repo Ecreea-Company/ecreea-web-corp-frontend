@@ -33,7 +33,7 @@ const DropdownOP = ({
 
     await router.push({
       pathname: '/busqueda-de-oportunidades',
-      query: { ...router.query, [slug]: value }
+      query: { ...router.query, [slug]: value, page: 1 }
     })
   }
 
