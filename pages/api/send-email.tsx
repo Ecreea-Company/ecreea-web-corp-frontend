@@ -1,7 +1,23 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
 
-export default async function handler (req: NextApiRequest, res: NextApiResponse) {
+const transporter = nodemailer.createTransport({
+  host: process.env.HOST_EMAIL,
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
+})
+
+export default async function handler (
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === 'POST') {
     const { email } = req.body
 
@@ -19,32 +35,22 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
       </div>
     `
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.HOST_EMAIL,
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD
-      },
-      tls: {
-        rejectUnauthorized: false
-      }
-    })
-
-    const mailOptions = {
+    const mailHeaders = {
       from: `Postulantes Ecreea <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_RECEIVE,
+      cc: [process.env.EMAIL_CC] as string[],
       subject: 'Nuevo formulario de postulante',
       html: contentHTML
     }
 
     try {
-      await transporter.sendMail(mailOptions)
+      await transporter.sendMail(mailHeaders)
       res.status(200).json({ message: 'Correo electrónico enviado con éxito' })
     } catch (error) {
       console.error('Error al enviar el correo electrónico:', error)
-      res.status(500).json({ error: 'Ocurrió un error al enviar el correo electrónico' })
+      res
+        .status(500)
+        .json({ error: 'Ocurrió un error al enviar el correo electrónico' })
     }
   } else {
     res.status(405).json({ error: 'Método no permitido' })
