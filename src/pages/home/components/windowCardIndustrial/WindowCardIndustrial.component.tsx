@@ -1,48 +1,52 @@
+import styles from './WindowCardIndustrial.module.scss'
+
 import { IoIosArrowForward } from 'react-icons/io'
 import { useInView } from 'react-intersection-observer'
 import { ImageFill } from '@/components'
-import styles from './WindowCardIndustrial.module.scss'
+import Image from 'next/image'
 
 function WindowCardIndustrial (): JSX.Element {
-  const [ref, inView] = useInView()
+  const [ref, inView] = useInView({ triggerOnce: true })
   return (
     <div className={styles.WindowCard} ref={ref}>
       {inView && (
-        <>
-          <ImageFill
-            alt="Building-Ecreea"
-            src="/pages/home/e2b_logo.png"
-            stylesCustom={styles.WindowCard__logo}
-          />
-          <p className={styles.WindowCard__title}>ECREEA TO BUSINESS | E2B</p>
-
-          <div className={styles.WindowCard__Info}>
-            <div className={styles.Info__contentTitle}>
-              <p className={styles.Info__p1}>
-                Es la <b>Transformación Digital</b> de todas las adquisiciones
-                industriales
-              </p>
-            </div>
-            <p className={styles.Info__p2}>
+        <div className={styles.Content}>
+          <div className={styles.ContentInitial}>
+            <section>
+              <ImageFill
+                stylesCustom={styles.Logo}
+                src="/pages/home/e2b_logo.png"
+                alt="logo-e2b-pe"
+              />
+              <h3>ECREEA TO BUSINESS | E2B</h3>
+            </section>
+          </div>
+          <div className={styles.ContentMain}>
+            <section>
+              <h1>
+                Es la <b>Transformación Digital</b> de <br /> todas las
+                adquisiciones industriales
+              </h1>
+            </section>
+            <p>
               Plataforma Digital que brinda soluciones integrales en suministros
               Industriales para crear negocios fáciles y productivos en todas
               las industrias del Perú.
             </p>
-
-            <ImageFill
+            <Image
               src="/pages/home/e2b_industrias.png"
-              alt="E2B-Industrias"
-              stylesCustom={styles.Info__industrias}
+              alt="industrial"
+              width={702}
+              height={255}
             />
-
-            <a className={styles.Info__link} href="https://www.e2b.pe/">
+            <a href="https://www.e2b.pe/">
               <p>Inicia tu transformación digital Aquí</p>
-              <div className={styles.Info__arrow}>
+              <span>
                 <IoIosArrowForward />
-              </div>
+              </span>
             </a>
           </div>
-        </>
+        </div>
       )}
     </div>
   )
