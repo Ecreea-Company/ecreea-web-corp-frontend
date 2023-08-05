@@ -150,7 +150,8 @@ export const getStaticProps: GetStaticProps<JobSlugProps> = async ({
   return {
     props: {
       data
-    }
+    },
+    revalidate: 10
   }
 }
 
